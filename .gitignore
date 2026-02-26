@@ -28,9 +28,15 @@ _archive/
 # ── External cloned repos ─────────────────────────────────────────────────────
 code-rag-bench/
 
-# ── Junk / scaffolding dirs ───────────────────────────────────────────────────
+# ── Old / archived / scaffolding dirs ────────────────────────────────────────
+old_files/
+_archive/
 _pruned_from_root/
 Thesis_Proj_benchmarking_empty_shell/
+external_tools/
+logs/
+indexes/
+NUL
 
 # ── IDE / tool settings ───────────────────────────────────────────────────────
 .claude/

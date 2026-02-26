@@ -1,0 +1,22 @@
+{
+  "ai_generated": true,
+  "concept_tags": [
+    "composition",
+    "docstrings",
+    "functions",
+    "return-types",
+    "type-hints"
+  ],
+  "content": "Even simple functions become easier to understand when they include a short docstring and (optionally) type hints.\n\n---\n## 1) A typed function with a docstring\n\n```python\nfrom typing import Optional\n\ndef parse_age(text: str) -> Optional[int]:\n    \"\"\"Convert a string to an integer age, or return None if invalid.\"\"\"\n    t = text.strip()\n    if not t.isdigit():\n        return None\n    age = int(t)\n    if not (0 <= age <= 120):\n        return None\n    return age\n\nprint(parse_age(\" 20 \"))\nprint(parse_age(\"x\"))\nprint(parse_age(\"999\"))\n```python\n\n---\n## 2) A function that returns a structured result\n\n```python\nfrom typing import Dict, List\n\ndef summarize(nums: List[int]) -> Dict[str, float]:\n    \"\"\"Return basic statistics for a list of integers.\"\"\"\n    if not nums:\n        return {\"count\": 0, \"sum\": 0, \"avg\": 0}\n\n    total = sum(nums)\n    return {\n        \"count\": len(nums),\n        \"sum\": total,\n        \"avg\": total / len(nums),\n    }\n\nprint(summarize([10, 20, 30]))\nprint(summarize([]))\n```python\n\n---\n## 3) Small composition example\n\n```python\ndef only_ints(tokens):\n    out = []\n    for t in tokens:\n        s = str(t).strip()\n        if s.isdigit():\n            out.append(int(s))\n    return out\n\nraw = [\"10\", \"x\", \" 5 \", \"-\", 7]\nnums = only_ints(raw)\nprint(nums)\nprint(summarize(nums))\n```",
+  "difficulty": "intro",
+  "doc_id": "doc-readable-functions-easy-type-hints-docstrings-and-example-driven-design-91bbc2f25b",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "",
+    "source_file": "data/corpus_raw/functions_easy_5.json",
+    "url": ""
+  },
+  "title": "Readable functions (easy): type hints, docstrings, and example-driven design",
+  "type": "tutorial"
+}

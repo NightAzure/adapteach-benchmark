@@ -1,0 +1,21 @@
+{
+  "title": "Iterator algebra with itertools: chain, islice, product, cycle, and groupby",
+  "content": "Hard loop problems often become easier when you can **compose iterators** instead of writing nested loops manually. The `itertools` module provides fast, memory-efficient building blocks.\n\n---\n## 1) chain(): loop over multiple iterables as one\n\n```python\nimport itertools\n\nfor x in itertools.chain([1, 2], [\"a\", \"b\"], [True, False]):\n    print(x)\n```\n\n---\n## 2) islice(): take a slice of an iterator (without converting to a list)\nUseful when you want “first N items” from a stream.\n\n```python\nimport itertools\n\nit = (i * i for i in range(100))\nfirst_five = itertools.islice(it, 5)\nprint(list(first_five))  # [0, 1, 4, 9, 16]\n```\n\n---\n## 3) product(): nested loops without writing nested loops\n`product(A, B)` is like:\n\n```python\n# conceptual\n# for a in A:\n#   for b in B:\n#     yield (a, b)\n```\n\nExample:\n\n```python\nimport itertools\n\ncolors = [\"red\", \"blue\"]\nsizes = [\"S\", \"M\", \"L\"]\n\nfor c, s in itertools.product(colors, sizes):\n    print(c, s)\n```\n\n---\n## 4) cycle(): repeat values forever (be careful)\n\n```python\nimport itertools\n\nspinner = itertools.cycle([\"-\", \"\\\\\", \"|\", \"/\"])\nfor i in range(8):\n    print(next(spinner))\n```\n\n---\n## 5) groupby(): group consecutive items\n`groupby` groups **adjacent** items with the same key (so it is usually used after sorting).\n\n```python\nimport itertools\n\ndata = [\"aa\", \"ab\", \"ac\", \"ba\", \"bb\", \"bc\"]\n\nfor key, group in itertools.groupby(data, key=lambda s: s[0]):\n    print(key, list(group))\n```\n\nSorted grouping example:\n\n```python\nimport itertools\n\nwords = [\"dog\", \"cat\", \"apple\", \"cow\", \"banana\"]\nwords.sort(key=lambda w: w[0])\n\nfor k, g in itertools.groupby(words, key=lambda w: w[0]):\n    print(k, list(g))\n```\n\n---\n## 6) A pipeline-style example (chain + filter + map + sum)\n\n```python\nimport itertools\n\nsources = itertools.chain([\"10\", \"x\"], [\"7\"], [\"3\", \"-\"])\n\nnums = (int(s) for s in sources if s.isdigit())\nprint(sum(nums))  # 20\n```\n\n---\n## 7) Practical takeaways\n- Prefer iterator pipelines when data is large or streaming.\n- `itertools` tools avoid building intermediate lists.\n- Be careful with infinite iterators like `cycle()`.\n",
+  "type": "reference",
+  "concept_tags": ["loops", "iterators", "itertools", "pipelines", "chain", "islice", "product", "cycle", "groupby"],
+  "difficulty": "hard",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["multiple itertools functions", "pipeline composition", "groupby requires adjacency note", "safe infinite iterator demo"]
+  },
+  "provenance": {
+    "url": "https://docs.python.org/3/library/itertools.html",
+    "license": "PSF Documentation License (Python docs)",
+    "attribution": "Python Software Foundation / Python Documentation Contributors",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

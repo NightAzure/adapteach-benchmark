@@ -1,0 +1,6 @@
+pipeline:
+  name: A
+  retrieval_enabled: false
+  hybrid: false
+  graph_expansion: false
+  chunking: fixed

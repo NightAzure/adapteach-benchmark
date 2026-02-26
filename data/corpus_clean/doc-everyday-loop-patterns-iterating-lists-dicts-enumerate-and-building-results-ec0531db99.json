@@ -1,0 +1,25 @@
+{
+  "ai_generated": false,
+  "concept_tags": [
+    "break",
+    "continue",
+    "dicts",
+    "enumerate",
+    "for",
+    "items",
+    "loops",
+    "parsing"
+  ],
+  "content": "Loops are most useful when they help you *process collections* (lists, strings, dictionaries) and build outputs.\n\n---\n## 1) Loop over a string\n\n```python\nfor ch in \"hello\":\n    print(ch)\n```python\n\n---\n## 2) Loop over a list and build a new list\n\n```python\nnums = [1, 2, 3, 4]\nsquares = []\n\nfor n in nums:\n    squares.append(n * n)\n\nprint(squares)  # [1, 4, 9, 16]\n```python\n\n---\n## 3) enumerate(): loop with index and value\n\n```python\nitems = [\"a\", \"b\", \"c\"]\nfor i, v in enumerate(items):\n    print(i, v)\n```python\n\nYou can start indices at 1:\n\n```python\nfor i, v in enumerate(items, start=1):\n    print(i, v)\n```python\n\n---\n## 4) Loop over dictionaries\nLoop over keys:\n\n```python\nm = {\"a\": 1, \"b\": 2}\nfor k in m:\n    print(k, m[k])\n```python\n\nLoop over key/value pairs:\n\n```python\nfor k, v in m.items():\n    print(k, v)\n```python\n\n---\n## 5) break and continue in a simple filter\n\n```python\nnums = [2, 4, 0, 6, 8]\n\nfor n in nums:\n    if n == 0:\n        print(\"stop at zero\")\n        break\n    if n % 4 != 0:\n        continue\n    print(\"multiple of 4:\", n)\n```python\n\n---\n## 6) A small practice script: sum only valid integers\n\n```python\ndata = [\"10\", \"x\", \"3\", \"-\", \"7\"]\n\ns = 0\nfor token in data:\n    if token.isdigit():\n        s += int(token)\n\nprint(\"sum\", s)  # 20\n```",
+  "difficulty": "intro",
+  "doc_id": "doc-everyday-loop-patterns-iterating-lists-dicts-enumerate-and-building-results-ec0531db99",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "CC BY-SA 3.0 (Learn X in Y Minutes)",
+    "source_file": "data/corpus_raw/loops_easy_3.json",
+    "url": "https://learnxinyminutes.com/python/"
+  },
+  "title": "Everyday loop patterns: iterating lists, dicts, enumerate, and building results",
+  "type": "tutorial"
+}

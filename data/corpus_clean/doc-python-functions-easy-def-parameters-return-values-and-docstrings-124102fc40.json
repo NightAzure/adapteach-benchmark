@@ -1,0 +1,24 @@
+{
+  "ai_generated": false,
+  "concept_tags": [
+    "def",
+    "defaults",
+    "docstrings",
+    "functions",
+    "keyword-arguments",
+    "parameters",
+    "return"
+  ],
+  "content": "Functions help you reuse logic, reduce repetition, and make code easier to read.\n\n---\n## 1) Defining and calling a function\nA function is defined with `def` and called by writing its name with parentheses.\n\n```python\ndef greet(name):\n    print(\"Hello\", name)\n\ngreet(\"Ana\")\ngreet(\"Ben\")\n```python\n\n---\n## 2) Returning values\nUse `return` to send a value back to the caller.\n\n```python\ndef add(a, b):\n    return a + b\n\nresult = add(2, 3)\nprint(result)\n```python\n\nIf a function returns nothing explicitly, it returns `None`.\n\n```python\ndef show(x):\n    print(\"x=\", x)\n\nprint(show(123))  # prints x=123 then prints None\n```python\n\n---\n## 3) Multiple return values (as a tuple)\nPython can return multiple values by returning a tuple.\n\n```python\ndef min_max(values):\n    return min(values), max(values)\n\nlo, hi = min_max([3, 9, 1, 5])\nprint(lo, hi)\n```python\n\n---\n## 4) Docstrings (notes inside the function)\nA docstring is the first string inside a function body. Tools can read it.\n\n```python\ndef area_rectangle(w, h):\n    \"\"\"Return the area of a rectangle with width w and height h.\"\"\"\n    return w * h\n\nprint(area_rectangle.__doc__)\nprint(area_rectangle(3, 4))\n```python\n\n---\n## 5) Default parameter values\nDefaults make arguments optional.\n\n```python\ndef power(base, exp=2):\n    return base ** exp\n\nprint(power(3))     # 9\nprint(power(3, 3))  # 27\n```python\n\n---\n## 6) Keyword arguments (call by name)\nKeyword arguments improve readability and allow flexible ordering.\n\n```python\ndef format_user(name, age, city):\n    return f\"{name} ({age}) from {city}\"\n\nprint(format_user(age=20, name=\"Ana\", city=\"Manila\"))\n```python\n\n---\n## 7) A small practice script: parse and compute\n\n```python\ndef parse_int(text):\n    text = text.strip()\n    if not text.isdigit():\n        return None\n    return int(text)\n\nvalues = [\"10\", \"x\", \" 7 \", \"-\", \"3\"]\nnums = []\n\nfor t in values:\n    n = parse_int(t)\n    if n is not None:\n        nums.append(n)\n\nprint(\"nums\", nums)\nprint(\"sum\", sum(nums))\n```",
+  "difficulty": "intro",
+  "doc_id": "doc-python-functions-easy-def-parameters-return-values-and-docstrings-124102fc40",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "PSF Documentation License; code examples in docs are dual-licensed (PSF-2.0 and BSD-0 starting Python 3.8.6+)",
+    "source_file": "data/corpus_raw/functions_easy_1.json",
+    "url": "https://docs.python.org/3/tutorial/controlflow.html"
+  },
+  "title": "Python functions (easy): def, parameters, return values, and docstrings",
+  "type": "tutorial"
+}

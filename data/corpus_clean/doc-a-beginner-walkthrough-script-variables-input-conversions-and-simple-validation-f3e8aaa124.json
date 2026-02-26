@@ -1,0 +1,23 @@
+{
+  "ai_generated": true,
+  "concept_tags": [
+    "input",
+    "print",
+    "reassignment",
+    "type-conversion",
+    "unpacking",
+    "variables"
+  ],
+  "content": "This walkthrough is intentionally written with clear steps and intermediate variables.\n\n```python\n# Step 1: read a name (string)\nname = input(\"Name: \").strip()\n\n# Step 2: read age as text, then convert\nage_text = input(\"Age: \").strip()\n\n# Step 3: validate and convert\nif age_text.isdigit():\n    age = int(age_text)\nelse:\n    age = 0\n\n# Step 4: compute derived variables\nnext_year_age = age + 1\n\n# Step 5: build messages\nif age > 0:\n    msg = f\"Hi {name}, next year you will be {next_year_age}.\"\nelse:\n    msg = f\"Hi {name}, I couldn't read your age as a number.\"\n\nprint(msg)\n\n# Step 6: show how reassignment works\ncount = 0\ncount = count + 1\ncount = count + 1\nprint(\"count =\", count)\n\n# Step 7: multiple assignment and swapping\nx, y = 10, 20\nprint(\"before\", x, y)\n\nx, y = y, x\nprint(\"after\", x, y)\n```python\n\nNotes:\n- `strip()` removes extra spaces\n- `.isdigit()` is a simple integer check for non-negative whole numbers\n- f-strings make readable output",
+  "difficulty": "intro",
+  "doc_id": "doc-a-beginner-walkthrough-script-variables-input-conversions-and-simple-validation-f3e8aaa124",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "",
+    "source_file": "data/corpus_raw/variables_easy_5.json",
+    "url": ""
+  },
+  "title": "A beginner walkthrough script: variables, input, conversions, and simple validation",
+  "type": "code_sample"
+}

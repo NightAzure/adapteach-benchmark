@@ -1,0 +1,16 @@
+{
+  "chunk_count": 5617,
+  "chunk_size_stats": {
+    "count": 5617,
+    "max_chars": 505,
+    "mean_chars": 319.586,
+    "median_chars": 400,
+    "min_chars": 24
+  },
+  "chunker": "ast-v1",
+  "content_type_counts": {
+    "code": 2238,
+    "text": 3379
+  },
+  "doc_count": 100
+}

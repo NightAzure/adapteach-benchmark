@@ -1,0 +1,7 @@
+dataset,config,n,labeled_rows,MRR@10,nDCG@10,context_precision,faithfulness_proxy,answer_relevance_proxy,parsability_rate,validator_pass_rate,fallback_rate,retrieval_latency_ms_avg,generation_latency_ms_avg,total_tokens
+staqc,A,500,500,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.001,0.0,0
+staqc,B,500,500,0.9455,0.592938,0.868,0.0,0.0,0.0,0.0,0.0,468.468,0.0,0
+staqc,C,500,500,0.866767,0.446173,0.7404,0.0,0.0,0.0,0.0,0.0,473.804,0.0,0
+staqc,D,500,500,0.901167,0.501126,0.8228,0.0,0.0,0.0,0.0,0.0,376.718,0.0,0
+staqc,E,500,500,0.793,0.346611,0.666,0.0,0.0,0.0,0.0,0.0,611.742,0.0,0
+staqc,F,500,500,0.901167,0.501126,0.8228,0.0,0.0,0.0,0.0,0.0,642.049,0.0,0

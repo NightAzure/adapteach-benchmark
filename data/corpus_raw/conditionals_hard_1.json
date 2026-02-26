@@ -1,0 +1,21 @@
+{
+  "title": "Assignment expressions (:=) in conditionals: compact patterns without losing clarity",
+  "content": "Hard-level conditional code often tries to balance readability with avoiding repeated work. Python’s **assignment expression** operator `:=` (sometimes called the “walrus operator”) helps when you want to compute a value once and use it immediately in an `if` or `while`.\n\n---\n## 1) The basic idea\nInstead of computing something twice:\n\n```python\ns = \" 42 \"\nif s.strip().isdigit():\n    n = int(s.strip())\n    print(n)\n```\n\nYou can compute once and reuse:\n\n```python\ns = \" 42 \"\nif (t := s.strip()).isdigit():\n    n = int(t)\n    print(n)\n```\n\n---\n## 2) While loops with assignment expressions (read/process pattern)\nA classic use is reading items until a sentinel.\n\n```python\n# conceptually similar to: line = input(); while line != \"\": ...; line = input()\nlines = [\"a\", \"bb\", \"\", \"ccc\"]\ni = 0\n\nwhile (line := lines[i]) != \"\":\n    print(\"got\", line)\n    i += 1\n```\n\n---\n## 3) Avoid repeated expensive work\n\n```python\nimport time\n\ndef expensive(x):\n    time.sleep(0.05)\n    return x * 2\n\nx = 10\n\n# without := you'd likely call expensive(x) twice if you need the value\nif (y := expensive(x)) > 10:\n    print(\"big\", y)\nelse:\n    print(\"small\", y)\n```\n\n---\n## 4) Parsing with := in a readable way\n\n```python\ntext = \"key=value\"\nif (parts := text.split(\"=\", 1)) and len(parts) == 2:\n    k, v = parts\n    print(k, v)\n```\n\n---\n## 5) A larger example: parse numeric tokens with a single pass\n\n```python\ndata = [\"10\", \"x\", \"5\", \"-\", \"7\", \" 3 \"]\nnums = []\n\nfor raw in data:\n    if (t := raw.strip()).isdigit():\n        nums.append(int(t))\n\nprint(nums)\nprint(\"sum\", sum(nums))\nprint(\"max\", max(nums) if nums else None)\n```\n\n---\n## 6) Practical guidance\n- Use `:=` when it **removes repetition** and stays readable.\n- If it makes the condition too dense, compute the value on a separate line.\n",
+  "type": "reference",
+  "concept_tags": ["conditionals", "walrus", "assignment-expression", "parsing", "while", "readability"],
+  "difficulty": "hard",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": [":= inside if/while", "single-pass parsing", "read/process loop", "balanced narrative+code"]
+  },
+  "provenance": {
+    "url": "https://peps.python.org/pep-0572/",
+    "license": "Public domain (PEP text)",
+    "attribution": "PEP 572 authors (see PEP header)",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

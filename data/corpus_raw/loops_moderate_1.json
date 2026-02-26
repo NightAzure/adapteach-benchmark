@@ -1,0 +1,21 @@
+{
+  "title": "Moderate loop control: break/continue, loop-else, and search patterns",
+  "content": "Once you’re comfortable with basic `for` and `while` loops, the next step is learning **loop control patterns**: exiting early, skipping work, and using `else` with loops to express “not found.”\n\n---\n## 1) break: exit early when the goal is reached\nA very common pattern is to stop looping as soon as you find what you need.\n\n```python\nvalues = [3, 7, 9, 12]\ntarget = 9\n\nfor v in values:\n    if v == target:\n        print(\"found\", v)\n        break\nprint(\"done\")\n```\n\n---\n## 2) continue: skip the current iteration\nUse `continue` when you want to ignore certain items and move on.\n\n```python\nnums = [1, 2, 3, 4, 5, 6]\nfor n in nums:\n    if n % 2 == 0:\n        continue\n    print(\"odd:\", n)\n```\n\n---\n## 3) loop-else: express “no break happened”\nA loop can have an `else` clause. The `else` block runs only if the loop finishes normally (not via `break`).\n\n```python\nvalues = [3, 7, 9, 12]\ntarget = 100\n\nfor v in values:\n    if v == target:\n        print(\"found\", v)\n        break\nelse:\n    print(\"not found\")\n```\n\nThis avoids extra flags like `found = False` in many cases.\n\n---\n## 4) Nested loops + break: “prime search” style\nThe tutorial’s classic example shows nested loops with `break` and a loop `else`.\n\n```python\nfor n in range(2, 10):\n    for x in range(2, n):\n        if n % x == 0:\n            print(n, \"equals\", x, \"*\", n // x)\n            break\n    else:\n        # ran without finding a factor\n        print(n, \"is prime\")\n```\n\n---\n## 5) A readable “search” function with loop-else\n\n```python\ndef find_first_even(values):\n    for v in values:\n        if v % 2 == 0:\n            return v\n    return None\n\nprint(find_first_even([1, 3, 5, 8, 9]))\nprint(find_first_even([1, 3, 5]))\n```\n\nAlternative using loop-else:\n\n```python\ndef find_first_even(values):\n    for v in values:\n        if v % 2 == 0:\n            return v\n    else:\n        return None\n```\n\n---\n## 6) Practice block: filter + early exit\n\n```python\n# Print numbers from 1..20, skipping multiples of 3.\n# Stop entirely if you hit a multiple of 11.\nfor n in range(1, 21):\n    if n % 11 == 0:\n        print(\"stop at\", n)\n        break\n    if n % 3 == 0:\n        continue\n    print(n)\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["loops", "for", "range", "break", "continue", "loop-else", "nested-loops", "search-patterns"],
+  "difficulty": "moderate",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["break/continue blocks", "loop-else examples", "nested loop prime example", "search function patterns"]
+  },
+  "provenance": {
+    "url": "https://docs.python.org/3/tutorial/controlflow.html",
+    "license": "PSF Documentation License; code examples are dual-licensed (PSF-2.0 and BSD-0 starting Python 3.8.6+)",
+    "attribution": "Python Software Foundation / Python Documentation Contributors",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

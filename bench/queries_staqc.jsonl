@@ -1,0 +1,500 @@
+{"id": "staqc-9a300c4710", "category": "concept_explanation", "topic": "variables", "query": "How do I treat an integer as an array of bytes in Python?"}
+{"id": "staqc-f46ba5e636", "category": "concept_explanation", "topic": "functions", "query": "How should I unit test a code-generator?"}
+{"id": "staqc-6caedbb561", "category": "concept_explanation", "topic": "functions", "query": "Can you explain closures (as they relate to Python)?"}
+{"id": "staqc-71f47f59fc", "category": "concept_explanation", "topic": "conditionals", "query": "Is there a python module for regex matching in zip files"}
+{"id": "staqc-4d913ee2c3", "category": "concept_explanation", "topic": "functions", "query": "What's the best way to grab/parse command line arguments passed to a Python script?"}
+{"id": "staqc-f8fb452b97", "category": "concept_explanation", "topic": "conditionals", "query": "Why Java and Python garbage collection methods are different?"}
+{"id": "staqc-a6d686bc24", "category": "concept_explanation", "topic": "functions", "query": "Where can I learn more about PyPy's translation function?"}
+{"id": "staqc-2aa71bacb3", "category": "concept_explanation", "topic": "variables", "query": "Does PHP have an equivalent to this type of Python string substitution?"}
+{"id": "staqc-d130148392", "category": "concept_explanation", "topic": "conditionals", "query": "How do threads work in Python, and what are common Python-threading specific pitfalls?"}
+{"id": "staqc-c10d4a806a", "category": "concept_explanation", "topic": "conditionals", "query": "Is it possible to run a Python script as a service in Windows? If possible, how?"}
+{"id": "staqc-78dc2fb380", "category": "concept_explanation", "topic": "conditionals", "query": "How to specify an authenticated proxy for a python http connection?"}
+{"id": "staqc-0d71b9f77e", "category": "concept_explanation", "topic": "functions", "query": "Why does Python's iter() on a mapping return iterkeys() instead of iteritems()?"}
+{"id": "staqc-199cf4569b", "category": "concept_explanation", "topic": "variables", "query": "Why is my instance variable not in __dict__?"}
+{"id": "staqc-e065a729f1", "category": "concept_explanation", "topic": "functions", "query": "How to escape os.system() calls in Python?"}
+{"id": "staqc-315d01422d", "category": "concept_explanation", "topic": "variables", "query": "How do I sort a list of strings in Python?"}
+{"id": "staqc-06be8e6957", "category": "concept_explanation", "topic": "functions", "query": "What does ** (double star) and * (star) do for Python parameters?"}
+{"id": "staqc-f9b9cc566c", "category": "concept_explanation", "topic": "functions", "query": "What are Class methods in Python for?"}
+{"id": "staqc-f6da31548a", "category": "concept_explanation", "topic": "functions", "query": "What's the best way to return multiple values from a function in Python?"}
+{"id": "staqc-59ffcf5848", "category": "concept_explanation", "topic": "variables", "query": "How to find the mime type of a file in python?"}
+{"id": "staqc-c5b174a2e0", "category": "concept_explanation", "topic": "variables", "query": "Where can I find the time and space complexity of the built-in sequence types in Python"}
+{"id": "staqc-a5aefbbc11", "category": "concept_explanation", "topic": "conditionals", "query": "What is the simplest way to find the difference between 2 times in python?"}
+{"id": "staqc-621f82f73b", "category": "concept_explanation", "topic": "functions", "query": "Why are SQL aggregate functions so much slower than Python and Java (or Poor Man's OLAP)"}
+{"id": "staqc-b7dabb5cc4", "category": "concept_explanation", "topic": "loops", "query": "How can I do a line break (line continuation) in Python?"}
+{"id": "staqc-b21ccf94d9", "category": "concept_explanation", "topic": "functions", "query": "How do you check whether a python method is bound or not?"}
+{"id": "staqc-8eb7e9e661", "category": "concept_explanation", "topic": "conditionals", "query": "What is the difference between old style and new style classes in Python?"}
+{"id": "staqc-ce3129b4c3", "category": "concept_explanation", "topic": "variables", "query": "How can I get Emacs' key bindings in Python's IDLE?"}
+{"id": "staqc-88dd9f7704", "category": "debugging", "topic": "functions", "query": "Does re.compile() or any given Python library call throw an exception?"}
+{"id": "staqc-6da8846b3b", "category": "concept_explanation", "topic": "functions", "query": "Is it pythonic for a function to return multiple values?"}
+{"id": "staqc-6dfe518d2d", "category": "concept_explanation", "topic": "functions", "query": "How to add method using metaclass"}
+{"id": "staqc-b7ea0fe7e8", "category": "concept_explanation", "topic": "functions", "query": "Why do you need explicitly have the \"self\" argument into a Python method?"}
+{"id": "staqc-438b23f255", "category": "misconception", "topic": "functions", "query": "Why are Python's 'private' methods not actually private?"}
+{"id": "staqc-e3c909007f", "category": "concept_explanation", "topic": "variables", "query": "How do I sort a list of dictionaries by values of the dictionary in Python?"}
+{"id": "staqc-f4b3f596cf", "category": "concept_explanation", "topic": "variables", "query": "Is there a common way to check in Python if an object is any function type?"}
+{"id": "staqc-cbfdb8f733", "category": "concept_explanation", "topic": "variables", "query": "How do I get the name of a python class as a string?"}
+{"id": "staqc-f959d2cab2", "category": "concept_explanation", "topic": "variables", "query": "How do I convert local time to UTC in Python?"}
+{"id": "staqc-564007f155", "category": "concept_explanation", "topic": "functions", "query": "How to programmatically enable/disable network interfaces? (Windows XP)"}
+{"id": "staqc-38b2e195f2", "category": "concept_explanation", "topic": "functions", "query": "Why isn't the 'len' function inherited by dictionaries and lists in Python"}
+{"id": "staqc-af69472667", "category": "concept_explanation", "topic": "functions", "query": "How do I unit test an __init__() method of a python class with assertRaises()?"}
+{"id": "staqc-60bec43aed", "category": "concept_explanation", "topic": "variables", "query": "How do I split a string into a list?"}
+{"id": "staqc-07f2f16e38", "category": "concept_explanation", "topic": "variables", "query": "How do I verify that a string only contains letters, numbers, underscores and dashes?"}
+{"id": "staqc-3933e262a9", "category": "concept_explanation", "topic": "variables", "query": "Will everything in the standard library treat strings as unicode in Python 3.0?"}
+{"id": "staqc-7ffbb2356a", "category": "concept_explanation", "topic": "loops", "query": "What is the difference between range and xrange functions in Python 2.X?"}
+{"id": "staqc-d2ce06ccbd", "category": "debugging", "topic": "conditionals", "query": "How can I analyze Python code to identify problematic areas?"}
+{"id": "staqc-78b3825ee8", "category": "concept_explanation", "topic": "conditionals", "query": "Why is \"if not someobj:\" better than \"if someobj == None:\" in Python?"}
+{"id": "staqc-53dfb500e8", "category": "concept_explanation", "topic": "functions", "query": "What can you use Python generator functions for?"}
+{"id": "staqc-48c1bcdeb7", "category": "concept_explanation", "topic": "variables", "query": "How do I merge a 2D array in Python into one string with List Comprehension?"}
+{"id": "staqc-9cfd3d552d", "category": "concept_explanation", "topic": "variables", "query": "What is \"thread local storage\" in Python, and why do I need it?"}
+{"id": "staqc-7dda6c7e3e", "category": "concept_explanation", "topic": "variables", "query": "Why unicode() uses str() on my object only with no encoding given?"}
+{"id": "staqc-76160eb797", "category": "concept_explanation", "topic": "conditionals", "query": "How to apply bold style to a specific word in Excel file using Python?"}
+{"id": "staqc-bc3da0976c", "category": "concept_explanation", "topic": "variables", "query": "How to get instance variables in Python?"}
+{"id": "staqc-a1de98b537", "category": "concept_explanation", "topic": "functions", "query": "What is a \"callable\" in Python?"}
+{"id": "staqc-09e3b23034", "category": "concept_explanation", "topic": "conditionals", "query": "What are the Python equivalents of the sighold and sigrelse functions found in C?"}
+{"id": "staqc-876d8d5fd7", "category": "concept_explanation", "topic": "variables", "query": "Is there a function in Python to split a string without ignoring the spaces?"}
+{"id": "staqc-658f7b5641", "category": "concept_explanation", "topic": "functions", "query": "Is there a function in python to split a word into a list?"}
+{"id": "staqc-f73e960af8", "category": "concept_explanation", "topic": "functions", "query": "Which is more pythonic, factory as a function in a module, or as a method on the class it creates?"}
+{"id": "staqc-b38cd80eaf", "category": "concept_explanation", "topic": "variables", "query": "How to Retrieve name of current Windows User (AD or local) using Python?"}
+{"id": "staqc-a4fb141aaa", "category": "concept_explanation", "topic": "variables", "query": "What is the scope for imported classes in python?"}
+{"id": "staqc-eac423413c", "category": "concept_explanation", "topic": "variables", "query": "How do I get a decimal value when using the division operator in Python?"}
+{"id": "staqc-dfab1720e3", "category": "concept_explanation", "topic": "variables", "query": "What's the Name of the Python Module that Formats arbitrary Text to nicely looking HTML?"}
+{"id": "staqc-514086d2d1", "category": "concept_explanation", "topic": "variables", "query": "How do I use timezones with a datetime object in python?"}
+{"id": "staqc-8ad5d77003", "category": "concept_explanation", "topic": "variables", "query": "How can i parse a comma delimited string into a list (caveat)?"}
+{"id": "staqc-622d086066", "category": "concept_explanation", "topic": "functions", "query": "What's the best dispatcher/callback library in Python?"}
+{"id": "staqc-aee3bf26d1", "category": "concept_explanation", "topic": "variables", "query": "How can I join a list into a string (caveat)?"}
+{"id": "staqc-16c9cd56c6", "category": "concept_explanation", "topic": "conditionals", "query": "Is it good to switch from c# to python?"}
+{"id": "staqc-e33323dffe", "category": "concept_explanation", "topic": "conditionals", "query": "How do I modify a text file in Python?"}
+{"id": "staqc-989c9c7fb6", "category": "concept_explanation", "topic": "variables", "query": "How can i move an object drawn in device context python"}
+{"id": "staqc-2f6ac862cc", "category": "debugging", "topic": "functions", "query": "How do you test that a Python function throws an exception?"}
+{"id": "staqc-95575b0dcc", "category": "concept_explanation", "topic": "functions", "query": "Is there an inverse function for time.gmtime() that parses a UTC tuple to seconds since the epoch?"}
+{"id": "staqc-070d8a7245", "category": "concept_explanation", "topic": "variables", "query": "How do I efficiently filter computed values within a Python list comprehension?"}
+{"id": "staqc-3ccabb38f3", "category": "debugging", "topic": "variables", "query": "Do I have to cause an ValueError in Python"}
+{"id": "staqc-f179e4bd82", "category": "concept_explanation", "topic": "conditionals", "query": "Is there a difference between `==` and `is` in Python?"}
+{"id": "staqc-a8073bcc17", "category": "concept_explanation", "topic": "functions", "query": "Which is more preferable to use in Python: lambda functions or nested functions ('def')?"}
+{"id": "staqc-a7fc96c9d1", "category": "concept_explanation", "topic": "variables", "query": "How do I use django.core.urlresolvers.reverse with a function reference instead of a named URL pattern?"}
+{"id": "staqc-b5fc6e533e", "category": "concept_explanation", "topic": "loops", "query": "Should you always favor xrange() over range()?"}
+{"id": "staqc-2a120b8055", "category": "concept_explanation", "topic": "conditionals", "query": "What is the difference between @staticmethod and @classmethod in Python?"}
+{"id": "staqc-8bf9c564f7", "category": "concept_explanation", "topic": "variables", "query": "How can I read the RGB value of a given pixel in Python?"}
+{"id": "staqc-733e1a2e91", "category": "concept_explanation", "topic": "variables", "query": "Can Regex be used for this particular string manipulation?"}
+{"id": "staqc-5d67ee9117", "category": "concept_explanation", "topic": "conditionals", "query": "Why results of map() and list comprehension are different?"}
+{"id": "staqc-5a8d067669", "category": "concept_explanation", "topic": "variables", "query": "How do I wrap a string in a file in Python?"}
+{"id": "staqc-3b4a4f56f7", "category": "concept_explanation", "topic": "conditionals", "query": "What limitations have closures in Python compared to language X closures?"}
+{"id": "staqc-02e2e3b551", "category": "concept_explanation", "topic": "variables", "query": "Does Python have a bitfield type?"}
+{"id": "staqc-0db5fa9a6c", "category": "concept_explanation", "topic": "variables", "query": "How do I successfully pass a function reference to Djangoâs reverse() function?"}
+{"id": "staqc-061590443f", "category": "concept_explanation", "topic": "functions", "query": "How does one do the equivalent of \"import * from module\" with Python's __import__ function?"}
+{"id": "staqc-2dcf28419d", "category": "debugging", "topic": "loops", "query": "How do you break into the debugger from Python source code?"}
+{"id": "staqc-0382d0d801", "category": "concept_explanation", "topic": "variables", "query": "What's the canonical way to check for type in python?"}
+{"id": "staqc-b081f19537", "category": "concept_explanation", "topic": "loops", "query": "How to iterate over a timespan after days, hours, weeks and months in Python?"}
+{"id": "staqc-efb932b789", "category": "concept_explanation", "topic": "conditionals", "query": "Is timsort general-purpose or Python-specific?"}
+{"id": "staqc-2d6be7e983", "category": "concept_explanation", "topic": "variables", "query": "How to skip the docstring using regex"}
+{"id": "staqc-80acd1fb9d", "category": "concept_explanation", "topic": "variables", "query": "What is the naming convention in Python for variable and function names?"}
+{"id": "staqc-b9f1b4f231", "category": "concept_explanation", "topic": "conditionals", "query": "What is the difference between Ruby and Python versions of\"self\"?"}
+{"id": "staqc-b3387818be", "category": "concept_explanation", "topic": "variables", "query": "What is \"lambda binding\" in Python?"}
+{"id": "staqc-781da8ba41", "category": "concept_explanation", "topic": "variables", "query": "What is best way to remove duplicate lines matching regex from string using Python?"}
+{"id": "staqc-b98e882cfa", "category": "concept_explanation", "topic": "variables", "query": "How do I split a multi-line string into multiple lines?"}
+{"id": "staqc-107328daf4", "category": "concept_explanation", "topic": "variables", "query": "Is it possible to pass arguments into event bindings?"}
+{"id": "staqc-ace6e2a256", "category": "concept_explanation", "topic": "variables", "query": "How do I convert a list of ascii values to a string in python?"}
+{"id": "staqc-566fabdda0", "category": "concept_explanation", "topic": "conditionals", "query": "What is the difference between Python's re.search and re.match?"}
+{"id": "staqc-edffbff25f", "category": "concept_explanation", "topic": "variables", "query": "Is this the best way to get unique version of filename w/ Python?"}
+{"id": "staqc-7bb42c9105", "category": "concept_explanation", "topic": "loops", "query": "How can I, in python, iterate over multiple 2d lists at once, cleanly?"}
+{"id": "staqc-5533341e7e", "category": "concept_explanation", "topic": "loops", "query": "How to break out of multiple loops in Python?"}
+{"id": "staqc-8047368828", "category": "concept_explanation", "topic": "functions", "query": "What property returns the regular expression used when re.compile was called?"}
+{"id": "staqc-321a0c321b", "category": "concept_explanation", "topic": "variables", "query": "How to get a complete list of object's methods and attributes?"}
+{"id": "staqc-937fb656bc", "category": "concept_explanation", "topic": "variables", "query": "Is there a function in Python to print all the current properties and values of an object?"}
+{"id": "staqc-6500a8e251", "category": "concept_explanation", "topic": "variables", "query": "Can you monkey patch methods on core types in python?"}
+{"id": "staqc-102f814270", "category": "concept_explanation", "topic": "variables", "query": "How to check if a string in Python is in ASCII?"}
+{"id": "staqc-fec4147459", "category": "concept_explanation", "topic": "variables", "query": "What is the best way to escape Python strings in PHP?"}
+{"id": "staqc-efa8df1636", "category": "concept_explanation", "topic": "variables", "query": "How do I emulate Python's named printf parameters in Ruby?"}
+{"id": "staqc-40ee514cfc", "category": "concept_explanation", "topic": "conditionals", "query": "How to check if OS is Vista in Python?"}
+{"id": "staqc-c83f3db329", "category": "concept_explanation", "topic": "functions", "query": "Can you list the keyword arguments a Python function receives?"}
+{"id": "staqc-50a93cdfac", "category": "concept_explanation", "topic": "conditionals", "query": "How do I get python-markdown to additionally \"urlify\" links when formatting plain text?"}
+{"id": "staqc-b76499f993", "category": "concept_explanation", "topic": "variables", "query": "Why do attribute references act like this with Python inheritance?"}
+{"id": "staqc-07da325b33", "category": "concept_explanation", "topic": "variables", "query": "How to convert a C string (char array) into a Python string when there are non-ASCII characters in the string?"}
+{"id": "staqc-4583abeaeb", "category": "concept_explanation", "topic": "functions", "query": "Why Python decorators rather than closures?"}
+{"id": "staqc-3c62fd9426", "category": "concept_explanation", "topic": "conditionals", "query": "How can you use BeautifulSoup to get colindex numbers?"}
+{"id": "staqc-4d129cc969", "category": "concept_explanation", "topic": "functions", "query": "How do I reverse a list using recursion in Python?"}
+{"id": "staqc-a361e7cc1a", "category": "concept_explanation", "topic": "functions", "query": "What is the best way on python 2.3 for windows to execute a program like ghostscript with multiple arguments and spaces in paths?"}
+{"id": "staqc-2b69db83c0", "category": "concept_explanation", "topic": "variables", "query": "How to get hex string from signed integer"}
+{"id": "staqc-6f04165845", "category": "concept_explanation", "topic": "variables", "query": "How do I iterate through a string in Python?"}
+{"id": "staqc-062f672226", "category": "concept_explanation", "topic": "functions", "query": "What is your convention to distinguish between object methods to be called by the outside, and object methods to be called by a subclass?"}
+{"id": "staqc-9f68d03dd8", "category": "concept_explanation", "topic": "conditionals", "query": "How to get file creation & modification date/times in Python?"}
+{"id": "staqc-e92ef3b987", "category": "concept_explanation", "topic": "variables", "query": "Is there a reason Python strings don't have a string length method?"}
+{"id": "staqc-8b7915c26b", "category": "concept_explanation", "topic": "functions", "query": "How do you programmatically reorder children of an ATFolder subclass?"}
+{"id": "staqc-e39591261f", "category": "concept_explanation", "topic": "variables", "query": "How do I parse a listing of files to get just the filenames in python?"}
+{"id": "staqc-a39ac4587b", "category": "concept_explanation", "topic": "variables", "query": "How can I support wildcards in user-defined search strings in Python?"}
+{"id": "staqc-c586c1d54b", "category": "concept_explanation", "topic": "variables", "query": "How to copy all properties of an object to another object, in Python?"}
+{"id": "staqc-c0ff82dfb5", "category": "concept_explanation", "topic": "loops", "query": "What is the OCaml idiom equivalent to Python's range function?"}
+{"id": "staqc-bd940ed1c2", "category": "concept_explanation", "topic": "variables", "query": "What are \"first class\" objects?"}
+{"id": "staqc-435f47ebb8", "category": "concept_explanation", "topic": "functions", "query": "How do I get the name of a function or method from within a Python function or method?"}
+{"id": "staqc-b3563b2a41", "category": "concept_explanation", "topic": "functions", "query": "When is not a good time to use python generators?"}
+{"id": "staqc-450bd5bcc1", "category": "concept_explanation", "topic": "functions", "query": "Can I call and set the Python gettext module in a library and a module using it at the same time?"}
+{"id": "staqc-e80efdd620", "category": "concept_explanation", "topic": "variables", "query": "Is it possible to get the value of an item contained in Django's \"changed_data\" list?"}
+{"id": "staqc-af5852a3b5", "category": "concept_explanation", "topic": "conditionals", "query": "How to determine if a directory is on same partition"}
+{"id": "staqc-e1f475ea02", "category": "concept_explanation", "topic": "conditionals", "query": "How to specify relations using SQLAlchemy declarative syntax?"}
+{"id": "staqc-e0b8ad6b51", "category": "concept_explanation", "topic": "variables", "query": "How to get a function name as a string in Python?"}
+{"id": "staqc-a78dfd2095", "category": "concept_explanation", "topic": "variables", "query": "What Python bindings are there for CVS or SVN?"}
+{"id": "staqc-3368e338af", "category": "debugging", "topic": "functions", "query": "Which exception should I raise on bad/illegal argument combinations in Python?"}
+{"id": "staqc-e69c9a1a6a", "category": "concept_explanation", "topic": "conditionals", "query": "How to find out if a lazy relation isn't loaded yet, with SQLAlchemy?"}
+{"id": "staqc-48cd34dc94", "category": "concept_explanation", "topic": "variables", "query": "Why the Global Interpreter Lock?"}
+{"id": "staqc-bc09a9a68e", "category": "concept_explanation", "topic": "variables", "query": "How do I process a string such as this using regular expressions?"}
+{"id": "staqc-98bf77c78d", "category": "concept_explanation", "topic": "variables", "query": "How do I treat an ASCII string as unicode and unescape the escaped characters in it in python?"}
+{"id": "staqc-e06653e814", "category": "concept_explanation", "topic": "functions", "query": "Is there a Python library function which attempts to guess the character-encoding of some bytes?"}
+{"id": "staqc-1743079542", "category": "concept_explanation", "topic": "variables", "query": "What mime-type should I return for a python string"}
+{"id": "staqc-7925e7109b", "category": "concept_explanation", "topic": "variables", "query": "how to tell if a string is base64 or not"}
+{"id": "staqc-c41225ea89", "category": "concept_explanation", "topic": "functions", "query": "How to show the visitor a moved web page AND return a 301 redirect HTTP response status code in Django?"}
+{"id": "staqc-94093e8232", "category": "concept_explanation", "topic": "functions", "query": "Can anyone recommend a decent FOSS PDF generator for Python?"}
+{"id": "staqc-84d445c914", "category": "concept_explanation", "topic": "variables", "query": "What is the Python equivalent of static variables inside a function?"}
+{"id": "staqc-a72881f081", "category": "concept_explanation", "topic": "functions", "query": "How do you programmatically set an attribute in Python?"}
+{"id": "staqc-e63870e87f", "category": "concept_explanation", "topic": "variables", "query": "How to access a Python global variable from C?"}
+{"id": "staqc-843cc150b8", "category": "concept_explanation", "topic": "functions", "query": "Is it correct to inherit from built-in classes?"}
+{"id": "staqc-eb3742a14e", "category": "concept_explanation", "topic": "functions", "query": "Why does Excel macro work in Excel but not when called from Python?"}
+{"id": "staqc-194af2e588", "category": "concept_explanation", "topic": "conditionals", "query": "How do I count bytecodes in Python so I can modify sys.setcheckinterval appropriately"}
+{"id": "staqc-a5c6307e7e", "category": "concept_explanation", "topic": "conditionals", "query": "How do I copy files with specific file extension to a folder in my python (version 2.5) script?"}
+{"id": "staqc-3798884d3f", "category": "concept_explanation", "topic": "conditionals", "query": "How do I remove a specific number of files using python (version 2.5)?"}
+{"id": "staqc-ebdb3d2547", "category": "concept_explanation", "topic": "variables", "query": "How to unquote a urlencoded unicode string in python?"}
+{"id": "staqc-4dfe273123", "category": "concept_explanation", "topic": "variables", "query": "Is there a better StringCollection editor for use in PropertyGrids?"}
+{"id": "staqc-d3ce52c002", "category": "concept_explanation", "topic": "variables", "query": "How to quote a string value explicitly (Python DB API/Psycopg2)"}
+{"id": "staqc-6e212e6acd", "category": "concept_explanation", "topic": "variables", "query": "How can I translate the following filename to a regular expression in Python?"}
+{"id": "staqc-34150f76a8", "category": "debugging", "topic": "variables", "query": "How do I not raise a Python exception when converting an integer-as-string to an int"}
+{"id": "staqc-b8d27b135b", "category": "concept_explanation", "topic": "variables", "query": "How do I search through a folder for the filename that matches a regular expression using Python?"}
+{"id": "staqc-f90f236f33", "category": "concept_explanation", "topic": "functions", "query": "How to call python2.5 function from x86asm/x64asm?"}
+{"id": "staqc-5c2f9fe1db", "category": "concept_explanation", "topic": "variables", "query": "How do I do a case insensitive string comparison in Python?"}
+{"id": "staqc-e790179696", "category": "concept_explanation", "topic": "loops", "query": "How do you iterate over a tree?"}
+{"id": "staqc-09ee870f08", "category": "concept_explanation", "topic": "loops", "query": "How to access previous/next element while for looping?"}
+{"id": "staqc-2a3ca75145", "category": "concept_explanation", "topic": "conditionals", "query": "How to find out if there is data to be read from stdin on Windows in Python?"}
+{"id": "staqc-b38e72aaff", "category": "concept_explanation", "topic": "functions", "query": "How to analyse .exe parameters inside the program?"}
+{"id": "staqc-7f9e0bc40c", "category": "concept_explanation", "topic": "conditionals", "query": "How do I determine if an email is Base64 encoded?"}
+{"id": "staqc-3ba3a8f61f", "category": "concept_explanation", "topic": "functions", "query": "How can I dynamically get the set of classes from the current python module?"}
+{"id": "staqc-335e55e04a", "category": "concept_explanation", "topic": "variables", "query": "How to quickly parse a list of strings"}
+{"id": "staqc-6c50560e4f", "category": "concept_explanation", "topic": "conditionals", "query": "How to determine if a page is being redirected"}
+{"id": "staqc-f88ccc5492", "category": "concept_explanation", "topic": "functions", "query": "How to complete this python function to save in the same folder?"}
+{"id": "staqc-61e199f4ae", "category": "concept_explanation", "topic": "variables", "query": "What happened to the python bindings for CGAL?"}
+{"id": "staqc-58e8fe4320", "category": "concept_explanation", "topic": "conditionals", "query": "How do I work with multiple git branches of a python module?"}
+{"id": "staqc-4ecb70c636", "category": "concept_explanation", "topic": "conditionals", "query": "Is this idiom pythonic? (someBool and \"True Result\" or \"False Result\")"}
+{"id": "staqc-2b59911de2", "category": "concept_explanation", "topic": "variables", "query": "Can I use Python to intercept global keystrokes in KDE?"}
+{"id": "staqc-f753a153e6", "category": "concept_explanation", "topic": "variables", "query": "What does the function set use to check if two objects are different?"}
+{"id": "staqc-ddf9c86e40", "category": "concept_explanation", "topic": "variables", "query": "How to add file extensions based on file type on Linux/Unix?"}
+{"id": "staqc-d5aef6cc0f", "category": "concept_explanation", "topic": "variables", "query": "How to work with very long strings in Python?"}
+{"id": "staqc-dc21146f50", "category": "concept_explanation", "topic": "variables", "query": "How do I check if a string is a number (float) in Python?"}
+{"id": "staqc-2d438b6331", "category": "concept_explanation", "topic": "loops", "query": "How to configure vim to not put comments at the beginning of lines while editing python files"}
+{"id": "staqc-fc01bb6af5", "category": "concept_explanation", "topic": "variables", "query": "How do you return multiple values in Python?"}
+{"id": "staqc-41c7538515", "category": "concept_explanation", "topic": "variables", "query": "How to compute the nth root of a very big integer"}
+{"id": "staqc-379f4fd456", "category": "concept_explanation", "topic": "functions", "query": "How to handle constructors or methods with a different set (or type) of arguments in Python?"}
+{"id": "staqc-88552eaae8", "category": "concept_explanation", "topic": "variables", "query": "What is the sqlalchemy equivalent column type for 'money' and 'OID' in Postgres?"}
+{"id": "staqc-909fb478a1", "category": "concept_explanation", "topic": "variables", "query": "How can I unload a DLL using ctypes in Python?"}
+{"id": "staqc-ad82d27b18", "category": "concept_explanation", "topic": "functions", "query": "What is the pythonic way to avoid default parameters that are empty lists?"}
+{"id": "staqc-949aa1eadb", "category": "concept_explanation", "topic": "functions", "query": "How to limit execution time of a function call in Python"}
+{"id": "staqc-f6e9c9913a", "category": "concept_explanation", "topic": "functions", "query": "How much input validation should I be doing on my python functions/methods?"}
+{"id": "staqc-e43b106360", "category": "concept_explanation", "topic": "loops", "query": "How can I stop a While loop?"}
+{"id": "staqc-28c91f7a60", "category": "concept_explanation", "topic": "variables", "query": "How to discover the type of the NAT a given interface is behind"}
+{"id": "staqc-df4f0ca391", "category": "debugging", "topic": "variables", "query": "Should I use get_/set_ prefixes in Python method names?"}
+{"id": "staqc-08861eab69", "category": "concept_explanation", "topic": "conditionals", "query": "How do I get the time a file was last modified in Python?"}
+{"id": "staqc-b463f87e95", "category": "concept_explanation", "topic": "conditionals", "query": "How to get a list of all users with a specific permission group in Django"}
+{"id": "staqc-6809471119", "category": "concept_explanation", "topic": "functions", "query": "What does the []-esque decorator syntax in Python mean?"}
+{"id": "staqc-90dad285c9", "category": "concept_explanation", "topic": "variables", "query": "How to integrate the StringTemplate engine into the CherryPy web server"}
+{"id": "staqc-a0d95cc8a6", "category": "concept_explanation", "topic": "variables", "query": "What are these tags @ivar @param and @type in python docstring?"}
+{"id": "staqc-06e167dffa", "category": "concept_explanation", "topic": "loops", "query": "How to do this - python dictionary traverse and search"}
+{"id": "staqc-c754fff040", "category": "concept_explanation", "topic": "loops", "query": "How to iterate over a list repeating each element in Python"}
+{"id": "staqc-47c1095785", "category": "concept_explanation", "topic": "variables", "query": "How do you apply 'or' to all values of a list in Python?"}
+{"id": "staqc-b5df8c5aff", "category": "concept_explanation", "topic": "variables", "query": "How do I convert part of a python tuple (byte array) into an integer"}
+{"id": "staqc-5676df2186", "category": "concept_explanation", "topic": "functions", "query": "Is there any built-in way to get the length of an iterable in python?"}
+{"id": "staqc-c9ca30235a", "category": "concept_explanation", "topic": "variables", "query": "What values to use for FastCGI maxrequests, maxspare, minspare, maxchildren?"}
+{"id": "staqc-daf2df88e3", "category": "concept_explanation", "topic": "conditionals", "query": "Does Python have a ternary conditional operator?"}
+{"id": "staqc-2a3d37f6d5", "category": "concept_explanation", "topic": "functions", "query": "Can I use a ForeignKey in __unicode__ return?"}
+{"id": "staqc-0b71ed6e30", "category": "concept_explanation", "topic": "variables", "query": "How to check whether a variable is a class or not?"}
+{"id": "staqc-83782d580f", "category": "concept_explanation", "topic": "variables", "query": "How to determine the variable type in Python?"}
+{"id": "staqc-21a0aa9383", "category": "concept_explanation", "topic": "variables", "query": "How to sort a list of objects in Python, based on an attribute of the objects?"}
+{"id": "staqc-08b6217cd8", "category": "concept_explanation", "topic": "loops", "query": "Why does Ruby have Rails while Python has no central framework?"}
+{"id": "staqc-74153e8424", "category": "concept_explanation", "topic": "variables", "query": "How to synchronize the same object on client and server side in client-server application? Is small messages framework good for this job?"}
+{"id": "staqc-7d110f8e7e", "category": "concept_explanation", "topic": "variables", "query": "How to compare and search list of integers efficiently?"}
+{"id": "staqc-01b49fa178", "category": "concept_explanation", "topic": "functions", "query": "How do I retrieve a Django model class dynamically?"}
+{"id": "staqc-ffe3a57748", "category": "concept_explanation", "topic": "conditionals", "query": "Is there a Python library than can simulate network traffic from different addresses"}
+{"id": "staqc-f6db665440", "category": "concept_explanation", "topic": "variables", "query": "Why does gethostbyaddr(gethostname()) return my IPv6 IP?"}
+{"id": "staqc-4355c2d538", "category": "concept_explanation", "topic": "conditionals", "query": "How can I tell if an Expando subclass has a property defined?"}
+{"id": "staqc-4421c2e22a", "category": "concept_explanation", "topic": "variables", "query": "Why does Python's string.printable contains unprintable characters?"}
+{"id": "staqc-205458ff85", "category": "concept_explanation", "topic": "variables", "query": "What does `if __name__ == \"__main__\":` do?"}
+{"id": "staqc-29e3d411e7", "category": "concept_explanation", "topic": "functions", "query": "How to maintain lists and dictionaries between function calls in Python?"}
+{"id": "staqc-fdb5529950", "category": "concept_explanation", "topic": "conditionals", "query": "How do I enable push-notification for IMAP (Gmail) using Python imaplib?"}
+{"id": "staqc-daf6f82c9e", "category": "debugging", "topic": "functions", "query": "How do I mock the Python method OptionParser.error(), which does a sys.exit()?"}
+{"id": "staqc-5a8f60e512", "category": "concept_explanation", "topic": "functions", "query": "How do I timestamp simultaneous function calls in Python?"}
+{"id": "staqc-fd93f33f8c", "category": "concept_explanation", "topic": "functions", "query": "How can I get the source code of a Python function?"}
+{"id": "staqc-1759df57ca", "category": "concept_explanation", "topic": "variables", "query": "How to split strings into text and number?"}
+{"id": "staqc-9ee6f16a65", "category": "concept_explanation", "topic": "functions", "query": "Is there a Numpy function to return the first index of something in an array?"}
+{"id": "staqc-ebf279ccfc", "category": "concept_explanation", "topic": "variables", "query": "How can I assign a new class attribute via __dict__ in python?"}
+{"id": "staqc-0bae132a76", "category": "concept_explanation", "topic": "variables", "query": "How do you get the logical xor of two variables in Python?"}
+{"id": "staqc-3b95db5db4", "category": "concept_explanation", "topic": "loops", "query": "What is the most \"pythonic\" way to iterate over a list in chunks?"}
+{"id": "staqc-1844b91280", "category": "concept_explanation", "topic": "variables", "query": "What is the fastest way to draw an image from discrete pixel values in Python?"}
+{"id": "staqc-5e404ac737", "category": "concept_explanation", "topic": "variables", "query": "How do I split email address/password string in two in Python?"}
+{"id": "staqc-5bd25cec9f", "category": "concept_explanation", "topic": "functions", "query": "What should \"value_from_datadict\" method of a custom form widget return?"}
+{"id": "staqc-00da2851e8", "category": "concept_explanation", "topic": "functions", "query": "How to call java objects and functions from CPython?"}
+{"id": "staqc-b0899e97ce", "category": "concept_explanation", "topic": "variables", "query": "How do I use a 2-d boolean array to select from a 1-d array on a per-row basis in numpy?"}
+{"id": "staqc-fae68f1050", "category": "concept_explanation", "topic": "loops", "query": "Why does Paramiko hang if you use it while loading a module?"}
+{"id": "staqc-61d009032e", "category": "concept_explanation", "topic": "variables", "query": "What's the best way to specify a proxy with username and password for an **https** connection in python?"}
+{"id": "staqc-e1684976ea", "category": "concept_explanation", "topic": "conditionals", "query": "What is the difference between encode/decode?"}
+{"id": "staqc-8096d45a0e", "category": "concept_explanation", "topic": "variables", "query": "How do I determine the size of an object in Python?"}
+{"id": "staqc-f1a265138b", "category": "concept_explanation", "topic": "variables", "query": "How can I split a url string up into separate parts in Python?"}
+{"id": "staqc-325bc104f9", "category": "concept_explanation", "topic": "conditionals", "query": "How to check if a file can be created inside given directory on MS XP/Vista?"}
+{"id": "staqc-632e08d23c", "category": "concept_explanation", "topic": "variables", "query": "What's the most efficient way to access sibling dictionary value in a Python dict?"}
+{"id": "staqc-3e32534201", "category": "concept_explanation", "topic": "variables", "query": "Does python have an equivalent to Java Class.forName()?"}
+{"id": "staqc-0ae79d25bd", "category": "concept_explanation", "topic": "conditionals", "query": "What is the practical difference between xml, json, rss and atom when interfacing with Twitter?"}
+{"id": "staqc-983ed954bd", "category": "concept_explanation", "topic": "conditionals", "query": "How do I re.search or re.match on a whole file without reading it all into memory?"}
+{"id": "staqc-a3de2cd95d", "category": "concept_explanation", "topic": "conditionals", "query": "Can't get Python to import from a different folder"}
+{"id": "staqc-97b95fdb30", "category": "debugging", "topic": "functions", "query": "How to handle the error that occurs on giving wrong number of parameters in a function call in Python?"}
+{"id": "staqc-e0d95425c3", "category": "concept_explanation", "topic": "loops", "query": "How do you run your own code alongside Tkinter's event loop?"}
+{"id": "staqc-96db64acca", "category": "concept_explanation", "topic": "variables", "query": "How can I type-check variables in Python?"}
+{"id": "staqc-e8d9650683", "category": "concept_explanation", "topic": "variables", "query": "How are POST and GET variables handled in Python?"}
+{"id": "staqc-89943f7b38", "category": "concept_explanation", "topic": "conditionals", "query": "Why do I have to specify my own class when using super(), and is there a way to get around it?"}
+{"id": "staqc-fb3d50fc6d", "category": "concept_explanation", "topic": "functions", "query": "How can I return system information in Python?"}
+{"id": "staqc-9badb8f157", "category": "concept_explanation", "topic": "conditionals", "query": "How to prevent overwriting an object someone else has modified"}
+{"id": "staqc-28bc2e73b8", "category": "concept_explanation", "topic": "variables", "query": "Is there a standalone Python type conversion library?"}
+{"id": "staqc-0d35d75b2e", "category": "concept_explanation", "topic": "variables", "query": "What is the best way to extract load average float values from a string in Python?"}
+{"id": "staqc-e96230f9c5", "category": "concept_explanation", "topic": "conditionals", "query": "How to specify uniqueness for a tuple of field in a Django model"}
+{"id": "staqc-1256462986", "category": "concept_explanation", "topic": "loops", "query": "What is the best way to repeatedly execute a function every x seconds in Python?"}
+{"id": "staqc-2a49edcf51", "category": "concept_explanation", "topic": "variables", "query": "How to read Unicode input and compare Unicode strings in Python?"}
+{"id": "staqc-52afd041de", "category": "concept_explanation", "topic": "variables", "query": "is there a string method to capitalize acronyms in python?"}
+{"id": "staqc-22e86defa6", "category": "concept_explanation", "topic": "variables", "query": "Is there a way in python to apply a list of regex patterns that are stored in a list to a single string?"}
+{"id": "staqc-24c4458a5a", "category": "concept_explanation", "topic": "functions", "query": "Can a lambda function call itself recursively in Python?"}
+{"id": "staqc-5e76e68922", "category": "concept_explanation", "topic": "variables", "query": "How do I convert a string to a double in Python?"}
+{"id": "staqc-389d4b96b5", "category": "concept_explanation", "topic": "functions", "query": "How would you determine where each property and method of a Python class is defined?"}
+{"id": "staqc-1b59592525", "category": "concept_explanation", "topic": "variables", "query": "Why aren't all the names in dir(x) valid for attribute access?"}
+{"id": "staqc-164c17064e", "category": "debugging", "topic": "variables", "query": "Why do I get TypeError: can't multiply sequence by non-int of type 'float'?"}
+{"id": "staqc-6281f12a8d", "category": "concept_explanation", "topic": "loops", "query": "How can I get interactive Python to avoid using readline while allowing utf-8 input?"}
+{"id": "staqc-4a642d7ae2", "category": "concept_explanation", "topic": "variables", "query": "Is there a standard way to list names of Python modules in a package?"}
+{"id": "staqc-d92a3d06c4", "category": "concept_explanation", "topic": "variables", "query": "Can a python script persistently change a Windows environment variable? (elegantly)"}
+{"id": "staqc-5119c373d8", "category": "debugging", "topic": "variables", "query": "Why am I getting the following error in Python \"ImportError: No module named py\"?"}
+{"id": "staqc-f68b25b887", "category": "concept_explanation", "topic": "variables", "query": "How can I pass a filename as a parameter into my module?"}
+{"id": "staqc-f694e51c0b", "category": "concept_explanation", "topic": "functions", "query": "How do I use ctypes to set a library's extern function pointer to a Python callback function?"}
+{"id": "staqc-dd2e8dae24", "category": "concept_explanation", "topic": "variables", "query": "Is there a way to convert number words to Integers?"}
+{"id": "staqc-65633069ef", "category": "concept_explanation", "topic": "functions", "query": "Is there any case where len(someObj) does not call someObj's __len__ function?"}
+{"id": "staqc-388a28107d", "category": "concept_explanation", "topic": "variables", "query": "What's a good way to keep track of class instance variables in Python?"}
+{"id": "staqc-38e812b3e7", "category": "concept_explanation", "topic": "variables", "query": "What's the best serialization method for objects in memcached?"}
+{"id": "staqc-c588f35826", "category": "concept_explanation", "topic": "functions", "query": "Can I log into a web application automatically using a users windows logon?"}
+{"id": "staqc-459f40d9ff", "category": "concept_explanation", "topic": "functions", "query": "is there an alternative way of calling next on python generators?"}
+{"id": "staqc-7c4080b7be", "category": "concept_explanation", "topic": "functions", "query": "How to call a python function from a foreign language thread (C++)"}
+{"id": "staqc-66534f287c", "category": "concept_explanation", "topic": "variables", "query": "Is there a way to get the current ref count of an object in Python?"}
+{"id": "staqc-4be18c330f", "category": "concept_explanation", "topic": "variables", "query": "How to print a string without including '\\n' in Python"}
+{"id": "staqc-802c3a01bd", "category": "concept_explanation", "topic": "variables", "query": "Why doesn't PyRun_String evaluate bool literals?"}
+{"id": "staqc-3d74ad3068", "category": "concept_explanation", "topic": "variables", "query": "How to split a string by using [] in Python"}
+{"id": "staqc-920dbe7ca2", "category": "concept_explanation", "topic": "variables", "query": "How best to pass database objects to a turbogears WidgetList?"}
+{"id": "staqc-e6cd8dc530", "category": "concept_explanation", "topic": "variables", "query": "What is the best way to remove accents in a Python unicode string?"}
+{"id": "staqc-6689197629", "category": "concept_explanation", "topic": "variables", "query": "What's the cleanest way to extract URLs from a string using Python?"}
+{"id": "staqc-c7c95d7b17", "category": "concept_explanation", "topic": "conditionals", "query": "Why True/False is capitalized in Python?"}
+{"id": "staqc-4efb20a3ab", "category": "concept_explanation", "topic": "variables", "query": "How do i get python's pprint to return a string instead of printing?"}
+{"id": "staqc-1d4345deb8", "category": "concept_explanation", "topic": "variables", "query": "How can I get only class variables?"}
+{"id": "staqc-6e6a08730f", "category": "concept_explanation", "topic": "loops", "query": "Is there a way to loop through a sub section of a list in Python"}
+{"id": "staqc-aa36cdc888", "category": "concept_explanation", "topic": "functions", "query": "How can I strip Python logging calls without commenting them out?"}
+{"id": "staqc-92e1447095", "category": "concept_explanation", "topic": "variables", "query": "how to search for specific file type with yahoo search API?"}
+{"id": "staqc-1f407bc28a", "category": "concept_explanation", "topic": "variables", "query": "Does Python have class prototypes (or forward declarations)?"}
+{"id": "staqc-1de37d2b07", "category": "concept_explanation", "topic": "conditionals", "query": "How to modify existing panels in Maya using MEL or Python?"}
+{"id": "staqc-9a5c435c8f", "category": "concept_explanation", "topic": "variables", "query": "Can I instantiate a subclass object from the superclass"}
+{"id": "staqc-10e2d0e3fe", "category": "concept_explanation", "topic": "functions", "query": "What is Python's \"built-in method acquire\"? How can I speed it up?"}
+{"id": "staqc-eecc558a1c", "category": "concept_explanation", "topic": "conditionals", "query": "Is there a way to determine if a subdirectory is in the same filesystem from python when using os.walk?"}
+{"id": "staqc-6e1d8a3321", "category": "concept_explanation", "topic": "functions", "query": "What does 'self' refer to in a @classmethod?"}
+{"id": "staqc-ad10a8ae99", "category": "concept_explanation", "topic": "variables", "query": "How to lookup custom ip address field stored as integer in Django-admin?"}
+{"id": "staqc-b7384b5bc7", "category": "concept_explanation", "topic": "functions", "query": "Is it possible to programmatically construct a Python stack frame and start execution at an arbitrary point in the code?"}
+{"id": "staqc-de392c1c40", "category": "concept_explanation", "topic": "variables", "query": "How to do variable assignment inside a while(expression) loop in Python?"}
+{"id": "staqc-0d0761e7dd", "category": "concept_explanation", "topic": "conditionals", "query": "How do you verify an RSA SHA1 signature in Python?"}
+{"id": "staqc-0edb60821e", "category": "concept_explanation", "topic": "variables", "query": "Can I print original variable's name in Python?"}
+{"id": "staqc-1f86d4c1b0", "category": "concept_explanation", "topic": "variables", "query": "How Do I Perform Introspection on an Object in Python 2.x?"}
+{"id": "staqc-636abcf4d3", "category": "concept_explanation", "topic": "functions", "query": "How to dynamically load a Python class"}
+{"id": "staqc-c0ac816e26", "category": "concept_explanation", "topic": "conditionals", "query": "How can I provide safety template for user to modify with python?"}
+{"id": "staqc-e0bead0978", "category": "concept_explanation", "topic": "variables", "query": "Can you use a string to instantiate a class in python?"}
+{"id": "staqc-727c79b088", "category": "debugging", "topic": "loops", "query": "What is wrong with my nested loops in Python?"}
+{"id": "staqc-01f4a2e63a", "category": "concept_explanation", "topic": "variables", "query": "How to convert an integer to the shortest url-safe string in Python?"}
+{"id": "staqc-95b571a61e", "category": "concept_explanation", "topic": "variables", "query": "How can I check the memory usage of objects in iPython?"}
+{"id": "staqc-9801454a42", "category": "concept_explanation", "topic": "variables", "query": "Is there a way to change effective process name in Python?"}
+{"id": "staqc-c94aa9dffd", "category": "concept_explanation", "topic": "variables", "query": "Is it safe to use Python UUID module generated values in URL's of a webpage?"}
+{"id": "staqc-6d01367e26", "category": "concept_explanation", "topic": "functions", "query": "How can I process command line arguments in Python?"}
+{"id": "staqc-4a9c8f4ac8", "category": "concept_explanation", "topic": "conditionals", "query": "How to check if there exists a process with a given pid?"}
+{"id": "staqc-8e9cdbebcc", "category": "concept_explanation", "topic": "functions", "query": "How to programmatically insert comments into a Microsoft Word document?"}
+{"id": "staqc-b074f66478", "category": "concept_explanation", "topic": "variables", "query": "How to tell for which object attribute pickle fails?"}
+{"id": "staqc-72fe982460", "category": "concept_explanation", "topic": "variables", "query": "What's the reason of providing some of the default methods in the global scope in Python?"}
+{"id": "staqc-aeed6515cc", "category": "concept_explanation", "topic": "functions", "query": "Why doesn't Python release file handles after calling file.close()?"}
+{"id": "staqc-5ccd137b2b", "category": "concept_explanation", "topic": "variables", "query": "How to convert rational and decimal number strings to floats in python?"}
+{"id": "staqc-c556313693", "category": "concept_explanation", "topic": "variables", "query": "How can I reference columns by their names in python calling SQLite?"}
+{"id": "staqc-436192813b", "category": "concept_explanation", "topic": "variables", "query": "How to pass values by ref in Python?"}
+{"id": "staqc-74870de734", "category": "concept_explanation", "topic": "variables", "query": "How do I copy a string to the clipboard on Windows using Python?"}
+{"id": "staqc-e58292c955", "category": "concept_explanation", "topic": "loops", "query": "Can someone explain why scipy.integrate.quad gives different results for equally long ranges while integrating sin(X)?"}
+{"id": "staqc-f64ff59c12", "category": "concept_explanation", "topic": "variables", "query": "How to change a Python module name?"}
+{"id": "staqc-df872641e6", "category": "concept_explanation", "topic": "conditionals", "query": "How can I query a model by if there is a subclass instance?"}
+{"id": "staqc-d7ae77444f", "category": "concept_explanation", "topic": "variables", "query": "Can I use a decorator to mutate the local scope of a function in Python?"}
+{"id": "staqc-5b476126b9", "category": "concept_explanation", "topic": "functions", "query": "When using random, which form returns an equal 50% chance?"}
+{"id": "staqc-814b67c841", "category": "concept_explanation", "topic": "conditionals", "query": "How can I modify password expiration in Windows using Python?"}
+{"id": "staqc-fc8d69bacf", "category": "concept_explanation", "topic": "functions", "query": "How can you programmatically tell the CPython interpreter to enter interactive mode when done?"}
+{"id": "staqc-af71e4c23b", "category": "concept_explanation", "topic": "variables", "query": "Why doesn't Python have static variables?"}
+{"id": "staqc-15467f3313", "category": "concept_explanation", "topic": "functions", "query": "What's the Python function like sum() but for multiplication? product()?"}
+{"id": "staqc-dbda340e10", "category": "concept_explanation", "topic": "functions", "query": "Where is the function get_example_data in matplotlib? It seems to be missing but its in examples/tutorials"}
+{"id": "staqc-f1217d26f6", "category": "concept_explanation", "topic": "variables", "query": "How to remove the left part of a string?"}
+{"id": "staqc-42dbe8fe3e", "category": "debugging", "topic": "functions", "query": "Why does Google Search return HTTP Error 403?"}
+{"id": "staqc-3b6d39215b", "category": "concept_explanation", "topic": "loops", "query": "how to time-out gracefully while downloading with python"}
+{"id": "staqc-e9873ee9f3", "category": "concept_explanation", "topic": "variables", "query": "Should I check the types of constructor arguments (and at other places too)?"}
+{"id": "staqc-5376e0bec1", "category": "concept_explanation", "topic": "variables", "query": "How can I access the current executing module or class name in Python?"}
+{"id": "staqc-a216486d0d", "category": "concept_explanation", "topic": "variables", "query": "Does Python have something like Perl 5.10's \"state\" variables?"}
+{"id": "staqc-9fd978b923", "category": "concept_explanation", "topic": "variables", "query": "How do I configure my sys.path variable in linux?"}
+{"id": "staqc-af486fbdb9", "category": "concept_explanation", "topic": "functions", "query": "How do I install python's sphinx documentation generator in linux?"}
+{"id": "staqc-614971234a", "category": "concept_explanation", "topic": "variables", "query": "How to get filename of the __main__ module in Python?"}
+{"id": "staqc-8ef0680bbd", "category": "concept_explanation", "topic": "variables", "query": "How to know if an object has an attribute in Python"}
+{"id": "staqc-0fcb08d590", "category": "concept_explanation", "topic": "variables", "query": "Can you give a Django app a verbose name for use throughout the admin?"}
+{"id": "staqc-2a8a05362d", "category": "debugging", "topic": "functions", "query": "Why is the regular expression returning an error in python?"}
+{"id": "staqc-21d8447fcf", "category": "concept_explanation", "topic": "functions", "query": "Is it possible to remove recursion from this function?"}
+{"id": "staqc-1da80e26db", "category": "concept_explanation", "topic": "conditionals", "query": "How do I detect if my appengine app is being accessed by an iphone/ipod touch?"}
+{"id": "staqc-635d1ccaba", "category": "concept_explanation", "topic": "loops", "query": "How to find whether a number belongs to a particular range in Python?"}
+{"id": "staqc-09573a256c", "category": "concept_explanation", "topic": "variables", "query": "What's the best way to find the closest matching type to an existing type?"}
+{"id": "staqc-c356c4f73d", "category": "concept_explanation", "topic": "variables", "query": "How to print tuples of unicode strings in original language (not u'foo' form)"}
+{"id": "staqc-b47ec01a75", "category": "concept_explanation", "topic": "variables", "query": "Why can't I directly add attributes to any python object?"}
+{"id": "staqc-8365ca594c", "category": "concept_explanation", "topic": "variables", "query": "how to detect whether a python variable is a function?"}
+{"id": "staqc-a440743805", "category": "concept_explanation", "topic": "functions", "query": "How can I pass all the parameters to a decorator?"}
+{"id": "staqc-d4643b676b", "category": "concept_explanation", "topic": "conditionals", "query": "What's the difference between list and tuples?"}
+{"id": "staqc-304b4e993b", "category": "concept_explanation", "topic": "functions", "query": "How can I use named arguments in a decorator?"}
+{"id": "staqc-42a0976ea3", "category": "concept_explanation", "topic": "loops", "query": "How to divide a set of overlapping ranges into non-overlapping ranges?"}
+{"id": "staqc-20386e0b18", "category": "concept_explanation", "topic": "variables", "query": "How do I send a HTTP POST value to a (PHP) page using Python?"}
+{"id": "staqc-4f96376a3f", "category": "concept_explanation", "topic": "variables", "query": "How do I assign a version number for a Python package using SVN and distutils?"}
+{"id": "staqc-2f5f618ff2", "category": "debugging", "topic": "loops", "query": "why am i getting errors while installing pysqlite2.5.3"}
+{"id": "staqc-86d7b56ab3", "category": "concept_explanation", "topic": "functions", "query": "Why do Python's frameworks return dictionaries from controllers?"}
+{"id": "staqc-fd2c6b6a47", "category": "concept_explanation", "topic": "conditionals", "query": "What's different between Python and Javascript regular expressions?"}
+{"id": "staqc-2d5a37e306", "category": "concept_explanation", "topic": "variables", "query": "How do I sum the first value in each tuple in a list of tuples in Python?"}
+{"id": "staqc-d9cef8f862", "category": "concept_explanation", "topic": "variables", "query": "What is the most efficient way in Python to convert a string to all lowercase stripping out all non-ascii alpha characters?"}
+{"id": "staqc-291bbce1fd", "category": "concept_explanation", "topic": "conditionals", "query": "What's the nearest equivalent of Beautiful Soup for Ruby?"}
+{"id": "staqc-5a0f6c023d", "category": "concept_explanation", "topic": "variables", "query": "Can I override the html_name for a tabularinline field in the admin interface?"}
+{"id": "staqc-e0edc2a48f", "category": "concept_explanation", "topic": "loops", "query": "How should I log while using multiprocessing in Python?"}
+{"id": "staqc-d0bf361003", "category": "concept_explanation", "topic": "variables", "query": "How to convert strings into integers in Python?"}
+{"id": "staqc-457254aff0", "category": "concept_explanation", "topic": "functions", "query": "How do I format positional argument help using Python's optparse?"}
+{"id": "staqc-2a92167b71", "category": "concept_explanation", "topic": "functions", "query": "Is it possible to replace a function/method decorator at runtime? [ python ]"}
+{"id": "staqc-e0e59046b4", "category": "concept_explanation", "topic": "conditionals", "query": "How should I conditionally assign based on the existence of a dictionary key?"}
+{"id": "staqc-cdfa13cd33", "category": "concept_explanation", "topic": "variables", "query": "Why can't Python's raw string literals end with a single backslash?"}
+{"id": "staqc-a237788dda", "category": "concept_explanation", "topic": "conditionals", "query": "how can i figure if a vim buffer is listed or unlisted from vim's python api?"}
+{"id": "staqc-6bb0bb825d", "category": "concept_explanation", "topic": "variables", "query": "Why are Python objects of different types ordered by type names?"}
+{"id": "staqc-2cd4538d86", "category": "concept_explanation", "topic": "functions", "query": "Is it possible, with the Python Standard Library (say version 2.5) to perform MS-SQL queries which are parameterized?"}
+{"id": "staqc-d9815dc23d", "category": "concept_explanation", "topic": "conditionals", "query": "How do I check if it's the homepage in a Plone website using ZPT?"}
+{"id": "staqc-85ca320484", "category": "concept_explanation", "topic": "functions", "query": "Can a neural network be used to find a functions minimum(a)?"}
+{"id": "staqc-d678a59ec2", "category": "concept_explanation", "topic": "variables", "query": "Why did Python 2.6 add a global next() function?"}
+{"id": "staqc-2500d80477", "category": "concept_explanation", "topic": "conditionals", "query": "How do I suppress scientific notation in Python?"}
+{"id": "staqc-5ec363b772", "category": "concept_explanation", "topic": "functions", "query": "What's the correct way to add extra find-links to easy_install when called as a function?"}
+{"id": "staqc-44bfcbe576", "category": "concept_explanation", "topic": "functions", "query": "How do I list all tga files in a directory (non recursive) in Python?"}
+{"id": "staqc-d187be3570", "category": "concept_explanation", "topic": "conditionals", "query": "How do I know if a generator is empty from the start?"}
+{"id": "staqc-eed6f896bc", "category": "concept_explanation", "topic": "variables", "query": "Is there a way to substring a string in Python?"}
+{"id": "staqc-5c5bf7c73b", "category": "concept_explanation", "topic": "conditionals", "query": "What's the difference between dict() and {}?"}
+{"id": "staqc-4b76e90bd2", "category": "concept_explanation", "topic": "variables", "query": "Is it possible only to declare a variable without assigning any value in Python?"}
+{"id": "staqc-5339d47574", "category": "concept_explanation", "topic": "conditionals", "query": "How to tell if a connection is dead in python"}
+{"id": "staqc-d739e809d6", "category": "debugging", "topic": "loops", "query": "How to display errors to the user while still logging it?"}
+{"id": "staqc-cfc29f0a89", "category": "concept_explanation", "topic": "variables", "query": "How do I iterate over a Python dictionary, ordered by values?"}
+{"id": "staqc-10fa8d2673", "category": "concept_explanation", "topic": "functions", "query": "Are there any built-in cross-thread events in python?"}
+{"id": "staqc-49844a7778", "category": "concept_explanation", "topic": "conditionals", "query": "How to check if an RGB image contains only one color?"}
+{"id": "staqc-36cfa75e36", "category": "concept_explanation", "topic": "variables", "query": "How to extract from a list of objects a list of specific attribute?"}
+{"id": "staqc-cf559b2131", "category": "concept_explanation", "topic": "variables", "query": "How to get the filename without the extension from a path in Python?"}
+{"id": "staqc-c5447b9e3b", "category": "concept_explanation", "topic": "loops", "query": "How can I add non-sequential numbers to a range?"}
+{"id": "staqc-dcc27c4d67", "category": "debugging", "topic": "functions", "query": "What's wrong with my Python SOAPpy webservice call?"}
+{"id": "staqc-8c55153582", "category": "concept_explanation", "topic": "variables", "query": "How is string.find implemented in CPython?"}
+{"id": "staqc-85c55a4f73", "category": "concept_explanation", "topic": "loops", "query": "Which version of python added the else clause for for loops?"}
+{"id": "staqc-e034490f41", "category": "concept_explanation", "topic": "functions", "query": "how to put a function and arguments into python queue?"}
+{"id": "staqc-c9bbd62f19", "category": "concept_explanation", "topic": "variables", "query": "can you distinguish between a test & a variable setting?"}
+{"id": "staqc-07dbdcf36f", "category": "concept_explanation", "topic": "loops", "query": "How to re import an updated package while in Python Interpreter?"}
+{"id": "staqc-0438fe86c5", "category": "concept_explanation", "topic": "functions", "query": "Is it safe to yield from within a \"with\" block in Python (and why)?"}
+{"id": "staqc-2b9269e7c3", "category": "concept_explanation", "topic": "functions", "query": "Is there a function in Python to list the attributes and methods of a particular object?"}
+{"id": "staqc-298d0de561", "category": "concept_explanation", "topic": "variables", "query": "How to prevent every malicious file upload on my server? (check file type)?"}
+{"id": "staqc-e390751392", "category": "concept_explanation", "topic": "conditionals", "query": "How do you determine if an IP address is private, in Python?"}
+{"id": "staqc-3882fb03e8", "category": "concept_explanation", "topic": "functions", "query": "Is there a method in python that's like os.path.split for other delimiters?"}
+{"id": "staqc-2d99f70de2", "category": "concept_explanation", "topic": "functions", "query": "Is it bad form to call a classmethod as a method from an instance?"}
+{"id": "staqc-878ef42bf0", "category": "concept_explanation", "topic": "variables", "query": "How do I track an animated object in Python?"}
+{"id": "staqc-6426c1292d", "category": "concept_explanation", "topic": "functions", "query": "How can you find unused functions in Python code?"}
+{"id": "staqc-2d02157114", "category": "concept_explanation", "topic": "functions", "query": "why doesn't subprocess.Popen(...) always return?"}
+{"id": "staqc-ec8dab4b44", "category": "concept_explanation", "topic": "functions", "query": "How to distinguish between a function and a class method?"}
+{"id": "staqc-47109a6978", "category": "concept_explanation", "topic": "variables", "query": "How can I parse a time string containing milliseconds in it with python?"}
+{"id": "staqc-cd59c197e1", "category": "concept_explanation", "topic": "conditionals", "query": "What's the best way to tell if a Python program has anything to read from stdin?"}
+{"id": "staqc-81fcdf60f4", "category": "concept_explanation", "topic": "variables", "query": "How do I execute a string containing Python code in Python?"}
+{"id": "staqc-aa6e84a674", "category": "concept_explanation", "topic": "variables", "query": "How can I convert a character to a integer in Python, and viceversa?"}
+{"id": "staqc-7b0e141cf3", "category": "concept_explanation", "topic": "functions", "query": "How do I pass a method as a parameter in python"}
+{"id": "staqc-0cae044c46", "category": "concept_explanation", "topic": "functions", "query": "What is the best way to pass a method (with parameters) to another method in python"}
+{"id": "staqc-73b3c027e6", "category": "concept_explanation", "topic": "variables", "query": "Is there a Perl equivalent to Python's `if __name__ == '__main__'`?"}
+{"id": "staqc-e6fe1e6868", "category": "concept_explanation", "topic": "variables", "query": "How to compare type of an object in Python?"}
+{"id": "staqc-8abb5040db", "category": "concept_explanation", "topic": "conditionals", "query": "Which Python Bayesian text classification modules are similar to dbacl?"}
+{"id": "staqc-092b815dc9", "category": "concept_explanation", "topic": "variables", "query": "Why do languages like Java use hierarchical package names, while Python does not?"}
+{"id": "staqc-076b575f5a", "category": "concept_explanation", "topic": "conditionals", "query": "What are the differences between json and simplejson Python modules?"}
+{"id": "staqc-b53f0b3e55", "category": "concept_explanation", "topic": "variables", "query": "How to execute an arbitrary shell script and pass multiple variables via Python?"}
+{"id": "staqc-70b31de83f", "category": "concept_explanation", "topic": "functions", "query": "What is a maximum number of arguments in a Python function?"}
+{"id": "staqc-31b0a3c272", "category": "concept_explanation", "topic": "loops", "query": "How do I print outputs from calls to subprocess.Popen(...) in a loop?"}
+{"id": "staqc-0073c16466", "category": "concept_explanation", "topic": "loops", "query": "How do I iterate over all lines of files passed on the command line?"}
+{"id": "staqc-c22b70b9d6", "category": "concept_explanation", "topic": "variables", "query": "How can I print entity numbers in my xml document instead of entity names using python's lxml?"}
+{"id": "staqc-7cff1d6071", "category": "concept_explanation", "topic": "variables", "query": "Why can't environmental variables set in python persist?"}
+{"id": "staqc-c2ff1e43ed", "category": "concept_explanation", "topic": "variables", "query": "Does the Python library httplib2 cache URIs with GET strings?"}
+{"id": "staqc-4a1fa0f4e1", "category": "concept_explanation", "topic": "variables", "query": "How can I get the width of a wx.ListCtrl and its column name?"}
+{"id": "staqc-a053ebb811", "category": "concept_explanation", "topic": "variables", "query": "How can I get a list of locally installed Python modules?"}
+{"id": "staqc-392940e598", "category": "concept_explanation", "topic": "conditionals", "query": "How to check if one of the following items is in a list?"}
+{"id": "staqc-29e03e81cc", "category": "concept_explanation", "topic": "variables", "query": "how to convert string representation bytes back to bytes?"}
+{"id": "staqc-adef51f4ee", "category": "concept_explanation", "topic": "variables", "query": "How do I get all the entities of a type with a required property in Google App Engine?"}
+{"id": "staqc-d3bd98b657", "category": "concept_explanation", "topic": "conditionals", "query": "Is it safe to rely on condition evaluation order in if statements?"}
+{"id": "staqc-a1ea42985e", "category": "concept_explanation", "topic": "variables", "query": "How is this \"referenced before assignment\"?"}
+{"id": "staqc-fcff20bb19", "category": "debugging", "topic": "conditionals", "query": "How do you Debug/Take Apart/Learn from someone else's Python code (web-based)?"}
+{"id": "staqc-37e27c05b5", "category": "concept_explanation", "topic": "conditionals", "query": "how to use pycurl if requested data is sometimes gzipped, sometimes not?"}
+{"id": "staqc-1417c36117", "category": "concept_explanation", "topic": "variables", "query": "How do I store a string with a `\"` in it?"}
+{"id": "staqc-ea8a218a3a", "category": "concept_explanation", "topic": "conditionals", "query": "How do I modify sys.path from .htaccess to allow mod_python to see Django?"}
+{"id": "staqc-3c7d1d3d2e", "category": "concept_explanation", "topic": "variables", "query": "What is the most Pythonic way to provide a fall-back value in an assignment?"}
+{"id": "staqc-3b4225ba2b", "category": "concept_explanation", "topic": "functions", "query": "What does python3 do with the methods passed to the \"key\" argument of sorted()?"}
+{"id": "staqc-6218057119", "category": "concept_explanation", "topic": "functions", "query": "What does the 'shell' argument in subprocess mean on Windows?"}
+{"id": "staqc-ad18f4efe0", "category": "concept_explanation", "topic": "variables", "query": "What does the Python Ellipsis object do?"}
+{"id": "staqc-8d302f6c55", "category": "concept_explanation", "topic": "variables", "query": "how can I decode the REG_BINARY value HKLM\\Software\\Microsoft\\Ole\\DefaultLaunchPermission to see which users have permission?"}
+{"id": "staqc-485c7f4f91", "category": "concept_explanation", "topic": "variables", "query": "How to query any constraint's target list without knowing the constraint type?"}
+{"id": "staqc-7745fb88ed", "category": "concept_explanation", "topic": "loops", "query": "how get last number in range in python"}
+{"id": "staqc-179c002ed2", "category": "concept_explanation", "topic": "functions", "query": "How to automatically reload a python file when it is changed"}
+{"id": "staqc-13fed6c9f4", "category": "concept_explanation", "topic": "conditionals", "query": "How to set correct value for Django ROOT_URLCONF setting in different branches"}
+{"id": "staqc-f469de7059", "category": "concept_explanation", "topic": "functions", "query": "How to hide __methods__ in python?"}
+{"id": "staqc-e0787f8841", "category": "concept_explanation", "topic": "variables", "query": "Is there a Vector3 type in Python?"}
+{"id": "staqc-66fc0c228d", "category": "debugging", "topic": "variables", "query": "What is wrong with my attempt to do a string replace operation in Python?"}
+{"id": "staqc-e069780193", "category": "concept_explanation", "topic": "functions", "query": "is it possible to define name of function's arguments dynamically?"}
+{"id": "staqc-edc968c698", "category": "concept_explanation", "topic": "variables", "query": "How to add seconds on a datetime value in Python?"}
+{"id": "staqc-c610f4a012", "category": "concept_explanation", "topic": "functions", "query": "How does a threading.Thread yield the rest of its quantum in Python?"}
+{"id": "staqc-c7b9e90510", "category": "concept_explanation", "topic": "functions", "query": "What are some successful methods for deploying a Django application on the desktop?"}
+{"id": "staqc-c0a04fd196", "category": "concept_explanation", "topic": "functions", "query": "Why builtin functions instead of root class methods?"}
+{"id": "staqc-de323fad77", "category": "concept_explanation", "topic": "functions", "query": "How do I return a CSV from a Pylons app?"}
+{"id": "staqc-5ec4b605f0", "category": "concept_explanation", "topic": "functions", "query": "Is it possible to call a Python module from ObjC?"}
+{"id": "staqc-122010c45b", "category": "concept_explanation", "topic": "variables", "query": "Can't decode utf-8 string in python on os x terminal.app"}
+{"id": "staqc-877d40be3b", "category": "concept_explanation", "topic": "variables", "query": "How to convert datetime to string in python in django"}
+{"id": "staqc-eb2d1f364a", "category": "concept_explanation", "topic": "functions", "query": "How to call a Perl script from Python, piping input to it?"}
+{"id": "staqc-9dcac59e7f", "category": "concept_explanation", "topic": "variables", "query": "What is the correct (or best) way to subclass the Python set class, adding a new instance variable?"}
+{"id": "staqc-f34faecf44", "category": "concept_explanation", "topic": "variables", "query": "How to initialize variables to None/Undefined and compare to other variables in Python?"}
+{"id": "staqc-191b548067", "category": "concept_explanation", "topic": "loops", "query": "How can I enumerate/list all installed applications in Windows XP?"}
+{"id": "staqc-f7637217e1", "category": "concept_explanation", "topic": "functions", "query": "How to use subprocess when multiple arguments contain spaces?"}
+{"id": "staqc-263197d41e", "category": "concept_explanation", "topic": "variables", "query": "How to hash a large object (dataset) in Python?"}
+{"id": "staqc-3117bd9811", "category": "concept_explanation", "topic": "variables", "query": "how to manually assign imagefield in Django"}
+{"id": "staqc-3a8d2166be", "category": "concept_explanation", "topic": "variables", "query": "Why does python logging package not support printing variable length args?"}
+{"id": "staqc-ddf1e55c8e", "category": "debugging", "topic": "functions", "query": "How many times was logging.error() called?"}
+{"id": "staqc-9a4f709cdd", "category": "concept_explanation", "topic": "functions", "query": "Is there a decorator to simply cache function return values?"}
+{"id": "staqc-2b5ebe812b", "category": "concept_explanation", "topic": "variables", "query": "How to use subversion Ctypes Python Bindings?"}
+{"id": "staqc-94d4493263", "category": "concept_explanation", "topic": "variables", "query": "How to convert strings numbers to integers in a list?"}
+{"id": "staqc-bb8cbf302a", "category": "concept_explanation", "topic": "variables", "query": "Is there a way to correctly sort unicode strings in SQLite using Python?"}
+{"id": "staqc-bfae11e249", "category": "concept_explanation", "topic": "conditionals", "query": "How can I check if an ip is in a network in python"}
+{"id": "staqc-53bfe77627", "category": "concept_explanation", "topic": "variables", "query": "How to bestow string-ness on my class?"}
+{"id": "staqc-68be29cbe2", "category": "concept_explanation", "topic": "loops", "query": "How do I iterate over the HTML attributes of a Beautiful Soup element?"}
+{"id": "staqc-5bf918d806", "category": "concept_explanation", "topic": "variables", "query": "What's the best way to record the type of every variable assignment in a Python program?"}
+{"id": "staqc-ad6202bf0b", "category": "concept_explanation", "topic": "loops", "query": "Why in the world does Python's Tkinter break using canvas.create_image?"}
+{"id": "staqc-ff514aaac7", "category": "concept_explanation", "topic": "variables", "query": "How do I convert a string 2 bytes long to an integer in python"}
+{"id": "staqc-c30054e1f0", "category": "concept_explanation", "topic": "variables", "query": "Should my python web app use unicode for all strings?"}
+{"id": "staqc-6695cb305c", "category": "concept_explanation", "topic": "conditionals", "query": "How do I constrain the SCons Command builder to run only if its dependencies have changed?"}
+{"id": "staqc-b6c8cf6be3", "category": "concept_explanation", "topic": "functions", "query": "What is the best way to programmatically log into a web site in order to screen scrape? (Preferably in Python)"}
+{"id": "staqc-c373d2baeb", "category": "concept_explanation", "topic": "variables", "query": "How to do fuzzy string search without a heavy database?"}
+{"id": "staqc-a702a6e5d1", "category": "concept_explanation", "topic": "variables", "query": "How can I tell if a python variable is a string or a list?"}
+{"id": "staqc-af2c50f507", "category": "concept_explanation", "topic": "functions", "query": "How to programatically combine two aac files into one?"}
+{"id": "staqc-ce1eb7d870", "category": "concept_explanation", "topic": "variables", "query": "How do you alias a python class to have another name without using inheritance?"}
+{"id": "staqc-226e5abcfe", "category": "concept_explanation", "topic": "functions", "query": "What's going on with the lambda expression in this python function?"}
+{"id": "staqc-3f065ddef2", "category": "concept_explanation", "topic": "variables", "query": "Is there a portable way to get the current username in Python?"}
+{"id": "staqc-c7cf6e0ba0", "category": "concept_explanation", "topic": "variables", "query": "how to use list of python objects whose representation is unicode"}
+{"id": "staqc-1d5c7506f8", "category": "concept_explanation", "topic": "variables", "query": "What's the most efficient way to find one of several substrings in Python?"}
+{"id": "staqc-718bb8b3dc", "category": "concept_explanation", "topic": "conditionals", "query": "How to render contents of a tag in unicode in BeautifulSoup?"}
+{"id": "staqc-766974200a", "category": "concept_explanation", "topic": "variables", "query": "How do I check if a variable exists?"}
+{"id": "staqc-782d59ea56", "category": "debugging", "topic": "variables", "query": "Why is django giving error: no module named django.core?"}
+{"id": "staqc-66c0e654c6", "category": "concept_explanation", "topic": "functions", "query": "How does garbage collection in Python work with class methods?"}
+{"id": "staqc-1a27ee0c96", "category": "concept_explanation", "topic": "conditionals", "query": "How to print the comparison of two multiline strings in unified diff format?"}
+{"id": "staqc-370561b6dc", "category": "concept_explanation", "topic": "loops", "query": "How do I enumerate() over a list of tuples in Python?"}
+{"id": "staqc-c062c21eda", "category": "concept_explanation", "topic": "functions", "query": "Can you pass a class (not an object) as a parameter to a method in python?"}
+{"id": "staqc-60f0d92365", "category": "concept_explanation", "topic": "conditionals", "query": "How do I check if a disk is in a drive using python?"}
+{"id": "staqc-b8a221258f", "category": "debugging", "topic": "conditionals", "query": "how are exceptions compared in an except clause"}
+{"id": "staqc-989fc18e38", "category": "concept_explanation", "topic": "functions", "query": "How the method resolution and invocation works internally in Python?"}
+{"id": "staqc-8f280b0f93", "category": "concept_explanation", "topic": "variables", "query": "Can I Pass Dictionary Values/Entry and Keys to function"}
+{"id": "staqc-f3c42e0bf6", "category": "concept_explanation", "topic": "variables", "query": "Why can't I pass a direct reference to a dictionary value to a function?"}
+{"id": "staqc-6d5b8e35a6", "category": "concept_explanation", "topic": "functions", "query": "what are the applications of the python reload function?"}
+{"id": "staqc-ff2c37db7b", "category": "concept_explanation", "topic": "functions", "query": "Does python have a call_user_func() like PHP?"}
+{"id": "staqc-d3648f0d48", "category": "concept_explanation", "topic": "variables", "query": "How use __setattr__ & __getattr__ for map INI values?"}
+{"id": "staqc-253467d561", "category": "concept_explanation", "topic": "functions", "query": "Is python automagically parallelizing IO- and CPU- or memory-bound sections?"}
+{"id": "staqc-14c3b5b2e8", "category": "concept_explanation", "topic": "functions", "query": "Is it possible to have multiple statements in a python lambda expression?"}
+{"id": "staqc-05dc7c13e1", "category": "concept_explanation", "topic": "variables", "query": "Which PEP governs the ordering of dict.values()?"}
+{"id": "staqc-49af0027d0", "category": "concept_explanation", "topic": "variables", "query": "How to get a subclassed object of a django model"}
+{"id": "staqc-a604422d26", "category": "concept_explanation", "topic": "variables", "query": "How do I correctly clean up a Python object?"}

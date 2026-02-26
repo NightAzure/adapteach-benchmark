@@ -1,0 +1,19 @@
+{
+  "title": "Validating user input with conditionals: digits, ranges, and safe defaults",
+  "content": "Conditionals are often used to keep programs safe and predictable by validating input before using it.\n\n---\n## 1) Check if a string looks like a whole number\n\n```python\nraw = \"42\"\n\nif raw.isdigit():\n    n = int(raw)\n    print(\"number\", n)\nelse:\n    print(\"not a whole number\")\n```\n\n---\n## 2) Range checking\n\n```python\nage = 20\n\nif age < 0:\n    print(\"invalid\")\nelif age < 13:\n    print(\"child\")\nelif age < 20:\n    print(\"teen\")\nelse:\n    print(\"adult\")\n```\n\n---\n## 3) Handling optional values (None checks)\n\n```python\nvalue = None\n\nif value is None:\n    print(\"missing\")\nelse:\n    print(\"got\", value)\n```\n\n---\n## 4) A balanced mini script: parse and respond\n\n```python\ntext = \" 7 \"\ntext = text.strip()\n\nif not text.isdigit():\n    print(\"please enter digits\")\nelse:\n    n = int(text)\n    if n % 2 == 0:\n        print(\"even\")\n    else:\n        print(\"odd\")\n\n    if n >= 10:\n        print(\"two digits or more\")\n    else:\n        print(\"single digit\")\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["conditionals", "input-validation", "ranges", "none-check", "nested-if"],
+  "difficulty": "intro",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "created_at": "2026-02-09",
+    "intended_use": "educational corpus"
+  },
+  "provenance": {
+    "source": "ai_generated",
+    "generator": "ChatGPT",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": true
+}

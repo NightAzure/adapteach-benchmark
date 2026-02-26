@@ -1,0 +1,22 @@
+{
+  "title": "Parallel iteration with zip() and enumerate(): iterate multiple sequences with an index",
+  "content": "After you know basic loops, a very useful moderate technique is **parallel iteration**: walking through two or more sequences at the same time. The built-ins `zip()` and `enumerate()` are common tools for this.\n\n---\n## 1) zip(): pair items by position\n\n```python\nnames = [\"Ana\", \"Ben\", \"Kai\"]\nscores = [10, 25, 18]\n\nfor name, score in zip(names, scores):\n    print(name, \"scored\", score)\n```\n\nIf the lists have different lengths, `zip` stops at the shortest.\n\n```python\nnames = [\"Ana\", \"Ben\", \"Kai\"]\nscores = [10, 25]\n\nfor name, score in zip(names, scores):\n    print(name, score)\n# prints only Ana/Ben\n```\n\n---\n## 2) enumerate(): add an index\n\n```python\nitems = [\"a\", \"b\", \"c\"]\nfor i, v in enumerate(items):\n    print(i, v)\n```\n\nStart indexing from 1:\n\n```python\nfor i, v in enumerate(items, start=1):\n    print(i, v)\n```\n\n---\n## 3) Combine enumerate + zip: index + paired values\n\n```python\nnames = [\"Ana\", \"Ben\", \"Kai\"]\nscores = [10, 25, 18]\n\nfor i, (name, score) in enumerate(zip(names, scores), start=1):\n    print(i, name, score)\n```\n\n---\n## 4) A more realistic example: align columns and compute totals\n\n```python\nproducts = [\"pen\", \"notebook\", \"tape\"]\nprices = [1.50, 3.00, 2.25]\nqty = [2, 1, 3]\n\ngrand = 0.0\nfor i, (p, price, q) in enumerate(zip(products, prices, qty), start=1):\n    line = price * q\n    grand += line\n    print(i, p, \"line=\", line)\n\nprint(\"grand=\", grand)\n```\n\n---\n## 5) Practice: detect mismatched lists early (simple check)\nSometimes you *want* to ensure lengths match.\n\n```python\nif len(products) != len(prices) or len(prices) != len(qty):\n    print(\"length mismatch\")\nelse:\n    for p, price, q in zip(products, prices, qty):\n        print(p, price, q)\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["loops", "for", "zip", "enumerate", "parallel-iteration", "indexing", "aggregation"],
+  "difficulty": "moderate",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["zip pairing blocks", "enumerate start param", "combined enumerate(zip()) pattern", "mini invoice-style script"]
+  },
+  "provenance": {
+    "url": "https://note.nkmk.me/en/python-for-enumerate-zip/",
+    "license": "Copyright (site content); verify reuse permissions before redistribution",
+    "attribution": "nkmk.me (author listed on page)",
+    "retrieved_at": "2026-02-09",
+    "license_review": "PENDING_LICENSE_REVIEW"
+  },
+  "ai_generated": false
+}

@@ -1,0 +1,436 @@
+{
+  "chunk_count": 1493,
+  "clean_files": [
+    {
+      "file": "doc-a-beginner-walkthrough-script-variables-input-conversions-and-simple-validation-f3e8aaa124.json",
+      "sha256": "8a8ac2b58d1e3d8f89dc4073eea0b9775b550d6aba5d31d09fccf7d7fabb526c"
+    },
+    {
+      "file": "doc-advanced-boolean-behavior-and-or-return-operands-evaluation-order-and-subtle-conditional-bugs-ad6a34ada1.json",
+      "sha256": "a3d5224f4c809bc38570fa5438be7e8ab15d08a72159a5e41eb457bcd2c6b941"
+    },
+    {
+      "file": "doc-assignment-basics-beyond-multiple-targets-unpacking-and-what-can-be-assigned-to-5caa9f3196.json",
+      "sha256": "b2c1682e6212f2dfcb3182a310be47c4a3437bb6a5dd870fa318775211c06d19"
+    },
+    {
+      "file": "doc-assignment-expressions-in-conditionals-compact-patterns-without-losing-clarity-2c1f405af6.json",
+      "sha256": "eb807df5059bbbdddd13a23746dce41f3e401e96a1d2a1a9c1d4d5aa7dd8a0de"
+    },
+    {
+      "file": "doc-assignment-vs-copying-objects-aliasing-shallow-copies-and-deep-copies-174c976547.json",
+      "sha256": "9c228dc53eff4f6cb0714041bd1028dbd0650c95bbeed4e6bbf540ad92df0190"
+    },
+    {
+      "file": "doc-augmented-assignment-how-works-evaluation-order-and-mutability-effects-bd8676a13f.json",
+      "sha256": "a6c201c020d1c9a26d3b1a8bac48cabee2748961292957c69871a3337b0f2154"
+    },
+    {
+      "file": "doc-building-a-loop-pipeline-parse-tokens-transform-streams-and-produce-a-report-3d5ba4846e.json",
+      "sha256": "aa38162ada6ed982cb6351802cd2970508b106ae18c703cb7075feaf8286d8a4"
+    },
+    {
+      "file": "doc-closures-and-late-binding-loop-variable-capture-and-dependable-ways-to-freeze-values-562b6f6f3d.json",
+      "sha256": "4171e264bd86641d5dd8d1d1c24404899fe65535795cc87cf3a214d05d8d4230"
+    },
+    {
+      "file": "doc-closures-moderate-inner-functions-nonlocal-state-and-function-factories-ce0632487d.json",
+      "sha256": "4bd5f404552ad8e2f85bb6f5f455e9bca731ee7ac39665a7d6290721af7f40bc"
+    },
+    {
+      "file": "doc-combining-conditions-and-or-not-parentheses-and-readable-checks-271c64265a.json",
+      "sha256": "19d833731eb7c019a0f1a83123f946d96b62018ede4f060ded060c7d868ca944"
+    },
+    {
+      "file": "doc-common-conditional-patterns-ternary-if-expression-membership-tests-and-clean-checks-4c1c191966.json",
+      "sha256": "8ba2deea0ce42e3df6141e3ee5c22647cf03e8ac85f7371f7cbe3e1d5683ba1a"
+    },
+    {
+      "file": "doc-conditional-expressions-using-a-if-cond-else-b-responsibly-37656294f5.json",
+      "sha256": "9bc90c64b9d1eab6f78e767acf18977ae2fe26c1dfe8dd33aea4400a1950539b"
+    },
+    {
+      "file": "doc-conditional-statements-comparisons-elif-chains-and-simple-input-based-decisions-6e8ed35909.json",
+      "sha256": "1477de35d5235284d6f548d247e5cec8a3f916dd54e2a0ddb4968ad41a09f252"
+    },
+    {
+      "file": "doc-conditionals-in-python-if-elif-else-blocks-and-readable-decision-logic-a5516b23d9.json",
+      "sha256": "9d25630f7b9a35f02fd647c6ff015f4a0c462d6dd27a77fed68be9b6bbb25405"
+    },
+    {
+      "file": "doc-creating-functions-easy-small-reusable-pieces-defaults-and-quick-tests-1a947f02ed.json",
+      "sha256": "72a8296d0bda99ee65aff302c7aeb36963475dd58e933e4f4020a3b348e51d16"
+    },
+    {
+      "file": "doc-creating-variables-by-assignment-naming-input-and-common-errors-af2dd8ed46.json",
+      "sha256": "6a28e4cee128fef81c73cf1a1060f7e88cb58b8cfe50c1840c4b7dba31d6de4a"
+    },
+    {
+      "file": "doc-decorator-factories-hard-writing-decorators-that-accept-arguments-safely-4ccdf84500.json",
+      "sha256": "5b441b7bc63a06276edadbab798bfa15c3fb896ac5db75f64f691bbc15a917b9"
+    },
+    {
+      "file": "doc-decorators-hard-what-decorator-means-stacking-decorators-and-readable-function-transformations-7abd2d614e.json",
+      "sha256": "afeb97ca7d72ec0253cda3b7f62e35a15b46d6b5eda6705d9a7892de912c73b6"
+    },
+    {
+      "file": "doc-everyday-loop-patterns-iterating-lists-dicts-enumerate-and-building-results-ec0531db99.json",
+      "sha256": "8284c81661bb01643864232ba9396eab79c78a8f69ca4c604e05087e80fcddb9"
+    },
+    {
+      "file": "doc-extended-unpacking-rest-splitting-sequences-safe-patterns-and-common-errors-595c1e439b.json",
+      "sha256": "e6b28c20bcae7113d40e0ef032889434a357e5814feca1f287ea27f8c4918641"
+    },
+    {
+      "file": "doc-flexible-function-inputs-easy-args-kwargs-and-keyword-only-parameters-b887e583fa.json",
+      "sha256": "1ccbe3d889aef2ed79441687cb9fe028399773f2bc80c0275ecfaacbb2c55939"
+    },
+    {
+      "file": "doc-function-parameters-moderate-defaults-keyword-args-args-kwargs-and-special-parameters-930de72751.json",
+      "sha256": "b775a3b043d1dcc47c59e61239a0d26cfdbfd7898f55f0eb2d5cfe5be701ae5b"
+    },
+    {
+      "file": "doc-functions-as-callables-easy-inputs-outputs-and-simple-scoping-intuition-204adfda5a.json",
+      "sha256": "bc9693527c38cfcf1d381bcbcd6e6d04713542a2ff3b2c0a3001e76fbde2e131"
+    },
+    {
+      "file": "doc-generator-expressions-lazy-looping-one-pass-behavior-and-common-patterns-2bd4b01471.json",
+      "sha256": "0c64380a8d8c2a698ed90c1c9a5be8f9ce33096e700a1929dc08f55451bf18a3"
+    },
+    {
+      "file": "doc-guard-clauses-for-complex-conditionals-early-returns-readable-validation-and-safer-flows-6bf0f16cf5.json",
+      "sha256": "953a2552f02ed59e186e4502549bb1c2d714b115549ba98c7420b247b6e31370"
+    },
+    {
+      "file": "doc-higher-order-function-tools-hard-functools-wraps-lru-cache-cache-and-partial-7b6a338369.json",
+      "sha256": "b490438b188b55d3f76f86326a5176648996e967d595fcb20bbaf56908241518"
+    },
+    {
+      "file": "doc-how-for-loops-really-work-iterables-iterators-next-and-stopiteration-fe19a3476f.json",
+      "sha256": "e222af1086c881cde2b0f1cd90b1c17d41b4d24cef6f657039bc7676306f3b06"
+    },
+    {
+      "file": "doc-identity-vs-equality-is-vs-id-and-how-variables-relate-to-objects-eff3606ea8.json",
+      "sha256": "c33fb4133463dc7d68b6d4981ef3de6ad964891e56dffe5da6062f4abe90eb6e"
+    },
+    {
+      "file": "doc-introspecting-functions-hard-inspect-signature-parameters-annotations-and-wrapper-effects-7c83e939f7.json",
+      "sha256": "5c2ab423450ae4aa54d7e3911058ea80c7b19e1378a573f65b71d95c74f91110"
+    },
+    {
+      "file": "doc-iterating-the-python-way-iterables-range-and-processing-sequences-with-for-loops-1f45214370.json",
+      "sha256": "40dbc0d0a8fb8d1e5a2dfd848d9a0791a66555d17e3e420c360c907ba2be53f9"
+    },
+    {
+      "file": "doc-iterator-algebra-with-itertools-chain-islice-product-cycle-and-groupby-373112e9f2.json",
+      "sha256": "fd9068edf3ea60f895c12d63296a729d2b6d40e0d73fed74130d3788b580768c"
+    },
+    {
+      "file": "doc-keyword-only-arguments-pep-3102-making-calls-clearer-with-b252f08a30.json",
+      "sha256": "d83facfdaf0f1df3d2eae7f4bc450e2aa525a32032ce155589e4d5caa829f8ad"
+    },
+    {
+      "file": "doc-looping-over-text-lines-clean-parsing-counters-and-early-exit-patterns-ce462c5d5f.json",
+      "sha256": "df70dd5b50b3f41c84dc869babcd617d92937390dacca3b561564bd58aa704ce"
+    },
+    {
+      "file": "doc-loops-in-python-for-vs-while-counting-and-sentinel-driven-repetition-5bd4c915d6.json",
+      "sha256": "a02d9c2cef33b9b63142cfe9def6c511ff416a4600382479e8cc1327506f6f92"
+    },
+    {
+      "file": "doc-moderate-comparisons-chaining-membership-checks-identity-and-readable-conditions-2351734f71.json",
+      "sha256": "815b69425d103d627a7c4f1205de1255e7b68e006333208fa82a96c14c6c9d0c"
+    },
+    {
+      "file": "doc-moderate-loop-control-break-continue-loop-else-and-search-patterns-1fcdf722b4.json",
+      "sha256": "1e7410e3a240a5493f21bded3e74a835aadadc2636502852c9fcb03529c1017e"
+    },
+    {
+      "file": "doc-mutable-default-arguments-moderate-why-it-happens-and-safe-design-patterns-77be358d12.json",
+      "sha256": "be0419401d68bdabd31bb9e1b9bbc428e39d5540b4ae9313c993709290b38257"
+    },
+    {
+      "file": "doc-nested-loop-search-scanning-a-grid-tracking-coordinates-and-clean-exit-strategies-cc184d15e4.json",
+      "sha256": "616ee7f1ee11e325db1e11b828c9fb76846206b8b5e59266168e60ce6bf743ed"
+    },
+    {
+      "file": "doc-nested-loops-easy-grids-simple-tables-and-readable-structure-a0cec1dadc.json",
+      "sha256": "c4cfe3c634d388796188ff86674449bd9b4cb0cd1d87966f073a745ab00016e0"
+    },
+    {
+      "file": "doc-one-pass-iterators-in-real-code-exhaustion-pitfalls-and-safe-handling-patterns-43f2cbd84c.json",
+      "sha256": "526ab33b58612dd27a90077b0e55c9f296b7a0413f550daa41e4952011eccd41"
+    },
+    {
+      "file": "doc-parallel-iteration-with-zip-and-enumerate-iterate-multiple-sequences-with-an-index-deed0d77ae.json",
+      "sha256": "d61209db08ca03724bced20d0282f4f32d4cf4df5c199e545406e8b798f473fc"
+    },
+    {
+      "file": "doc-positional-only-parameters-pep-570-using-to-control-function-call-semantics-a5d400b365.json",
+      "sha256": "f78f9327ad3ff9dd782d6e7cbc9e81f71d5c5ef2733d96d75726b71571930794"
+    },
+    {
+      "file": "doc-putting-it-together-parsing-records-with-unpacking-updating-counters-and-copying-safely-5b6baf6607.json",
+      "sha256": "8ac4e0acc289cee06318e0f562687864823cd1c31869bc9e607af5baa320292a"
+    },
+    {
+      "file": "doc-python-functions-easy-def-parameters-return-values-and-docstrings-124102fc40.json",
+      "sha256": "a9d5527dcc766299df9d81ada45f1fec479828b40a9c9c3d4be0f05a68e26664"
+    },
+    {
+      "file": "doc-python-loop-control-for-range-break-continue-and-else-on-loops-9e511c3e9e.json",
+      "sha256": "f3f9aef99cc788b4c199fd60db4dafcfda4642682121ae891decf7916bb703b1"
+    },
+    {
+      "file": "doc-python-variable-binding-and-scope-blocks-locals-free-variables-globals-and-nonlocal-51310631d8.json",
+      "sha256": "50fe67ad27bd2f8023a1df53f3aaefc53dcf887718627d2b1a82bcd50215a2d5"
+    },
+    {
+      "file": "doc-readable-functions-easy-type-hints-docstrings-and-example-driven-design-91bbc2f25b.json",
+      "sha256": "9e6703d7e383592898a0db7f5fd5db7b99ab3ea1db14cc2516411561a4c0ab46"
+    },
+    {
+      "file": "doc-refactoring-if-elif-chains-dispatch-tables-for-commands-and-categories-dacef1c4a7.json",
+      "sha256": "941b9b4eb12d6739f7fa0202340513e43b24f16571c29835d601dbeb209cc87d"
+    },
+    {
+      "file": "doc-scope-surprises-class-bodies-comprehensions-and-generator-lambda-capture-c1ad7f3f8f.json",
+      "sha256": "aa18d5a3a2453d97b2a96bfcb5d218b64a78a7fd46efd8469c0cf1a1ac40f65b"
+    },
+    {
+      "file": "doc-short-circuit-conditionals-in-practice-safe-guards-and-optional-values-b39eec0789.json",
+      "sha256": "60c2d1f033fa9a070fe5327d901969124cb05c093b8da58d2dcb1b0013395ec7"
+    },
+    {
+      "file": "doc-structural-pattern-matching-match-case-for-complex-branching-and-data-shaped-conditions-8b7b091601.json",
+      "sha256": "13893f70da03a4326db7a6d0ed30c60d9dea814df5f483282726b20ed083b46b"
+    },
+    {
+      "file": "doc-taming-complex-conditions-name-sub-checks-avoid-truthiness-traps-and-make-behavior-testable-6abc768071.json",
+      "sha256": "27f85368fcefdac2604ac698390510a4da6c57281faae2fe38b83de8dd1b94fa"
+    },
+    {
+      "file": "doc-tool-friendly-wrappers-hard-preserving-metadata-wrapped-and-inspection-aware-patterns-ff9835dd75.json",
+      "sha256": "17e553e52e5e006caadc645a4e55cc38f4c678f50520ae98f47a003080551619"
+    },
+    {
+      "file": "doc-truthiness-and-short-circuit-logic-how-python-decides-true-false-and-why-it-matters-abbe1e506b.json",
+      "sha256": "80423e820f372d9cdd74af4691ef419a87f1e160c3dfa67ab677471b915df7d4"
+    },
+    {
+      "file": "doc-updating-outer-scope-state-nonlocal-vs-container-mutation-and-how-to-keep-it-readable-78109640c9.json",
+      "sha256": "6b634961a913c2da86b319758ae517a7e769feaab0611ca49c40acad3b0692f7"
+    },
+    {
+      "file": "doc-using-variables-to-build-text-output-concatenation-f-strings-and-join-c4e429d9a9.json",
+      "sha256": "6834bfb576ae3236d722658c7b427dfc7ce7316f300fff50b142a23f59d50d90"
+    },
+    {
+      "file": "doc-validating-user-input-with-conditionals-digits-ranges-and-safe-defaults-e44427239d.json",
+      "sha256": "d14685078b36428a67879eaadaa1dbebaa5ff130ab94d53110ec94bfe2a46a34"
+    },
+    {
+      "file": "doc-variables-in-python-names-assignment-reassignment-and-reading-values-a86c7f1c23.json",
+      "sha256": "bb5aa2e624726fed6725b0b306f46258fea3a39f954d1b2e968b56e063d78edb"
+    },
+    {
+      "file": "doc-while-loop-patterns-easy-menus-retries-and-simple-validation-6c1217a4e0.json",
+      "sha256": "f77195ac112245492da8fdd47382377b08c12307196b2038bdfce1a5cb103e3f"
+    },
+    {
+      "file": "doc-why-unboundlocalerror-happens-assignment-makes-a-name-local-and-how-to-fix-it-safely-07825eb2a0.json",
+      "sha256": "e132f4697f448175c2b08b052f3328a64706c025865a7bf97164282f204b9899"
+    }
+  ],
+  "concept_coverage_counts": {
+    "__wrapped__": 1,
+    "accumulation": 1,
+    "aggregation": 1,
+    "aliasing": 2,
+    "all": 3,
+    "and": 2,
+    "and-or": 1,
+    "annotations": 1,
+    "any": 3,
+    "api-design": 2,
+    "args": 2,
+    "arguments": 1,
+    "assert": 1,
+    "assignment": 6,
+    "assignment-expression": 1,
+    "attributes": 1,
+    "augmented-assignment": 2,
+    "binding": 2,
+    "blocks": 2,
+    "boolean-logic": 1,
+    "boolean-ops": 2,
+    "branching": 1,
+    "break": 7,
+    "bugs": 1,
+    "cache": 1,
+    "caching": 2,
+    "callables": 1,
+    "chain": 1,
+    "chained-comparisons": 1,
+    "classes": 1,
+    "classmethod": 1,
+    "closures": 5,
+    "comparisons": 4,
+    "composition": 1,
+    "comprehensions": 1,
+    "conditional-expression": 1,
+    "conditionals": 15,
+    "continue": 5,
+    "copy": 2,
+    "counting": 2,
+    "cycle": 1,
+    "data-shapes": 1,
+    "debugging": 4,
+    "decorator-factory": 1,
+    "decorators": 4,
+    "deepcopy": 2,
+    "def": 1,
+    "defaults": 5,
+    "dict": 1,
+    "dicts": 5,
+    "dispatch-table": 1,
+    "docstrings": 2,
+    "elif": 2,
+    "else": 3,
+    "enumerate": 3,
+    "equality": 1,
+    "errors": 1,
+    "exhaustion": 1,
+    "expressions": 1,
+    "extended-unpacking": 1,
+    "f-strings": 1,
+    "filtering": 1,
+    "for": 8,
+    "formatting": 1,
+    "free-variables": 1,
+    "function-factory": 1,
+    "functions": 16,
+    "functools": 1,
+    "generator": 1,
+    "generator-expressions": 1,
+    "generators": 4,
+    "get": 1,
+    "global": 2,
+    "grids": 2,
+    "groupby": 1,
+    "guard-clauses": 2,
+    "guards": 3,
+    "identity": 3,
+    "if": 3,
+    "indentation": 1,
+    "indexing": 1,
+    "infinite-loop": 1,
+    "input": 2,
+    "input-validation": 2,
+    "inspect": 2,
+    "introspection": 1,
+    "islice": 1,
+    "items": 1,
+    "iterables": 2,
+    "iteration": 1,
+    "iterators": 3,
+    "itertools": 2,
+    "join": 1,
+    "keyword-arguments": 2,
+    "keyword-only": 3,
+    "kwargs": 2,
+    "lambdas": 1,
+    "late-binding": 2,
+    "lazy-evaluation": 1,
+    "len": 1,
+    "lists": 5,
+    "locals": 1,
+    "loop-else": 4,
+    "loops": 16,
+    "lru_cache": 2,
+    "match": 1,
+    "membership": 2,
+    "memoization": 1,
+    "memory-efficiency": 1,
+    "menus": 1,
+    "methods": 1,
+    "mutability": 4,
+    "mutable-defaults": 2,
+    "nameerror": 2,
+    "naming": 1,
+    "nested-functions": 1,
+    "nested-if": 1,
+    "nested-loops": 3,
+    "next": 1,
+    "none": 1,
+    "none-check": 1,
+    "nonlocal": 3,
+    "normalization": 1,
+    "not": 2,
+    "or": 2,
+    "parallel-iteration": 1,
+    "parameters": 4,
+    "parentheses": 1,
+    "parsing": 6,
+    "partial": 1,
+    "pattern-matching": 1,
+    "pep-3102": 1,
+    "pep-318": 1,
+    "pep-570": 1,
+    "pipelines": 4,
+    "positional-only": 2,
+    "practice": 1,
+    "precedence": 2,
+    "print": 3,
+    "product": 1,
+    "pure-functions": 1,
+    "range": 5,
+    "ranges": 1,
+    "readability": 7,
+    "reassignment": 2,
+    "refactoring": 2,
+    "retry": 1,
+    "return": 2,
+    "return-types": 1,
+    "scope": 6,
+    "search": 1,
+    "search-patterns": 1,
+    "sentinel": 1,
+    "shallow-copy": 1,
+    "short-circuit": 3,
+    "signature": 1,
+    "signatures": 1,
+    "single-pass": 1,
+    "snake_case": 1,
+    "special-parameters": 2,
+    "stacking": 1,
+    "staticmethod": 1,
+    "stopiteration": 1,
+    "strings": 2,
+    "tables": 1,
+    "ternary": 2,
+    "testing": 3,
+    "tooling": 1,
+    "truthiness": 5,
+    "tuples": 1,
+    "type-conversion": 4,
+    "type-hints": 1,
+    "unboundlocalerror": 1,
+    "unpacking": 6,
+    "validation": 4,
+    "variables": 15,
+    "walrus": 1,
+    "while": 3,
+    "wrappers": 2,
+    "wrapping": 1,
+    "wraps": 3,
+    "zip": 1
+  },
+  "created_from": {
+    "clean_dir": "data/corpus_clean",
+    "meta_dir": "data/corpus_meta"
+  },
+  "exclude_ai": false,
+  "snapshot_hash": "79e1e04897064e16f9a3cf2046a698b1b8f63bfb3f93155eb1d67476f640050b",
+  "snapshot_id": "79e1e04897064e16"
+}

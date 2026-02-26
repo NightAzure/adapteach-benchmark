@@ -1,0 +1,23 @@
+{
+  "ai_generated": true,
+  "concept_tags": [
+    "f-strings",
+    "join",
+    "print",
+    "strings",
+    "type-conversion",
+    "variables"
+  ],
+  "content": "Variables often hold **pieces of text** that you combine into messages. Here are common beginner-friendly patterns.\n\n---\n## 1) Concatenation with +\n\n```python\nfirst = \"Good\"\nsecond = \"morning\"\nmsg = first + \" \" + second + \"!\"\nprint(msg)  # Good morning!\n```python\n\nConcatenation requires both sides to be strings:\n\n```python\nscore = 42\n# print(\"Score: \" + score)  # TypeError\nprint(\"Score: \" + str(score))\n```python\n\n---\n## 2) f-strings (usually easiest to read)\n\n```python\nname = \"Mika\"\nscore = 42\nprint(f\"{name} scored {score} points\")\n```python\n\nYou can format numbers too:\n\n```python\npi = 3.1415926\nprint(f\"pi\u2248{pi:.2f}\")\n```python\n\n---\n## 3) str.format()\n\n```python\nname = \"Mika\"\nscore = 42\nprint(\"{} scored {} points\".format(name, score))\n```python\n\n---\n## 4) join() for many strings\nWhen joining many parts, build a list and join.\n\n```python\nparts = [\"A\", \"B\", \"C\"]\nprint(\"-\".join(parts))  # A-B-C\n```python\n\n---\n## 5) A small, realistic example\n\n```python\nuser = \"ana\"\nitems = [\"apple\", \"banana\", \"cherry\"]\ncount = len(items)\n\nline1 = f\"User: {user}\"\nline2 = \"Items: \" + \", \".join(items)\nline3 = f\"Count: {count}\"\n\nprint(line1)\nprint(line2)\nprint(line3)\n```",
+  "difficulty": "intro",
+  "doc_id": "doc-using-variables-to-build-text-output-concatenation-f-strings-and-join-c4e429d9a9",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "",
+    "source_file": "data/corpus_raw/variables_easy_4.json",
+    "url": ""
+  },
+  "title": "Using variables to build text output: concatenation, f-strings, and join()",
+  "type": "tutorial"
+}

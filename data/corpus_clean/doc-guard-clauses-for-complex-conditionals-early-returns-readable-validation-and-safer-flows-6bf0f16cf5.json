@@ -1,0 +1,22 @@
+{
+  "ai_generated": true,
+  "concept_tags": [
+    "conditionals",
+    "guard-clauses",
+    "normalization",
+    "readability",
+    "validation"
+  ],
+  "content": "Hard conditional logic is often about keeping code readable when there are many requirements. A common strategy is **guard clauses**: return early when something is invalid, so the \u201chappy path\u201d stays uncluttered.\n\n---\n## 1) Baseline: nested ifs get deep\n\n```python\ndef process(user):\n    if user is not None:\n        if \"name\" in user:\n            if user[\"name\"]:\n                return \"ok\"\n    return \"bad\"\n```python\n\n---\n## 2) Refactor with guard clauses\n\n```python\ndef process(user):\n    if user is None:\n        return \"missing user\"\n    if \"name\" not in user:\n        return \"missing name\"\n    if user[\"name\"] == \"\":\n        return \"empty name\"\n    return \"ok\"\n\nprint(process({\"name\": \"ana\"}))\nprint(process({\"name\": \"\"}))\nprint(process({}))\nprint(process(None))\n```python\n\n---\n## 3) A larger example: validate and normalize a record\n\n```python\ndef normalize_record(rec):\n    # rec should be a dict with keys: name(str), age(int-like), tags(list)\n    if rec is None or not isinstance(rec, dict):\n        return None\n\n    name = rec.get(\"name\")\n    if name is None:\n        return None\n    name = str(name).strip()\n    if name == \"\":\n        return None\n\n    age_raw = rec.get(\"age\")\n    if age_raw is None:\n        return None\n\n    # accept int or digit-string\n    if isinstance(age_raw, int):\n        age = age_raw\n    else:\n        s = str(age_raw).strip()\n        if not s.isdigit():\n            return None\n        age = int(s)\n\n    if not (0 <= age <= 120):\n        return None\n\n    tags = rec.get(\"tags\")\n    if tags is None:\n        tags = []\n    if not isinstance(tags, list):\n        return None\n\n    # normalize tags\n    clean_tags = []\n    for t in tags:\n        t = str(t).strip()\n        if t:\n            clean_tags.append(t)\n\n    return {\"name\": name, \"age\": age, \"tags\": clean_tags}\n\nprint(normalize_record({\"name\": \" Ana \", \"age\": \"20\", \"tags\": [\"x\", \" \", \"y\"]}))\nprint(normalize_record({\"name\": \"\", \"age\": \"20\"}))\n```python\n\n---\n## 4) Takeaway\nGuard clauses reduce indentation and make it easier to see why a record fails validation.",
+  "difficulty": "hard",
+  "doc_id": "doc-guard-clauses-for-complex-conditionals-early-returns-readable-validation-and-safer-flows-6bf0f16cf5",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "",
+    "source_file": "data/corpus_raw/conditionals_hard_4.json",
+    "url": ""
+  },
+  "title": "Guard clauses for complex conditionals: early returns, readable validation, and safer flows",
+  "type": "tutorial"
+}

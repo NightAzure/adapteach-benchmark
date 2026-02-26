@@ -1,0 +1,25 @@
+{
+  "ai_generated": true,
+  "concept_tags": [
+    "augmented-assignment",
+    "copy",
+    "deepcopy",
+    "dicts",
+    "lists",
+    "parsing",
+    "unpacking",
+    "variables"
+  ],
+  "content": "This walkthrough uses moderate variable techniques in a practical mini task: parse records, update counters, and avoid accidental aliasing.\n\n---\n## 1) The input data\nEach record looks like: `(user, score, tags...)`.\n\n```python\nrecords = [\n    (\"ana\", 10, \"new\", \"mobile\"),\n    (\"ben\", 25, \"returning\"),\n    (\"ana\", 5, \"web\"),\n]\n```python\n\n---\n## 2) Use unpacking to separate fixed fields and the rest\n\n```python\ntotals = {}\ntag_index = {}\n\nfor rec in records:\n    user, score, *tags = rec\n\n    totals[user] = totals.get(user, 0) + score\n\n    for t in tags:\n        tag_index.setdefault(t, []).append(user)\n\nprint(totals)\nprint(tag_index)\n```python\n\n---\n## 3) Why aliasing matters when indexing\nIf you reuse the same list object in multiple places, one append can affect multiple keys.\nA safe habit is to create a new list per key.\n\n```python\n# Safe pattern: setdefault creates/stores a list per key\nidx = {}\nidx.setdefault(\"a\", []).append(1)\nidx.setdefault(\"a\", []).append(2)\nprint(idx)  # {'a': [1, 2]}\n```python\n\n---\n## 4) Snapshotting data: shallow copy vs deep copy\nIf your structure is nested, consider what you need.\n\n```python\nimport copy\n\nstate = {\"totals\": totals, \"tag_index\": tag_index}\nshallow = state.copy()              # outer copy only\nsafe = copy.deepcopy(state)         # nested copy\n\n# mutate nested\nstate[\"tag_index\"].setdefault(\"new\", []).append(\"SYSTEM\")\n\nprint(shallow[\"tag_index\"][\"new\"])  # likely changed (shared)\nprint(safe[\"tag_index\"].get(\"new\")) # independent snapshot\n```python\n\n---\n## 5) A compact summary script (single block)\n\n```python\nimport copy\n\nrecords = [\n    (\"ana\", 10, \"new\", \"mobile\"),\n    (\"ben\", 25, \"returning\"),\n    (\"ana\", 5, \"web\"),\n]\n\ntotals = {}\ntag_index = {}\n\nfor user, score, *tags in records:\n    totals[user] = totals.get(user, 0) + score\n    for t in tags:\n        tag_index.setdefault(t, []).append(user)\n\nsnapshot = copy.deepcopy({\"totals\": totals, \"tag_index\": tag_index})\n\nprint(\"totals\", totals)\nprint(\"tags\", tag_index)\nprint(\"snapshot\", snapshot)\n```",
+  "difficulty": "moderate",
+  "doc_id": "doc-putting-it-together-parsing-records-with-unpacking-updating-counters-and-copying-safely-5b6baf6607",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "",
+    "source_file": "data/corpus_raw/variables_moderate_5.json",
+    "url": ""
+  },
+  "title": "Putting it together: parsing records with unpacking, updating counters, and copying safely",
+  "type": "tutorial"
+}

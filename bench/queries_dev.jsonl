@@ -1,0 +1,30 @@
+{"id": "d-001", "category": "concept_explanation", "topic": "data_types", "query": "Explain the difference between int, float, and complex in Python with type conversion examples."}
+{"id": "d-002", "category": "debugging", "topic": "conditionals", "query": "Explain the logic error here: score = 75\\nif score >= 90: grade = 'A'\\nelif score >= 80: grade = 'B'\\nelif score >= 70: grade = 'C'\\nelse: grade = 'F' — does it correctly handle score == 70?"}
+{"id": "d-003", "category": "artifact_generation", "topic": "lists", "query": "Generate a mutation exercise where a student must fix an off-by-one error in a list slicing operation."}
+{"id": "d-004", "category": "misconception", "topic": "recursion", "query": "Correct this misconception: 'Recursive solutions are always more efficient than iterative ones.'"}
+{"id": "d-005", "category": "concept_explanation", "topic": "tuples", "query": "Explain the difference between tuples and lists in Python. When is a tuple the better choice?"}
+{"id": "d-006", "category": "debugging", "topic": "scope", "query": "Fix the UnboundLocalError: x = 10\\ndef add_five():\\n    x = x + 5\\n    return x\\nprint(add_five())"}
+{"id": "d-007", "category": "artifact_generation", "topic": "conditionals", "query": "Create a Parsons problem for a grade classifier that uses if/elif/else to assign letter grades."}
+{"id": "d-008", "category": "tracing", "topic": "loops", "query": "Trace this code and state the final value printed: total = 0\\nfor num in [1, 2, 3, 4, 5]:\\n    if num % 2 == 0:\\n        total += num\\nprint(total)"}
+{"id": "d-009", "category": "concept_explanation", "topic": "sets", "query": "Explain Python sets and their operations: union, intersection, difference, and symmetric difference with examples."}
+{"id": "d-010", "category": "debugging", "topic": "OOP", "query": "Fix the TypeError in this inheritance: class Animal:\\n    def speak(self):\\n        return 'Sound'\\nclass Dog(Animal):\\n    def speak(self):\\n        return super.speak() + ' Woof'"}
+{"id": "d-011", "category": "concept_explanation", "topic": "loops", "query": "Explain the difference between for loops and while loops in Python. Give an example where each is the natural choice."}
+{"id": "d-012", "category": "misconception", "topic": "lists", "query": "Correct this misconception: 'Writing new_list = old_list creates an independent copy of the list.'"}
+{"id": "d-013", "category": "artifact_generation", "topic": "recursion", "query": "Generate a mutation exercise for a recursive Fibonacci function where the base case is incorrectly mutated."}
+{"id": "d-014", "category": "tracing", "topic": "functions", "query": "Trace this code and give all printed values: def double(x):\\n    return x * 2\\ndef apply(f, val):\\n    return f(val)\\nprint(apply(double, 4))"}
+{"id": "d-015", "category": "concept_explanation", "topic": "functions", "query": "Explain *args and **kwargs in Python functions. Show a practical example using both."}
+{"id": "d-016", "category": "debugging", "topic": "comprehensions", "query": "Fix this list comprehension that produces wrong output: evens = [x for x in range(10) if x % 2 == 1]"}
+{"id": "d-017", "category": "artifact_generation", "topic": "strings", "query": "Create a Parsons problem for reversing a string using Python slice notation."}
+{"id": "d-018", "category": "concept_explanation", "topic": "OOP", "query": "Explain the difference between class attributes and instance attributes in Python with an example showing how they behave differently."}
+{"id": "d-019", "category": "misconception", "topic": "exceptions", "query": "Correct this misconception: 'Using a bare except: clause is good practice because it catches all possible errors.'"}
+{"id": "d-020", "category": "debugging", "topic": "loops", "query": "Fix this for loop that skips the last element: items = [10, 20, 30, 40, 50]\\nfor i in range(len(items) - 1):\\n    print(items[i])"}
+{"id": "d-021", "category": "concept_explanation", "topic": "variables", "query": "Explain Python's pass-by-object-reference semantics. How does it behave differently for mutable vs immutable types?"}
+{"id": "d-022", "category": "artifact_generation", "topic": "OOP", "query": "Generate a mutation exercise where a student must fix an incorrect use of self in a class method."}
+{"id": "d-023", "category": "tracing", "topic": "conditionals", "query": "Trace this code and give the output: a = True\\nb = False\\nif a and not b:\\n    print('yes')\\nelif a or b:\\n    print('maybe')\\nelse:\\n    print('no')"}
+{"id": "d-024", "category": "concept_explanation", "topic": "sorting", "query": "Explain how Python's sorted() and list.sort() differ. Show sorting a list of dicts by a key using a lambda."}
+{"id": "d-025", "category": "debugging", "topic": "exceptions", "query": "Add error handling to this code that crashes on invalid input: num = int(input('Enter a number: '))\\nprint(10 / num)"}
+{"id": "d-026", "category": "artifact_generation", "topic": "loops", "query": "Generate a mutation exercise for a while loop where the loop termination condition operator is mutated."}
+{"id": "d-027", "category": "misconception", "topic": "scope", "query": "Correct this misconception: 'Variables defined inside an if block are local to that block and cannot be accessed outside it in Python.'"}
+{"id": "d-028", "category": "concept_explanation", "topic": "comprehensions", "query": "Explain dictionary comprehensions and set comprehensions in Python with filtering examples."}
+{"id": "d-029", "category": "debugging", "topic": "file_io", "query": "What is wrong with this code beyond missing with statement: f = open('data.txt')\\ndata = f.read()\\nprocess(data) — what happens if process() raises an exception?"}
+{"id": "d-030", "category": "concept_explanation", "topic": "OOP", "query": "Explain Python's __str__ and __repr__ methods. When is each called and what is the difference between them?"}

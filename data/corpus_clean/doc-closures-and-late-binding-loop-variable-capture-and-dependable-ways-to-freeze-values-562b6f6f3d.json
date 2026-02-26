@@ -1,0 +1,23 @@
+{
+  "ai_generated": false,
+  "concept_tags": [
+    "closures",
+    "lambdas",
+    "late-binding",
+    "loops",
+    "scope",
+    "variables"
+  ],
+  "content": "Python uses lexical scoping: inner functions can reference names from enclosing scopes. However, closure variables are often **late-bound**, meaning the name is looked up when the inner function runs, not when it is created.\n\n---\n## 1) The classic pitfall: closures created in a loop\n\n```python\nfuncs = []\nfor i in range(5):\n    funcs.append(lambda: i)\n\nprint([f() for f in funcs])  # often [4, 4, 4, 4, 4]\n```python\n\nAll lambdas refer to the same name `i`, which ends at 4 after the loop.\n\n---\n## 2) Fix pattern A: default argument capture (simple and popular)\nDefault arguments are evaluated when the function is defined.\n\n```python\nfuncs = []\nfor i in range(5):\n    funcs.append(lambda i=i: i)\n\nprint([f() for f in funcs])  # [0, 1, 2, 3, 4]\n```python\n\n---\n## 3) Fix pattern B: helper factory function\n\n```python\ndef make_func(i):\n    def f():\n        return i\n    return f\n\nfuncs = [make_func(i) for i in range(5)]\nprint([f() for f in funcs])  # [0, 1, 2, 3, 4]\n```python\n\n---\n## 4) Fix pattern C: functools.partial\n\n```python\nfrom functools import partial\n\ndef identity(x):\n    return x\n\nfuncs = [partial(identity, i) for i in range(5)]\nprint([f() for f in funcs])  # [0, 1, 2, 3, 4]\n```python\n\n---\n## 5) A chunking-friendly \u201creal use\u201d example\nMake a set of functions that add different offsets.\n\n```python\nadders = []\nfor offset in (0, 10, 100):\n    adders.append(lambda x, offset=offset: x + offset)\n\nprint([f(5) for f in adders])  # [5, 15, 105]\n```python\n\n---\n## 6) Extra: closures with multiple captured names\n\n```python\ndef factory(mult):\n    funcs = []\n    for i in range(3):\n        funcs.append(lambda x, i=i, mult=mult: (x + i) * mult)\n    return funcs\n\nfs = factory(10)\nprint([f(1) for f in fs])  # [10, 20, 30]\n```python\n\n---\n## 7) Practical takeaways\n- If you build lambdas in loops, **assume late binding** unless you capture values explicitly.\n- Default arguments are the shortest \u201cfreeze this value now\u201d technique.",
+  "difficulty": "hard",
+  "doc_id": "doc-closures-and-late-binding-loop-variable-capture-and-dependable-ways-to-freeze-values-562b6f6f3d",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "CC BY-SA (Stack Overflow; version depends on post date)",
+    "source_file": "data/corpus_raw/variables_hard_3.json",
+    "url": "https://stackoverflow.com/questions/2295290/what-do-lambda-function-closures-capture"
+  },
+  "title": "Closures and late binding: loop variable capture and dependable ways to freeze values",
+  "type": "tutorial"
+}

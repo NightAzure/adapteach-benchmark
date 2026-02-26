@@ -1,0 +1,21 @@
+{
+  "title": "Python loop control: for + range, break/continue, and else on loops",
+  "content": "Python’s tutorial introduces `for` loops (iteration over items), `range()` for counting, and common loop controls like `break` and `continue`.\n\n---\n## 1) Iterating directly over items\nInstead of indexing, Python commonly loops over values directly.\n\n```python\nwords = [\"cat\", \"window\", \"defenestrate\"]\nfor w in words:\n    print(w, len(w))\n```\n\n---\n## 2) Counting with range()\n\n```python\nfor i in range(5):\n    print(i)\n```\n\nA frequent beginner task: iterate by index when you truly need positions.\n\n```python\nitems = [\"a\", \"b\", \"c\"]\nfor i in range(len(items)):\n    print(i, items[i])\n```\n\n---\n## 3) break: exit a loop early\n\n```python\nfor n in range(2, 10):\n    if n == 5:\n        break\n    print(n)\nprint(\"done\")\n```\n\n---\n## 4) continue: skip to the next iteration\n\n```python\nfor n in range(1, 8):\n    if n % 2 == 0:\n        continue\n    print(\"odd:\", n)\n```\n\n---\n## 5) else on loops\nA loop can have an `else` clause that runs only if the loop finishes normally (not via `break`).\n\n```python\nfor n in range(2, 6):\n    if n == 4:\n        break\nelse:\n    print(\"loop ended without break\")\n\nprint(\"after loop\")\n```\n\nTry removing the `break` line and see the `else` behavior.\n\n---\n## 6) A friendly example: find the first match\n\n```python\nvalues = [3, 7, 9, 12]\ntarget = 9\n\nfor v in values:\n    if v == target:\n        print(\"found\", v)\n        break\nelse:\n    print(\"not found\")\n```\n\n---\n## 7) Mini practice block\n\n```python\n# Print numbers 1..10, but skip multiples of 3\nfor n in range(1, 11):\n    if n % 3 == 0:\n        continue\n    print(n)\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["loops", "for", "range", "break", "continue", "loop-else", "iteration"],
+  "difficulty": "intro",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["many short blocks", "break/continue examples", "loop-else pattern", "find-first-match pattern"]
+  },
+  "provenance": {
+    "url": "https://docs.python.org/3/tutorial/controlflow.html",
+    "license": "PSF Documentation License; code examples in docs are dual-licensed (PSF-2.0 and BSD-0 starting Python 3.8.6+)",
+    "attribution": "Python Software Foundation / Python Documentation Contributors",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

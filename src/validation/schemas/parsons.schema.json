@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["artifact_type", "prompt", "lines", "solution_order", "concept"],
+  "properties": {
+    "artifact_type": { "const": "parsons" },
+    "prompt": { "type": "string", "minLength": 1 },
+    "lines": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "solution_order": { "type": "array", "items": { "type": "integer", "minimum": 0 }, "minItems": 1 },
+    "concept": { "type": "string", "minLength": 1 },
+    "distractors": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

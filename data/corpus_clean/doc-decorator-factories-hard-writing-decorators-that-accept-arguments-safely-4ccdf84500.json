@@ -1,0 +1,23 @@
+{
+  "ai_generated": true,
+  "concept_tags": [
+    "decorator-factory",
+    "decorators",
+    "functions",
+    "retry",
+    "validation",
+    "wraps"
+  ],
+  "content": "A decorator that accepts arguments is typically a **decorator factory**: a function that returns a decorator.\n\n---\n## 1) Goal: @repeat(n=3)\nWe want this style:\n\n```python\n@repeat(n=3)\ndef shout(text):\n    return text.upper()\n```python\n\n---\n## 2) Implementation using a factory + wraps\n\n```python\nimport functools\n\ndef repeat(*, n=2):\n    if n < 1:\n        raise ValueError(\"n must be >= 1\")\n\n    def decorator(func):\n        @functools.wraps(func)\n        def wrapper(*args, **kwargs):\n            last = None\n            for _ in range(n):\n                last = func(*args, **kwargs)\n            return last\n        return wrapper\n\n    return decorator\n\n@repeat(n=3)\ndef shout(text):\n    return text.upper()\n\nprint(shout(\"hi\"))\n```python\n\n---\n## 3) A more practical example: retry on exceptions\n\n```python\nimport functools\n\ndef retry(*, tries=3, exceptions=(Exception,)):\n    def decorator(func):\n        @functools.wraps(func)\n        def wrapper(*args, **kwargs):\n            last_err = None\n            for _ in range(tries):\n                try:\n                    return func(*args, **kwargs)\n                except exceptions as e:\n                    last_err = e\n            raise last_err\n        return wrapper\n    return decorator\n\ncounter = {\"n\": 0}\n\n@retry(tries=3, exceptions=(ValueError,))\ndef flaky():\n    counter[\"n\"] += 1\n    if counter[\"n\"] < 3:\n        raise ValueError(\"not yet\")\n    return \"ok\"\n\nprint(flaky())\n```",
+  "difficulty": "hard",
+  "doc_id": "doc-decorator-factories-hard-writing-decorators-that-accept-arguments-safely-4ccdf84500",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "",
+    "source_file": "data/corpus_raw/functions_hard_4.json",
+    "url": ""
+  },
+  "title": "Decorator factories (hard): writing decorators that accept arguments safely",
+  "type": "tutorial"
+}

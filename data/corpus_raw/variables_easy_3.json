@@ -1,0 +1,21 @@
+{
+  "title": "Assignment basics beyond '=': multiple targets, unpacking, and what can be assigned to",
+  "content": "Python assignment is more flexible than “name = value”. The language reference describes different assignment target forms and their behavior.\n\n---\n## 1) One value to multiple names\n\n```python\nx = y = z = 0\nprint(x, y, z)  # 0 0 0\n```\n\n---\n## 2) Unpacking assignment (tuple/list)\n\n```python\npoint = (10, 20)\nx, y = point\nprint(x, y)      # 10 20\n\nrgb = [255, 128, 0]\nr, g, b = rgb\nprint(r, g, b)\n```\n\nCommon error case:\n\n```python\n# a, b = (1, 2, 3)  # ValueError: too many values to unpack\n```\n\n---\n## 3) Assignment targets are not only names\nYou can assign to:\n- names\n- attributes (`obj.attr`)\n- items (`obj[index]` or `obj[key]`)\n\n### Attribute assignment\n\n```python\nclass Box:\n    pass\n\nb = Box()\nb.value = 99\nprint(b.value)\n```\n\n### Item assignment (list/dict)\n\n```python\nnums = [1, 2, 3]\nnums[0] = 100\nprint(nums)  # [100, 2, 3]\n\nm = {\"count\": 1}\nm[\"count\"] = m[\"count\"] + 1\nprint(m)     # {'count': 2}\n```\n\n---\n## 4) A compact “many forms” practice block\n\n```python\nx = 1\nx = x + 1\n\n(a, b) = (10, 20)\n\nnums = [0, 1, 2]\nnums[2] = 99\n\nclass C:\n    pass\nobj = C()\nobj.name = \"Ada\"\n\nprint(x, a, b)\nprint(nums)\nprint(obj.name)\n```\n",
+  "type": "reference",
+  "concept_tags": ["variables", "assignment", "unpacking", "attributes", "lists", "dicts"],
+  "difficulty": "intro",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "code-heavy educational corpus",
+    "chunking_hints": ["multiple assignment forms", "mixed targets (name/attr/item)", "includes a common unpacking failure case"]
+  },
+  "provenance": {
+    "url": "https://docs.python.org/3/reference/simple_stmts.html",
+    "license": "PSF Documentation License (Python docs)",
+    "attribution": "Python Software Foundation / Python Documentation Contributors",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

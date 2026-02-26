@@ -1,0 +1,7 @@
+dataset,config,n,labeled_rows,MRR@10,nDCG@10,context_precision,faithfulness_proxy,answer_relevance_proxy,parsability_rate,validator_pass_rate,fallback_rate,retrieval_latency_ms_avg,generation_latency_ms_avg,total_tokens
+mbpp,A,500,500,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.001,0.0,0
+mbpp,B,500,500,0.991,0.570296,0.9444,0.0,0.0,0.0,0.0,0.0,544.565,0.0,0
+mbpp,C,500,500,0.963667,0.485326,0.876,0.0,0.0,0.0,0.0,0.0,487.629,0.0,0
+mbpp,D,500,500,1.0,0.598161,0.9996,0.0,0.0,0.0,0.0,0.0,392.206,0.0,0
+mbpp,E,500,500,0.997,0.460146,0.9568,0.0,0.0,0.0,0.0,0.0,411.125,0.0,0
+mbpp,F,500,500,1.0,0.598161,0.9996,0.0,0.0,0.0,0.0,0.0,382.157,0.0,0

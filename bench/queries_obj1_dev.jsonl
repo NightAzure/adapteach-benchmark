@@ -1,0 +1,30 @@
+{"id": "obj1-dev-001", "category": "concept_explanation", "topic": "variables", "query": "Explain variable assignment and reassignment in Python with one short code snippet and one common beginner mistake."}
+{"id": "obj1-dev-002", "category": "concept_explanation", "topic": "variables", "query": "Explain identity vs equality (`is` vs `==`) using a list example."}
+{"id": "obj1-dev-003", "category": "debugging", "topic": "variables", "query": "A learner gets `NameError` from a misspelled variable. Explain the error and show a corrected snippet."}
+{"id": "obj1-dev-004", "category": "debugging", "topic": "variables", "query": "Explain why `UnboundLocalError` happens when assigning inside a function and show one fix."}
+{"id": "obj1-dev-005", "category": "concept_explanation", "topic": "variables", "query": "Explain aliasing vs copying for lists and when to use `copy()` vs `deepcopy()`."}
+{"id": "obj1-dev-006", "category": "misconception", "topic": "variables", "query": "Correct this misconception: variables store values directly instead of references to objects."}
+{"id": "obj1-dev-007", "category": "concept_explanation", "topic": "loops", "query": "Explain `for` with `range()` and show a small counting example."}
+{"id": "obj1-dev-008", "category": "concept_explanation", "topic": "loops", "query": "Explain `while` loops and when they are better than `for` loops."}
+{"id": "obj1-dev-009", "category": "debugging", "topic": "loops", "query": "A `while` loop runs forever because state is not updated. Diagnose and fix."}
+{"id": "obj1-dev-010", "category": "debugging", "topic": "loops", "query": "Find and fix an off-by-one error in a loop intended to print 1 through 10."}
+{"id": "obj1-dev-011", "category": "concept_explanation", "topic": "loops", "query": "Explain `break` and `continue` with one concrete example each."}
+{"id": "obj1-dev-012", "category": "misconception", "topic": "loops", "query": "Correct this misconception: a `for` loop always executes at least once."}
+{"id": "obj1-dev-013", "category": "concept_explanation", "topic": "conditionals", "query": "Explain `if`, `elif`, and `else` using a grading-rule example."}
+{"id": "obj1-dev-014", "category": "concept_explanation", "topic": "conditionals", "query": "Explain truthy and falsy values used in condition checks."}
+{"id": "obj1-dev-015", "category": "debugging", "topic": "conditionals", "query": "A nested `if` block has wrong indentation and logic. Explain and fix the structure."}
+{"id": "obj1-dev-016", "category": "debugging", "topic": "conditionals", "query": "A condition mixes `and` and `or` incorrectly. Explain precedence and fix with parentheses."}
+{"id": "obj1-dev-017", "category": "concept_explanation", "topic": "conditionals", "query": "Explain guard clauses and why they improve readability over deep nesting."}
+{"id": "obj1-dev-018", "category": "misconception", "topic": "conditionals", "query": "Correct this misconception: only `True` and `False` can appear in Python `if` conditions."}
+{"id": "obj1-dev-019", "category": "concept_explanation", "topic": "functions", "query": "Explain function parameters and return values with one short example."}
+{"id": "obj1-dev-020", "category": "concept_explanation", "topic": "functions", "query": "Explain default parameters and why mutable defaults can cause bugs."}
+{"id": "obj1-dev-021", "category": "debugging", "topic": "functions", "query": "A function prints output but returns `None`. Explain the issue and show the corrected version."}
+{"id": "obj1-dev-022", "category": "debugging", "topic": "functions", "query": "A call fails due to positional/keyword argument misuse. Explain and fix."}
+{"id": "obj1-dev-023", "category": "concept_explanation", "topic": "functions", "query": "Explain local scope vs global scope inside functions with a minimal example."}
+{"id": "obj1-dev-024", "category": "misconception", "topic": "functions", "query": "Correct this misconception: Python functions cannot return multiple values."}
+{"id": "obj1-dev-025", "category": "concept_explanation", "topic": "loops", "query": "Explain `for ... else` and exactly when the `else` clause executes."}
+{"id": "obj1-dev-026", "category": "debugging", "topic": "conditionals", "query": "A validation condition accepts invalid ages due to comparison logic. Identify and fix it."}
+{"id": "obj1-dev-027", "category": "concept_explanation", "topic": "functions", "query": "Explain `*args` and `**kwargs` with one beginner-friendly example."}
+{"id": "obj1-dev-028", "category": "debugging", "topic": "variables", "query": "A student expects `copy = original` to create an independent list. Explain what actually happens."}
+{"id": "obj1-dev-029", "category": "concept_explanation", "topic": "conditionals", "query": "Explain nested conditionals vs guard-clause style with a short refactor example."}
+{"id": "obj1-dev-030", "category": "concept_explanation", "topic": "functions", "query": "Explain decorators at a conceptual level and show one minimal wrapper example."}

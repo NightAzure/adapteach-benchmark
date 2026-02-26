@@ -1,0 +1,21 @@
+{
+  "title": "Assignment vs copying objects: aliasing, shallow copies, and deep copies",
+  "content": "A moderate jump in understanding variables is realizing that **assignment does not copy objects**. It creates a binding (a reference) from a name to an object.\n\n---\n## 1) Aliasing: two names, one object\n\n```python\noriginal = {\"k\": 1}\nalias = original\n\nalias[\"k\"] = 999\nprint(original)  # {'k': 999}\nprint(alias)     # {'k': 999}\n```\n\nBoth names refer to the same dictionary, so changing it via one name is visible through the other.\n\n---\n## 2) Shallow copy: new outer object, shared inner objects\nA shallow copy duplicates the outer container but keeps references to nested objects.\n\n```python\nouter1 = {\"nums\": [1, 2, 3], \"tag\": \"A\"}\nouter2 = outer1.copy()  # dict shallow copy\n\nouter2[\"tag\"] = \"B\"          # changes only outer2\nouter2[\"nums\"].append(4)      # changes the shared inner list\n\nprint(outer1)  # nums changed!\nprint(outer2)\n```\n\nThis can surprise people: the dict itself is copied, but the list inside is still shared.\n\n---\n## 3) Shallow copying techniques you’ll see often\n\n```python\nlst1 = [1, 2, 3]\nlst2 = lst1.copy()   # or lst1[:] or list(lst1)\n\nlst2.append(999)\nprint(lst1)  # [1, 2, 3]\nprint(lst2)  # [1, 2, 3, 999]\n```\n\nFor nested lists, shallow copying the outer list isn’t enough:\n\n```python\ngrid1 = [[0, 0], [0, 0]]\ngrid2 = grid1.copy()  # shallow\n\ngrid2[0].append(1)\nprint(grid1)  # inner list mutated (shared)\nprint(grid2)\n```\n\n---\n## 4) Deep copy: recursively copies nested objects\nWhen you need an independent copy of a nested structure, use `copy.deepcopy`.\n\n```python\nimport copy\n\ngrid1 = [[0, 0], [0, 0]]\ngrid3 = copy.deepcopy(grid1)\n\ngrid3[0].append(1)\nprint(grid1)  # unchanged\nprint(grid3)  # changed\n```\n\n---\n## 5) A practical mini checklist\n- If you only need a separate outer container and you are fine sharing nested objects → shallow copy is fine.\n- If you need nested objects to be independent too → deep copy.\n- If the object is immutable (like an int or string), aliasing is usually not a problem.\n\n---\n## 6) Short “spot the aliasing” practice block\n\n```python\nimport copy\n\na = {\"x\": [1, 2]}\nb = a\nc = a.copy()\nd = copy.deepcopy(a)\n\nb[\"x\"].append(3)\nprint(a)  # affects a\nprint(c)  # shallow copy shares inner list\nprint(d)  # deep copy independent\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["variables", "assignment", "aliasing", "mutability", "copy", "shallow-copy", "deepcopy", "lists", "dicts"],
+  "difficulty": "moderate",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["nested structure examples", "copy vs deepcopy contrast", "multi-step practice block"]
+  },
+  "provenance": {
+    "url": "https://docs.python.org/3/library/copy.html",
+    "license": "PSF Documentation License (Python docs)",
+    "attribution": "Python Software Foundation / Python Documentation Contributors",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

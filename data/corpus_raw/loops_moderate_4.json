@@ -1,0 +1,19 @@
+{
+  "title": "Looping over text lines: clean parsing, counters, and early-exit patterns",
+  "content": "Looping over lines is a common real-world use of `for`. This example stays moderate: it mixes parsing, counters, and early exit, but remains readable.\n\n---\n## 1) Basic line iteration (list of lines)\n\n```python\nlines = [\n    \"INFO start\\n\",\n    \"WARN low disk\\n\",\n    \"INFO running\\n\",\n    \"ERROR crashed\\n\",\n]\n\nfor line in lines:\n    print(line.strip())\n```\n\n---\n## 2) Counting types of lines\n\n```python\ncounts = {\"INFO\": 0, \"WARN\": 0, \"ERROR\": 0}\n\nfor line in lines:\n    text = line.strip()\n    level, *rest = text.split(\" \")\n    if level in counts:\n        counts[level] += 1\n\nprint(counts)\n```\n\n---\n## 3) Stop when a condition is met (early exit)\n\n```python\nfor line in lines:\n    if line.startswith(\"ERROR\"):\n        print(\"first error:\", line.strip())\n        break\nelse:\n    print(\"no errors\")\n```\n\n---\n## 4) Practice-style block: extract messages after WARN\n\n```python\nwarn_msgs = []\nfor line in lines:\n    if not line.startswith(\"WARN\"):\n        continue\n    warn_msgs.append(line.strip())\n\nprint(warn_msgs)\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["loops", "for", "break", "continue", "loop-else", "parsing", "counting", "unpacking"],
+  "difficulty": "moderate",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "created_at": "2026-02-09",
+    "intended_use": "educational corpus"
+  },
+  "provenance": {
+    "source": "ai_generated",
+    "generator": "ChatGPT",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": true
+}

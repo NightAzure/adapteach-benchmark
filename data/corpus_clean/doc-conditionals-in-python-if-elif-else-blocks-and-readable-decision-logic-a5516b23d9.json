@@ -1,0 +1,25 @@
+{
+  "ai_generated": false,
+  "concept_tags": [
+    "blocks",
+    "comparisons",
+    "conditionals",
+    "elif",
+    "else",
+    "if",
+    "indentation",
+    "truthiness"
+  ],
+  "content": "Conditionals let your program choose different actions based on data. In Python, the basic tools are `if`, `elif`, and `else`.\n\n---\n## 1) The simplest if-statement\n\n```python\nx = 10\nif x > 5:\n    print(\"x is bigger than 5\")\n```python\n\nPython uses **indentation** to define the block (the code controlled by the `if`).\n\n---\n## 2) if/else: choose between two paths\n\n```python\nage = 17\nif age >= 18:\n    print(\"adult\")\nelse:\n    print(\"minor\")\n```python\n\n---\n## 3) elif: multiple choices\nUse `elif` to avoid deeply nested `if` statements.\n\n```python\nscore = 82\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelse:\n    grade = \"D\"\n\nprint(\"grade\", grade)\n```python\n\n---\n## 4) Comparing the same value to several constants\n\n```python\ncmd = \"start\"\n\nif cmd == \"start\":\n    print(\"starting\")\nelif cmd == \"stop\":\n    print(\"stopping\")\nelif cmd == \"status\":\n    print(\"show status\")\nelse:\n    print(\"unknown command\")\n```python\n\n---\n## 5) Truthiness: if checks a truth value\nMany expressions can be used directly in `if`.\n\n```python\nitems = []\nif items:\n    print(\"has items\")\nelse:\n    print(\"empty\")\n\nname = \"\"\nif not name:\n    print(\"missing name\")\n```python\n\n---\n## 6) A small practice script: validate and respond\n\n```python\ntext = \"42\"\n\nif text.isdigit():\n    n = int(text)\n    if n % 2 == 0:\n        print(\"even\")\n    else:\n        print(\"odd\")\nelse:\n    print(\"not a number\")\n```",
+  "difficulty": "intro",
+  "doc_id": "doc-conditionals-in-python-if-elif-else-blocks-and-readable-decision-logic-a5516b23d9",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "PSF Documentation License; code examples are dual-licensed (PSF-2.0 and BSD-0 starting Python 3.8.6+)",
+    "source_file": "data/corpus_raw/conditionals_easy_1.json",
+    "url": "https://docs.python.org/3/tutorial/controlflow.html"
+  },
+  "title": "Conditionals in Python: if/elif/else, blocks, and readable decision logic",
+  "type": "tutorial"
+}

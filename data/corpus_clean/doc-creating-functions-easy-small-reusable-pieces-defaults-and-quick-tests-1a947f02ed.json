@@ -1,0 +1,24 @@
+{
+  "ai_generated": false,
+  "concept_tags": [
+    "assert",
+    "debugging",
+    "defaults",
+    "functions",
+    "parameters",
+    "return",
+    "testing"
+  ],
+  "content": "A practical way to learn functions is to write small, single-purpose helpers and then test them quickly.\n\n---\n## 1) Start simple: a function that transforms data\n\n```python\ndef normalize_name(name):\n    return name.strip().title()\n\nprint(normalize_name(\"  aNa  \"))\n```python\n\n---\n## 2) Add parameters to generalize behavior\n\n```python\ndef repeat(text, times):\n    return text * times\n\nprint(repeat(\"ha\", 3))\n```python\n\n---\n## 3) Return values instead of printing\nReturning makes functions easier to reuse.\n\n```python\ndef perimeter_rectangle(w, h):\n    return 2 * (w + h)\n\np = perimeter_rectangle(3, 4)\nprint(p)\n```python\n\n---\n## 4) Default parameter values\nDefaults reduce clutter in calls.\n\n```python\ndef greet(name, punctuation=\"!\"):\n    return \"Hello \" + name + punctuation\n\nprint(greet(\"Ana\"))\nprint(greet(\"Ana\", \"...\"))\n```python\n\n---\n## 5) Quick tests (lightweight)\nA simple \u201cassert\u201d can confirm a function behaves as expected.\n\n```python\ndef add_tax(price, rate=0.12):\n    return price * (1 + rate)\n\nassert add_tax(100) == 112\nassert add_tax(100, 0.10) == 110\nprint(\"tests passed\")\n```python\n\n---\n## 6) A bigger example: build a small pipeline\n\n```python\ndef parse_ints(tokens):\n    out = []\n    for t in tokens:\n        s = str(t).strip()\n        if s.isdigit():\n            out.append(int(s))\n    return out\n\ndef mean(nums):\n    if not nums:\n        return None\n    return sum(nums) / len(nums)\n\nraw = [\"10\", \"x\", \" 5 \", \"-\", 7]\nnums = parse_ints(raw)\nprint(\"nums\", nums)\nprint(\"mean\", mean(nums))\n```",
+  "difficulty": "intro",
+  "doc_id": "doc-creating-functions-easy-small-reusable-pieces-defaults-and-quick-tests-1a947f02ed",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "CC BY 4.0 (The Carpentries lesson material)",
+    "source_file": "data/corpus_raw/functions_easy_3.json",
+    "url": "https://carpentries-incubator.github.io/python-novice-programming-gapminder/08-func/index.html"
+  },
+  "title": "Creating functions (easy): small reusable pieces, defaults, and quick tests",
+  "type": "tutorial"
+}

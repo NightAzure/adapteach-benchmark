@@ -1,0 +1,23 @@
+{
+  "ai_generated": true,
+  "concept_tags": [
+    "boolean-logic",
+    "conditionals",
+    "readability",
+    "refactoring",
+    "testing",
+    "truthiness"
+  ],
+  "content": "Hard conditionals often fail not because they\u2019re wrong, but because they\u2019re hard to read and easy to modify incorrectly. A practical approach is to name sub-conditions and avoid relying on truthiness when empty values are meaningful.\n\n---\n## 1) A too-dense condition\n\n```python\nuser = {\"name\": \"\", \"age\": \"20\", \"role\": \"editor\", \"active\": True}\n\nif user and user.get(\"active\") and user.get(\"role\") in {\"admin\", \"editor\"} and user.get(\"age\") and str(user.get(\"age\")).isdigit():\n    print(\"allowed\")\nelse:\n    print(\"denied\")\n```python\n\nThis works, but it\u2019s difficult to review.\n\n---\n## 2) Refactor into named checks\n\n```python\nuser = {\"name\": \"\", \"age\": \"20\", \"role\": \"editor\", \"active\": True}\n\nis_present = user is not None\nis_active = is_present and user.get(\"active\") is True\nrole = user.get(\"role\") if is_present else None\nhas_role = role in {\"admin\", \"editor\"}\n\nage_raw = user.get(\"age\") if is_present else None\nage_text = None if age_raw is None else str(age_raw).strip()\nage_is_number = age_text is not None and age_text.isdigit()\n\nallowed = is_active and has_role and age_is_number\n\nprint(\"allowed\" if allowed else \"denied\")\n```python\n\n---\n## 3) Truthiness traps: empty string vs missing\nIf empty string is different from missing, do not use `or` defaulting blindly.\n\n```python\nname = \"\"          # intentionally empty\nfallback = \"(anon)\"\nprint(name or fallback)  # prints fallback, maybe not desired\n\n# explicit handling\nif name is None:\n    display = fallback\nelse:\n    display = name\nprint(display)\n```python\n\n---\n## 4) Test-friendly function design\n\n```python\ndef can_edit(user):\n    if user is None:\n        return False\n    if user.get(\"active\") is not True:\n        return False\n    if user.get(\"role\") not in {\"admin\", \"editor\"}:\n        return False\n\n    age = user.get(\"age\")\n    if age is None:\n        return False\n\n    s = str(age).strip()\n    if not s.isdigit():\n        return False\n\n    return True\n\ncases = [\n    {\"active\": True, \"role\": \"editor\", \"age\": \"20\"},\n    {\"active\": True, \"role\": \"viewer\", \"age\": \"20\"},\n    {\"active\": False, \"role\": \"editor\", \"age\": \"20\"},\n    None,\n]\n\nfor c in cases:\n    print(c, can_edit(c))\n```python\n\n---\n## 5) Takeaway\n- When a condition is long, name sub-conditions.\n- Be explicit when `0` and `\"\"` are valid values.\n- Write a function and test it with several cases.",
+  "difficulty": "hard",
+  "doc_id": "doc-taming-complex-conditions-name-sub-checks-avoid-truthiness-traps-and-make-behavior-testable-6abc768071",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "",
+    "source_file": "data/corpus_raw/conditionals_hard_5.json",
+    "url": ""
+  },
+  "title": "Taming complex conditions: name sub-checks, avoid truthiness traps, and make behavior testable",
+  "type": "tutorial"
+}

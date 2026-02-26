@@ -1,0 +1,21 @@
+{
+  "title": "Keyword-only arguments (PEP 3102): making calls clearer with '*'",
+  "content": "Keyword-only arguments are parameters that **must** be supplied by name. They help avoid ambiguous calls and make code self-documenting.\n\nIn a function definition, putting a bare `*` means: “everything after this is keyword-only.”\n\n---\n## 1) Basic keyword-only example\n\n```python\ndef connect(host, port, *, timeout=5):\n    return f\"connect {host}:{port} timeout={timeout}\"\n\nprint(connect(\"example.com\", 443, timeout=10))\n# connect(\"example.com\", 443, 10) fails because timeout is keyword-only\n```\n\n---\n## 2) Why keyword-only is useful\nConsider a function with many optional settings. Keyword-only prevents calls like:\n\n```python\n# confusing\n# connect(\"example.com\", 443, 10)\n\n# clearer\nconnect(\"example.com\", 443, timeout=10)\n```\n\n---\n## 3) Combining normal args + keyword-only args\n\n```python\ndef draw(text, width=10, *, fill=\"-\", align=\"center\"):\n    if len(text) >= width:\n        return text\n\n    pad = width - len(text)\n    if align == \"left\":\n        return text + fill * pad\n    if align == \"right\":\n        return fill * pad + text\n\n    left = pad // 2\n    right = pad - left\n    return fill * left + text + fill * right\n\nprint(draw(\"hi\", 12, fill=\"*\", align=\"left\"))\nprint(draw(\"hi\", 12, fill=\"*\", align=\"right\"))\nprint(draw(\"hi\", 12, fill=\"*\"))\n```\n\n---\n## 4) Practice: make a function safer by forcing named options\n\n```python\ndef parse_int(text, *, base=10):\n    text = text.strip()\n    try:\n        return int(text, base)\n    except ValueError:\n        return None\n\nprint(parse_int(\"FF\", base=16))\nprint(parse_int(\" 42 \"))\n```\n",
+  "type": "reference",
+  "concept_tags": ["functions", "keyword-only", "pep-3102", "special-parameters", "api-design", "readability"],
+  "difficulty": "moderate",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["bare * keyword-only", "why keyword-only matters", "options-heavy function example", "parsing practice"]
+  },
+  "provenance": {
+    "url": "https://peps.python.org/pep-3102/",
+    "license": "Public domain (PEP text)",
+    "attribution": "PEP 3102 authors (see PEP header)",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Why UnboundLocalError happens: assignment makes a name local (and how to fix it safely)",
+  "content": "A frequent hard-level error is:\n\n> `UnboundLocalError: local variable 'x' referenced before assignment`\n\nThis happens because Python decides whether a name is **local** by scanning the function body for **any binding** to that name. If the name is assigned anywhere in the function, it is treated as local throughout that function (unless declared `global` or `nonlocal`).\n\n---\n## 1) Minimal example\n\n```python\nx = 10\n\ndef f():\n    print(x)  # Python thinks x is local here\n    x = 3     # because of this assignment\n\n# f() would raise UnboundLocalError\n```\n\nWhy? Because `x = 3` makes `x` local to `f()`, so `print(x)` tries to read the local `x` before it has a value.\n\n---\n## 2) Fix pattern A: rename the local variable (best default)\nIf you didn’t intend to modify the global `x`, use a different name.\n\n```python\nx = 10\n\ndef f():\n    print(x)      # reads global x\n    x_local = 3\n    return x_local\n\nprint(f())\nprint(x)          # still 10\n```\n\n---\n## 3) Fix pattern B: pass input as arguments and return results (pure function style)\n\n```python\ndef f(x):\n    print(x)\n    x = 3\n    return x\n\nprint(f(10))\n```\n\n---\n## 4) Fix pattern C: global (only if you truly mean shared module state)\n\n```python\nx = 10\n\ndef f():\n    global x\n    print(x)\n    x = 3\n\nf()\nprint(x)  # 3\n```\n\n---\n## 5) A more realistic “branch” example\nEven if the assignment happens only in one branch, it still makes the name local for the whole function.\n\n```python\nflag = False\nx = 100\n\ndef g():\n    if flag:\n        x = 5   # assignment exists → x is local in g\n    return x\n\n# g() would error if flag is False (it tries to return local x before assignment)\n```\n\nA safe refactor is to always assign before use:\n\n```python\nflag = False\nx = 100\n\ndef g():\n    local_x = x\n    if flag:\n        local_x = 5\n    return local_x\n\nprint(g())\n```\n\n---\n## 6) Related: comprehension variables can also create bindings\nSome confusing cases happen when a name becomes local because of a binding inside an expression (e.g., comprehensions).\n\n```python\ndef h():\n    # If you bind a name inside the function body, it can change locality expectations.\n    data = [1, 2, 3]\n    out = [v for v in data]\n    return out\n\nprint(h())\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["variables", "scope", "unboundlocalerror", "binding", "debugging", "global"],
+  "difficulty": "hard",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["error-first narrative", "multiple fix patterns", "branch-induced locality", "clean runnable blocks"]
+  },
+  "provenance": {
+    "url": "https://stackoverflow.com/questions/10851906/how-can-i-fix-unboundlocalerror-local-variable-referenced-before-assignment",
+    "license": "CC BY-SA (Stack Overflow; version depends on post date)",
+    "attribution": "Stack Overflow contributors (see post timeline)",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Functions as callables (easy): inputs, outputs, and simple scoping intuition",
+  "content": "A function is a callable piece of code that can accept arguments and optionally return a value.\n\n---\n## 1) A function as a reusable “recipe”\n\n```python\ndef headline(text):\n    return text.strip().title()\n\nprint(headline(\"  hello world  \"))\nprint(headline(\"python functions\"))\n```\n\n---\n## 2) Parameters vs arguments\n- **Parameters**: names in the function definition\n- **Arguments**: actual values passed in calls\n\n```python\ndef multiply(a, b):\n    return a * b\n\nprint(multiply(6, 7))\n```\n\n---\n## 3) Local variables live inside the function\nVariables created inside a function normally exist only within that function.\n\n```python\nx = \"global\"\n\ndef demo():\n    x = \"local\"\n    return x\n\nprint(demo())\nprint(x)\n```\n\n---\n## 4) Pure functions (easy-to-test)\nA pure-style function depends only on inputs and returns outputs (no hidden state).\n\n```python\ndef clamp(n, lo, hi):\n    if n < lo:\n        return lo\n    if n > hi:\n        return hi\n    return n\n\nprint(clamp(5, 0, 10))\nprint(clamp(-2, 0, 10))\nprint(clamp(99, 0, 10))\n```\n\n---\n## 5) A slightly larger example: compute basic stats\n\n```python\ndef stats(nums):\n    if not nums:\n        return None\n    return {\n        \"count\": len(nums),\n        \"min\": min(nums),\n        \"max\": max(nums),\n        \"sum\": sum(nums),\n        \"avg\": sum(nums) / len(nums),\n    }\n\nprint(stats([10, 20, 30]))\nprint(stats([]))\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["functions", "callables", "parameters", "arguments", "scope", "locals", "pure-functions"],
+  "difficulty": "intro",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["scope demo block", "pure clamp function", "stats function returning dict", "multiple small examples"]
+  },
+  "provenance": {
+    "url": "https://en.wikibooks.org/wiki/Python_Programming/Functions",
+    "license": "CC BY-SA 4.0 (Wikibooks) / also dual-licensed with GFDL per Wikibooks policy",
+    "attribution": "Wikibooks contributors",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

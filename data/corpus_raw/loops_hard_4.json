@@ -1,0 +1,19 @@
+{
+  "title": "One-pass iterators in real code: exhaustion pitfalls and safe handling patterns",
+  "content": "Hard loop bugs often happen when code accidentally assumes an iterator can be reused like a list. Many iteration tools are **one-pass**.\n\n---\n## 1) The bug: consuming an iterator early\n\n```python\ndef data_stream():\n    for i in range(3):\n        yield i\n\nit = data_stream()\nprint(\"preview\", list(it))\n\n# later...\nfor x in it:\n    print(\"loop\", x)\n# nothing prints (iterator already consumed)\n```\n\n---\n## 2) Fix A: recreate the iterator when needed\n\n```python\ndef data_stream():\n    for i in range(3):\n        yield i\n\nit1 = data_stream()\nprint(\"preview\", list(it1))\n\nit2 = data_stream()\nfor x in it2:\n    print(\"loop\", x)\n```\n\n---\n## 3) Fix B: snapshot to a list (when data size is manageable)\n\n```python\nit = (i for i in range(5))\nitems = list(it)\n\nprint(\"preview\", items)\nfor x in items:\n    print(\"loop\", x)\n```\n\n---\n## 4) Fix C: split iteration carefully\nIf you must use the same underlying stream twice, you may need different strategies.\nA straightforward approach is to compute what you need in a single pass.\n\n```python\nnums = (i for i in range(10))\n\ncount = 0\ns = 0\nfor n in nums:\n    count += 1\n    s += n\n\nprint(\"count\", count)\nprint(\"sum\", s)\n```\n\n---\n## 5) A pipeline example where single-pass is a feature\n\n```python\nlines = [\"10\\n\", \"x\\n\", \"5\\n\", \"7\\n\"]\nnums = (int(line) for line in lines if line.strip().isdigit())\n\nprint(sum(nums))\n```\n\n---\n## 6) Practical takeaway\n- If you need multiple passes, prefer **recreating the iterator**.\n- If data is small enough, snapshot with `list()`.\n- If the dataset is large, restructure to compute results in one pass.\n",
+  "type": "tutorial",
+  "concept_tags": ["loops", "iterators", "exhaustion", "generators", "pipelines", "debugging"],
+  "difficulty": "hard",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "created_at": "2026-02-09",
+    "intended_use": "educational corpus"
+  },
+  "provenance": {
+    "source": "ai_generated",
+    "generator": "ChatGPT",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": true
+}

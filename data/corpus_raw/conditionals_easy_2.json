@@ -1,0 +1,21 @@
+{
+  "title": "Conditional statements: comparisons, elif chains, and simple input-based decisions",
+  "content": "Conditionals are used to run code only when certain conditions are true. Most beginner programs use conditionals for validation (checking input) and for choosing behavior.\n\n---\n## 1) Basic comparisons\n\n```python\nx = 3\nif x < 5:\n    print(\"small\")\n```\n\n```python\nname = \"Ana\"\nif name == \"Ana\":\n    print(\"hello\")\nelse:\n    print(\"hi\")\n```\n\n---\n## 2) Using elif to avoid nesting\n\n```python\ntemp = 22\nif temp < 0:\n    print(\"freezing\")\nelif temp < 15:\n    print(\"cold\")\nelif temp < 25:\n    print(\"warm\")\nelse:\n    print(\"hot\")\n```\n\n---\n## 3) Combining conditions with and/or\n\n```python\nage = 20\nmember = True\n\nif age >= 18 and member:\n    print(\"allowed\")\nelse:\n    print(\"not allowed\")\n```\n\n---\n## 4) A password attempt example (typical beginner pattern)\n\n```python\npassword = \"unicorn\"\ntries = 0\n\nwhile True:\n    guess = input(\"Password: \")\n    if guess == password:\n        print(\"success\")\n        break\n\n    tries += 1\n    if tries >= 3:\n        print(\"denied\")\n        break\n```\n\n---\n## 5) Practice: compare sums\n\n```python\na = 40\nb = 70\n\nif a + b > 100:\n    print(\"big number\")\nelse:\n    print(\"not big\")\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["conditionals", "if", "elif", "else", "comparisons", "and-or", "input-validation", "practice"],
+  "difficulty": "intro",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["mix of tiny examples and one longer script", "and/or usage", "if + while combined pattern"]
+  },
+  "provenance": {
+    "url": "https://en.wikibooks.org/wiki/Python_Programming/Conditional_Statements",
+    "license": "CC BY-SA 4.0 (Wikibooks) / also dual-licensed with GFDL per Wikibooks policy",
+    "attribution": "Wikibooks contributors",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

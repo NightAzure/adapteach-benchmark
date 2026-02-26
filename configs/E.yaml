@@ -1,0 +1,6 @@
+pipeline:
+  name: E
+  retrieval_enabled: true
+  hybrid: true
+  graph_expansion: true
+  chunking: ast

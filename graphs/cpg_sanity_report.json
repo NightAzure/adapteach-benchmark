@@ -1,0 +1,198 @@
+{
+  "bounded": true,
+  "call_collision_log": [
+    {
+      "callee_name": "f",
+      "candidate_count": 3
+    },
+    {
+      "callee_name": "decorator",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 3
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 4
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 5
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 6
+    },
+    {
+      "callee_name": "compute",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 7
+    },
+    {
+      "callee_name": "make_counter",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 7
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 7
+    },
+    {
+      "callee_name": "greet",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 9
+    },
+    {
+      "callee_name": "greet",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "greet",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "append_item",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "append_item",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 11
+    },
+    {
+      "callee_name": "demo",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "inc",
+      "candidate_count": 4
+    },
+    {
+      "callee_name": "connect",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 11
+    },
+    {
+      "callee_name": "compute",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 11
+    },
+    {
+      "callee_name": "add",
+      "candidate_count": 6
+    },
+    {
+      "callee_name": "make_counter",
+      "candidate_count": 3
+    },
+    {
+      "callee_name": "find_first_even",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "find_first_even",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 12
+    },
+    {
+      "callee_name": "make_counter",
+      "candidate_count": 3
+    },
+    {
+      "callee_name": "mul",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "add",
+      "candidate_count": 7
+    },
+    {
+      "callee_name": "process",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "process",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "show_fields",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 14
+    },
+    {
+      "callee_name": "power",
+      "candidate_count": 3
+    },
+    {
+      "callee_name": "power",
+      "candidate_count": 3
+    },
+    {
+      "callee_name": "demo",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 14
+    },
+    {
+      "callee_name": "inc",
+      "candidate_count": 5
+    },
+    {
+      "callee_name": "state",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 15
+    },
+    {
+      "callee_name": "f",
+      "candidate_count": 15
+    },
+    {
+      "callee_name": "fib",
+      "candidate_count": 2
+    },
+    {
+      "callee_name": "fib",
+      "candidate_count": 2
+    }
+  ],
+  "edge_count": 2623,
+  "edge_type_counts": {
+    "CALLS": 63,
+    "CONTAINS": 2315,
+    "DEF-USE": 245
+  },
+  "node_count": 3775,
+  "orphan_node_count": 0,
+  "orphan_node_ids": []
+}

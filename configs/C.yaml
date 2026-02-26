@@ -1,0 +1,6 @@
+pipeline:
+  name: C
+  retrieval_enabled: true
+  hybrid: true
+  graph_expansion: false
+  chunking: fixed

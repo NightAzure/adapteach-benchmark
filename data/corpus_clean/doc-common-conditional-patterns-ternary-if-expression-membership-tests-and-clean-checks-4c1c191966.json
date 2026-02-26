@@ -1,0 +1,24 @@
+{
+  "ai_generated": false,
+  "concept_tags": [
+    "comparisons",
+    "conditionals",
+    "else",
+    "guard-clauses",
+    "if",
+    "membership",
+    "ternary"
+  ],
+  "content": "Beyond basic if/else, Python has small patterns that make code shorter while staying readable.\n\n---\n## 1) The if-expression (ternary)\nPython supports a compact expression form:\n\n```python\nresult = \"yay\" if 1 < 2 else \"nay\"\nprint(result)\n```python\n\nThis is best used for simple decisions.\n\n---\n## 2) Membership tests with in\n\n```python\nallowed = {\"start\", \"stop\", \"status\"}\ncmd = \"status\"\n\nif cmd in allowed:\n    print(\"ok\")\nelse:\n    print(\"unknown\")\n```python\n\n---\n## 3) Guard clauses (simple early returns)\nIn functions, a clear style is to return early for invalid input.\n\n```python\ndef parse_age(text):\n    text = text.strip()\n    if not text.isdigit():\n        return None\n    return int(text)\n\nprint(parse_age(\" 21 \"))\nprint(parse_age(\"x\"))\n```python\n\n---\n## 4) Comparing multiple conditions cleanly\n\n```python\nx = 10\nif 0 <= x <= 100:\n    print(\"in range\")\n```python\n\n---\n## 5) A slightly larger example: categorize a value\n\n```python\ndef categorize(n):\n    if n < 0:\n        return \"negative\"\n    elif n == 0:\n        return \"zero\"\n    else:\n        return \"positive\"\n\nfor v in [-2, 0, 5]:\n    print(v, categorize(v))\n```",
+  "difficulty": "intro",
+  "doc_id": "doc-common-conditional-patterns-ternary-if-expression-membership-tests-and-clean-checks-4c1c191966",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "CC BY-SA 3.0 (Learn X in Y Minutes)",
+    "source_file": "data/corpus_raw/conditionals_easy_3.json",
+    "url": "https://learnxinyminutes.com/python/"
+  },
+  "title": "Common conditional patterns: ternary if-expression, membership tests, and clean checks",
+  "type": "tutorial"
+}

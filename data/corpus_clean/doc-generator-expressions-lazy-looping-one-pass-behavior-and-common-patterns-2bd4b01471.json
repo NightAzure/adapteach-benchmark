@@ -1,0 +1,23 @@
+{
+  "ai_generated": false,
+  "concept_tags": [
+    "generator-expressions",
+    "generators",
+    "lazy-evaluation",
+    "loops",
+    "memory-efficiency",
+    "pipelines"
+  ],
+  "content": "Generator expressions are a compact way to build a lazy iterator. They often replace loops that \u201cbuild a list just to consume it once.\u201d\n\n---\n## 1) Generator expression vs list comprehension\nList comprehensions build the whole list immediately:\n\n```python\nsquares_list = [x * x for x in range(10)]\nprint(squares_list)\n```python\n\nGenerator expressions are lazy (produce items on demand):\n\n```python\nsquares_gen = (x * x for x in range(10))\nprint(squares_gen)          # generator object\nprint(next(squares_gen))    # 0\nprint(next(squares_gen))    # 1\n```python\n\n---\n## 2) Common \u201creduce\u201d patterns: sum/min/max\nA classic use is feeding a generator directly into a reducer.\n\n```python\nlines = [\"a\", \"abcd\", \"xy\", \"\"]\n\nlongest = max((len(line) for line in lines if line))\nprint(longest)  # 4\n```python\n\n```python\nnums = [1, 2, 3, 4]\nprint(sum(n * n for n in nums))  # 30\n```python\n\n---\n## 3) One-pass behavior (easy to forget)\nOnce you consume a generator, it\u2019s exhausted.\n\n```python\ng = (x for x in range(3))\nprint(list(g))  # [0, 1, 2]\nprint(list(g))  # []\n```python\n\nIf you need two passes, recreate it:\n\n```python\nprint(list(x for x in range(3)))\nprint(list(x for x in range(3)))\n```python\n\n---\n## 4) Nested generator expressions (powerful but can get dense)\n\n```python\npairs = ((a, b) for a in range(3) for b in range(3) if a != b)\nprint(list(pairs))\n```python\n\n---\n## 5) A readable pipeline-style example\n\n```python\ntext = [\"10\", \"x\", \"5\", \"-\", \"7\"]\n\nnums = (int(t) for t in text if t.isdigit())\nprint(sum(nums))\n```python\n\n---\n## 6) Practical takeaways\n- Generator expressions are great for large inputs.\n- They are lazy and single-pass.\n- Keep them readable; if it becomes too dense, expand into a generator function or a loop.",
+  "difficulty": "hard",
+  "doc_id": "doc-generator-expressions-lazy-looping-one-pass-behavior-and-common-patterns-2bd4b01471",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "Public domain (PEP text)",
+    "source_file": "data/corpus_raw/loops_hard_3.json",
+    "url": "https://peps.python.org/pep-0289/"
+  },
+  "title": "Generator expressions: lazy looping, one-pass behavior, and common patterns",
+  "type": "reference"
+}

@@ -1,0 +1,120 @@
+{"id": "obj1-dev-001", "category": "concept_explanation", "topic": "variables", "query": "Explain variable assignment and reassignment in Python with one short code snippet and one common beginner mistake."}
+{"id": "obj1-dev-002", "category": "concept_explanation", "topic": "variables", "query": "Explain identity vs equality (`is` vs `==`) using a list example."}
+{"id": "obj1-dev-003", "category": "debugging", "topic": "variables", "query": "A learner gets `NameError` from a misspelled variable. Explain the error and show a corrected snippet."}
+{"id": "obj1-dev-004", "category": "debugging", "topic": "variables", "query": "Explain why `UnboundLocalError` happens when assigning inside a function and show one fix."}
+{"id": "obj1-dev-005", "category": "concept_explanation", "topic": "variables", "query": "Explain aliasing vs copying for lists and when to use `copy()` vs `deepcopy()`."}
+{"id": "obj1-dev-006", "category": "misconception", "topic": "variables", "query": "Correct this misconception: variables store values directly instead of references to objects."}
+{"id": "obj1-dev-007", "category": "concept_explanation", "topic": "loops", "query": "Explain `for` with `range()` and show a small counting example."}
+{"id": "obj1-dev-008", "category": "concept_explanation", "topic": "loops", "query": "Explain `while` loops and when they are better than `for` loops."}
+{"id": "obj1-dev-009", "category": "debugging", "topic": "loops", "query": "A `while` loop runs forever because state is not updated. Diagnose and fix."}
+{"id": "obj1-dev-010", "category": "debugging", "topic": "loops", "query": "Find and fix an off-by-one error in a loop intended to print 1 through 10."}
+{"id": "obj1-dev-011", "category": "concept_explanation", "topic": "loops", "query": "Explain `break` and `continue` with one concrete example each."}
+{"id": "obj1-dev-012", "category": "misconception", "topic": "loops", "query": "Correct this misconception: a `for` loop always executes at least once."}
+{"id": "obj1-dev-013", "category": "concept_explanation", "topic": "conditionals", "query": "Explain `if`, `elif`, and `else` using a grading-rule example."}
+{"id": "obj1-dev-014", "category": "concept_explanation", "topic": "conditionals", "query": "Explain truthy and falsy values used in condition checks."}
+{"id": "obj1-dev-015", "category": "debugging", "topic": "conditionals", "query": "A nested `if` block has wrong indentation and logic. Explain and fix the structure."}
+{"id": "obj1-dev-016", "category": "debugging", "topic": "conditionals", "query": "A condition mixes `and` and `or` incorrectly. Explain precedence and fix with parentheses."}
+{"id": "obj1-dev-017", "category": "concept_explanation", "topic": "conditionals", "query": "Explain guard clauses and why they improve readability over deep nesting."}
+{"id": "obj1-dev-018", "category": "misconception", "topic": "conditionals", "query": "Correct this misconception: only `True` and `False` can appear in Python `if` conditions."}
+{"id": "obj1-dev-019", "category": "concept_explanation", "topic": "functions", "query": "Explain function parameters and return values with one short example."}
+{"id": "obj1-dev-020", "category": "concept_explanation", "topic": "functions", "query": "Explain default parameters and why mutable defaults can cause bugs."}
+{"id": "obj1-dev-021", "category": "debugging", "topic": "functions", "query": "A function prints output but returns `None`. Explain the issue and show the corrected version."}
+{"id": "obj1-dev-022", "category": "debugging", "topic": "functions", "query": "A call fails due to positional/keyword argument misuse. Explain and fix."}
+{"id": "obj1-dev-023", "category": "concept_explanation", "topic": "functions", "query": "Explain local scope vs global scope inside functions with a minimal example."}
+{"id": "obj1-dev-024", "category": "misconception", "topic": "functions", "query": "Correct this misconception: Python functions cannot return multiple values."}
+{"id": "obj1-dev-025", "category": "concept_explanation", "topic": "loops", "query": "Explain `for ... else` and exactly when the `else` clause executes."}
+{"id": "obj1-dev-026", "category": "debugging", "topic": "conditionals", "query": "A validation condition accepts invalid ages due to comparison logic. Identify and fix it."}
+{"id": "obj1-dev-027", "category": "concept_explanation", "topic": "functions", "query": "Explain `*args` and `**kwargs` with one beginner-friendly example."}
+{"id": "obj1-dev-028", "category": "debugging", "topic": "variables", "query": "A student expects `copy = original` to create an independent list. Explain what actually happens."}
+{"id": "obj1-dev-029", "category": "concept_explanation", "topic": "conditionals", "query": "Explain nested conditionals vs guard-clause style with a short refactor example."}
+{"id": "obj1-dev-030", "category": "concept_explanation", "topic": "functions", "query": "Explain decorators at a conceptual level and show one minimal wrapper example."}
+{"id": "obj1-test-001", "category": "concept_explanation", "topic": "variables", "query": "Explain Python name binding across local, global, and nonlocal scopes with a compact example."}
+{"id": "obj1-test-002", "category": "debugging", "topic": "variables", "query": "A closure inside a loop captures the final loop value for all lambdas. Explain and fix."}
+{"id": "obj1-test-003", "category": "misconception", "topic": "variables", "query": "Correct this misconception: `x += 1` always behaves exactly like `x = x + 1` for all objects."}
+{"id": "obj1-test-004", "category": "concept_explanation", "topic": "variables", "query": "Explain tuple unpacking with starred targets and one common error."}
+{"id": "obj1-test-005", "category": "debugging", "topic": "variables", "query": "A function mutates a list argument and causes side effects in caller code. Diagnose and fix."}
+{"id": "obj1-test-006", "category": "concept_explanation", "topic": "variables", "query": "Explain assignment, aliasing, and object identity in a small list/dict example."}
+{"id": "obj1-test-007", "category": "concept_explanation", "topic": "loops", "query": "Explain nested loops for grid traversal and how to reason about iteration counts."}
+{"id": "obj1-test-008", "category": "debugging", "topic": "loops", "query": "A `for` loop edits the same list while iterating and skips elements. Explain and fix."}
+{"id": "obj1-test-009", "category": "concept_explanation", "topic": "loops", "query": "Explain `break`, `continue`, and `loop-else` in one coherent example."}
+{"id": "obj1-test-010", "category": "misconception", "topic": "loops", "query": "Correct this misconception: `continue` exits the loop like `break`."}
+{"id": "obj1-test-011", "category": "debugging", "topic": "loops", "query": "A loop using `enumerate` has shifted index logic and wrong labels. Diagnose and fix."}
+{"id": "obj1-test-012", "category": "concept_explanation", "topic": "loops", "query": "Explain iterator exhaustion and why the second pass over an iterator may be empty."}
+{"id": "obj1-test-013", "category": "concept_explanation", "topic": "conditionals", "query": "Explain short-circuit behavior in `and`/`or` and why operand order matters."}
+{"id": "obj1-test-014", "category": "debugging", "topic": "conditionals", "query": "A chain of separate `if` statements should be mutually exclusive. Refactor to correct logic."}
+{"id": "obj1-test-015", "category": "concept_explanation", "topic": "conditionals", "query": "Explain boolean precedence with a minimal example needing parentheses."}
+{"id": "obj1-test-016", "category": "misconception", "topic": "conditionals", "query": "Correct this misconception: `elif` is unnecessary because separate `if` blocks are equivalent."}
+{"id": "obj1-test-017", "category": "debugging", "topic": "conditionals", "query": "A ternary expression returns opposite values due to inverted condition. Explain and correct."}
+{"id": "obj1-test-018", "category": "concept_explanation", "topic": "conditionals", "query": "Explain structural pattern matching (`match`) vs if-elif chains for simple command routing."}
+{"id": "obj1-test-019", "category": "concept_explanation", "topic": "functions", "query": "Explain positional-only and keyword-only parameters with one practical function API example."}
+{"id": "obj1-test-020", "category": "debugging", "topic": "functions", "query": "A recursive function lacks a base case and crashes. Diagnose and provide corrected logic."}
+{"id": "obj1-test-021", "category": "concept_explanation", "topic": "functions", "query": "Explain decorators with one wrapper example and what gets called first."}
+{"id": "obj1-test-022", "category": "misconception", "topic": "functions", "query": "Correct this misconception: decorators magically change results without wrapper logic."}
+{"id": "obj1-test-023", "category": "debugging", "topic": "functions", "query": "A mutable default argument accumulates values across calls. Explain and fix."}
+{"id": "obj1-test-024", "category": "concept_explanation", "topic": "functions", "query": "Explain closures and nonlocal updates for stateful function factories."}
+{"id": "obj1-test-025", "category": "debugging", "topic": "loops", "query": "A `while True` retry loop never exits after success due to control-flow bug. Fix it."}
+{"id": "obj1-test-026", "category": "concept_explanation", "topic": "conditionals", "query": "Explain safe input validation patterns using conditionals and guard checks."}
+{"id": "obj1-test-027", "category": "concept_explanation", "topic": "functions", "query": "Explain `functools.lru_cache` conceptually and when it helps."}
+{"id": "obj1-test-028", "category": "debugging", "topic": "variables", "query": "A student confuses class-body scope and function local scope. Clarify with corrected code."}
+{"id": "obj1-test-029", "category": "concept_explanation", "topic": "conditionals", "query": "Explain chained comparisons and common pitfalls in conditional checks."}
+{"id": "obj1-test-030", "category": "debugging", "topic": "functions", "query": "A function call breaks due to wrong `*args`/`**kwargs` unpacking. Explain and correct."}
+{"id": "q-001", "category": "concept_explanation", "topic": "variables", "query": "What is variable assignment in Python? Show how Python handles dynamic typing with a short example."}
+{"id": "q-002", "category": "debugging", "topic": "loops", "query": "This while loop runs forever. Find the bug and explain the fix: i = 0\\nwhile i < 5:\\n    print(i)"}
+{"id": "q-003", "category": "artifact_generation", "topic": "conditionals", "query": "Generate a mutation exercise where a student must fix an if/elif/else chain with a wrong comparison operator."}
+{"id": "q-004", "category": "misconception", "topic": "functions", "query": "Correct this misconception: 'A Python function can only return a single value.'"}
+{"id": "q-005", "category": "concept_explanation", "topic": "lists", "query": "Explain Python list indexing, negative indexing, and slicing with concrete examples."}
+{"id": "q-006", "category": "debugging", "topic": "recursion", "query": "Fix this recursive function that causes infinite recursion: def count_down(n):\\n    print(n)\\n    count_down(n-1)"}
+{"id": "q-007", "category": "artifact_generation", "topic": "loops", "query": "Create a Parsons problem for iterating over a dictionary's key-value pairs using items()."}
+{"id": "q-008", "category": "tracing", "topic": "conditionals", "query": "Trace this code step by step and give the final output: x = 10\\nif x > 5:\\n    if x > 15:\\n        print('big')\\n    else:\\n        print('medium')\\nelse:\\n    print('small')"}
+{"id": "q-009", "category": "concept_explanation", "topic": "dictionaries", "query": "Explain how Python dictionaries store key-value pairs and demonstrate add, update, delete, and lookup operations."}
+{"id": "q-010", "category": "debugging", "topic": "strings", "query": "Fix the TypeError: name = 'Alice'\\nage = 25\\nprint('Hello ' + name + ', you are ' + age + ' years old.')"}
+{"id": "q-011", "category": "concept_explanation", "topic": "OOP", "query": "Explain the purpose of __init__ in a Python class. Show a simple class definition with instance attributes."}
+{"id": "q-012", "category": "misconception", "topic": "loops", "query": "Correct this misconception: 'break exits the entire program, not just the current loop.'"}
+{"id": "q-013", "category": "artifact_generation", "topic": "functions", "query": "Generate a mutation exercise where a student must fix a function with an incorrect default argument value."}
+{"id": "q-014", "category": "tracing", "topic": "loops", "query": "Trace this nested loop and list all values printed: for i in range(3):\\n    for j in range(2):\\n        print(i, j)"}
+{"id": "q-015", "category": "concept_explanation", "topic": "exceptions", "query": "Explain try/except/else/finally blocks in Python with a practical file-reading example."}
+{"id": "q-016", "category": "debugging", "topic": "lists", "query": "Fix the IndexError: nums = [1, 2, 3]\\nprint(nums[3])"}
+{"id": "q-017", "category": "artifact_generation", "topic": "OOP", "query": "Create a Parsons problem for defining a Python class with __init__, an instance method, and proper self usage."}
+{"id": "q-018", "category": "concept_explanation", "topic": "recursion", "query": "Explain base case and recursive case in recursion. Show a correct recursive factorial function and trace the call stack."}
+{"id": "q-019", "category": "misconception", "topic": "variables", "query": "Correct this misconception: 'You need to declare a variable type before using it in Python.'"}
+{"id": "q-020", "category": "debugging", "topic": "dictionaries", "query": "Fix the KeyError in this code: d = {'a': 1, 'b': 2}\\nprint(d['c'])"}
+{"id": "q-021", "category": "concept_explanation", "topic": "comprehensions", "query": "Explain list comprehensions with conditional filtering. Compare a traditional for loop to its equivalent comprehension."}
+{"id": "q-022", "category": "artifact_generation", "topic": "exceptions", "query": "Generate a mutation exercise where the student must fix an incorrect exception type in an except clause."}
+{"id": "q-023", "category": "tracing", "topic": "functions", "query": "Trace this code and give the printed value: def add(a, b=10):\\n    return a + b\\nresult = add(5)\\nprint(result)"}
+{"id": "q-024", "category": "concept_explanation", "topic": "scope", "query": "Explain the LEGB rule in Python (Local, Enclosing, Global, Built-in) with a code example showing each scope level."}
+{"id": "q-025", "category": "debugging", "topic": "OOP", "query": "Fix this class where increment fails: class Counter:\\n    count = 0\\n    def increment(self):\\n        count += 1"}
+{"id": "q-026", "category": "artifact_generation", "topic": "sorting", "query": "Create a mutation exercise for a bubble sort implementation where the comparison operator is mutated."}
+{"id": "q-027", "category": "misconception", "topic": "OOP", "query": "Correct this misconception: 'self is a reserved keyword in Python like for or if.'"}
+{"id": "q-028", "category": "concept_explanation", "topic": "strings", "query": "Explain Python string immutability and demonstrate common string methods: split, join, strip, replace, and format."}
+{"id": "q-029", "category": "debugging", "topic": "functions", "query": "Fix this function that always returns None: def multiply(a, b):\\n    result = a * b"}
+{"id": "q-030", "category": "concept_explanation", "topic": "file_io", "query": "Explain how to read and write text files in Python using the with statement and why it is preferred over manual open/close."}
+{"id": "d-001", "category": "concept_explanation", "topic": "data_types", "query": "Explain the difference between int, float, and complex in Python with type conversion examples."}
+{"id": "d-002", "category": "debugging", "topic": "conditionals", "query": "Explain the logic error here: score = 75\\nif score >= 90: grade = 'A'\\nelif score >= 80: grade = 'B'\\nelif score >= 70: grade = 'C'\\nelse: grade = 'F' — does it correctly handle score == 70?"}
+{"id": "d-003", "category": "artifact_generation", "topic": "lists", "query": "Generate a mutation exercise where a student must fix an off-by-one error in a list slicing operation."}
+{"id": "d-004", "category": "misconception", "topic": "recursion", "query": "Correct this misconception: 'Recursive solutions are always more efficient than iterative ones.'"}
+{"id": "d-005", "category": "concept_explanation", "topic": "tuples", "query": "Explain the difference between tuples and lists in Python. When is a tuple the better choice?"}
+{"id": "d-006", "category": "debugging", "topic": "scope", "query": "Fix the UnboundLocalError: x = 10\\ndef add_five():\\n    x = x + 5\\n    return x\\nprint(add_five())"}
+{"id": "d-007", "category": "artifact_generation", "topic": "conditionals", "query": "Create a Parsons problem for a grade classifier that uses if/elif/else to assign letter grades."}
+{"id": "d-008", "category": "tracing", "topic": "loops", "query": "Trace this code and state the final value printed: total = 0\\nfor num in [1, 2, 3, 4, 5]:\\n    if num % 2 == 0:\\n        total += num\\nprint(total)"}
+{"id": "d-009", "category": "concept_explanation", "topic": "sets", "query": "Explain Python sets and their operations: union, intersection, difference, and symmetric difference with examples."}
+{"id": "d-010", "category": "debugging", "topic": "OOP", "query": "Fix the TypeError in this inheritance: class Animal:\\n    def speak(self):\\n        return 'Sound'\\nclass Dog(Animal):\\n    def speak(self):\\n        return super.speak() + ' Woof'"}
+{"id": "d-011", "category": "concept_explanation", "topic": "loops", "query": "Explain the difference between for loops and while loops in Python. Give an example where each is the natural choice."}
+{"id": "d-012", "category": "misconception", "topic": "lists", "query": "Correct this misconception: 'Writing new_list = old_list creates an independent copy of the list.'"}
+{"id": "d-013", "category": "artifact_generation", "topic": "recursion", "query": "Generate a mutation exercise for a recursive Fibonacci function where the base case is incorrectly mutated."}
+{"id": "d-014", "category": "tracing", "topic": "functions", "query": "Trace this code and give all printed values: def double(x):\\n    return x * 2\\ndef apply(f, val):\\n    return f(val)\\nprint(apply(double, 4))"}
+{"id": "d-015", "category": "concept_explanation", "topic": "functions", "query": "Explain *args and **kwargs in Python functions. Show a practical example using both."}
+{"id": "d-016", "category": "debugging", "topic": "comprehensions", "query": "Fix this list comprehension that produces wrong output: evens = [x for x in range(10) if x % 2 == 1]"}
+{"id": "d-017", "category": "artifact_generation", "topic": "strings", "query": "Create a Parsons problem for reversing a string using Python slice notation."}
+{"id": "d-018", "category": "concept_explanation", "topic": "OOP", "query": "Explain the difference between class attributes and instance attributes in Python with an example showing how they behave differently."}
+{"id": "d-019", "category": "misconception", "topic": "exceptions", "query": "Correct this misconception: 'Using a bare except: clause is good practice because it catches all possible errors.'"}
+{"id": "d-020", "category": "debugging", "topic": "loops", "query": "Fix this for loop that skips the last element: items = [10, 20, 30, 40, 50]\\nfor i in range(len(items) - 1):\\n    print(items[i])"}
+{"id": "d-021", "category": "concept_explanation", "topic": "variables", "query": "Explain Python's pass-by-object-reference semantics. How does it behave differently for mutable vs immutable types?"}
+{"id": "d-022", "category": "artifact_generation", "topic": "OOP", "query": "Generate a mutation exercise where a student must fix an incorrect use of self in a class method."}
+{"id": "d-023", "category": "tracing", "topic": "conditionals", "query": "Trace this code and give the output: a = True\\nb = False\\nif a and not b:\\n    print('yes')\\nelif a or b:\\n    print('maybe')\\nelse:\\n    print('no')"}
+{"id": "d-024", "category": "concept_explanation", "topic": "sorting", "query": "Explain how Python's sorted() and list.sort() differ. Show sorting a list of dicts by a key using a lambda."}
+{"id": "d-025", "category": "debugging", "topic": "exceptions", "query": "Add error handling to this code that crashes on invalid input: num = int(input('Enter a number: '))\\nprint(10 / num)"}
+{"id": "d-026", "category": "artifact_generation", "topic": "loops", "query": "Generate a mutation exercise for a while loop where the loop termination condition operator is mutated."}
+{"id": "d-027", "category": "misconception", "topic": "scope", "query": "Correct this misconception: 'Variables defined inside an if block are local to that block and cannot be accessed outside it in Python.'"}
+{"id": "d-028", "category": "concept_explanation", "topic": "comprehensions", "query": "Explain dictionary comprehensions and set comprehensions in Python with filtering examples."}
+{"id": "d-029", "category": "debugging", "topic": "file_io", "query": "What is wrong with this code beyond missing with statement: f = open('data.txt')\\ndata = f.read()\\nprocess(data) — what happens if process() raises an exception?"}
+{"id": "d-030", "category": "concept_explanation", "topic": "OOP", "query": "Explain Python's __str__ and __repr__ methods. When is each called and what is the difference between them?"}

@@ -1,0 +1,25 @@
+{
+  "ai_generated": false,
+  "concept_tags": [
+    "all",
+    "any",
+    "boolean-ops",
+    "bugs",
+    "conditionals",
+    "precedence",
+    "short-circuit",
+    "truthiness"
+  ],
+  "content": "At hard difficulty, conditionals become tricky because `and`/`or` do more than produce True/False: they can **return one of their operands**, and they **short-circuit** evaluation.\n\n---\n## 1) and/or return values\n\n```python\nprint(0 and 99)        # 0\nprint(5 and 99)        # 99\n\nprint(\"hi\" or \"bye\")  # hi\nprint(\"\" or \"bye\")    # bye\n```python\n\nThis is why \u201cdefaulting\u201d works:\n\n```python\nname = \"\"\ndisplay = name or \"(anonymous)\"\nprint(display)\n```python\n\nBut be careful: `0` is falsy, so it will also fall back.\n\n```python\nn = 0\nprint(n or 123)  # 123 (maybe not desired)\n```python\n\nIf 0 is valid, be explicit:\n\n```python\nn = 0\nfallback = 123\nprint(fallback if n is None else n)\n```python\n\n---\n## 2) Short-circuit prevents errors (guard patterns)\n\n```python\nobj = None\n\n# safe: second part runs only if first part is True\nif obj is not None and obj.get(\"k\") == 1:\n    print(\"match\")\nelse:\n    print(\"no\")\n```python\n\n---\n## 3) Precedence and parentheses\nWhen conditions get long, parentheses improve clarity.\n\n```python\nage = 19\nhas_ticket = True\nvip = False\n\nif (age >= 18 and has_ticket) or vip:\n    print(\"enter\")\nelse:\n    print(\"no\")\n```python\n\n---\n## 4) any/all: make complex checks readable\n\n```python\npassword = \"Abc123\"\n\nrules = [\n    len(password) >= 6,\n    any(ch.isdigit() for ch in password),\n    any(ch.isupper() for ch in password),\n]\n\nif all(rules):\n    print(\"ok\")\nelse:\n    print(\"try again\")\n```python\n\n---\n## 5) A larger example: choose a safe default without losing information\n\n```python\ndef display_name(user):\n    # user may be None, or a dict with optional fields\n    if user is None:\n        return \"(missing user)\"\n\n    # prefer nickname, then name, then id\n    nick = user.get(\"nickname\")\n    name = user.get(\"name\")\n    uid = user.get(\"id\")\n\n    # careful: nick/name could be empty strings and that might matter\n    if nick is not None and nick != \"\":\n        return nick\n    if name is not None and name != \"\":\n        return name\n    return f\"user-{uid}\" if uid is not None else \"(unknown)\"\n\nprint(display_name({\"nickname\": \"\", \"name\": \"Ana\", \"id\": 7}))\nprint(display_name({\"name\": \"\", \"id\": 7}))\nprint(display_name(None))\n```",
+  "difficulty": "hard",
+  "doc_id": "doc-advanced-boolean-behavior-and-or-return-operands-evaluation-order-and-subtle-conditional-bugs-ad6a34ada1",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "PSF Documentation License (Python docs)",
+    "source_file": "data/corpus_raw/conditionals_hard_3.json",
+    "url": "https://docs.python.org/3/reference/expressions.html"
+  },
+  "title": "Advanced boolean behavior: and/or return operands, evaluation order, and subtle conditional bugs",
+  "type": "reference"
+}

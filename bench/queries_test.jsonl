@@ -1,0 +1,30 @@
+{"id": "q-001", "category": "concept_explanation", "topic": "variables", "query": "What is variable assignment in Python? Show how Python handles dynamic typing with a short example."}
+{"id": "q-002", "category": "debugging", "topic": "loops", "query": "This while loop runs forever. Find the bug and explain the fix: i = 0\\nwhile i < 5:\\n    print(i)"}
+{"id": "q-003", "category": "artifact_generation", "topic": "conditionals", "query": "Generate a mutation exercise where a student must fix an if/elif/else chain with a wrong comparison operator."}
+{"id": "q-004", "category": "misconception", "topic": "functions", "query": "Correct this misconception: 'A Python function can only return a single value.'"}
+{"id": "q-005", "category": "concept_explanation", "topic": "lists", "query": "Explain Python list indexing, negative indexing, and slicing with concrete examples."}
+{"id": "q-006", "category": "debugging", "topic": "recursion", "query": "Fix this recursive function that causes infinite recursion: def count_down(n):\\n    print(n)\\n    count_down(n-1)"}
+{"id": "q-007", "category": "artifact_generation", "topic": "loops", "query": "Create a Parsons problem for iterating over a dictionary's key-value pairs using items()."}
+{"id": "q-008", "category": "tracing", "topic": "conditionals", "query": "Trace this code step by step and give the final output: x = 10\\nif x > 5:\\n    if x > 15:\\n        print('big')\\n    else:\\n        print('medium')\\nelse:\\n    print('small')"}
+{"id": "q-009", "category": "concept_explanation", "topic": "dictionaries", "query": "Explain how Python dictionaries store key-value pairs and demonstrate add, update, delete, and lookup operations."}
+{"id": "q-010", "category": "debugging", "topic": "strings", "query": "Fix the TypeError: name = 'Alice'\\nage = 25\\nprint('Hello ' + name + ', you are ' + age + ' years old.')"}
+{"id": "q-011", "category": "concept_explanation", "topic": "OOP", "query": "Explain the purpose of __init__ in a Python class. Show a simple class definition with instance attributes."}
+{"id": "q-012", "category": "misconception", "topic": "loops", "query": "Correct this misconception: 'break exits the entire program, not just the current loop.'"}
+{"id": "q-013", "category": "artifact_generation", "topic": "functions", "query": "Generate a mutation exercise where a student must fix a function with an incorrect default argument value."}
+{"id": "q-014", "category": "tracing", "topic": "loops", "query": "Trace this nested loop and list all values printed: for i in range(3):\\n    for j in range(2):\\n        print(i, j)"}
+{"id": "q-015", "category": "concept_explanation", "topic": "exceptions", "query": "Explain try/except/else/finally blocks in Python with a practical file-reading example."}
+{"id": "q-016", "category": "debugging", "topic": "lists", "query": "Fix the IndexError: nums = [1, 2, 3]\\nprint(nums[3])"}
+{"id": "q-017", "category": "artifact_generation", "topic": "OOP", "query": "Create a Parsons problem for defining a Python class with __init__, an instance method, and proper self usage."}
+{"id": "q-018", "category": "concept_explanation", "topic": "recursion", "query": "Explain base case and recursive case in recursion. Show a correct recursive factorial function and trace the call stack."}
+{"id": "q-019", "category": "misconception", "topic": "variables", "query": "Correct this misconception: 'You need to declare a variable type before using it in Python.'"}
+{"id": "q-020", "category": "debugging", "topic": "dictionaries", "query": "Fix the KeyError in this code: d = {'a': 1, 'b': 2}\\nprint(d['c'])"}
+{"id": "q-021", "category": "concept_explanation", "topic": "comprehensions", "query": "Explain list comprehensions with conditional filtering. Compare a traditional for loop to its equivalent comprehension."}
+{"id": "q-022", "category": "artifact_generation", "topic": "exceptions", "query": "Generate a mutation exercise where the student must fix an incorrect exception type in an except clause."}
+{"id": "q-023", "category": "tracing", "topic": "functions", "query": "Trace this code and give the printed value: def add(a, b=10):\\n    return a + b\\nresult = add(5)\\nprint(result)"}
+{"id": "q-024", "category": "concept_explanation", "topic": "scope", "query": "Explain the LEGB rule in Python (Local, Enclosing, Global, Built-in) with a code example showing each scope level."}
+{"id": "q-025", "category": "debugging", "topic": "OOP", "query": "Fix this class where increment fails: class Counter:\\n    count = 0\\n    def increment(self):\\n        count += 1"}
+{"id": "q-026", "category": "artifact_generation", "topic": "sorting", "query": "Create a mutation exercise for a bubble sort implementation where the comparison operator is mutated."}
+{"id": "q-027", "category": "misconception", "topic": "OOP", "query": "Correct this misconception: 'self is a reserved keyword in Python like for or if.'"}
+{"id": "q-028", "category": "concept_explanation", "topic": "strings", "query": "Explain Python string immutability and demonstrate common string methods: split, join, strip, replace, and format."}
+{"id": "q-029", "category": "debugging", "topic": "functions", "query": "Fix this function that always returns None: def multiply(a, b):\\n    result = a * b"}
+{"id": "q-030", "category": "concept_explanation", "topic": "file_io", "query": "Explain how to read and write text files in Python using the with statement and why it is preferred over manual open/close."}

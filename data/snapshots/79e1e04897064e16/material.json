@@ -1,0 +1,1863 @@
+{
+  "chunk_count": 1493,
+  "clean_hashes": [
+    {
+      "file": "doc-a-beginner-walkthrough-script-variables-input-conversions-and-simple-validation-f3e8aaa124.json",
+      "sha256": "8a8ac2b58d1e3d8f89dc4073eea0b9775b550d6aba5d31d09fccf7d7fabb526c"
+    },
+    {
+      "file": "doc-advanced-boolean-behavior-and-or-return-operands-evaluation-order-and-subtle-conditional-bugs-ad6a34ada1.json",
+      "sha256": "a3d5224f4c809bc38570fa5438be7e8ab15d08a72159a5e41eb457bcd2c6b941"
+    },
+    {
+      "file": "doc-assignment-basics-beyond-multiple-targets-unpacking-and-what-can-be-assigned-to-5caa9f3196.json",
+      "sha256": "b2c1682e6212f2dfcb3182a310be47c4a3437bb6a5dd870fa318775211c06d19"
+    },
+    {
+      "file": "doc-assignment-expressions-in-conditionals-compact-patterns-without-losing-clarity-2c1f405af6.json",
+      "sha256": "eb807df5059bbbdddd13a23746dce41f3e401e96a1d2a1a9c1d4d5aa7dd8a0de"
+    },
+    {
+      "file": "doc-assignment-vs-copying-objects-aliasing-shallow-copies-and-deep-copies-174c976547.json",
+      "sha256": "9c228dc53eff4f6cb0714041bd1028dbd0650c95bbeed4e6bbf540ad92df0190"
+    },
+    {
+      "file": "doc-augmented-assignment-how-works-evaluation-order-and-mutability-effects-bd8676a13f.json",
+      "sha256": "a6c201c020d1c9a26d3b1a8bac48cabee2748961292957c69871a3337b0f2154"
+    },
+    {
+      "file": "doc-building-a-loop-pipeline-parse-tokens-transform-streams-and-produce-a-report-3d5ba4846e.json",
+      "sha256": "aa38162ada6ed982cb6351802cd2970508b106ae18c703cb7075feaf8286d8a4"
+    },
+    {
+      "file": "doc-closures-and-late-binding-loop-variable-capture-and-dependable-ways-to-freeze-values-562b6f6f3d.json",
+      "sha256": "4171e264bd86641d5dd8d1d1c24404899fe65535795cc87cf3a214d05d8d4230"
+    },
+    {
+      "file": "doc-closures-moderate-inner-functions-nonlocal-state-and-function-factories-ce0632487d.json",
+      "sha256": "4bd5f404552ad8e2f85bb6f5f455e9bca731ee7ac39665a7d6290721af7f40bc"
+    },
+    {
+      "file": "doc-combining-conditions-and-or-not-parentheses-and-readable-checks-271c64265a.json",
+      "sha256": "19d833731eb7c019a0f1a83123f946d96b62018ede4f060ded060c7d868ca944"
+    },
+    {
+      "file": "doc-common-conditional-patterns-ternary-if-expression-membership-tests-and-clean-checks-4c1c191966.json",
+      "sha256": "8ba2deea0ce42e3df6141e3ee5c22647cf03e8ac85f7371f7cbe3e1d5683ba1a"
+    },
+    {
+      "file": "doc-conditional-expressions-using-a-if-cond-else-b-responsibly-37656294f5.json",
+      "sha256": "9bc90c64b9d1eab6f78e767acf18977ae2fe26c1dfe8dd33aea4400a1950539b"
+    },
+    {
+      "file": "doc-conditional-statements-comparisons-elif-chains-and-simple-input-based-decisions-6e8ed35909.json",
+      "sha256": "1477de35d5235284d6f548d247e5cec8a3f916dd54e2a0ddb4968ad41a09f252"
+    },
+    {
+      "file": "doc-conditionals-in-python-if-elif-else-blocks-and-readable-decision-logic-a5516b23d9.json",
+      "sha256": "9d25630f7b9a35f02fd647c6ff015f4a0c462d6dd27a77fed68be9b6bbb25405"
+    },
+    {
+      "file": "doc-creating-functions-easy-small-reusable-pieces-defaults-and-quick-tests-1a947f02ed.json",
+      "sha256": "72a8296d0bda99ee65aff302c7aeb36963475dd58e933e4f4020a3b348e51d16"
+    },
+    {
+      "file": "doc-creating-variables-by-assignment-naming-input-and-common-errors-af2dd8ed46.json",
+      "sha256": "6a28e4cee128fef81c73cf1a1060f7e88cb58b8cfe50c1840c4b7dba31d6de4a"
+    },
+    {
+      "file": "doc-decorator-factories-hard-writing-decorators-that-accept-arguments-safely-4ccdf84500.json",
+      "sha256": "5b441b7bc63a06276edadbab798bfa15c3fb896ac5db75f64f691bbc15a917b9"
+    },
+    {
+      "file": "doc-decorators-hard-what-decorator-means-stacking-decorators-and-readable-function-transformations-7abd2d614e.json",
+      "sha256": "afeb97ca7d72ec0253cda3b7f62e35a15b46d6b5eda6705d9a7892de912c73b6"
+    },
+    {
+      "file": "doc-everyday-loop-patterns-iterating-lists-dicts-enumerate-and-building-results-ec0531db99.json",
+      "sha256": "8284c81661bb01643864232ba9396eab79c78a8f69ca4c604e05087e80fcddb9"
+    },
+    {
+      "file": "doc-extended-unpacking-rest-splitting-sequences-safe-patterns-and-common-errors-595c1e439b.json",
+      "sha256": "e6b28c20bcae7113d40e0ef032889434a357e5814feca1f287ea27f8c4918641"
+    },
+    {
+      "file": "doc-flexible-function-inputs-easy-args-kwargs-and-keyword-only-parameters-b887e583fa.json",
+      "sha256": "1ccbe3d889aef2ed79441687cb9fe028399773f2bc80c0275ecfaacbb2c55939"
+    },
+    {
+      "file": "doc-function-parameters-moderate-defaults-keyword-args-args-kwargs-and-special-parameters-930de72751.json",
+      "sha256": "b775a3b043d1dcc47c59e61239a0d26cfdbfd7898f55f0eb2d5cfe5be701ae5b"
+    },
+    {
+      "file": "doc-functions-as-callables-easy-inputs-outputs-and-simple-scoping-intuition-204adfda5a.json",
+      "sha256": "bc9693527c38cfcf1d381bcbcd6e6d04713542a2ff3b2c0a3001e76fbde2e131"
+    },
+    {
+      "file": "doc-generator-expressions-lazy-looping-one-pass-behavior-and-common-patterns-2bd4b01471.json",
+      "sha256": "0c64380a8d8c2a698ed90c1c9a5be8f9ce33096e700a1929dc08f55451bf18a3"
+    },
+    {
+      "file": "doc-guard-clauses-for-complex-conditionals-early-returns-readable-validation-and-safer-flows-6bf0f16cf5.json",
+      "sha256": "953a2552f02ed59e186e4502549bb1c2d714b115549ba98c7420b247b6e31370"
+    },
+    {
+      "file": "doc-higher-order-function-tools-hard-functools-wraps-lru-cache-cache-and-partial-7b6a338369.json",
+      "sha256": "b490438b188b55d3f76f86326a5176648996e967d595fcb20bbaf56908241518"
+    },
+    {
+      "file": "doc-how-for-loops-really-work-iterables-iterators-next-and-stopiteration-fe19a3476f.json",
+      "sha256": "e222af1086c881cde2b0f1cd90b1c17d41b4d24cef6f657039bc7676306f3b06"
+    },
+    {
+      "file": "doc-identity-vs-equality-is-vs-id-and-how-variables-relate-to-objects-eff3606ea8.json",
+      "sha256": "c33fb4133463dc7d68b6d4981ef3de6ad964891e56dffe5da6062f4abe90eb6e"
+    },
+    {
+      "file": "doc-introspecting-functions-hard-inspect-signature-parameters-annotations-and-wrapper-effects-7c83e939f7.json",
+      "sha256": "5c2ab423450ae4aa54d7e3911058ea80c7b19e1378a573f65b71d95c74f91110"
+    },
+    {
+      "file": "doc-iterating-the-python-way-iterables-range-and-processing-sequences-with-for-loops-1f45214370.json",
+      "sha256": "40dbc0d0a8fb8d1e5a2dfd848d9a0791a66555d17e3e420c360c907ba2be53f9"
+    },
+    {
+      "file": "doc-iterator-algebra-with-itertools-chain-islice-product-cycle-and-groupby-373112e9f2.json",
+      "sha256": "fd9068edf3ea60f895c12d63296a729d2b6d40e0d73fed74130d3788b580768c"
+    },
+    {
+      "file": "doc-keyword-only-arguments-pep-3102-making-calls-clearer-with-b252f08a30.json",
+      "sha256": "d83facfdaf0f1df3d2eae7f4bc450e2aa525a32032ce155589e4d5caa829f8ad"
+    },
+    {
+      "file": "doc-looping-over-text-lines-clean-parsing-counters-and-early-exit-patterns-ce462c5d5f.json",
+      "sha256": "df70dd5b50b3f41c84dc869babcd617d92937390dacca3b561564bd58aa704ce"
+    },
+    {
+      "file": "doc-loops-in-python-for-vs-while-counting-and-sentinel-driven-repetition-5bd4c915d6.json",
+      "sha256": "a02d9c2cef33b9b63142cfe9def6c511ff416a4600382479e8cc1327506f6f92"
+    },
+    {
+      "file": "doc-moderate-comparisons-chaining-membership-checks-identity-and-readable-conditions-2351734f71.json",
+      "sha256": "815b69425d103d627a7c4f1205de1255e7b68e006333208fa82a96c14c6c9d0c"
+    },
+    {
+      "file": "doc-moderate-loop-control-break-continue-loop-else-and-search-patterns-1fcdf722b4.json",
+      "sha256": "1e7410e3a240a5493f21bded3e74a835aadadc2636502852c9fcb03529c1017e"
+    },
+    {
+      "file": "doc-mutable-default-arguments-moderate-why-it-happens-and-safe-design-patterns-77be358d12.json",
+      "sha256": "be0419401d68bdabd31bb9e1b9bbc428e39d5540b4ae9313c993709290b38257"
+    },
+    {
+      "file": "doc-nested-loop-search-scanning-a-grid-tracking-coordinates-and-clean-exit-strategies-cc184d15e4.json",
+      "sha256": "616ee7f1ee11e325db1e11b828c9fb76846206b8b5e59266168e60ce6bf743ed"
+    },
+    {
+      "file": "doc-nested-loops-easy-grids-simple-tables-and-readable-structure-a0cec1dadc.json",
+      "sha256": "c4cfe3c634d388796188ff86674449bd9b4cb0cd1d87966f073a745ab00016e0"
+    },
+    {
+      "file": "doc-one-pass-iterators-in-real-code-exhaustion-pitfalls-and-safe-handling-patterns-43f2cbd84c.json",
+      "sha256": "526ab33b58612dd27a90077b0e55c9f296b7a0413f550daa41e4952011eccd41"
+    },
+    {
+      "file": "doc-parallel-iteration-with-zip-and-enumerate-iterate-multiple-sequences-with-an-index-deed0d77ae.json",
+      "sha256": "d61209db08ca03724bced20d0282f4f32d4cf4df5c199e545406e8b798f473fc"
+    },
+    {
+      "file": "doc-positional-only-parameters-pep-570-using-to-control-function-call-semantics-a5d400b365.json",
+      "sha256": "f78f9327ad3ff9dd782d6e7cbc9e81f71d5c5ef2733d96d75726b71571930794"
+    },
+    {
+      "file": "doc-putting-it-together-parsing-records-with-unpacking-updating-counters-and-copying-safely-5b6baf6607.json",
+      "sha256": "8ac4e0acc289cee06318e0f562687864823cd1c31869bc9e607af5baa320292a"
+    },
+    {
+      "file": "doc-python-functions-easy-def-parameters-return-values-and-docstrings-124102fc40.json",
+      "sha256": "a9d5527dcc766299df9d81ada45f1fec479828b40a9c9c3d4be0f05a68e26664"
+    },
+    {
+      "file": "doc-python-loop-control-for-range-break-continue-and-else-on-loops-9e511c3e9e.json",
+      "sha256": "f3f9aef99cc788b4c199fd60db4dafcfda4642682121ae891decf7916bb703b1"
+    },
+    {
+      "file": "doc-python-variable-binding-and-scope-blocks-locals-free-variables-globals-and-nonlocal-51310631d8.json",
+      "sha256": "50fe67ad27bd2f8023a1df53f3aaefc53dcf887718627d2b1a82bcd50215a2d5"
+    },
+    {
+      "file": "doc-readable-functions-easy-type-hints-docstrings-and-example-driven-design-91bbc2f25b.json",
+      "sha256": "9e6703d7e383592898a0db7f5fd5db7b99ab3ea1db14cc2516411561a4c0ab46"
+    },
+    {
+      "file": "doc-refactoring-if-elif-chains-dispatch-tables-for-commands-and-categories-dacef1c4a7.json",
+      "sha256": "941b9b4eb12d6739f7fa0202340513e43b24f16571c29835d601dbeb209cc87d"
+    },
+    {
+      "file": "doc-scope-surprises-class-bodies-comprehensions-and-generator-lambda-capture-c1ad7f3f8f.json",
+      "sha256": "aa18d5a3a2453d97b2a96bfcb5d218b64a78a7fd46efd8469c0cf1a1ac40f65b"
+    },
+    {
+      "file": "doc-short-circuit-conditionals-in-practice-safe-guards-and-optional-values-b39eec0789.json",
+      "sha256": "60c2d1f033fa9a070fe5327d901969124cb05c093b8da58d2dcb1b0013395ec7"
+    },
+    {
+      "file": "doc-structural-pattern-matching-match-case-for-complex-branching-and-data-shaped-conditions-8b7b091601.json",
+      "sha256": "13893f70da03a4326db7a6d0ed30c60d9dea814df5f483282726b20ed083b46b"
+    },
+    {
+      "file": "doc-taming-complex-conditions-name-sub-checks-avoid-truthiness-traps-and-make-behavior-testable-6abc768071.json",
+      "sha256": "27f85368fcefdac2604ac698390510a4da6c57281faae2fe38b83de8dd1b94fa"
+    },
+    {
+      "file": "doc-tool-friendly-wrappers-hard-preserving-metadata-wrapped-and-inspection-aware-patterns-ff9835dd75.json",
+      "sha256": "17e553e52e5e006caadc645a4e55cc38f4c678f50520ae98f47a003080551619"
+    },
+    {
+      "file": "doc-truthiness-and-short-circuit-logic-how-python-decides-true-false-and-why-it-matters-abbe1e506b.json",
+      "sha256": "80423e820f372d9cdd74af4691ef419a87f1e160c3dfa67ab677471b915df7d4"
+    },
+    {
+      "file": "doc-updating-outer-scope-state-nonlocal-vs-container-mutation-and-how-to-keep-it-readable-78109640c9.json",
+      "sha256": "6b634961a913c2da86b319758ae517a7e769feaab0611ca49c40acad3b0692f7"
+    },
+    {
+      "file": "doc-using-variables-to-build-text-output-concatenation-f-strings-and-join-c4e429d9a9.json",
+      "sha256": "6834bfb576ae3236d722658c7b427dfc7ce7316f300fff50b142a23f59d50d90"
+    },
+    {
+      "file": "doc-validating-user-input-with-conditionals-digits-ranges-and-safe-defaults-e44427239d.json",
+      "sha256": "d14685078b36428a67879eaadaa1dbebaa5ff130ab94d53110ec94bfe2a46a34"
+    },
+    {
+      "file": "doc-variables-in-python-names-assignment-reassignment-and-reading-values-a86c7f1c23.json",
+      "sha256": "bb5aa2e624726fed6725b0b306f46258fea3a39f954d1b2e968b56e063d78edb"
+    },
+    {
+      "file": "doc-while-loop-patterns-easy-menus-retries-and-simple-validation-6c1217a4e0.json",
+      "sha256": "f77195ac112245492da8fdd47382377b08c12307196b2038bdfce1a5cb103e3f"
+    },
+    {
+      "file": "doc-why-unboundlocalerror-happens-assignment-makes-a-name-local-and-how-to-fix-it-safely-07825eb2a0.json",
+      "sha256": "e132f4697f448175c2b08b052f3328a64706c025865a7bf97164282f204b9899"
+    }
+  ],
+  "concept_coverage_counts": {
+    "__wrapped__": 1,
+    "accumulation": 1,
+    "aggregation": 1,
+    "aliasing": 2,
+    "all": 3,
+    "and": 2,
+    "and-or": 1,
+    "annotations": 1,
+    "any": 3,
+    "api-design": 2,
+    "args": 2,
+    "arguments": 1,
+    "assert": 1,
+    "assignment": 6,
+    "assignment-expression": 1,
+    "attributes": 1,
+    "augmented-assignment": 2,
+    "binding": 2,
+    "blocks": 2,
+    "boolean-logic": 1,
+    "boolean-ops": 2,
+    "branching": 1,
+    "break": 7,
+    "bugs": 1,
+    "cache": 1,
+    "caching": 2,
+    "callables": 1,
+    "chain": 1,
+    "chained-comparisons": 1,
+    "classes": 1,
+    "classmethod": 1,
+    "closures": 5,
+    "comparisons": 4,
+    "composition": 1,
+    "comprehensions": 1,
+    "conditional-expression": 1,
+    "conditionals": 15,
+    "continue": 5,
+    "copy": 2,
+    "counting": 2,
+    "cycle": 1,
+    "data-shapes": 1,
+    "debugging": 4,
+    "decorator-factory": 1,
+    "decorators": 4,
+    "deepcopy": 2,
+    "def": 1,
+    "defaults": 5,
+    "dict": 1,
+    "dicts": 5,
+    "dispatch-table": 1,
+    "docstrings": 2,
+    "elif": 2,
+    "else": 3,
+    "enumerate": 3,
+    "equality": 1,
+    "errors": 1,
+    "exhaustion": 1,
+    "expressions": 1,
+    "extended-unpacking": 1,
+    "f-strings": 1,
+    "filtering": 1,
+    "for": 8,
+    "formatting": 1,
+    "free-variables": 1,
+    "function-factory": 1,
+    "functions": 16,
+    "functools": 1,
+    "generator": 1,
+    "generator-expressions": 1,
+    "generators": 4,
+    "get": 1,
+    "global": 2,
+    "grids": 2,
+    "groupby": 1,
+    "guard-clauses": 2,
+    "guards": 3,
+    "identity": 3,
+    "if": 3,
+    "indentation": 1,
+    "indexing": 1,
+    "infinite-loop": 1,
+    "input": 2,
+    "input-validation": 2,
+    "inspect": 2,
+    "introspection": 1,
+    "islice": 1,
+    "items": 1,
+    "iterables": 2,
+    "iteration": 1,
+    "iterators": 3,
+    "itertools": 2,
+    "join": 1,
+    "keyword-arguments": 2,
+    "keyword-only": 3,
+    "kwargs": 2,
+    "lambdas": 1,
+    "late-binding": 2,
+    "lazy-evaluation": 1,
+    "len": 1,
+    "lists": 5,
+    "locals": 1,
+    "loop-else": 4,
+    "loops": 16,
+    "lru_cache": 2,
+    "match": 1,
+    "membership": 2,
+    "memoization": 1,
+    "memory-efficiency": 1,
+    "menus": 1,
+    "methods": 1,
+    "mutability": 4,
+    "mutable-defaults": 2,
+    "nameerror": 2,
+    "naming": 1,
+    "nested-functions": 1,
+    "nested-if": 1,
+    "nested-loops": 3,
+    "next": 1,
+    "none": 1,
+    "none-check": 1,
+    "nonlocal": 3,
+    "normalization": 1,
+    "not": 2,
+    "or": 2,
+    "parallel-iteration": 1,
+    "parameters": 4,
+    "parentheses": 1,
+    "parsing": 6,
+    "partial": 1,
+    "pattern-matching": 1,
+    "pep-3102": 1,
+    "pep-318": 1,
+    "pep-570": 1,
+    "pipelines": 4,
+    "positional-only": 2,
+    "practice": 1,
+    "precedence": 2,
+    "print": 3,
+    "product": 1,
+    "pure-functions": 1,
+    "range": 5,
+    "ranges": 1,
+    "readability": 7,
+    "reassignment": 2,
+    "refactoring": 2,
+    "retry": 1,
+    "return": 2,
+    "return-types": 1,
+    "scope": 6,
+    "search": 1,
+    "search-patterns": 1,
+    "sentinel": 1,
+    "shallow-copy": 1,
+    "short-circuit": 3,
+    "signature": 1,
+    "signatures": 1,
+    "single-pass": 1,
+    "snake_case": 1,
+    "special-parameters": 2,
+    "stacking": 1,
+    "staticmethod": 1,
+    "stopiteration": 1,
+    "strings": 2,
+    "tables": 1,
+    "ternary": 2,
+    "testing": 3,
+    "tooling": 1,
+    "truthiness": 5,
+    "tuples": 1,
+    "type-conversion": 4,
+    "type-hints": 1,
+    "unboundlocalerror": 1,
+    "unpacking": 6,
+    "validation": 4,
+    "variables": 15,
+    "walrus": 1,
+    "while": 3,
+    "wrappers": 2,
+    "wrapping": 1,
+    "wraps": 3,
+    "zip": 1
+  },
+  "exclude_ai": false,
+  "manifest": {
+    "documents": [
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "input",
+          "print",
+          "reassignment",
+          "type-conversion",
+          "unpacking",
+          "variables"
+        ],
+        "content": "This walkthrough is intentionally written with clear steps and intermediate variables.\n\n```python\n# Step 1: read a name (string)\nname = input(\"Name: \").strip()\n\n# Step 2: read age as text, then convert\nage_text = input(\"Age: \").strip()\n\n# Step 3: validate and convert\nif age_text.isdigit():\n    age = int(age_text)\nelse:\n    age = 0\n\n# Step 4: compute derived variables\nnext_year_age = age + 1\n\n# Step 5: build messages\nif age > 0:\n    msg = f\"Hi {name}, next year you will be {next_year_age}.\"\nelse:\n    msg = f\"Hi {name}, I couldn't read your age as a number.\"\n\nprint(msg)\n\n# Step 6: show how reassignment works\ncount = 0\ncount = count + 1\ncount = count + 1\nprint(\"count =\", count)\n\n# Step 7: multiple assignment and swapping\nx, y = 10, 20\nprint(\"before\", x, y)\n\nx, y = y, x\nprint(\"after\", x, y)\n```python\n\nNotes:\n- `strip()` removes extra spaces\n- `.isdigit()` is a simple integer check for non-negative whole numbers\n- f-strings make readable output",
+        "difficulty": "intro",
+        "doc_id": "doc-a-beginner-walkthrough-script-variables-input-conversions-and-simple-validation-f3e8aaa124",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/variables_easy_5.json",
+          "url": ""
+        },
+        "title": "A beginner walkthrough script: variables, input, conversions, and simple validation",
+        "type": "code_sample"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "all",
+          "any",
+          "boolean-ops",
+          "bugs",
+          "conditionals",
+          "precedence",
+          "short-circuit",
+          "truthiness"
+        ],
+        "content": "At hard difficulty, conditionals become tricky because `and`/`or` do more than produce True/False: they can **return one of their operands**, and they **short-circuit** evaluation.\n\n---\n## 1) and/or return values\n\n```python\nprint(0 and 99)        # 0\nprint(5 and 99)        # 99\n\nprint(\"hi\" or \"bye\")  # hi\nprint(\"\" or \"bye\")    # bye\n```python\n\nThis is why \u201cdefaulting\u201d works:\n\n```python\nname = \"\"\ndisplay = name or \"(anonymous)\"\nprint(display)\n```python\n\nBut be careful: `0` is falsy, so it will also fall back.\n\n```python\nn = 0\nprint(n or 123)  # 123 (maybe not desired)\n```python\n\nIf 0 is valid, be explicit:\n\n```python\nn = 0\nfallback = 123\nprint(fallback if n is None else n)\n```python\n\n---\n## 2) Short-circuit prevents errors (guard patterns)\n\n```python\nobj = None\n\n# safe: second part runs only if first part is True\nif obj is not None and obj.get(\"k\") == 1:\n    print(\"match\")\nelse:\n    print(\"no\")\n```python\n\n---\n## 3) Precedence and parentheses\nWhen conditions get long, parentheses improve clarity.\n\n```python\nage = 19\nhas_ticket = True\nvip = False\n\nif (age >= 18 and has_ticket) or vip:\n    print(\"enter\")\nelse:\n    print(\"no\")\n```python\n\n---\n## 4) any/all: make complex checks readable\n\n```python\npassword = \"Abc123\"\n\nrules = [\n    len(password) >= 6,\n    any(ch.isdigit() for ch in password),\n    any(ch.isupper() for ch in password),\n]\n\nif all(rules):\n    print(\"ok\")\nelse:\n    print(\"try again\")\n```python\n\n---\n## 5) A larger example: choose a safe default without losing information\n\n```python\ndef display_name(user):\n    # user may be None, or a dict with optional fields\n    if user is None:\n        return \"(missing user)\"\n\n    # prefer nickname, then name, then id\n    nick = user.get(\"nickname\")\n    name = user.get(\"name\")\n    uid = user.get(\"id\")\n\n    # careful: nick/name could be empty strings and that might matter\n    if nick is not None and nick != \"\":\n        return nick\n    if name is not None and name != \"\":\n        return name\n    return f\"user-{uid}\" if uid is not None else \"(unknown)\"\n\nprint(display_name({\"nickname\": \"\", \"name\": \"Ana\", \"id\": 7}))\nprint(display_name({\"name\": \"\", \"id\": 7}))\nprint(display_name(None))\n```",
+        "difficulty": "hard",
+        "doc_id": "doc-advanced-boolean-behavior-and-or-return-operands-evaluation-order-and-subtle-conditional-bugs-ad6a34ada1",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License (Python docs)",
+          "source_file": "data/corpus_raw/conditionals_hard_3.json",
+          "url": "https://docs.python.org/3/reference/expressions.html"
+        },
+        "title": "Advanced boolean behavior: and/or return operands, evaluation order, and subtle conditional bugs",
+        "type": "reference"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "assignment",
+          "attributes",
+          "dicts",
+          "lists",
+          "unpacking",
+          "variables"
+        ],
+        "content": "Python assignment is more flexible than \u201cname = value\u201d. The language reference describes different assignment target forms and their behavior.\n\n---\n## 1) One value to multiple names\n\n```python\nx = y = z = 0\nprint(x, y, z)  # 0 0 0\n```python\n\n---\n## 2) Unpacking assignment (tuple/list)\n\n```python\npoint = (10, 20)\nx, y = point\nprint(x, y)      # 10 20\n\nrgb = [255, 128, 0]\nr, g, b = rgb\nprint(r, g, b)\n```python\n\nCommon error case:\n\n```python\n# a, b = (1, 2, 3)  # ValueError: too many values to unpack\n```python\n\n---\n## 3) Assignment targets are not only names\nYou can assign to:\n- names\n- attributes (`obj.attr`)\n- items (`obj[index]` or `obj[key]`)\n\n### Attribute assignment\n\n```python\nclass Box:\n    pass\n\nb = Box()\nb.value = 99\nprint(b.value)\n```python\n\n### Item assignment (list/dict)\n\n```python\nnums = [1, 2, 3]\nnums[0] = 100\nprint(nums)  # [100, 2, 3]\n\nm = {\"count\": 1}\nm[\"count\"] = m[\"count\"] + 1\nprint(m)     # {'count': 2}\n```python\n\n---\n## 4) A compact \u201cmany forms\u201d practice block\n\n```python\nx = 1\nx = x + 1\n\n(a, b) = (10, 20)\n\nnums = [0, 1, 2]\nnums[2] = 99\n\nclass C:\n    pass\nobj = C()\nobj.name = \"Ada\"\n\nprint(x, a, b)\nprint(nums)\nprint(obj.name)\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-assignment-basics-beyond-multiple-targets-unpacking-and-what-can-be-assigned-to-5caa9f3196",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License (Python docs)",
+          "source_file": "data/corpus_raw/variables_easy_3.json",
+          "url": "https://docs.python.org/3/reference/simple_stmts.html"
+        },
+        "title": "Assignment basics beyond '=': multiple targets, unpacking, and what can be assigned to",
+        "type": "reference"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "assignment-expression",
+          "conditionals",
+          "parsing",
+          "readability",
+          "walrus",
+          "while"
+        ],
+        "content": "Hard-level conditional code often tries to balance readability with avoiding repeated work. Python\u2019s **assignment expression** operator `:=` (sometimes called the \u201cwalrus operator\u201d) helps when you want to compute a value once and use it immediately in an `if` or `while`.\n\n---\n## 1) The basic idea\nInstead of computing something twice:\n\n```python\ns = \" 42 \"\nif s.strip().isdigit():\n    n = int(s.strip())\n    print(n)\n```python\n\nYou can compute once and reuse:\n\n```python\ns = \" 42 \"\nif (t := s.strip()).isdigit():\n    n = int(t)\n    print(n)\n```python\n\n---\n## 2) While loops with assignment expressions (read/process pattern)\nA classic use is reading items until a sentinel.\n\n```python\n# conceptually similar to: line = input(); while line != \"\": ...; line = input()\nlines = [\"a\", \"bb\", \"\", \"ccc\"]\ni = 0\n\nwhile (line := lines[i]) != \"\":\n    print(\"got\", line)\n    i += 1\n```python\n\n---\n## 3) Avoid repeated expensive work\n\n```python\nimport time\n\ndef expensive(x):\n    time.sleep(0.05)\n    return x * 2\n\nx = 10\n\n# without := you'd likely call expensive(x) twice if you need the value\nif (y := expensive(x)) > 10:\n    print(\"big\", y)\nelse:\n    print(\"small\", y)\n```python\n\n---\n## 4) Parsing with := in a readable way\n\n```python\ntext = \"key=value\"\nif (parts := text.split(\"=\", 1)) and len(parts) == 2:\n    k, v = parts\n    print(k, v)\n```python\n\n---\n## 5) A larger example: parse numeric tokens with a single pass\n\n```python\ndata = [\"10\", \"x\", \"5\", \"-\", \"7\", \" 3 \"]\nnums = []\n\nfor raw in data:\n    if (t := raw.strip()).isdigit():\n        nums.append(int(t))\n\nprint(nums)\nprint(\"sum\", sum(nums))\nprint(\"max\", max(nums) if nums else None)\n```python\n\n---\n## 6) Practical guidance\n- Use `:=` when it **removes repetition** and stays readable.\n- If it makes the condition too dense, compute the value on a separate line.",
+        "difficulty": "hard",
+        "doc_id": "doc-assignment-expressions-in-conditionals-compact-patterns-without-losing-clarity-2c1f405af6",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "Public domain (PEP text)",
+          "source_file": "data/corpus_raw/conditionals_hard_1.json",
+          "url": "https://peps.python.org/pep-0572/"
+        },
+        "title": "Assignment expressions (:=) in conditionals: compact patterns without losing clarity",
+        "type": "reference"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "aliasing",
+          "assignment",
+          "copy",
+          "deepcopy",
+          "dicts",
+          "lists",
+          "mutability",
+          "shallow-copy",
+          "variables"
+        ],
+        "content": "A moderate jump in understanding variables is realizing that **assignment does not copy objects**. It creates a binding (a reference) from a name to an object.\n\n---\n## 1) Aliasing: two names, one object\n\n```python\noriginal = {\"k\": 1}\nalias = original\n\nalias[\"k\"] = 999\nprint(original)  # {'k': 999}\nprint(alias)     # {'k': 999}\n```python\n\nBoth names refer to the same dictionary, so changing it via one name is visible through the other.\n\n---\n## 2) Shallow copy: new outer object, shared inner objects\nA shallow copy duplicates the outer container but keeps references to nested objects.\n\n```python\nouter1 = {\"nums\": [1, 2, 3], \"tag\": \"A\"}\nouter2 = outer1.copy()  # dict shallow copy\n\nouter2[\"tag\"] = \"B\"          # changes only outer2\nouter2[\"nums\"].append(4)      # changes the shared inner list\n\nprint(outer1)  # nums changed!\nprint(outer2)\n```python\n\nThis can surprise people: the dict itself is copied, but the list inside is still shared.\n\n---\n## 3) Shallow copying techniques you\u2019ll see often\n\n```python\nlst1 = [1, 2, 3]\nlst2 = lst1.copy()   # or lst1[:] or list(lst1)\n\nlst2.append(999)\nprint(lst1)  # [1, 2, 3]\nprint(lst2)  # [1, 2, 3, 999]\n```python\n\nFor nested lists, shallow copying the outer list isn\u2019t enough:\n\n```python\ngrid1 = [[0, 0], [0, 0]]\ngrid2 = grid1.copy()  # shallow\n\ngrid2[0].append(1)\nprint(grid1)  # inner list mutated (shared)\nprint(grid2)\n```python\n\n---\n## 4) Deep copy: recursively copies nested objects\nWhen you need an independent copy of a nested structure, use `copy.deepcopy`.\n\n```python\nimport copy\n\ngrid1 = [[0, 0], [0, 0]]\ngrid3 = copy.deepcopy(grid1)\n\ngrid3[0].append(1)\nprint(grid1)  # unchanged\nprint(grid3)  # changed\n```python\n\n---\n## 5) A practical mini checklist\n- If you only need a separate outer container and you are fine sharing nested objects \u2192 shallow copy is fine.\n- If you need nested objects to be independent too \u2192 deep copy.\n- If the object is immutable (like an int or string), aliasing is usually not a problem.\n\n---\n## 6) Short \u201cspot the aliasing\u201d practice block\n\n```python\nimport copy\n\na = {\"x\": [1, 2]}\nb = a\nc = a.copy()\nd = copy.deepcopy(a)\n\nb[\"x\"].append(3)\nprint(a)  # affects a\nprint(c)  # shallow copy shares inner list\nprint(d)  # deep copy independent\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-assignment-vs-copying-objects-aliasing-shallow-copies-and-deep-copies-174c976547",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License (Python docs)",
+          "source_file": "data/corpus_raw/variables_moderate_2.json",
+          "url": "https://docs.python.org/3/library/copy.html"
+        },
+        "title": "Assignment vs copying objects: aliasing, shallow copies, and deep copies",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "assignment",
+          "augmented-assignment",
+          "identity",
+          "lists",
+          "mutability",
+          "strings",
+          "tuples",
+          "variables"
+        ],
+        "content": "Augmented assignment combines an operation and an assignment into one statement, like `x += 1`. It\u2019s convenient, but it also introduces a few important details that matter when variables refer to **mutable** objects.\n\n---\n## 1) The basic idea\n\n```python\nx = 10\nx += 5\nprint(x)  # 15\n```python\n\nYou can think of `x += 5` as \u201ctake the current value of `x`, add 5, then store it back into `x`.\u201d\n\n---\n## 2) The target is evaluated once\nIn augmented assignment, the *target expression* is evaluated once, then updated.\n\n```python\nitems = [10, 20, 30]\ni = 1\n\nitems[i] += 100\nprint(items)  # [10, 120, 30]\n```python\n\nThis matters when the target expression is more complex or has side effects.\n\n---\n## 3) Different operators exist\nPython supports many augmented operators.\n\n```python\nx = 7\nx *= 3\nprint(x)  # 21\n\nx //= 4\nprint(x)  # 5\n\nx **= 2\nprint(x)  # 25\n```python\n\n---\n## 4) Mutability: += may mutate in place\nA key moderate-level concept is that `+=` can behave differently depending on the type.\n\n### Lists: often mutate in place\n\n```python\nlst = [1, 2]\nalias = lst\n\nlst += [3, 4]\nprint(lst)   # [1, 2, 3, 4]\nprint(alias) # [1, 2, 3, 4]  (same object)\n```python\n\n### Tuples: cannot mutate, so a new tuple is created\n\n```python\nt = (1, 2)\nold = t\n\nt += (3,)\nprint(old)  # (1, 2)\nprint(t)    # (1, 2, 3)\n```python\n\nA quick way to see \u201csame object or new object\u201d is to compare identities:\n\n```python\nlst = [1, 2]\nprint(id(lst))\n\nlst += [3]\nprint(id(lst))  # often the same (in-place)\n\ns = \"hi\"\nprint(id(s))\n\ns += \"!\"\nprint(id(s))    # different (strings are immutable)\n```python\n\n---\n## 5) Augmented assignment on attributes and items\n\n```python\nclass Box:\n    def __init__(self, v):\n        self.v = v\n\nb = Box(10)\nb.v += 7\nprint(b.v)  # 17\n\nm = {\"count\": 1}\nm[\"count\"] += 1\nprint(m)    # {'count': 2}\n```python\n\n---\n## 6) Common confusion (good to know)\n- Augmented assignment targets cannot be unpacking targets.\n\n```python\n# a, b += (1, 2)  # not allowed\n```python\n\n---\n## 7) Mixed example to practice reading code\n\n```python\nnums = [0, 1, 2]\nnums[0] += 10\n\nx = 2\nx *= 5\n\nname = \"A\"\nname += \"B\"\n\nprint(nums)   # [10, 1, 2]\nprint(x)      # 10\nprint(name)   # AB\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-augmented-assignment-how-works-evaluation-order-and-mutability-effects-bd8676a13f",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License (Python docs)",
+          "source_file": "data/corpus_raw/variables_moderate_1.json",
+          "url": "https://docs.python.org/3/reference/simple_stmts.html"
+        },
+        "title": "Augmented assignment: how += works, evaluation order, and mutability effects",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "generators",
+          "itertools",
+          "loops",
+          "parsing",
+          "pipelines",
+          "single-pass"
+        ],
+        "content": "This mini-project shows why hard looping concepts matter: you can build a readable data-processing pipeline without deeply nested loops.\n\n---\n## 1) The data\nImagine a stream of tokens from logs or configuration lines.\n\n```python\ntokens = [\n    \"USER ana\",\n    \"SCORE 10\",\n    \"USER ben\",\n    \"SCORE 25\",\n    \"USER ana\",\n    \"SCORE 5\",\n    \"JUNK ???\",\n]\n```python\n\n---\n## 2) Parse the stream into structured events\n\n```python\ndef parse(tokens):\n    for line in tokens:\n        parts = line.split()\n        if len(parts) != 2:\n            continue\n        kind, value = parts\n        if kind not in (\"USER\", \"SCORE\"):\n            continue\n        yield (kind, value)\n\nevents = parse(tokens)\nprint(list(events))\n```python\n\nNote: `events` is now consumed because we converted it to a list. In real code, avoid consuming the stream unless you mean to.\n\n---\n## 3) Keep it streaming: compute totals in one pass\n\n```python\ndef totals_by_user(tokens):\n    current_user = None\n    totals = {}\n\n    for kind, value in parse(tokens):\n        if kind == \"USER\":\n            current_user = value\n        elif kind == \"SCORE\" and current_user is not None and value.isdigit():\n            totals[current_user] = totals.get(current_user, 0) + int(value)\n\n    return totals\n\nprint(totals_by_user(tokens))\n```python\n\n---\n## 4) Add a streaming filter + transformation layer\n\n```python\ndef only_scores(tokens):\n    for kind, value in parse(tokens):\n        if kind == \"SCORE\" and value.isdigit():\n            yield int(value)\n\nprint(sum(only_scores(tokens)))\n```python\n\n---\n## 5) Use itertools to combine streams\n\n```python\nimport itertools\n\nmore = [\"SCORE 7\", \"SCORE x\", \"SCORE 3\"]\nall_tokens = itertools.chain(tokens, more)\n\nprint(sum(only_scores(all_tokens)))  # sums digits only\n```python\n\n---\n## 6) Practice block: take only the first N numeric scores\n\n```python\nimport itertools\n\nscores = only_scores(tokens)\nprint(list(itertools.islice(scores, 2)))\n```",
+        "difficulty": "hard",
+        "doc_id": "doc-building-a-loop-pipeline-parse-tokens-transform-streams-and-produce-a-report-3d5ba4846e",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/loops_hard_5.json",
+          "url": ""
+        },
+        "title": "Building a loop pipeline: parse tokens, transform streams, and produce a report",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "closures",
+          "lambdas",
+          "late-binding",
+          "loops",
+          "scope",
+          "variables"
+        ],
+        "content": "Python uses lexical scoping: inner functions can reference names from enclosing scopes. However, closure variables are often **late-bound**, meaning the name is looked up when the inner function runs, not when it is created.\n\n---\n## 1) The classic pitfall: closures created in a loop\n\n```python\nfuncs = []\nfor i in range(5):\n    funcs.append(lambda: i)\n\nprint([f() for f in funcs])  # often [4, 4, 4, 4, 4]\n```python\n\nAll lambdas refer to the same name `i`, which ends at 4 after the loop.\n\n---\n## 2) Fix pattern A: default argument capture (simple and popular)\nDefault arguments are evaluated when the function is defined.\n\n```python\nfuncs = []\nfor i in range(5):\n    funcs.append(lambda i=i: i)\n\nprint([f() for f in funcs])  # [0, 1, 2, 3, 4]\n```python\n\n---\n## 3) Fix pattern B: helper factory function\n\n```python\ndef make_func(i):\n    def f():\n        return i\n    return f\n\nfuncs = [make_func(i) for i in range(5)]\nprint([f() for f in funcs])  # [0, 1, 2, 3, 4]\n```python\n\n---\n## 4) Fix pattern C: functools.partial\n\n```python\nfrom functools import partial\n\ndef identity(x):\n    return x\n\nfuncs = [partial(identity, i) for i in range(5)]\nprint([f() for f in funcs])  # [0, 1, 2, 3, 4]\n```python\n\n---\n## 5) A chunking-friendly \u201creal use\u201d example\nMake a set of functions that add different offsets.\n\n```python\nadders = []\nfor offset in (0, 10, 100):\n    adders.append(lambda x, offset=offset: x + offset)\n\nprint([f(5) for f in adders])  # [5, 15, 105]\n```python\n\n---\n## 6) Extra: closures with multiple captured names\n\n```python\ndef factory(mult):\n    funcs = []\n    for i in range(3):\n        funcs.append(lambda x, i=i, mult=mult: (x + i) * mult)\n    return funcs\n\nfs = factory(10)\nprint([f(1) for f in fs])  # [10, 20, 30]\n```python\n\n---\n## 7) Practical takeaways\n- If you build lambdas in loops, **assume late binding** unless you capture values explicitly.\n- Default arguments are the shortest \u201cfreeze this value now\u201d technique.",
+        "difficulty": "hard",
+        "doc_id": "doc-closures-and-late-binding-loop-variable-capture-and-dependable-ways-to-freeze-values-562b6f6f3d",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "CC BY-SA (Stack Overflow; version depends on post date)",
+          "source_file": "data/corpus_raw/variables_hard_3.json",
+          "url": "https://stackoverflow.com/questions/2295290/what-do-lambda-function-closures-capture"
+        },
+        "title": "Closures and late binding: loop variable capture and dependable ways to freeze values",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "caching",
+          "closures",
+          "function-factory",
+          "functions",
+          "nested-functions",
+          "nonlocal"
+        ],
+        "content": "Functions can be nested in Python. When an inner function uses variables from the outer scope, it forms a **closure**.\n\n---\n## 1) Nested functions\n\n```python\ndef outer():\n    msg = \"hello\"\n\n    def inner():\n        return msg\n\n    return inner\n\nf = outer()\nprint(f())\n```python\n\n`inner()` still remembers `msg` even after `outer()` has finished.\n\n---\n## 2) Function factory: build functions that customize behavior\n\n```python\ndef make_multiplier(factor):\n    def mul(x):\n        return x * factor\n    return mul\n\nby2 = make_multiplier(2)\nby10 = make_multiplier(10)\n\nprint(by2(7))\nprint(by10(7))\n```python\n\n---\n## 3) Capturing changing state with nonlocal\nIf you want to *modify* a captured variable, use `nonlocal`.\n\n```python\ndef make_counter():\n    count = 0\n\n    def inc():\n        nonlocal count\n        count += 1\n        return count\n\n    return inc\n\nc = make_counter()\nprint(c())\nprint(c())\nprint(c())\n```python\n\n---\n## 4) A realistic closure: configurable validator\n\n```python\ndef make_range_checker(lo, hi):\n    def check(n):\n        return lo <= n <= hi\n    return check\n\nis_age = make_range_checker(0, 120)\nprint(is_age(20))\nprint(is_age(999))\n```python\n\n---\n## 5) Practice block: build a tiny \"memoize\" wrapper (simple caching)\nThis is a gentle intro to decorators without introducing decorator syntax yet.\n\n```python\ndef memoize_1arg(func):\n    cache = {}\n\n    def wrapped(x):\n        if x in cache:\n            return cache[x]\n        cache[x] = func(x)\n        return cache[x]\n\n    return wrapped\n\ndef slow_square(n):\n    # imagine expensive work here\n    return n * n\n\nfast_square = memoize_1arg(slow_square)\nprint(fast_square(10))\nprint(fast_square(10))  # cached\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-closures-moderate-inner-functions-nonlocal-state-and-function-factories-ce0632487d",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/functions_moderate_5.json",
+          "url": ""
+        },
+        "title": "Closures (moderate): inner functions, nonlocal state, and function factories",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "and",
+          "conditionals",
+          "guards",
+          "not",
+          "or",
+          "parentheses",
+          "readability"
+        ],
+        "content": "As programs grow, you often combine several checks in one decision. The goal is to keep conditions readable.\n\n---\n## 1) Basic and/or/not\n\n```python\nlogged_in = True\nis_admin = False\n\nif logged_in and is_admin:\n    print(\"admin panel\")\nelse:\n    print(\"regular view\")\n```python\n\n```python\nrole = \"editor\"\n\nif role == \"admin\" or role == \"editor\":\n    print(\"can edit\")\nelse:\n    print(\"read only\")\n```python\n\n```python\nname = \"\"\nif not name:\n    print(\"name required\")\n```python\n\n---\n## 2) Parentheses for clarity\n\n```python\nage = 19\nhas_ticket = True\nvip = False\n\nif (age >= 18 and has_ticket) or vip:\n    print(\"enter\")\nelse:\n    print(\"no entry\")\n```python\n\n---\n## 3) A slightly larger example: validate a password\n\n```python\npwd = \"Abc123\"\n\nhas_len = len(pwd) >= 6\nhas_digit = any(ch.isdigit() for ch in pwd)\nhas_upper = any(ch.isupper() for ch in pwd)\n\nif has_len and has_digit and has_upper:\n    print(\"strong enough\")\nelse:\n    print(\"try again\")\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-combining-conditions-and-or-not-parentheses-and-readable-checks-271c64265a",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/conditionals_easy_5.json",
+          "url": ""
+        },
+        "title": "Combining conditions: and/or/not, parentheses, and readable checks",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "comparisons",
+          "conditionals",
+          "else",
+          "guard-clauses",
+          "if",
+          "membership",
+          "ternary"
+        ],
+        "content": "Beyond basic if/else, Python has small patterns that make code shorter while staying readable.\n\n---\n## 1) The if-expression (ternary)\nPython supports a compact expression form:\n\n```python\nresult = \"yay\" if 1 < 2 else \"nay\"\nprint(result)\n```python\n\nThis is best used for simple decisions.\n\n---\n## 2) Membership tests with in\n\n```python\nallowed = {\"start\", \"stop\", \"status\"}\ncmd = \"status\"\n\nif cmd in allowed:\n    print(\"ok\")\nelse:\n    print(\"unknown\")\n```python\n\n---\n## 3) Guard clauses (simple early returns)\nIn functions, a clear style is to return early for invalid input.\n\n```python\ndef parse_age(text):\n    text = text.strip()\n    if not text.isdigit():\n        return None\n    return int(text)\n\nprint(parse_age(\" 21 \"))\nprint(parse_age(\"x\"))\n```python\n\n---\n## 4) Comparing multiple conditions cleanly\n\n```python\nx = 10\nif 0 <= x <= 100:\n    print(\"in range\")\n```python\n\n---\n## 5) A slightly larger example: categorize a value\n\n```python\ndef categorize(n):\n    if n < 0:\n        return \"negative\"\n    elif n == 0:\n        return \"zero\"\n    else:\n        return \"positive\"\n\nfor v in [-2, 0, 5]:\n    print(v, categorize(v))\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-common-conditional-patterns-ternary-if-expression-membership-tests-and-clean-checks-4c1c191966",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "CC BY-SA 3.0 (Learn X in Y Minutes)",
+          "source_file": "data/corpus_raw/conditionals_easy_3.json",
+          "url": "https://learnxinyminutes.com/python/"
+        },
+        "title": "Common conditional patterns: ternary if-expression, membership tests, and clean checks",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "conditional-expression",
+          "conditionals",
+          "formatting",
+          "readability",
+          "ternary"
+        ],
+        "content": "Python supports a compact conditional expression:\n\n`value_if_true if condition else value_if_false`\n\nThis is often called a \u201cternary expression.\u201d It can make code shorter, but it should still remain readable.\n\n---\n## 1) Basic usage\n\n```python\nx = 7\nlabel = \"even\" if x % 2 == 0 else \"odd\"\nprint(label)\n```python\n\n---\n## 2) Prefer it for simple expressions\nA short conditional expression is great for small decisions.\n\n```python\nname = \"\"\ndisplay = name if name else \"(anonymous)\"\nprint(display)\n```python\n\nFor more complex logic, a standard if/elif/else block is easier to maintain.\n\n---\n## 3) Using conditional expressions inside formatting\n\n```python\nscore = 82\nstatus = \"pass\" if score >= 75 else \"fail\"\nprint(f\"score={score} status={status}\")\n```python\n\n---\n## 4) A compact mapping pattern\nSometimes you can replace a short if/else with a mapping, but the conditional expression is still helpful for quick cases.\n\n```python\nn = -3\nsign = \"pos\" if n > 0 else (\"zero\" if n == 0 else \"neg\")\nprint(sign)\n```python\n\n---\n## 5) Practice block: sanitize a value\n\n```python\nraw = \"  42 \"\nclean = raw.strip()\nvalue = int(clean) if clean.isdigit() else None\nprint(value)\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-conditional-expressions-using-a-if-cond-else-b-responsibly-37656294f5",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "Public domain (PEP text)",
+          "source_file": "data/corpus_raw/conditionals_moderate_3.json",
+          "url": "https://peps.python.org/pep-0308/"
+        },
+        "title": "Conditional expressions: using 'a if cond else b' responsibly",
+        "type": "reference"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "and-or",
+          "comparisons",
+          "conditionals",
+          "elif",
+          "else",
+          "if",
+          "input-validation",
+          "practice"
+        ],
+        "content": "Conditionals are used to run code only when certain conditions are true. Most beginner programs use conditionals for validation (checking input) and for choosing behavior.\n\n---\n## 1) Basic comparisons\n\n```python\nx = 3\nif x < 5:\n    print(\"small\")\n```python\n\n```python\nname = \"Ana\"\nif name == \"Ana\":\n    print(\"hello\")\nelse:\n    print(\"hi\")\n```python\n\n---\n## 2) Using elif to avoid nesting\n\n```python\ntemp = 22\nif temp < 0:\n    print(\"freezing\")\nelif temp < 15:\n    print(\"cold\")\nelif temp < 25:\n    print(\"warm\")\nelse:\n    print(\"hot\")\n```python\n\n---\n## 3) Combining conditions with and/or\n\n```python\nage = 20\nmember = True\n\nif age >= 18 and member:\n    print(\"allowed\")\nelse:\n    print(\"not allowed\")\n```python\n\n---\n## 4) A password attempt example (typical beginner pattern)\n\n```python\npassword = \"unicorn\"\ntries = 0\n\nwhile True:\n    guess = input(\"Password: \")\n    if guess == password:\n        print(\"success\")\n        break\n\n    tries += 1\n    if tries >= 3:\n        print(\"denied\")\n        break\n```python\n\n---\n## 5) Practice: compare sums\n\n```python\na = 40\nb = 70\n\nif a + b > 100:\n    print(\"big number\")\nelse:\n    print(\"not big\")\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-conditional-statements-comparisons-elif-chains-and-simple-input-based-decisions-6e8ed35909",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "CC BY-SA 4.0 (Wikibooks) / also dual-licensed with GFDL per Wikibooks policy",
+          "source_file": "data/corpus_raw/conditionals_easy_2.json",
+          "url": "https://en.wikibooks.org/wiki/Python_Programming/Conditional_Statements"
+        },
+        "title": "Conditional statements: comparisons, elif chains, and simple input-based decisions",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "blocks",
+          "comparisons",
+          "conditionals",
+          "elif",
+          "else",
+          "if",
+          "indentation",
+          "truthiness"
+        ],
+        "content": "Conditionals let your program choose different actions based on data. In Python, the basic tools are `if`, `elif`, and `else`.\n\n---\n## 1) The simplest if-statement\n\n```python\nx = 10\nif x > 5:\n    print(\"x is bigger than 5\")\n```python\n\nPython uses **indentation** to define the block (the code controlled by the `if`).\n\n---\n## 2) if/else: choose between two paths\n\n```python\nage = 17\nif age >= 18:\n    print(\"adult\")\nelse:\n    print(\"minor\")\n```python\n\n---\n## 3) elif: multiple choices\nUse `elif` to avoid deeply nested `if` statements.\n\n```python\nscore = 82\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelse:\n    grade = \"D\"\n\nprint(\"grade\", grade)\n```python\n\n---\n## 4) Comparing the same value to several constants\n\n```python\ncmd = \"start\"\n\nif cmd == \"start\":\n    print(\"starting\")\nelif cmd == \"stop\":\n    print(\"stopping\")\nelif cmd == \"status\":\n    print(\"show status\")\nelse:\n    print(\"unknown command\")\n```python\n\n---\n## 5) Truthiness: if checks a truth value\nMany expressions can be used directly in `if`.\n\n```python\nitems = []\nif items:\n    print(\"has items\")\nelse:\n    print(\"empty\")\n\nname = \"\"\nif not name:\n    print(\"missing name\")\n```python\n\n---\n## 6) A small practice script: validate and respond\n\n```python\ntext = \"42\"\n\nif text.isdigit():\n    n = int(text)\n    if n % 2 == 0:\n        print(\"even\")\n    else:\n        print(\"odd\")\nelse:\n    print(\"not a number\")\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-conditionals-in-python-if-elif-else-blocks-and-readable-decision-logic-a5516b23d9",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License; code examples are dual-licensed (PSF-2.0 and BSD-0 starting Python 3.8.6+)",
+          "source_file": "data/corpus_raw/conditionals_easy_1.json",
+          "url": "https://docs.python.org/3/tutorial/controlflow.html"
+        },
+        "title": "Conditionals in Python: if/elif/else, blocks, and readable decision logic",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "assert",
+          "debugging",
+          "defaults",
+          "functions",
+          "parameters",
+          "return",
+          "testing"
+        ],
+        "content": "A practical way to learn functions is to write small, single-purpose helpers and then test them quickly.\n\n---\n## 1) Start simple: a function that transforms data\n\n```python\ndef normalize_name(name):\n    return name.strip().title()\n\nprint(normalize_name(\"  aNa  \"))\n```python\n\n---\n## 2) Add parameters to generalize behavior\n\n```python\ndef repeat(text, times):\n    return text * times\n\nprint(repeat(\"ha\", 3))\n```python\n\n---\n## 3) Return values instead of printing\nReturning makes functions easier to reuse.\n\n```python\ndef perimeter_rectangle(w, h):\n    return 2 * (w + h)\n\np = perimeter_rectangle(3, 4)\nprint(p)\n```python\n\n---\n## 4) Default parameter values\nDefaults reduce clutter in calls.\n\n```python\ndef greet(name, punctuation=\"!\"):\n    return \"Hello \" + name + punctuation\n\nprint(greet(\"Ana\"))\nprint(greet(\"Ana\", \"...\"))\n```python\n\n---\n## 5) Quick tests (lightweight)\nA simple \u201cassert\u201d can confirm a function behaves as expected.\n\n```python\ndef add_tax(price, rate=0.12):\n    return price * (1 + rate)\n\nassert add_tax(100) == 112\nassert add_tax(100, 0.10) == 110\nprint(\"tests passed\")\n```python\n\n---\n## 6) A bigger example: build a small pipeline\n\n```python\ndef parse_ints(tokens):\n    out = []\n    for t in tokens:\n        s = str(t).strip()\n        if s.isdigit():\n            out.append(int(s))\n    return out\n\ndef mean(nums):\n    if not nums:\n        return None\n    return sum(nums) / len(nums)\n\nraw = [\"10\", \"x\", \" 5 \", \"-\", 7]\nnums = parse_ints(raw)\nprint(\"nums\", nums)\nprint(\"mean\", mean(nums))\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-creating-functions-easy-small-reusable-pieces-defaults-and-quick-tests-1a947f02ed",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "CC BY 4.0 (The Carpentries lesson material)",
+          "source_file": "data/corpus_raw/functions_easy_3.json",
+          "url": "https://carpentries-incubator.github.io/python-novice-programming-gapminder/08-func/index.html"
+        },
+        "title": "Creating functions (easy): small reusable pieces, defaults, and quick tests",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "assignment",
+          "input",
+          "nameerror",
+          "naming",
+          "snake_case",
+          "type-conversion",
+          "unpacking",
+          "variables"
+        ],
+        "content": "Python does not require variable declarations. A variable is created when you assign to it.\n\n---\n## 1) Variables are created by assignment\n\n```python\nsome_var = 5\nprint(some_var)      # 5\n\nsome_var = some_var + 10\nprint(some_var)      # 15\n```python\n\n---\n## 2) Naming: use snake_case\nReadable names reduce mistakes and make code easier to scan.\n\n```python\nuser_age = 20\nmax_retries = 3\npi_estimate = 3.14\n\nprint(user_age, max_retries, pi_estimate)\n```python\n\n---\n## 3) Accessing an unassigned name raises NameError\n\n```python\nvalue = 10\nprint(value)\n\n# print(vaule)  # NameError (typo)\n```python\n\n---\n## 4) Input returns a string (convert when needed)\n\n```python\nraw = input(\"Enter a number: \")\nprint(type(raw))   # <class 'str'>\n\nn = int(raw)\nprint(n + 1)\n```python\n\nIf conversion fails, you\u2019ll get a ValueError. A safe beginner-friendly pattern:\n\n```python\nraw = input(\"Enter an integer: \")\nif raw.isdigit():\n    n = int(raw)\n    print(\"OK:\", n)\nelse:\n    print(\"Not an integer:\", raw)\n```python\n\n---\n## 5) Quick patterns that feel like \u201cvariable tools\u201d\n### Swap two variables\n\n```python\na = \"left\"\nb = \"right\"\na, b = b, a\nprint(a, b)  # right left\n```python\n\n### Multiple assignment (unpacking)\n\n```python\nx, y, z = 1, 2, 3\nprint(x, y, z)\n```python\n\n---\n## 6) Mini practice: predict the output\n\n```python\nx = 1\nx = x + 2\n\ny = x\nx = 50\n\nprint(\"x\", x)\nprint(\"y\", y)\n\nx, y = y, x\nprint(\"swap\", x, y)\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-creating-variables-by-assignment-naming-input-and-common-errors-af2dd8ed46",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "CC BY-SA 3.0 (Learn X in Y Minutes docs)",
+          "source_file": "data/corpus_raw/variables_easy_2.json",
+          "url": "https://learnxinyminutes.com/python/"
+        },
+        "title": "Creating variables by assignment: naming, input, and common errors",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "decorator-factory",
+          "decorators",
+          "functions",
+          "retry",
+          "validation",
+          "wraps"
+        ],
+        "content": "A decorator that accepts arguments is typically a **decorator factory**: a function that returns a decorator.\n\n---\n## 1) Goal: @repeat(n=3)\nWe want this style:\n\n```python\n@repeat(n=3)\ndef shout(text):\n    return text.upper()\n```python\n\n---\n## 2) Implementation using a factory + wraps\n\n```python\nimport functools\n\ndef repeat(*, n=2):\n    if n < 1:\n        raise ValueError(\"n must be >= 1\")\n\n    def decorator(func):\n        @functools.wraps(func)\n        def wrapper(*args, **kwargs):\n            last = None\n            for _ in range(n):\n                last = func(*args, **kwargs)\n            return last\n        return wrapper\n\n    return decorator\n\n@repeat(n=3)\ndef shout(text):\n    return text.upper()\n\nprint(shout(\"hi\"))\n```python\n\n---\n## 3) A more practical example: retry on exceptions\n\n```python\nimport functools\n\ndef retry(*, tries=3, exceptions=(Exception,)):\n    def decorator(func):\n        @functools.wraps(func)\n        def wrapper(*args, **kwargs):\n            last_err = None\n            for _ in range(tries):\n                try:\n                    return func(*args, **kwargs)\n                except exceptions as e:\n                    last_err = e\n            raise last_err\n        return wrapper\n    return decorator\n\ncounter = {\"n\": 0}\n\n@retry(tries=3, exceptions=(ValueError,))\ndef flaky():\n    counter[\"n\"] += 1\n    if counter[\"n\"] < 3:\n        raise ValueError(\"not yet\")\n    return \"ok\"\n\nprint(flaky())\n```",
+        "difficulty": "hard",
+        "doc_id": "doc-decorator-factories-hard-writing-decorators-that-accept-arguments-safely-4ccdf84500",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/functions_hard_4.json",
+          "url": ""
+        },
+        "title": "Decorator factories (hard): writing decorators that accept arguments safely",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "classmethod",
+          "decorators",
+          "functions",
+          "methods",
+          "pep-318",
+          "stacking",
+          "staticmethod",
+          "wrapping"
+        ],
+        "content": "Decorators are a way to transform a function (or method) at definition time. The `@decorator` syntax makes transformations explicit and keeps them close to the function they affect.\n\n---\n## 1) Mental model: @decorator rewrites the function binding\nConceptually, this:\n\n```python\n@decorator\ndef f(x):\n    return x + 1\n```python\n\nis like:\n\n```python\ndef f(x):\n    return x + 1\n\nf = decorator(f)\n```python\n\nThis \u201crebinding\u201d happens when the function definition is executed.\n\n---\n## 2) A simple decorator: log calls\n\n```python\ndef log_calls(func):\n    def wrapper(*args, **kwargs):\n        print(\"calling\", func.__name__, args, kwargs)\n        result = func(*args, **kwargs)\n        print(\"returned\", result)\n        return result\n    return wrapper\n\n@log_calls\ndef add(a, b):\n    return a + b\n\nprint(add(2, 3))\n```python\n\n---\n## 3) Stacking decorators (order matters)\n\n```python\ndef d1(func):\n    def w(*a, **k):\n        print(\"d1 before\")\n        r = func(*a, **k)\n        print(\"d1 after\")\n        return r\n    return w\n\ndef d2(func):\n    def w(*a, **k):\n        print(\"d2 before\")\n        r = func(*a, **k)\n        print(\"d2 after\")\n        return r\n    return w\n\n@d1\n@d2\ndef work():\n    print(\"work\")\n\nwork()\n```python\n\nThink of it as:\n\n```python\n# roughly\nwork = d1(d2(work))\n```python\n\n---\n## 4) Decorators are common for method transformations\nA classic motivation is avoiding \u201cwrap then assign\u201d patterns for things like `staticmethod` / `classmethod`.\n\n```python\nclass C:\n    @staticmethod\n    def f(x):\n        return x * 2\n\nprint(C.f(10))\n```python\n\n---\n## 5) A bigger example: permission check decorator\n\n```python\ndef require_admin(func):\n    def wrapper(user, *args, **kwargs):\n        if user.get(\"role\") != \"admin\":\n            raise PermissionError(\"admin only\")\n        return func(user, *args, **kwargs)\n    return wrapper\n\n@require_admin\ndef delete_post(user, post_id):\n    return f\"deleted {post_id}\"\n\nadmin = {\"role\": \"admin\"}\nguest = {\"role\": \"guest\"}\n\nprint(delete_post(admin, 123))\n# delete_post(guest, 123) would raise PermissionError\n```",
+        "difficulty": "hard",
+        "doc_id": "doc-decorators-hard-what-decorator-means-stacking-decorators-and-readable-function-transformations-7abd2d614e",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "Public domain (PEP text)",
+          "source_file": "data/corpus_raw/functions_hard_1.json",
+          "url": "https://peps.python.org/pep-0318/"
+        },
+        "title": "Decorators (hard): what @decorator means, stacking decorators, and readable function transformations",
+        "type": "reference"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "break",
+          "continue",
+          "dicts",
+          "enumerate",
+          "for",
+          "items",
+          "loops",
+          "parsing"
+        ],
+        "content": "Loops are most useful when they help you *process collections* (lists, strings, dictionaries) and build outputs.\n\n---\n## 1) Loop over a string\n\n```python\nfor ch in \"hello\":\n    print(ch)\n```python\n\n---\n## 2) Loop over a list and build a new list\n\n```python\nnums = [1, 2, 3, 4]\nsquares = []\n\nfor n in nums:\n    squares.append(n * n)\n\nprint(squares)  # [1, 4, 9, 16]\n```python\n\n---\n## 3) enumerate(): loop with index and value\n\n```python\nitems = [\"a\", \"b\", \"c\"]\nfor i, v in enumerate(items):\n    print(i, v)\n```python\n\nYou can start indices at 1:\n\n```python\nfor i, v in enumerate(items, start=1):\n    print(i, v)\n```python\n\n---\n## 4) Loop over dictionaries\nLoop over keys:\n\n```python\nm = {\"a\": 1, \"b\": 2}\nfor k in m:\n    print(k, m[k])\n```python\n\nLoop over key/value pairs:\n\n```python\nfor k, v in m.items():\n    print(k, v)\n```python\n\n---\n## 5) break and continue in a simple filter\n\n```python\nnums = [2, 4, 0, 6, 8]\n\nfor n in nums:\n    if n == 0:\n        print(\"stop at zero\")\n        break\n    if n % 4 != 0:\n        continue\n    print(\"multiple of 4:\", n)\n```python\n\n---\n## 6) A small practice script: sum only valid integers\n\n```python\ndata = [\"10\", \"x\", \"3\", \"-\", \"7\"]\n\ns = 0\nfor token in data:\n    if token.isdigit():\n        s += int(token)\n\nprint(\"sum\", s)  # 20\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-everyday-loop-patterns-iterating-lists-dicts-enumerate-and-building-results-ec0531db99",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "CC BY-SA 3.0 (Learn X in Y Minutes)",
+          "source_file": "data/corpus_raw/loops_easy_3.json",
+          "url": "https://learnxinyminutes.com/python/"
+        },
+        "title": "Everyday loop patterns: iterating lists, dicts, enumerate, and building results",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "assignment",
+          "errors",
+          "extended-unpacking",
+          "parsing",
+          "unpacking",
+          "variables"
+        ],
+        "content": "Extended iterable unpacking lets you capture \u201cthe remaining items\u201d in a sequence using a starred target. This is extremely useful when parsing structured data like lines, tokens, or tuples.\n\n---\n## 1) First/rest pattern\n\n```python\nfirst, *rest = [10, 20, 30, 40]\nprint(first)  # 10\nprint(rest)   # [20, 30, 40]\n```python\n\n---\n## 2) Head/middle/tail pattern\n\n```python\nhead, *middle, tail = (1, 2, 3, 4, 5)\nprint(head)    # 1\nprint(middle)  # [2, 3, 4]\nprint(tail)    # 5\n```python\n\n---\n## 3) Practical parsing example (tokenizing)\n\n```python\ncmd = \"git commit -m 'hello'\".split()\nprogram, subcmd, *args = cmd\n\nprint(program)  # git\nprint(subcmd)   # commit\nprint(args)     # ['-m', \"'hello'\"]\n```python\n\n---\n## 4) Nested unpacking (moderate complexity)\n\n```python\nrecord = (\"user1\", (10, 20), [\"admin\", \"active\"])\nname, (x, y), flags = record\nprint(name, x, y, flags)\n```python\n\n---\n## 5) Common errors to recognize\n### Too many values to unpack\n\n```python\n# a, b = (1, 2, 3)  # ValueError: too many values to unpack\n```python\n\n### Not enough values to unpack\n\n```python\n# a, b, c = (1, 2)  # ValueError: not enough values to unpack\n```python\n\n### Only one starred target is allowed\n\n```python\n# a, *b, *c = range(5)  # invalid\n```python\n\n---\n## 6) A chunk-friendly \u201cmany shapes\u201d practice section\n\n```python\nvalues = [1, 2, 3, 4]\na, *b, c = values\nprint(a, b, c)  # 1 [2, 3] 4\n```python\n\n```python\npair = (\"x\", 1)\nkey, val = pair\nprint(key, val)\n```python\n\n```python\nletters = \"ABCDE\"\n*prefix, last = letters\nprint(prefix, last)  # ['A','B','C','D'] E\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-extended-unpacking-rest-splitting-sequences-safe-patterns-and-common-errors-595c1e439b",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "Public domain (PEP text)",
+          "source_file": "data/corpus_raw/variables_moderate_3.json",
+          "url": "https://peps.python.org/pep-3132/"
+        },
+        "title": "Extended unpacking (*rest): splitting sequences, safe patterns, and common errors",
+        "type": "reference"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "args",
+          "defaults",
+          "functions",
+          "keyword-only",
+          "kwargs"
+        ],
+        "content": "Sometimes you want a function that can accept a variable number of inputs. Python supports this with `*args` and `**kwargs`.\n\n---\n## 1) *args collects extra positional arguments into a tuple\n\n```python\ndef add_many(*args):\n    total = 0\n    for n in args:\n        total += n\n    return total\n\nprint(add_many(1, 2, 3))\nprint(add_many(10))\nprint(add_many())\n```python\n\n---\n## 2) **kwargs collects extra keyword arguments into a dict\n\n```python\ndef show_fields(**kwargs):\n    for k, v in kwargs.items():\n        print(k, \"=\", v)\n\nshow_fields(name=\"Ana\", age=20)\n```python\n\n---\n## 3) Mix normal params + *args + **kwargs\n\n```python\ndef user_info(name, age=18, *skills, **extra):\n    return {\n        \"name\": name,\n        \"age\": age,\n        \"skills\": list(skills),\n        \"extra\": dict(extra),\n    }\n\nprint(user_info(\"Ben\", 20, \"Python\", \"Django\", city=\"Manila\"))\n```python\n\n---\n## 4) Keyword-only parameters (easy intro)\nA `*` in the signature can force parameters to be passed by name.\n\n```python\ndef greet(*, name):\n    return \"Hello \" + name\n\nprint(greet(name=\"Ana\"))\n# greet(\"Ana\") would be an error because name is keyword-only\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-flexible-function-inputs-easy-args-kwargs-and-keyword-only-parameters-b887e583fa",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/functions_easy_4.json",
+          "url": ""
+        },
+        "title": "Flexible function inputs (easy): *args, **kwargs, and keyword-only parameters",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "args",
+          "defaults",
+          "functions",
+          "keyword-arguments",
+          "keyword-only",
+          "kwargs",
+          "mutable-defaults",
+          "parameters",
+          "positional-only"
+        ],
+        "content": "At moderate difficulty, functions become more about designing clean APIs: deciding which arguments are required, which are optional, and how callers are allowed to pass them.\n\n---\n## 1) Default argument values\nDefaults make an argument optional.\n\n```python\ndef power(base, exp=2):\n    return base ** exp\n\nprint(power(3))     # 9\nprint(power(3, 3))  # 27\n```python\n\n---\n## 2) Keyword arguments\nCalling with keywords improves readability and allows flexible ordering.\n\n```python\ndef format_user(name, age, city):\n    return f\"{name} ({age}) from {city}\"\n\nprint(format_user(age=20, city=\"Manila\", name=\"Ana\"))\n```python\n\n---\n## 3) Mixing positional and keyword arguments (common pattern)\nPositional first, then keyword.\n\n```python\ndef banner(text, width=10, fill=\"-\"):\n    if len(text) >= width:\n        return text\n    pad = width - len(text)\n    left = pad // 2\n    right = pad - left\n    return fill * left + text + fill * right\n\nprint(banner(\"hi\"))\nprint(banner(\"hi\", width=12, fill=\"*\"))\n```python\n\n---\n## 4) *args and **kwargs\n`*args` collects extra positional arguments; `**kwargs` collects extra keyword arguments.\n\n```python\ndef add_many(*args):\n    total = 0\n    for n in args:\n        total += n\n    return total\n\nprint(add_many(1, 2, 3))\n```python\n\n```python\ndef show_fields(**kwargs):\n    for k, v in kwargs.items():\n        print(k, \"=\", v)\n\nshow_fields(name=\"Ana\", age=20)\n```python\n\n---\n## 5) Special parameters: positional-only (/) and keyword-only (*)\nPython supports marking parameters as:\n- **positional-only**: must be passed by position (left of `/`)\n- **keyword-only**: must be passed by keyword (right of `*`)\n\n```python\n# a and b are positional-only\n# c and d are positional-or-keyword\n# e and f are keyword-only\n\ndef f(a, b, /, c, d, *, e, f):\n    return a, b, c, d, e, f\n\nprint(f(1, 2, 3, d=4, e=5, f=6))\n# f(a=1, b=2, ...) would fail because a and b are positional-only\n```python\n\nKeyword-only example:\n\n```python\ndef greet(name, *, punctuation=\"!\"):\n    return \"Hello \" + name + punctuation\n\nprint(greet(\"Ana\", punctuation=\"...\"))\n# greet(\"Ana\", \"...\") would fail because punctuation is keyword-only\n```python\n\n---\n## 6) Default value gotcha (preview): defaults are evaluated once\nThis matters when the default is mutable.\n\n```python\ndef append_item(x, items=[]):\n    items.append(x)\n    return items\n\nprint(append_item(1))\nprint(append_item(2))  # keeps growing across calls\n```python\n\nA common safe pattern is using None:\n\n```python\ndef append_item(x, items=None):\n    if items is None:\n        items = []\n    items.append(x)\n    return items\n\nprint(append_item(1))\nprint(append_item(2))\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-function-parameters-moderate-defaults-keyword-args-args-kwargs-and-special-parameters-930de72751",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License; code examples in docs are dual-licensed (PSF-2.0 and BSD-0 starting Python 3.8.6+)",
+          "source_file": "data/corpus_raw/functions_moderate_1.json",
+          "url": "https://docs.python.org/3/tutorial/controlflow.html"
+        },
+        "title": "Function parameters (moderate): defaults, keyword args, *args/**kwargs, and / + * special parameters",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "arguments",
+          "callables",
+          "functions",
+          "locals",
+          "parameters",
+          "pure-functions",
+          "scope"
+        ],
+        "content": "A function is a callable piece of code that can accept arguments and optionally return a value.\n\n---\n## 1) A function as a reusable \u201crecipe\u201d\n\n```python\ndef headline(text):\n    return text.strip().title()\n\nprint(headline(\"  hello world  \"))\nprint(headline(\"python functions\"))\n```python\n\n---\n## 2) Parameters vs arguments\n- **Parameters**: names in the function definition\n- **Arguments**: actual values passed in calls\n\n```python\ndef multiply(a, b):\n    return a * b\n\nprint(multiply(6, 7))\n```python\n\n---\n## 3) Local variables live inside the function\nVariables created inside a function normally exist only within that function.\n\n```python\nx = \"global\"\n\ndef demo():\n    x = \"local\"\n    return x\n\nprint(demo())\nprint(x)\n```python\n\n---\n## 4) Pure functions (easy-to-test)\nA pure-style function depends only on inputs and returns outputs (no hidden state).\n\n```python\ndef clamp(n, lo, hi):\n    if n < lo:\n        return lo\n    if n > hi:\n        return hi\n    return n\n\nprint(clamp(5, 0, 10))\nprint(clamp(-2, 0, 10))\nprint(clamp(99, 0, 10))\n```python\n\n---\n## 5) A slightly larger example: compute basic stats\n\n```python\ndef stats(nums):\n    if not nums:\n        return None\n    return {\n        \"count\": len(nums),\n        \"min\": min(nums),\n        \"max\": max(nums),\n        \"sum\": sum(nums),\n        \"avg\": sum(nums) / len(nums),\n    }\n\nprint(stats([10, 20, 30]))\nprint(stats([]))\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-functions-as-callables-easy-inputs-outputs-and-simple-scoping-intuition-204adfda5a",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "CC BY-SA 4.0 (Wikibooks) / also dual-licensed with GFDL per Wikibooks policy",
+          "source_file": "data/corpus_raw/functions_easy_2.json",
+          "url": "https://en.wikibooks.org/wiki/Python_Programming/Functions"
+        },
+        "title": "Functions as callables (easy): inputs, outputs, and simple scoping intuition",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "generator-expressions",
+          "generators",
+          "lazy-evaluation",
+          "loops",
+          "memory-efficiency",
+          "pipelines"
+        ],
+        "content": "Generator expressions are a compact way to build a lazy iterator. They often replace loops that \u201cbuild a list just to consume it once.\u201d\n\n---\n## 1) Generator expression vs list comprehension\nList comprehensions build the whole list immediately:\n\n```python\nsquares_list = [x * x for x in range(10)]\nprint(squares_list)\n```python\n\nGenerator expressions are lazy (produce items on demand):\n\n```python\nsquares_gen = (x * x for x in range(10))\nprint(squares_gen)          # generator object\nprint(next(squares_gen))    # 0\nprint(next(squares_gen))    # 1\n```python\n\n---\n## 2) Common \u201creduce\u201d patterns: sum/min/max\nA classic use is feeding a generator directly into a reducer.\n\n```python\nlines = [\"a\", \"abcd\", \"xy\", \"\"]\n\nlongest = max((len(line) for line in lines if line))\nprint(longest)  # 4\n```python\n\n```python\nnums = [1, 2, 3, 4]\nprint(sum(n * n for n in nums))  # 30\n```python\n\n---\n## 3) One-pass behavior (easy to forget)\nOnce you consume a generator, it\u2019s exhausted.\n\n```python\ng = (x for x in range(3))\nprint(list(g))  # [0, 1, 2]\nprint(list(g))  # []\n```python\n\nIf you need two passes, recreate it:\n\n```python\nprint(list(x for x in range(3)))\nprint(list(x for x in range(3)))\n```python\n\n---\n## 4) Nested generator expressions (powerful but can get dense)\n\n```python\npairs = ((a, b) for a in range(3) for b in range(3) if a != b)\nprint(list(pairs))\n```python\n\n---\n## 5) A readable pipeline-style example\n\n```python\ntext = [\"10\", \"x\", \"5\", \"-\", \"7\"]\n\nnums = (int(t) for t in text if t.isdigit())\nprint(sum(nums))\n```python\n\n---\n## 6) Practical takeaways\n- Generator expressions are great for large inputs.\n- They are lazy and single-pass.\n- Keep them readable; if it becomes too dense, expand into a generator function or a loop.",
+        "difficulty": "hard",
+        "doc_id": "doc-generator-expressions-lazy-looping-one-pass-behavior-and-common-patterns-2bd4b01471",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "Public domain (PEP text)",
+          "source_file": "data/corpus_raw/loops_hard_3.json",
+          "url": "https://peps.python.org/pep-0289/"
+        },
+        "title": "Generator expressions: lazy looping, one-pass behavior, and common patterns",
+        "type": "reference"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "conditionals",
+          "guard-clauses",
+          "normalization",
+          "readability",
+          "validation"
+        ],
+        "content": "Hard conditional logic is often about keeping code readable when there are many requirements. A common strategy is **guard clauses**: return early when something is invalid, so the \u201chappy path\u201d stays uncluttered.\n\n---\n## 1) Baseline: nested ifs get deep\n\n```python\ndef process(user):\n    if user is not None:\n        if \"name\" in user:\n            if user[\"name\"]:\n                return \"ok\"\n    return \"bad\"\n```python\n\n---\n## 2) Refactor with guard clauses\n\n```python\ndef process(user):\n    if user is None:\n        return \"missing user\"\n    if \"name\" not in user:\n        return \"missing name\"\n    if user[\"name\"] == \"\":\n        return \"empty name\"\n    return \"ok\"\n\nprint(process({\"name\": \"ana\"}))\nprint(process({\"name\": \"\"}))\nprint(process({}))\nprint(process(None))\n```python\n\n---\n## 3) A larger example: validate and normalize a record\n\n```python\ndef normalize_record(rec):\n    # rec should be a dict with keys: name(str), age(int-like), tags(list)\n    if rec is None or not isinstance(rec, dict):\n        return None\n\n    name = rec.get(\"name\")\n    if name is None:\n        return None\n    name = str(name).strip()\n    if name == \"\":\n        return None\n\n    age_raw = rec.get(\"age\")\n    if age_raw is None:\n        return None\n\n    # accept int or digit-string\n    if isinstance(age_raw, int):\n        age = age_raw\n    else:\n        s = str(age_raw).strip()\n        if not s.isdigit():\n            return None\n        age = int(s)\n\n    if not (0 <= age <= 120):\n        return None\n\n    tags = rec.get(\"tags\")\n    if tags is None:\n        tags = []\n    if not isinstance(tags, list):\n        return None\n\n    # normalize tags\n    clean_tags = []\n    for t in tags:\n        t = str(t).strip()\n        if t:\n            clean_tags.append(t)\n\n    return {\"name\": name, \"age\": age, \"tags\": clean_tags}\n\nprint(normalize_record({\"name\": \" Ana \", \"age\": \"20\", \"tags\": [\"x\", \" \", \"y\"]}))\nprint(normalize_record({\"name\": \"\", \"age\": \"20\"}))\n```python\n\n---\n## 4) Takeaway\nGuard clauses reduce indentation and make it easier to see why a record fails validation.",
+        "difficulty": "hard",
+        "doc_id": "doc-guard-clauses-for-complex-conditionals-early-returns-readable-validation-and-safer-flows-6bf0f16cf5",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/conditionals_hard_4.json",
+          "url": ""
+        },
+        "title": "Guard clauses for complex conditionals: early returns, readable validation, and safer flows",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "cache",
+          "decorators",
+          "functions",
+          "functools",
+          "lru_cache",
+          "memoization",
+          "partial",
+          "wraps"
+        ],
+        "content": "Hard-level function work often means building function wrappers (decorators), caching results, or creating specialized callables. The `functools` module supports these patterns.\n\n---\n## 1) functools.wraps: preserve metadata when wrapping\nWithout care, wrappers hide the original function\u2019s name/docstring.\n\n```python\ndef deco(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n    return wrapper\n\n@deco\ndef f():\n    \"\"\"example doc\"\"\"\n    return 1\n\nprint(f.__name__)  # wrapper\nprint(f.__doc__)   # None\n```python\n\nUsing `functools.wraps` fixes that:\n\n```python\nimport functools\n\ndef deco(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n    return wrapper\n\n@deco\ndef f():\n    \"\"\"example doc\"\"\"\n    return 1\n\nprint(f.__name__)  # f\nprint(f.__doc__)   # example doc\n```python\n\n---\n## 2) lru_cache/cache: memoize function results\nCaching is useful when the function is pure-ish and called repeatedly with the same inputs.\n\n```python\nimport functools\n\n@functools.lru_cache(maxsize=128)\ndef fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\nprint(fib(30))\nprint(fib.cache_info())\n```python\n\nUnbounded caching is available via `cache` (or `lru_cache(maxsize=None)`):\n\n```python\nimport functools\n\n@functools.cache\ndef f(n):\n    return n * n\n\nprint(f(10))\n```python\n\n---\n## 3) partial: create specialized callables\n`partial` pre-fills arguments.\n\n```python\nimport functools\n\ndef power(base, exp):\n    return base ** exp\n\nsquare = functools.partial(power, exp=2)\ncube = functools.partial(power, exp=3)\n\nprint(square(10))\nprint(cube(10))\n```python\n\n---\n## 4) A larger example: decorator + wraps + caching together\n\n```python\nimport functools\n\ndef log_calls(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        print(\"call\", func.__name__, args, kwargs)\n        return func(*args, **kwargs)\n    return wrapper\n\n@log_calls\n@functools.lru_cache(maxsize=64)\ndef compute(x, y):\n    return (x * x) + (y * y)\n\nprint(compute(3, 4))\nprint(compute(3, 4))  # cached\n```",
+        "difficulty": "hard",
+        "doc_id": "doc-higher-order-function-tools-hard-functools-wraps-lru-cache-cache-and-partial-7b6a338369",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License (Python docs)",
+          "source_file": "data/corpus_raw/functions_hard_2.json",
+          "url": "https://docs.python.org/3/library/functools.html"
+        },
+        "title": "Higher-order function tools (hard): functools.wraps, lru_cache/cache, and partial",
+        "type": "reference"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "for",
+          "generator",
+          "iterables",
+          "iterators",
+          "loops",
+          "next",
+          "stopiteration"
+        ],
+        "content": "Hard-level loop knowledge starts with understanding what a `for` loop is *actually doing*.\n\nIn Python, `for x in iterable:` is driven by the **iterator protocol**:\n- An **iterable** can produce an **iterator**.\n- An **iterator** produces values one-at-a-time via `__next__()`.\n- When exhausted, `__next__()` raises `StopIteration`.\n\n---\n## 1) Iterables vs iterators (mental model)\n- **Iterable**: something you can loop over (it can produce an iterator)\n- **Iterator**: something you can call `next()` on until it\u2019s exhausted\n\n```python\nnums = [10, 20, 30]\n\nit = iter(nums)          # iterator\nprint(next(it))          # 10\nprint(next(it))          # 20\nprint(next(it))          # 30\n# next(it) would raise StopIteration\n```python\n\nA key detail: once an iterator is exhausted, it stays exhausted.\n\n```python\nit = iter([1, 2])\nprint(list(it))  # [1, 2]\nprint(list(it))  # []  (already consumed)\n```python\n\n---\n## 2) What the for-loop roughly does\nA simplified view:\n\n```python\n# conceptual, not exact interpreter code\nit = iter(iterable)\nwhile True:\n    try:\n        x = next(it)\n    except StopIteration:\n        break\n    # loop body runs here\n```python\n\nThis is why iterators are perfect for streaming data: they don\u2019t require loading everything into memory first.\n\n---\n## 3) Custom iterator class (stateful iteration)\nWhen implementing your own iterator, you typically provide:\n- `__iter__()` returning the iterator object\n- `__next__()` returning the next item or raising `StopIteration`\n\n```python\nclass CountUpTo:\n    def __init__(self, n):\n        self.n = n\n        self.i = 0\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.i >= self.n:\n            raise StopIteration\n        self.i += 1\n        return self.i\n\nfor x in CountUpTo(5):\n    print(x)\n```python\n\n---\n## 4) Generator functions are iterators too\nA generator function automatically creates an iterator.\n\n```python\ndef count_up_to(n):\n    i = 0\n    while i < n:\n        i += 1\n        yield i\n\nfor x in count_up_to(5):\n    print(x)\n```python\n\n---\n## 5) Practical consequence: one-pass iterators\nSome objects (like file handles, generator objects, many iterator tools) are **consumed** as you loop.\nIf you need to loop twice, you usually must recreate the iterator.\n\n```python\ndef make_iter():\n    for i in range(3):\n        yield i\n\nit = make_iter()\nprint(list(it))  # [0, 1, 2]\nprint(list(it))  # []\n\nit2 = make_iter()\nprint(list(it2)) # [0, 1, 2]\n```python\n\n---\n## 6) A dense practice block (consumption + next + for)\n\n```python\ndata = [\"a\", \"b\", \"c\"]\nit = iter(data)\n\nprint(next(it))\n\nfor x in it:\n    print(\"loop:\", x)\n\nprint(list(it))  # empty, already exhausted\n```",
+        "difficulty": "hard",
+        "doc_id": "doc-how-for-loops-really-work-iterables-iterators-next-and-stopiteration-fe19a3476f",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License (Python docs)",
+          "source_file": "data/corpus_raw/loops_hard_1.json",
+          "url": "https://docs.python.org/3/library/stdtypes.html"
+        },
+        "title": "How for-loops really work: iterables, iterators, next(), and StopIteration",
+        "type": "reference"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "aliasing",
+          "equality",
+          "identity",
+          "mutability",
+          "none",
+          "variables"
+        ],
+        "content": "A moderate step up from basic variables is understanding that variables refer to **objects**, and there are two different questions you might ask:\n\n- **Do these two values look the same?** \u2192 `==`\n- **Are these two names pointing to the same object?** \u2192 `is`\n\n---\n## 1) Equality compares values\n\n```python\nprint([1, 2, 3] == [1, 2, 3])  # True\nprint({\"a\": 1} == {\"a\": 1})  # True\n```python\n\n---\n## 2) Identity compares object sameness\n\n```python\na = [1, 2, 3]\nb = [1, 2, 3]\n\nprint(a is b)        # False (different list objects)\nprint(a == b)        # True  (same contents)\n```python\n\nYou can inspect identity with `id()`:\n\n```python\na = [1, 2]\nb = a\nc = a.copy()\n\nprint(id(a), id(b), id(c))\nprint(a is b)  # True\nprint(a is c)  # False\n```python\n\n---\n## 3) When should you use `is`?\nUse `is` when checking for singletons like `None`.\n\n```python\nvalue = None\nif value is None:\n    print(\"missing\")\n```python\n\nAvoid using `is` for string/number comparisons.\n\n```python\nx = 1000\ny = 1000\nprint(x == y)  # True\n# print(x is y)  # don't rely on this for correctness\n```python\n\n---\n## 4) A realistic example mixing identity, aliasing, and mutation\n\n```python\nitems = [\"a\", \"b\"]\nalias = items\ncopy1 = items.copy()\n\nalias.append(\"c\")\ncopy1.append(\"X\")\n\nprint(items)   # alias changed the original\nprint(alias)\nprint(copy1)   # separate\n\nprint(items is alias)   # True\nprint(items is copy1)   # False\n```python\n\n---\n## 5) Short practice block\nTry predicting which lines print True.\n\n```python\nx = [1]\ny = x\nz = [1]\n\nprint(x is y)\nprint(x == y)\nprint(x is z)\nprint(x == z)\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-identity-vs-equality-is-vs-id-and-how-variables-relate-to-objects-eff3606ea8",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/variables_moderate_4.json",
+          "url": ""
+        },
+        "title": "Identity vs equality: is vs ==, id(), and how variables relate to objects",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "annotations",
+          "functions",
+          "inspect",
+          "introspection",
+          "signature",
+          "tooling",
+          "wrappers"
+        ],
+        "content": "If you\u2019re building tooling around code (parsers, generators, analyzers), function introspection becomes important. The `inspect` module provides a stable way to examine call signatures.\n\n---\n## 1) Read a function signature\n\n```python\nimport inspect\n\ndef f(a, b=10, *, c: int = 1, **kw) -> str:\n    return \"ok\"\n\nsig = inspect.signature(f)\nprint(sig)\n\nfor name, p in sig.parameters.items():\n    print(name, p.kind, p.default, p.annotation)\n\nprint(\"return\", sig.return_annotation)\n```python\n\n---\n## 2) Why wrappers can break introspection\nA decorator wrapper often looks like `(*args, **kwargs)` which hides real parameters.\n\n```python\ndef deco(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n    return wrapper\n\n@deco\ndef add(a, b):\n    return a + b\n\nimport inspect\nprint(inspect.signature(add))  # shows (*args, **kwargs) not (a, b)\n```python\n\n---\n## 3) How wraps helps tools\n`functools.wraps` sets metadata (and commonly improves introspection behavior in practice).\n\n```python\nimport functools, inspect\n\ndef deco(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n    return wrapper\n\n@deco\ndef add(a, b):\n    return a + b\n\nprint(add.__name__)\nprint(inspect.signature(add))\n```python\n\n---\n## 4) Practical pattern: inspect + validation\n\n```python\nimport inspect\n\ndef accepts_two_args(fn):\n    sig = inspect.signature(fn)\n    params = [p for p in sig.parameters.values()\n              if p.kind in (p.POSITIONAL_ONLY, p.POSITIONAL_OR_KEYWORD)]\n    return len(params) == 2\n\nprint(accepts_two_args(lambda a, b: a + b))\nprint(accepts_two_args(lambda a, *, b: a + b))\n```python\n\n---\n## 5) A larger example: build a tiny call planner\nThis shows how tooling might build a call using defaults.\n\n```python\nimport inspect\n\ndef plan_call(fn):\n    sig = inspect.signature(fn)\n    kwargs = {}\n    for name, p in sig.parameters.items():\n        if p.default is not inspect.Parameter.empty:\n            kwargs[name] = p.default\n    return kwargs\n\ndef connect(host, port=443, *, timeout=5, secure=True):\n    return host, port, timeout, secure\n\nprint(plan_call(connect))\n```",
+        "difficulty": "hard",
+        "doc_id": "doc-introspecting-functions-hard-inspect-signature-parameters-annotations-and-wrapper-effects-7c83e939f7",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License (Python docs)",
+          "source_file": "data/corpus_raw/functions_hard_3.json",
+          "url": "https://docs.python.org/3/library/inspect.html"
+        },
+        "title": "Introspecting functions (hard): inspect.signature, parameters, annotations, and wrapper effects",
+        "type": "reference"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "accumulation",
+          "filtering",
+          "for",
+          "iterables",
+          "len",
+          "loops",
+          "range"
+        ],
+        "content": "A moderate step in loops is shifting your mindset from \u201ccounting with indices\u201d to \u201citerating over **iterables**.\u201d Python\u2019s `for` loop is designed to work with any iterable: lists, sets, strings, ranges, and many custom objects.\n\n---\n## 1) for-loops iterate over items (not just numbers)\n\n```python\nfor ch in \"spam\":\n    print(ch)\n```python\n\n```python\nfor item in {\"a\", \"b\", \"c\"}:\n    print(item)\n```python\n\n---\n## 2) range(start, stop) is an iterable of numbers\n`range` produces numbers on demand (it does not build a giant list automatically).\n\n```python\nonetoten = range(1, 11)\nfor count in onetoten:\n    print(count)\n```python\n\n---\n## 3) Processing a list: accumulate a result\nModerate loop work often means building a computed output.\n\n```python\nnums = [2, 4, 6, 8]\n\ntotal = 0\nfor n in nums:\n    total += n\nprint(\"total\", total)\n```python\n\n---\n## 4) Counting + values (two common approaches)\n### Approach A: iterate values directly (preferred when possible)\n\n```python\nnums = [10, 20, 30]\nfor n in nums:\n    print(n)\n```python\n\n### Approach B: iterate indices only when needed\n\n```python\nnums = [10, 20, 30]\nfor i in range(len(nums)):\n    print(i, nums[i])\n```python\n\n---\n## 5) A slightly larger example: compute min/max and ignore bad items\n\n```python\ndata = [\"10\", \"x\", \"5\", \"-\", \"7\", \"3\"]\nvalues = []\n\nfor token in data:\n    if token.isdigit():\n        values.append(int(token))\n\nif values:\n    print(\"min\", min(values))\n    print(\"max\", max(values))\n    print(\"sum\", sum(values))\nelse:\n    print(\"no valid numbers\")\n```python\n\n---\n## 6) Practice: loop with a running average\n\n```python\nnums = [10, 20, 30, 40]\ncount = 0\ns = 0\n\nfor n in nums:\n    count += 1\n    s += n\n    print(\"after\", count, \"items avg=\", s / count)\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-iterating-the-python-way-iterables-range-and-processing-sequences-with-for-loops-1f45214370",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "CC BY-SA 4.0 (Wikibooks) / also dual-licensed with GFDL per Wikibooks policy",
+          "source_file": "data/corpus_raw/loops_moderate_2.json",
+          "url": "https://en.wikibooks.org/wiki/Python_Programming/Loops"
+        },
+        "title": "Iterating the Python way: iterables, range(), and processing sequences with for-loops",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "chain",
+          "cycle",
+          "groupby",
+          "islice",
+          "iterators",
+          "itertools",
+          "loops",
+          "pipelines",
+          "product"
+        ],
+        "content": "Hard loop problems often become easier when you can **compose iterators** instead of writing nested loops manually. The `itertools` module provides fast, memory-efficient building blocks.\n\n---\n## 1) chain(): loop over multiple iterables as one\n\n```python\nimport itertools\n\nfor x in itertools.chain([1, 2], [\"a\", \"b\"], [True, False]):\n    print(x)\n```python\n\n---\n## 2) islice(): take a slice of an iterator (without converting to a list)\nUseful when you want \u201cfirst N items\u201d from a stream.\n\n```python\nimport itertools\n\nit = (i * i for i in range(100))\nfirst_five = itertools.islice(it, 5)\nprint(list(first_five))  # [0, 1, 4, 9, 16]\n```python\n\n---\n## 3) product(): nested loops without writing nested loops\n`product(A, B)` is like:\n\n```python\n# conceptual\n# for a in A:\n#   for b in B:\n#     yield (a, b)\n```python\n\nExample:\n\n```python\nimport itertools\n\ncolors = [\"red\", \"blue\"]\nsizes = [\"S\", \"M\", \"L\"]\n\nfor c, s in itertools.product(colors, sizes):\n    print(c, s)\n```python\n\n---\n## 4) cycle(): repeat values forever (be careful)\n\n```python\nimport itertools\n\nspinner = itertools.cycle([\"-\", \"\\\\\", \"|\", \"/\"])\nfor i in range(8):\n    print(next(spinner))\n```python\n\n---\n## 5) groupby(): group consecutive items\n`groupby` groups **adjacent** items with the same key (so it is usually used after sorting).\n\n```python\nimport itertools\n\ndata = [\"aa\", \"ab\", \"ac\", \"ba\", \"bb\", \"bc\"]\n\nfor key, group in itertools.groupby(data, key=lambda s: s[0]):\n    print(key, list(group))\n```python\n\nSorted grouping example:\n\n```python\nimport itertools\n\nwords = [\"dog\", \"cat\", \"apple\", \"cow\", \"banana\"]\nwords.sort(key=lambda w: w[0])\n\nfor k, g in itertools.groupby(words, key=lambda w: w[0]):\n    print(k, list(g))\n```python\n\n---\n## 6) A pipeline-style example (chain + filter + map + sum)\n\n```python\nimport itertools\n\nsources = itertools.chain([\"10\", \"x\"], [\"7\"], [\"3\", \"-\"])\n\nnums = (int(s) for s in sources if s.isdigit())\nprint(sum(nums))  # 20\n```python\n\n---\n## 7) Practical takeaways\n- Prefer iterator pipelines when data is large or streaming.\n- `itertools` tools avoid building intermediate lists.\n- Be careful with infinite iterators like `cycle()`.",
+        "difficulty": "hard",
+        "doc_id": "doc-iterator-algebra-with-itertools-chain-islice-product-cycle-and-groupby-373112e9f2",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License (Python docs)",
+          "source_file": "data/corpus_raw/loops_hard_2.json",
+          "url": "https://docs.python.org/3/library/itertools.html"
+        },
+        "title": "Iterator algebra with itertools: chain, islice, product, cycle, and groupby",
+        "type": "reference"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "api-design",
+          "functions",
+          "keyword-only",
+          "pep-3102",
+          "readability",
+          "special-parameters"
+        ],
+        "content": "Keyword-only arguments are parameters that **must** be supplied by name. They help avoid ambiguous calls and make code self-documenting.\n\nIn a function definition, putting a bare `*` means: \u201ceverything after this is keyword-only.\u201d\n\n---\n## 1) Basic keyword-only example\n\n```python\ndef connect(host, port, *, timeout=5):\n    return f\"connect {host}:{port} timeout={timeout}\"\n\nprint(connect(\"example.com\", 443, timeout=10))\n# connect(\"example.com\", 443, 10) fails because timeout is keyword-only\n```python\n\n---\n## 2) Why keyword-only is useful\nConsider a function with many optional settings. Keyword-only prevents calls like:\n\n```python\n# confusing\n# connect(\"example.com\", 443, 10)\n\n# clearer\nconnect(\"example.com\", 443, timeout=10)\n```python\n\n---\n## 3) Combining normal args + keyword-only args\n\n```python\ndef draw(text, width=10, *, fill=\"-\", align=\"center\"):\n    if len(text) >= width:\n        return text\n\n    pad = width - len(text)\n    if align == \"left\":\n        return text + fill * pad\n    if align == \"right\":\n        return fill * pad + text\n\n    left = pad // 2\n    right = pad - left\n    return fill * left + text + fill * right\n\nprint(draw(\"hi\", 12, fill=\"*\", align=\"left\"))\nprint(draw(\"hi\", 12, fill=\"*\", align=\"right\"))\nprint(draw(\"hi\", 12, fill=\"*\"))\n```python\n\n---\n## 4) Practice: make a function safer by forcing named options\n\n```python\ndef parse_int(text, *, base=10):\n    text = text.strip()\n    try:\n        return int(text, base)\n    except ValueError:\n        return None\n\nprint(parse_int(\"FF\", base=16))\nprint(parse_int(\" 42 \"))\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-keyword-only-arguments-pep-3102-making-calls-clearer-with-b252f08a30",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "Public domain (PEP text)",
+          "source_file": "data/corpus_raw/functions_moderate_3.json",
+          "url": "https://peps.python.org/pep-3102/"
+        },
+        "title": "Keyword-only arguments (PEP 3102): making calls clearer with '*'",
+        "type": "reference"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "break",
+          "continue",
+          "counting",
+          "for",
+          "loop-else",
+          "loops",
+          "parsing",
+          "unpacking"
+        ],
+        "content": "Looping over lines is a common real-world use of `for`. This example stays moderate: it mixes parsing, counters, and early exit, but remains readable.\n\n---\n## 1) Basic line iteration (list of lines)\n\n```python\nlines = [\n    \"INFO start\\n\",\n    \"WARN low disk\\n\",\n    \"INFO running\\n\",\n    \"ERROR crashed\\n\",\n]\n\nfor line in lines:\n    print(line.strip())\n```python\n\n---\n## 2) Counting types of lines\n\n```python\ncounts = {\"INFO\": 0, \"WARN\": 0, \"ERROR\": 0}\n\nfor line in lines:\n    text = line.strip()\n    level, *rest = text.split(\" \")\n    if level in counts:\n        counts[level] += 1\n\nprint(counts)\n```python\n\n---\n## 3) Stop when a condition is met (early exit)\n\n```python\nfor line in lines:\n    if line.startswith(\"ERROR\"):\n        print(\"first error:\", line.strip())\n        break\nelse:\n    print(\"no errors\")\n```python\n\n---\n## 4) Practice-style block: extract messages after WARN\n\n```python\nwarn_msgs = []\nfor line in lines:\n    if not line.startswith(\"WARN\"):\n        continue\n    warn_msgs.append(line.strip())\n\nprint(warn_msgs)\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-looping-over-text-lines-clean-parsing-counters-and-early-exit-patterns-ce462c5d5f",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/loops_moderate_4.json",
+          "url": ""
+        },
+        "title": "Looping over text lines: clean parsing, counters, and early-exit patterns",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "counting",
+          "for",
+          "infinite-loop",
+          "loops",
+          "range",
+          "sentinel",
+          "while"
+        ],
+        "content": "Loops let you repeat a block of code. In Python, the two everyday loops are:\n\n- `for`: repeat once for each item in a sequence/iterable\n- `while`: repeat while a condition stays true\n\n---\n## 1) A simple `for` loop over a list\n\n```python\nnames = [\"Ana\", \"Ben\", \"Kai\"]\nfor name in names:\n    print(\"Hello\", name)\n```python\n\nThis reads naturally: \u201cfor each name in names, run the indented block.\u201d\n\n---\n## 2) Counting with `range()`\nUse `range(n)` to produce `0..n-1`.\n\n```python\nfor i in range(5):\n    print(i)\n# 0 1 2 3 4\n```python\n\nCounting from 1 to 5:\n\n```python\nfor i in range(1, 6):\n    print(i)\n# 1 2 3 4 5\n```python\n\nUsing a step:\n\n```python\nfor i in range(0, 10, 2):\n    print(i)\n# 0 2 4 6 8\n```python\n\n---\n## 3) A `while` loop for repeated actions\nA `while` loop checks its condition before each iteration.\n\n```python\ncount = 1\nwhile count <= 5:\n    print(\"count =\", count)\n    count += 1\n```python\n\n---\n## 4) Sentinel input loop (repeat until a target value)\nA common pattern is \u201ckeep asking until the user enters a special value.\u201d\n\n```python\npassword = \"unicorn\"\nentered = \"\"\n\nwhile entered != password:\n    entered = input(\"Password: \")\n\nprint(\"Welcome in\")\n```python\n\nThis loop stops when `entered` matches the sentinel value.\n\n---\n## 5) Avoiding infinite loops\nIf the condition never becomes false, the loop runs forever.\n\n```python\n# WARNING: infinite loop example\n# x = 1\n# while x > 0:\n#     print(x)\n#     x += 1\n```python\n\nA safe habit is to ensure your loop updates the variable that controls the condition.\n\n---\n## 6) A small practice script (for + while)\n\n```python\n# for loop: sum numbers 1..5\ns = 0\nfor i in range(1, 6):\n    s += i\nprint(\"sum\", s)\n\n# while loop: countdown\nn = 3\nwhile n > 0:\n    print(\"T-\", n)\n    n -= 1\nprint(\"Lift off\")\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-loops-in-python-for-vs-while-counting-and-sentinel-driven-repetition-5bd4c915d6",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "CC BY-SA 4.0 (Wikibooks) / also dual-licensed with GFDL per Wikibooks policy",
+          "source_file": "data/corpus_raw/loops_easy_1.json",
+          "url": "https://en.wikibooks.org/wiki/Python_Programming/Loops"
+        },
+        "title": "Loops in Python: for vs while, counting, and sentinel-driven repetition",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "chained-comparisons",
+          "comparisons",
+          "conditionals",
+          "identity",
+          "membership",
+          "precedence"
+        ],
+        "content": "Moderate conditionals often involve writing **clear comparisons** and avoiding subtle bugs.\n\n---\n## 1) Chained comparisons\nPython allows chained comparisons like `0 < x < 10`. This is usually clearer than writing two comparisons with `and`.\n\n```python\nx = 7\nif 0 < x < 10:\n    print(\"single digit positive\")\n```python\n\nA more realistic example:\n\n```python\ntemp = 22\nif 18 <= temp <= 27:\n    print(\"comfortable\")\nelse:\n    print(\"adjust\")\n```python\n\n---\n## 2) Membership tests: in / not in\nMembership checks are often clearer than multiple equality checks.\n\n```python\ncmd = \"status\"\nif cmd in {\"start\", \"stop\", \"status\"}:\n    print(\"known command\")\nelse:\n    print(\"unknown\")\n```python\n\n---\n## 3) Identity vs equality: is vs ==\nUse `is` for singletons like `None`. Use `==` for value comparisons.\n\n```python\nvalue = None\nif value is None:\n    print(\"missing\")\n\nx = [1, 2]\ny = [1, 2]\nprint(x == y)  # True\nprint(x is y)  # False\n```python\n\n---\n## 4) Common readability tip: avoid overly clever precedence\nParentheses can make intent obvious.\n\n```python\nage = 19\nhas_ticket = True\nvip = False\n\nif (age >= 18 and has_ticket) or vip:\n    print(\"enter\")\nelse:\n    print(\"no\")\n```python\n\n---\n## 5) Practice block: classify a score with clear comparisons\n\n```python\ndef grade(score):\n    if score < 0 or score > 100:\n        return \"invalid\"\n    if score >= 90:\n        return \"A\"\n    if score >= 80:\n        return \"B\"\n    if score >= 70:\n        return \"C\"\n    return \"D\"\n\nfor s in [105, 95, 81, 70, 69]:\n    print(s, grade(s))\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-moderate-comparisons-chaining-membership-checks-identity-and-readable-conditions-2351734f71",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License (Python docs)",
+          "source_file": "data/corpus_raw/conditionals_moderate_2.json",
+          "url": "https://docs.python.org/3/reference/expressions.html"
+        },
+        "title": "Moderate comparisons: chaining, membership checks, identity, and readable conditions",
+        "type": "reference"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "break",
+          "continue",
+          "for",
+          "loop-else",
+          "loops",
+          "nested-loops",
+          "range",
+          "search-patterns"
+        ],
+        "content": "Once you\u2019re comfortable with basic `for` and `while` loops, the next step is learning **loop control patterns**: exiting early, skipping work, and using `else` with loops to express \u201cnot found.\u201d\n\n---\n## 1) break: exit early when the goal is reached\nA very common pattern is to stop looping as soon as you find what you need.\n\n```python\nvalues = [3, 7, 9, 12]\ntarget = 9\n\nfor v in values:\n    if v == target:\n        print(\"found\", v)\n        break\nprint(\"done\")\n```python\n\n---\n## 2) continue: skip the current iteration\nUse `continue` when you want to ignore certain items and move on.\n\n```python\nnums = [1, 2, 3, 4, 5, 6]\nfor n in nums:\n    if n % 2 == 0:\n        continue\n    print(\"odd:\", n)\n```python\n\n---\n## 3) loop-else: express \u201cno break happened\u201d\nA loop can have an `else` clause. The `else` block runs only if the loop finishes normally (not via `break`).\n\n```python\nvalues = [3, 7, 9, 12]\ntarget = 100\n\nfor v in values:\n    if v == target:\n        print(\"found\", v)\n        break\nelse:\n    print(\"not found\")\n```python\n\nThis avoids extra flags like `found = False` in many cases.\n\n---\n## 4) Nested loops + break: \u201cprime search\u201d style\nThe tutorial\u2019s classic example shows nested loops with `break` and a loop `else`.\n\n```python\nfor n in range(2, 10):\n    for x in range(2, n):\n        if n % x == 0:\n            print(n, \"equals\", x, \"*\", n // x)\n            break\n    else:\n        # ran without finding a factor\n        print(n, \"is prime\")\n```python\n\n---\n## 5) A readable \u201csearch\u201d function with loop-else\n\n```python\ndef find_first_even(values):\n    for v in values:\n        if v % 2 == 0:\n            return v\n    return None\n\nprint(find_first_even([1, 3, 5, 8, 9]))\nprint(find_first_even([1, 3, 5]))\n```python\n\nAlternative using loop-else:\n\n```python\ndef find_first_even(values):\n    for v in values:\n        if v % 2 == 0:\n            return v\n    else:\n        return None\n```python\n\n---\n## 6) Practice block: filter + early exit\n\n```python\n# Print numbers from 1..20, skipping multiples of 3.\n# Stop entirely if you hit a multiple of 11.\nfor n in range(1, 21):\n    if n % 11 == 0:\n        print(\"stop at\", n)\n        break\n    if n % 3 == 0:\n        continue\n    print(n)\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-moderate-loop-control-break-continue-loop-else-and-search-patterns-1fcdf722b4",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License; code examples are dual-licensed (PSF-2.0 and BSD-0 starting Python 3.8.6+)",
+          "source_file": "data/corpus_raw/loops_moderate_1.json",
+          "url": "https://docs.python.org/3/tutorial/controlflow.html"
+        },
+        "title": "Moderate loop control: break/continue, loop-else, and search patterns",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "caching",
+          "defaults",
+          "dicts",
+          "functions",
+          "lists",
+          "mutable-defaults",
+          "testing"
+        ],
+        "content": "One of the most important moderate-level function details is that **default parameter values are evaluated once**, when the function is defined. If the default is mutable (like a list or dict), it can keep state between calls.\n\n---\n## 1) The surprising behavior\n\n```python\ndef add_tag(tag, tags=[]):\n    tags.append(tag)\n    return tags\n\nprint(add_tag(\"a\"))\nprint(add_tag(\"b\"))\nprint(add_tag(\"c\"))\n```python\n\nThis keeps growing because `tags` is the same list object each time.\n\n---\n## 2) The common safe pattern: default to None\n\n```python\ndef add_tag(tag, tags=None):\n    if tags is None:\n        tags = []\n    tags.append(tag)\n    return tags\n\nprint(add_tag(\"a\"))\nprint(add_tag(\"b\"))\n```python\n\n---\n## 3) Same pitfall with dict defaults\n\n```python\ndef count_word(word, counts={}):\n    counts[word] = counts.get(word, 0) + 1\n    return counts\n\nprint(count_word(\"hi\"))\nprint(count_word(\"hi\"))\n```python\n\nSafe version:\n\n```python\ndef count_word(word, counts=None):\n    if counts is None:\n        counts = {}\n    counts[word] = counts.get(word, 0) + 1\n    return counts\n\nprint(count_word(\"hi\"))\nprint(count_word(\"hi\"))\n```python\n\n---\n## 4) When a mutable default is actually OK\nSometimes you *want* caching. In that case, document it clearly.\n\n```python\ndef fib(n, _cache={0: 0, 1: 1}):\n    if n in _cache:\n        return _cache[n]\n    _cache[n] = fib(n - 1) + fib(n - 2)\n    return _cache[n]\n\nprint(fib(10))\nprint(fib(12))\n```python\n\n---\n## 5) Lightweight tests to catch regressions\n\n```python\ndef add_tag_safe(tag, tags=None):\n    if tags is None:\n        tags = []\n    tags.append(tag)\n    return tags\n\nassert add_tag_safe(\"x\") == [\"x\"]\nassert add_tag_safe(\"y\") == [\"y\"]\nprint(\"tests passed\")\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-mutable-default-arguments-moderate-why-it-happens-and-safe-design-patterns-77be358d12",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/functions_moderate_4.json",
+          "url": ""
+        },
+        "title": "Mutable default arguments (moderate): why it happens and safe design patterns",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "break",
+          "enumerate",
+          "functions",
+          "grids",
+          "loops",
+          "nested-loops",
+          "search"
+        ],
+        "content": "Nested loops show up naturally when working with 2D data (grids, tables, boards). This example is moderate because it introduces coordinate tracking and multiple exit strategies.\n\n---\n## 1) Scan a grid and print coordinates\n\n```python\ngrid = [\n    [\".\", \".\", \".\"],\n    [\".\", \"X\", \".\"],\n    [\".\", \".\", \".\"],\n]\n\nfor r in range(len(grid)):\n    for c in range(len(grid[r])):\n        print(\"cell\", r, c, grid[r][c])\n```python\n\n---\n## 2) Find the first 'X' using break + flag\n\n```python\nfound = False\npos = None\n\nfor r in range(len(grid)):\n    for c in range(len(grid[r])):\n        if grid[r][c] == \"X\":\n            found = True\n            pos = (r, c)\n            break\n    if found:\n        break\n\nprint(\"found\", found, \"pos\", pos)\n```python\n\n---\n## 3) Alternative: wrap search in a function and return early\nReturning early is often the cleanest way to exit multiple loop layers.\n\n```python\ndef find_x(grid):\n    for r, row in enumerate(grid):\n        for c, value in enumerate(row):\n            if value == \"X\":\n                return (r, c)\n    return None\n\nprint(find_x(grid))\n```python\n\n---\n## 4) Practice block: count neighbors around a coordinate\n\n```python\ndef neighbors(r, c):\n    return [\n        (r-1, c), (r+1, c),\n        (r, c-1), (r, c+1)\n    ]\n\nr0, c0 = 1, 1\ncount_dots = 0\n\nfor r, c in neighbors(r0, c0):\n    if 0 <= r < len(grid) and 0 <= c < len(grid[r]):\n        if grid[r][c] == \".\":\n            count_dots += 1\n\nprint(\"dots around X:\", count_dots)\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-nested-loop-search-scanning-a-grid-tracking-coordinates-and-clean-exit-strategies-cc184d15e4",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/loops_moderate_5.json",
+          "url": ""
+        },
+        "title": "Nested loop search: scanning a grid, tracking coordinates, and clean exit strategies",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "break",
+          "grids",
+          "loops",
+          "nested-loops",
+          "range",
+          "tables"
+        ],
+        "content": "Nested loops are loops inside loops. They\u2019re useful for working with grid-like data, building tables, or processing pairs of items.\n\n---\n## 1) Print a small multiplication table\n\n```python\nfor row in range(1, 4):\n    for col in range(1, 4):\n        print(row * col, end=\" \")\n    print()  # new line after each row\n```python\n\n---\n## 2) Loop through a \u201cgrid\u201d (list of lists)\n\n```python\ngrid = [\n    [1, 2, 3],\n    [4, 5, 6],\n]\n\nfor r in grid:\n    for value in r:\n        print(value)\n```python\n\n---\n## 3) Build a flattened list (turn 2D into 1D)\n\n```python\ngrid = [\n    [1, 2, 3],\n    [4, 5, 6],\n]\n\nflat = []\nfor r in grid:\n    for value in r:\n        flat.append(value)\n\nprint(flat)  # [1, 2, 3, 4, 5, 6]\n```python\n\n---\n## 4) Pairs: all combinations of two lists\n\n```python\ncolors = [\"red\", \"blue\"]\nsizes = [\"S\", \"M\", \"L\"]\n\nfor c in colors:\n    for s in sizes:\n        print(c, s)\n```python\n\n---\n## 5) Early exit from nested loops (simple technique)\nIf you want to stop both loops when you find something, one easy approach is a flag.\n\n```python\nfound = False\nfor r in range(3):\n    for c in range(3):\n        if r == 1 and c == 2:\n            found = True\n            break\n    if found:\n        break\n\nprint(\"found?\", found)\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-nested-loops-easy-grids-simple-tables-and-readable-structure-a0cec1dadc",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/loops_easy_4.json",
+          "url": ""
+        },
+        "title": "Nested loops (easy): grids, simple tables, and readable structure",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "debugging",
+          "exhaustion",
+          "generators",
+          "iterators",
+          "loops",
+          "pipelines"
+        ],
+        "content": "Hard loop bugs often happen when code accidentally assumes an iterator can be reused like a list. Many iteration tools are **one-pass**.\n\n---\n## 1) The bug: consuming an iterator early\n\n```python\ndef data_stream():\n    for i in range(3):\n        yield i\n\nit = data_stream()\nprint(\"preview\", list(it))\n\n# later...\nfor x in it:\n    print(\"loop\", x)\n# nothing prints (iterator already consumed)\n```python\n\n---\n## 2) Fix A: recreate the iterator when needed\n\n```python\ndef data_stream():\n    for i in range(3):\n        yield i\n\nit1 = data_stream()\nprint(\"preview\", list(it1))\n\nit2 = data_stream()\nfor x in it2:\n    print(\"loop\", x)\n```python\n\n---\n## 3) Fix B: snapshot to a list (when data size is manageable)\n\n```python\nit = (i for i in range(5))\nitems = list(it)\n\nprint(\"preview\", items)\nfor x in items:\n    print(\"loop\", x)\n```python\n\n---\n## 4) Fix C: split iteration carefully\nIf you must use the same underlying stream twice, you may need different strategies.\nA straightforward approach is to compute what you need in a single pass.\n\n```python\nnums = (i for i in range(10))\n\ncount = 0\ns = 0\nfor n in nums:\n    count += 1\n    s += n\n\nprint(\"count\", count)\nprint(\"sum\", s)\n```python\n\n---\n## 5) A pipeline example where single-pass is a feature\n\n```python\nlines = [\"10\\n\", \"x\\n\", \"5\\n\", \"7\\n\"]\nnums = (int(line) for line in lines if line.strip().isdigit())\n\nprint(sum(nums))\n```python\n\n---\n## 6) Practical takeaway\n- If you need multiple passes, prefer **recreating the iterator**.\n- If data is small enough, snapshot with `list()`.\n- If the dataset is large, restructure to compute results in one pass.",
+        "difficulty": "hard",
+        "doc_id": "doc-one-pass-iterators-in-real-code-exhaustion-pitfalls-and-safe-handling-patterns-43f2cbd84c",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/loops_hard_4.json",
+          "url": ""
+        },
+        "title": "One-pass iterators in real code: exhaustion pitfalls and safe handling patterns",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "aggregation",
+          "enumerate",
+          "for",
+          "indexing",
+          "loops",
+          "parallel-iteration",
+          "zip"
+        ],
+        "content": "After you know basic loops, a very useful moderate technique is **parallel iteration**: walking through two or more sequences at the same time. The built-ins `zip()` and `enumerate()` are common tools for this.\n\n---\n## 1) zip(): pair items by position\n\n```python\nnames = [\"Ana\", \"Ben\", \"Kai\"]\nscores = [10, 25, 18]\n\nfor name, score in zip(names, scores):\n    print(name, \"scored\", score)\n```python\n\nIf the lists have different lengths, `zip` stops at the shortest.\n\n```python\nnames = [\"Ana\", \"Ben\", \"Kai\"]\nscores = [10, 25]\n\nfor name, score in zip(names, scores):\n    print(name, score)\n# prints only Ana/Ben\n```python\n\n---\n## 2) enumerate(): add an index\n\n```python\nitems = [\"a\", \"b\", \"c\"]\nfor i, v in enumerate(items):\n    print(i, v)\n```python\n\nStart indexing from 1:\n\n```python\nfor i, v in enumerate(items, start=1):\n    print(i, v)\n```python\n\n---\n## 3) Combine enumerate + zip: index + paired values\n\n```python\nnames = [\"Ana\", \"Ben\", \"Kai\"]\nscores = [10, 25, 18]\n\nfor i, (name, score) in enumerate(zip(names, scores), start=1):\n    print(i, name, score)\n```python\n\n---\n## 4) A more realistic example: align columns and compute totals\n\n```python\nproducts = [\"pen\", \"notebook\", \"tape\"]\nprices = [1.50, 3.00, 2.25]\nqty = [2, 1, 3]\n\ngrand = 0.0\nfor i, (p, price, q) in enumerate(zip(products, prices, qty), start=1):\n    line = price * q\n    grand += line\n    print(i, p, \"line=\", line)\n\nprint(\"grand=\", grand)\n```python\n\n---\n## 5) Practice: detect mismatched lists early (simple check)\nSometimes you *want* to ensure lengths match.\n\n```python\nif len(products) != len(prices) or len(prices) != len(qty):\n    print(\"length mismatch\")\nelse:\n    for p, price, q in zip(products, prices, qty):\n        print(p, price, q)\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-parallel-iteration-with-zip-and-enumerate-iterate-multiple-sequences-with-an-index-deed0d77ae",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "Copyright (site content); verify reuse permissions before redistribution",
+          "source_file": "data/corpus_raw/loops_moderate_3.json",
+          "url": "https://note.nkmk.me/en/python-for-enumerate-zip/"
+        },
+        "title": "Parallel iteration with zip() and enumerate(): iterate multiple sequences with an index",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "api-design",
+          "functions",
+          "pep-570",
+          "positional-only",
+          "signatures",
+          "special-parameters"
+        ],
+        "content": "Positional-only parameters let you define function arguments that **cannot** be passed by keyword. This is useful when you want to:\n- prevent callers from depending on parameter names\n- keep flexibility to rename parameters later\n- match conventions of built-in functions\n\nSyntax: parameters **before** `/` are positional-only.\n\n---\n## 1) Basic example\n\n```python\ndef divide(a, b, /):\n    return a / b\n\nprint(divide(10, 2))\n# divide(a=10, b=2) would raise TypeError\n```python\n\n---\n## 2) Mixing positional-only with other kinds\n\n```python\n# a, b: positional-only\n# c: positional-or-keyword\n# d: keyword-only\n\ndef demo(a, b, /, c, *, d):\n    return a, b, c, d\n\nprint(demo(1, 2, 3, d=4))\n# demo(a=1, b=2, c=3, d=4) fails because a and b are positional-only\n```python\n\n---\n## 3) Why it\u2019s useful (practical API perspective)\nIf you expose a function with keywords, callers may write:\n\n```python\n# caller code\nresult = demo(a=1, b=2, c=3, d=4)\n```python\n\nIf you later rename `a` to `x`, the call breaks. Positional-only reduces this risk.\n\n---\n## 4) Signature clarity vs *args tricks\nBefore `/`, libraries sometimes used `*args` to force positional usage, but that hides the signature.\nWith `/`, you can keep a clean signature while enforcing positional-only behavior.\n\n---\n## 5) Practice: design a stable numeric API\n\n```python\ndef clamp(n, /, lo=0, hi=100):\n    if n < lo:\n        return lo\n    if n > hi:\n        return hi\n    return n\n\nprint(clamp(5))\nprint(clamp(5, lo=3))\nprint(clamp(5, hi=4))\n# clamp(n=5) would fail because n is positional-only\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-positional-only-parameters-pep-570-using-to-control-function-call-semantics-a5d400b365",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "Public domain (PEP text)",
+          "source_file": "data/corpus_raw/functions_moderate_2.json",
+          "url": "https://peps.python.org/pep-0570/"
+        },
+        "title": "Positional-only parameters (PEP 570): using '/' to control function call semantics",
+        "type": "reference"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "augmented-assignment",
+          "copy",
+          "deepcopy",
+          "dicts",
+          "lists",
+          "parsing",
+          "unpacking",
+          "variables"
+        ],
+        "content": "This walkthrough uses moderate variable techniques in a practical mini task: parse records, update counters, and avoid accidental aliasing.\n\n---\n## 1) The input data\nEach record looks like: `(user, score, tags...)`.\n\n```python\nrecords = [\n    (\"ana\", 10, \"new\", \"mobile\"),\n    (\"ben\", 25, \"returning\"),\n    (\"ana\", 5, \"web\"),\n]\n```python\n\n---\n## 2) Use unpacking to separate fixed fields and the rest\n\n```python\ntotals = {}\ntag_index = {}\n\nfor rec in records:\n    user, score, *tags = rec\n\n    totals[user] = totals.get(user, 0) + score\n\n    for t in tags:\n        tag_index.setdefault(t, []).append(user)\n\nprint(totals)\nprint(tag_index)\n```python\n\n---\n## 3) Why aliasing matters when indexing\nIf you reuse the same list object in multiple places, one append can affect multiple keys.\nA safe habit is to create a new list per key.\n\n```python\n# Safe pattern: setdefault creates/stores a list per key\nidx = {}\nidx.setdefault(\"a\", []).append(1)\nidx.setdefault(\"a\", []).append(2)\nprint(idx)  # {'a': [1, 2]}\n```python\n\n---\n## 4) Snapshotting data: shallow copy vs deep copy\nIf your structure is nested, consider what you need.\n\n```python\nimport copy\n\nstate = {\"totals\": totals, \"tag_index\": tag_index}\nshallow = state.copy()              # outer copy only\nsafe = copy.deepcopy(state)         # nested copy\n\n# mutate nested\nstate[\"tag_index\"].setdefault(\"new\", []).append(\"SYSTEM\")\n\nprint(shallow[\"tag_index\"][\"new\"])  # likely changed (shared)\nprint(safe[\"tag_index\"].get(\"new\")) # independent snapshot\n```python\n\n---\n## 5) A compact summary script (single block)\n\n```python\nimport copy\n\nrecords = [\n    (\"ana\", 10, \"new\", \"mobile\"),\n    (\"ben\", 25, \"returning\"),\n    (\"ana\", 5, \"web\"),\n]\n\ntotals = {}\ntag_index = {}\n\nfor user, score, *tags in records:\n    totals[user] = totals.get(user, 0) + score\n    for t in tags:\n        tag_index.setdefault(t, []).append(user)\n\nsnapshot = copy.deepcopy({\"totals\": totals, \"tag_index\": tag_index})\n\nprint(\"totals\", totals)\nprint(\"tags\", tag_index)\nprint(\"snapshot\", snapshot)\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-putting-it-together-parsing-records-with-unpacking-updating-counters-and-copying-safely-5b6baf6607",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/variables_moderate_5.json",
+          "url": ""
+        },
+        "title": "Putting it together: parsing records with unpacking, updating counters, and copying safely",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "def",
+          "defaults",
+          "docstrings",
+          "functions",
+          "keyword-arguments",
+          "parameters",
+          "return"
+        ],
+        "content": "Functions help you reuse logic, reduce repetition, and make code easier to read.\n\n---\n## 1) Defining and calling a function\nA function is defined with `def` and called by writing its name with parentheses.\n\n```python\ndef greet(name):\n    print(\"Hello\", name)\n\ngreet(\"Ana\")\ngreet(\"Ben\")\n```python\n\n---\n## 2) Returning values\nUse `return` to send a value back to the caller.\n\n```python\ndef add(a, b):\n    return a + b\n\nresult = add(2, 3)\nprint(result)\n```python\n\nIf a function returns nothing explicitly, it returns `None`.\n\n```python\ndef show(x):\n    print(\"x=\", x)\n\nprint(show(123))  # prints x=123 then prints None\n```python\n\n---\n## 3) Multiple return values (as a tuple)\nPython can return multiple values by returning a tuple.\n\n```python\ndef min_max(values):\n    return min(values), max(values)\n\nlo, hi = min_max([3, 9, 1, 5])\nprint(lo, hi)\n```python\n\n---\n## 4) Docstrings (notes inside the function)\nA docstring is the first string inside a function body. Tools can read it.\n\n```python\ndef area_rectangle(w, h):\n    \"\"\"Return the area of a rectangle with width w and height h.\"\"\"\n    return w * h\n\nprint(area_rectangle.__doc__)\nprint(area_rectangle(3, 4))\n```python\n\n---\n## 5) Default parameter values\nDefaults make arguments optional.\n\n```python\ndef power(base, exp=2):\n    return base ** exp\n\nprint(power(3))     # 9\nprint(power(3, 3))  # 27\n```python\n\n---\n## 6) Keyword arguments (call by name)\nKeyword arguments improve readability and allow flexible ordering.\n\n```python\ndef format_user(name, age, city):\n    return f\"{name} ({age}) from {city}\"\n\nprint(format_user(age=20, name=\"Ana\", city=\"Manila\"))\n```python\n\n---\n## 7) A small practice script: parse and compute\n\n```python\ndef parse_int(text):\n    text = text.strip()\n    if not text.isdigit():\n        return None\n    return int(text)\n\nvalues = [\"10\", \"x\", \" 7 \", \"-\", \"3\"]\nnums = []\n\nfor t in values:\n    n = parse_int(t)\n    if n is not None:\n        nums.append(n)\n\nprint(\"nums\", nums)\nprint(\"sum\", sum(nums))\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-python-functions-easy-def-parameters-return-values-and-docstrings-124102fc40",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License; code examples in docs are dual-licensed (PSF-2.0 and BSD-0 starting Python 3.8.6+)",
+          "source_file": "data/corpus_raw/functions_easy_1.json",
+          "url": "https://docs.python.org/3/tutorial/controlflow.html"
+        },
+        "title": "Python functions (easy): def, parameters, return values, and docstrings",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "break",
+          "continue",
+          "for",
+          "iteration",
+          "loop-else",
+          "loops",
+          "range"
+        ],
+        "content": "Python\u2019s tutorial introduces `for` loops (iteration over items), `range()` for counting, and common loop controls like `break` and `continue`.\n\n---\n## 1) Iterating directly over items\nInstead of indexing, Python commonly loops over values directly.\n\n```python\nwords = [\"cat\", \"window\", \"defenestrate\"]\nfor w in words:\n    print(w, len(w))\n```python\n\n---\n## 2) Counting with range()\n\n```python\nfor i in range(5):\n    print(i)\n```python\n\nA frequent beginner task: iterate by index when you truly need positions.\n\n```python\nitems = [\"a\", \"b\", \"c\"]\nfor i in range(len(items)):\n    print(i, items[i])\n```python\n\n---\n## 3) break: exit a loop early\n\n```python\nfor n in range(2, 10):\n    if n == 5:\n        break\n    print(n)\nprint(\"done\")\n```python\n\n---\n## 4) continue: skip to the next iteration\n\n```python\nfor n in range(1, 8):\n    if n % 2 == 0:\n        continue\n    print(\"odd:\", n)\n```python\n\n---\n## 5) else on loops\nA loop can have an `else` clause that runs only if the loop finishes normally (not via `break`).\n\n```python\nfor n in range(2, 6):\n    if n == 4:\n        break\nelse:\n    print(\"loop ended without break\")\n\nprint(\"after loop\")\n```python\n\nTry removing the `break` line and see the `else` behavior.\n\n---\n## 6) A friendly example: find the first match\n\n```python\nvalues = [3, 7, 9, 12]\ntarget = 9\n\nfor v in values:\n    if v == target:\n        print(\"found\", v)\n        break\nelse:\n    print(\"not found\")\n```python\n\n---\n## 7) Mini practice block\n\n```python\n# Print numbers 1..10, but skip multiples of 3\nfor n in range(1, 11):\n    if n % 3 == 0:\n        continue\n    print(n)\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-python-loop-control-for-range-break-continue-and-else-on-loops-9e511c3e9e",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License; code examples in docs are dual-licensed (PSF-2.0 and BSD-0 starting Python 3.8.6+)",
+          "source_file": "data/corpus_raw/loops_easy_2.json",
+          "url": "https://docs.python.org/3/tutorial/controlflow.html"
+        },
+        "title": "Python loop control: for + range, break/continue, and else on loops",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "binding",
+          "blocks",
+          "closures",
+          "free-variables",
+          "global",
+          "nonlocal",
+          "scope",
+          "variables"
+        ],
+        "content": "This section builds a solid mental model for *where variable names live* and *how Python decides what a name refers to*. This is one of the most important \u201chard\u201d topics because the rules are determined by the **structure of the code block**, not by types or declarations.\n\n---\n## 1) Names, objects, and binding\nA **name** (variable) refers to an **object**. A **binding operation** creates or updates that relationship.\n\nTypical binding operations include:\n- assignment (`x = ...`)\n- function definitions (`def f(...): ...` binds `f`)\n- imports (`import math` binds `math`)\n- loop targets (`for i in ...` binds `i`)\n- exception targets (`except Exception as e` binds `e`)\n\n```python\nx = 10\n\ndef demo_bindings():\n    y = 1\n    for i in range(3):\n        pass\n    try:\n        1 / 0\n    except Exception as e:\n        pass\n    import math\n    return y, i, e, math\n\nprint(x)\nprint(demo_bindings())\n```python\n\n---\n## 2) Blocks and scope boundaries\nA **block** is code executed as a unit. The most common blocks are:\n- a module (top-level of a file)\n- a function body\n- a class body\n\nEach block has rules about where bindings go.\n\n### Module (global) scope\nNames assigned at top-level become module globals.\n\n```python\n# module scope\nA = 1\nB = 2\nprint(A + B)\n```python\n\n### Function (local) scope\nNames bound inside a function are local to that function (unless declared otherwise).\n\n```python\nX = \"global\"\n\ndef f():\n    X_local = \"local\"\n    return X, X_local\n\nprint(f())\n```python\n\n---\n## 3) Free variables and closures\nNested functions can *read* names from enclosing scopes. When an inner function uses a name that is not local to it, that name is a **free variable**.\n\n```python\ndef make_adder(n):\n    # n is in the enclosing scope of add()\n    def add(x):\n        return x + n\n    return add\n\nadd5 = make_adder(5)\nprint(add5(10))  # 15\n```python\n\n---\n## 4) Rebinding outer names: global vs nonlocal\nReading an outer variable is typically fine. **Rebinding** (assigning) is where you need explicit declarations.\n\n### 4a) global: rebind a module-level name\n\n```python\ncounter = 0\n\ndef bump():\n    global counter\n    counter += 1\n\nbump(); bump(); bump()\nprint(counter)  # 3\n```python\n\n### 4b) nonlocal: rebind an enclosing function\u2019s name\n\n```python\ndef make_counter():\n    count = 0\n\n    def inc():\n        nonlocal count\n        count += 1\n        return count\n\n    return inc\n\nc = make_counter()\nprint(c(), c(), c())  # 1 2 3\n```python\n\n---\n## 5) A dense example: multiple scopes interacting\nThis example mixes global reads, enclosing reads, and nonlocal rebinding.\n\n```python\nGLOBAL = 100\n\ndef factory(scale):\n    base = 10\n\n    def compute(x):\n        # GLOBAL is read from module scope\n        # base is read from enclosing scope\n        return (GLOBAL + base + x) * scale\n\n    def tweak(delta):\n        nonlocal base\n        base += delta\n        return base\n\n    return compute, tweak\n\ncompute, tweak = factory(2)\nprint(compute(1))  # (100+10+1)*2 = 222\nprint(tweak(5))    # base becomes 15\nprint(compute(1))  # (100+15+1)*2 = 232\n```python\n\n---\n## 6) Practical tips\n- Prefer **return values** over globals for most application code.\n- Use `nonlocal` sparingly (it\u2019s powerful, but can make flows harder to follow).\n- When debugging scope issues, try printing values from each scope or refactor into smaller pure functions.",
+        "difficulty": "hard",
+        "doc_id": "doc-python-variable-binding-and-scope-blocks-locals-free-variables-globals-and-nonlocal-51310631d8",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License (Python docs)",
+          "source_file": "data/corpus_raw/variables_hard_1.json",
+          "url": "https://docs.python.org/3/reference/executionmodel.html"
+        },
+        "title": "Python variable binding and scope: blocks, locals, free variables, globals, and nonlocal",
+        "type": "reference"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "composition",
+          "docstrings",
+          "functions",
+          "return-types",
+          "type-hints"
+        ],
+        "content": "Even simple functions become easier to understand when they include a short docstring and (optionally) type hints.\n\n---\n## 1) A typed function with a docstring\n\n```python\nfrom typing import Optional\n\ndef parse_age(text: str) -> Optional[int]:\n    \"\"\"Convert a string to an integer age, or return None if invalid.\"\"\"\n    t = text.strip()\n    if not t.isdigit():\n        return None\n    age = int(t)\n    if not (0 <= age <= 120):\n        return None\n    return age\n\nprint(parse_age(\" 20 \"))\nprint(parse_age(\"x\"))\nprint(parse_age(\"999\"))\n```python\n\n---\n## 2) A function that returns a structured result\n\n```python\nfrom typing import Dict, List\n\ndef summarize(nums: List[int]) -> Dict[str, float]:\n    \"\"\"Return basic statistics for a list of integers.\"\"\"\n    if not nums:\n        return {\"count\": 0, \"sum\": 0, \"avg\": 0}\n\n    total = sum(nums)\n    return {\n        \"count\": len(nums),\n        \"sum\": total,\n        \"avg\": total / len(nums),\n    }\n\nprint(summarize([10, 20, 30]))\nprint(summarize([]))\n```python\n\n---\n## 3) Small composition example\n\n```python\ndef only_ints(tokens):\n    out = []\n    for t in tokens:\n        s = str(t).strip()\n        if s.isdigit():\n            out.append(int(s))\n    return out\n\nraw = [\"10\", \"x\", \" 5 \", \"-\", 7]\nnums = only_ints(raw)\nprint(nums)\nprint(summarize(nums))\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-readable-functions-easy-type-hints-docstrings-and-example-driven-design-91bbc2f25b",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/functions_easy_5.json",
+          "url": ""
+        },
+        "title": "Readable functions (easy): type hints, docstrings, and example-driven design",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "conditionals",
+          "dict",
+          "dispatch-table",
+          "get",
+          "readability",
+          "refactoring"
+        ],
+        "content": "As programs grow, long if/elif chains can become repetitive. A moderate technique is using a **dispatch table** (a dictionary mapping) when the logic is \u201cchoose behavior based on a key.\u201d\n\n---\n## 1) The baseline: if/elif chain\n\n```python\ncmd = \"status\"\n\nif cmd == \"start\":\n    msg = \"starting\"\nelif cmd == \"stop\":\n    msg = \"stopping\"\nelif cmd == \"status\":\n    msg = \"showing status\"\nelse:\n    msg = \"unknown\"\n\nprint(msg)\n```python\n\n---\n## 2) Dispatch table: cleaner for simple key-to-value choices\n\n```python\ncmd = \"status\"\n\nmessages = {\n    \"start\": \"starting\",\n    \"stop\": \"stopping\",\n    \"status\": \"showing status\",\n}\n\nmsg = messages.get(cmd, \"unknown\")\nprint(msg)\n```python\n\n---\n## 3) Dispatch table with functions (choose actions)\n\n```python\ndef start():\n    return \"started\"\n\ndef stop():\n    return \"stopped\"\n\ndef status():\n    return \"ok\"\n\nactions = {\n    \"start\": start,\n    \"stop\": stop,\n    \"status\": status,\n}\n\ncmd = \"start\"\nresult = actions.get(cmd, lambda: \"unknown\")()\nprint(result)\n```python\n\n---\n## 4) Guard conditions still matter\nSometimes you need both: a dispatch plus a conditional check.\n\n```python\ncmd = \"start\"\nuser_role = \"guest\"\n\nif cmd == \"start\" and user_role != \"admin\":\n    print(\"permission denied\")\nelse:\n    print(\"ok to proceed\")\n```python\n\n---\n## 5) Practice block: categorize with a mapping\n\n```python\ncode = \"PH\"\ncountry = {\n    \"PH\": \"Philippines\",\n    \"JP\": \"Japan\",\n    \"US\": \"United States\",\n}.get(code, \"Unknown\")\n\nprint(country)\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-refactoring-if-elif-chains-dispatch-tables-for-commands-and-categories-dacef1c4a7",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/conditionals_moderate_4.json",
+          "url": ""
+        },
+        "title": "Refactoring if/elif chains: dispatch tables for commands and categories",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "classes",
+          "closures",
+          "comprehensions",
+          "generators",
+          "late-binding",
+          "scope",
+          "variables"
+        ],
+        "content": "Some variable behaviors feel surprising because class bodies and comprehensions introduce rules that differ from plain function blocks.\n\n---\n## 1) Class bodies execute top-to-bottom\nA class body is executed when the class is created. Names are bound in the class namespace as the body runs.\n\n```python\nclass C:\n    a = 10\n    b = a + 5\n\nprint(C.a, C.b)  # 10 15\n```python\n\nOrder matters:\n\n```python\nclass D:\n    x = 1\n    y = x + 1\n\nprint(D.y)  # 2\n```python\n\n---\n## 2) List comprehensions vs generator expressions\nA list comprehension builds a list eagerly; a generator expression is lazy.\n\n```python\n# list comprehension\nnums = [i for i in range(3)]\nprint(nums)\n```python\n\n```python\n# generator expression\nit = (i for i in range(3))\nprint(list(it))\n```python\n\n---\n## 3) Generator of lambdas: late binding appears again\n\n```python\nfuncs = (lambda: i for i in range(3))\nprint([f() for f in funcs])  # typically [2, 2, 2]\n```python\n\nFix by capturing immediately:\n\n```python\nfuncs = (lambda i=i: i for i in range(3))\nprint([f() for f in funcs])  # [0, 1, 2]\n```python\n\n---\n## 4) A combined example: class builds functions safely\n\n```python\nclass Tools:\n    adders = []\n    for offset in (0, 10, 100):\n        adders.append(lambda x, offset=offset: x + offset)\n\nprint([f(5) for f in Tools.adders])  # [5, 15, 105]\n```python\n\n---\n## 5) Takeaways\n- If code is created in a loop, assume you must **capture loop variables explicitly**.\n- If you define lots of behavior in a class body, remember it executes immediately at import time.",
+        "difficulty": "hard",
+        "doc_id": "doc-scope-surprises-class-bodies-comprehensions-and-generator-lambda-capture-c1ad7f3f8f",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/variables_hard_5.json",
+          "url": ""
+        },
+        "title": "Scope surprises: class bodies, comprehensions, and generator/lambda capture",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "all",
+          "any",
+          "conditionals",
+          "guards",
+          "short-circuit",
+          "truthiness",
+          "validation"
+        ],
+        "content": "Short-circuit logic is not only about concision\u2014it\u2019s a practical tool to avoid errors and avoid unnecessary work.\n\n---\n## 1) Guarding attribute access\n\n```python\nuser = None\n\nif user is not None and user.get(\"active\"):\n    print(\"active user\")\nelse:\n    print(\"no active user\")\n```python\n\n---\n## 2) Avoid expensive work unless needed\n\n```python\nimport time\n\ndef expensive():\n    time.sleep(0.1)\n    return True\n\nflag = False\n\nif flag and expensive():\n    print(\"ran\")\nelse:\n    print(\"skipped\")\n```python\n\nBecause `flag` is False, `expensive()` is never called.\n\n---\n## 3) Defaulting with or (with a caution)\n\n```python\nname = \"\"\ndisplay = name or \"(anonymous)\"\nprint(display)\n```python\n\nThis works well when empty values should fall back to a default. If empty is meaningful, be explicit:\n\n```python\nname = \"\"\nif name == \"\":\n    display = \"(empty string)\"\nelse:\n    display = name\nprint(display)\n```python\n\n---\n## 4) any/all with generator expressions\n\n```python\npassword = \"Abc123\"\n\nhas_digit = any(ch.isdigit() for ch in password)\nhas_upper = any(ch.isupper() for ch in password)\nlong_enough = len(password) >= 6\n\nif has_digit and has_upper and long_enough:\n    print(\"ok\")\nelse:\n    print(\"try again\")\n```python\n\n---\n## 5) Practice block: validate a record safely\n\n```python\nrecord = {\"name\": \"ana\", \"age\": \"20\"}\n\nname_ok = bool(record.get(\"name\"))\nage_text = record.get(\"age\")\nage_ok = age_text is not None and age_text.isdigit() and 0 <= int(age_text) <= 120\n\nif name_ok and age_ok:\n    print(\"valid\")\nelse:\n    print(\"invalid\")\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-short-circuit-conditionals-in-practice-safe-guards-and-optional-values-b39eec0789",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/conditionals_moderate_5.json",
+          "url": ""
+        },
+        "title": "Short-circuit conditionals in practice: safe guards and optional values",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "branching",
+          "conditionals",
+          "data-shapes",
+          "guards",
+          "match",
+          "pattern-matching"
+        ],
+        "content": "Hard conditional logic often shows up when branching depends on the **shape** of data (tuples, dicts, nested structures). Python\u2019s `match` statement supports *structural pattern matching*, which can replace long `if/elif` chains.\n\n---\n## 1) A basic match example\n\n```python\ndef http_status(code):\n    match code:\n        case 200:\n            return \"OK\"\n        case 404:\n            return \"Not Found\"\n        case 500:\n            return \"Server Error\"\n        case _:\n            return \"Unknown\"\n\nprint(http_status(200))\nprint(http_status(123))\n```python\n\n`case _:` is a wildcard \u201cdefault.\u201d\n\n---\n## 2) Matching sequences (tuples/lists)\n\n```python\ndef describe_point(p):\n    match p:\n        case (0, 0):\n            return \"origin\"\n        case (0, y):\n            return f\"on y-axis at {y}\"\n        case (x, 0):\n            return f\"on x-axis at {x}\"\n        case (x, y):\n            return f\"point {x},{y}\"\n        case _:\n            return \"not a point\"\n\nprint(describe_point((0, 5)))\nprint(describe_point((3, 0)))\nprint(describe_point((2, 9)))\n```python\n\n---\n## 3) Matching with guards (extra conditions)\nGuards let you add an `if` to a `case`.\n\n```python\ndef classify(n):\n    match n:\n        case x if x < 0:\n            return \"negative\"\n        case 0:\n            return \"zero\"\n        case x if x % 2 == 0:\n            return \"positive even\"\n        case _:\n            return \"positive odd\"\n\nfor v in [-3, 0, 2, 5]:\n    print(v, classify(v))\n```python\n\n---\n## 4) Matching dictionaries (structured input)\n\n```python\ndef handle_event(evt):\n    match evt:\n        case {\"type\": \"login\", \"user\": user}:\n            return f\"login {user}\"\n        case {\"type\": \"score\", \"user\": user, \"value\": v} if isinstance(v, int):\n            return f\"score {user}={v}\"\n        case {\"type\": t}:\n            return f\"unknown event type {t}\"\n        case _:\n            return \"invalid\"\n\nprint(handle_event({\"type\": \"login\", \"user\": \"ana\"}))\nprint(handle_event({\"type\": \"score\", \"user\": \"ana\", \"value\": 10}))\nprint(handle_event({\"type\": \"score\", \"user\": \"ana\", \"value\": \"x\"}))\n```python\n\n---\n## 5) When match helps\n- When data has multiple possible shapes.\n- When nested if/elif becomes hard to read.\n- When you want to capture parts of the data as variables.",
+        "difficulty": "hard",
+        "doc_id": "doc-structural-pattern-matching-match-case-for-complex-branching-and-data-shaped-conditions-8b7b091601",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "Public domain (PEP text)",
+          "source_file": "data/corpus_raw/conditionals_hard_2.json",
+          "url": "https://peps.python.org/pep-0634/"
+        },
+        "title": "Structural pattern matching: match/case for complex branching and data-shaped conditions",
+        "type": "reference"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "boolean-logic",
+          "conditionals",
+          "readability",
+          "refactoring",
+          "testing",
+          "truthiness"
+        ],
+        "content": "Hard conditionals often fail not because they\u2019re wrong, but because they\u2019re hard to read and easy to modify incorrectly. A practical approach is to name sub-conditions and avoid relying on truthiness when empty values are meaningful.\n\n---\n## 1) A too-dense condition\n\n```python\nuser = {\"name\": \"\", \"age\": \"20\", \"role\": \"editor\", \"active\": True}\n\nif user and user.get(\"active\") and user.get(\"role\") in {\"admin\", \"editor\"} and user.get(\"age\") and str(user.get(\"age\")).isdigit():\n    print(\"allowed\")\nelse:\n    print(\"denied\")\n```python\n\nThis works, but it\u2019s difficult to review.\n\n---\n## 2) Refactor into named checks\n\n```python\nuser = {\"name\": \"\", \"age\": \"20\", \"role\": \"editor\", \"active\": True}\n\nis_present = user is not None\nis_active = is_present and user.get(\"active\") is True\nrole = user.get(\"role\") if is_present else None\nhas_role = role in {\"admin\", \"editor\"}\n\nage_raw = user.get(\"age\") if is_present else None\nage_text = None if age_raw is None else str(age_raw).strip()\nage_is_number = age_text is not None and age_text.isdigit()\n\nallowed = is_active and has_role and age_is_number\n\nprint(\"allowed\" if allowed else \"denied\")\n```python\n\n---\n## 3) Truthiness traps: empty string vs missing\nIf empty string is different from missing, do not use `or` defaulting blindly.\n\n```python\nname = \"\"          # intentionally empty\nfallback = \"(anon)\"\nprint(name or fallback)  # prints fallback, maybe not desired\n\n# explicit handling\nif name is None:\n    display = fallback\nelse:\n    display = name\nprint(display)\n```python\n\n---\n## 4) Test-friendly function design\n\n```python\ndef can_edit(user):\n    if user is None:\n        return False\n    if user.get(\"active\") is not True:\n        return False\n    if user.get(\"role\") not in {\"admin\", \"editor\"}:\n        return False\n\n    age = user.get(\"age\")\n    if age is None:\n        return False\n\n    s = str(age).strip()\n    if not s.isdigit():\n        return False\n\n    return True\n\ncases = [\n    {\"active\": True, \"role\": \"editor\", \"age\": \"20\"},\n    {\"active\": True, \"role\": \"viewer\", \"age\": \"20\"},\n    {\"active\": False, \"role\": \"editor\", \"age\": \"20\"},\n    None,\n]\n\nfor c in cases:\n    print(c, can_edit(c))\n```python\n\n---\n## 5) Takeaway\n- When a condition is long, name sub-conditions.\n- Be explicit when `0` and `\"\"` are valid values.\n- Write a function and test it with several cases.",
+        "difficulty": "hard",
+        "doc_id": "doc-taming-complex-conditions-name-sub-checks-avoid-truthiness-traps-and-make-behavior-testable-6abc768071",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/conditionals_hard_5.json",
+          "url": ""
+        },
+        "title": "Taming complex conditions: name sub-checks, avoid truthiness traps, and make behavior testable",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "__wrapped__",
+          "decorators",
+          "functions",
+          "inspect",
+          "lru_cache",
+          "wrappers",
+          "wraps"
+        ],
+        "content": "When you wrap functions, you can accidentally break tools that rely on signatures and metadata. A strong baseline is using `functools.wraps`, which also sets `__wrapped__`.\n\n---\n## 1) Wrapper that preserves doc/name\n\n```python\nimport functools\n\ndef timed(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        # placeholder timing logic\n        return func(*args, **kwargs)\n    return wrapper\n\n@timed\ndef add(a: int, b: int) -> int:\n    \"\"\"Add two integers.\"\"\"\n    return a + b\n\nprint(add.__name__)\nprint(add.__doc__)\n```python\n\n---\n## 2) Using inspect.signature on wrapped functions\n\n```python\nimport inspect\nprint(inspect.signature(add))\n```python\n\n---\n## 3) A \u201cprecheck\u201d decorator that keeps behavior readable\n\n```python\nimport functools\n\ndef require_ints(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        for x in args:\n            if not isinstance(x, int):\n                raise TypeError(\"positional args must be int\")\n        for k, v in kwargs.items():\n            if not isinstance(v, int):\n                raise TypeError(f\"{k} must be int\")\n        return func(*args, **kwargs)\n    return wrapper\n\n@require_ints\ndef mul(a: int, b: int) -> int:\n    return a * b\n\nprint(mul(2, 3))\n# mul(2, \"x\") would raise TypeError\n```python\n\n---\n## 4) Practice block: wrapper + caching in a tooling-friendly way\n\n```python\nimport functools\n\n@functools.lru_cache(maxsize=128)\ndef slow_square(n: int) -> int:\n    return n * n\n\nprint(slow_square(10))\nprint(slow_square.cache_info())\n```",
+        "difficulty": "hard",
+        "doc_id": "doc-tool-friendly-wrappers-hard-preserving-metadata-wrapped-and-inspection-aware-patterns-ff9835dd75",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/functions_hard_5.json",
+          "url": ""
+        },
+        "title": "Tool-friendly wrappers (hard): preserving metadata, __wrapped__, and inspection-aware patterns",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "all",
+          "and",
+          "any",
+          "boolean-ops",
+          "conditionals",
+          "not",
+          "or",
+          "short-circuit",
+          "truthiness"
+        ],
+        "content": "Moderate conditional logic is less about syntax and more about understanding how expressions are evaluated.\n\nTwo key ideas:\n1) **Truth value testing** (\u201ctruthiness\u201d): many objects count as True or False in `if`.\n2) **Short-circuit evaluation**: `and` / `or` may stop early and return one of the operands.\n\n---\n## 1) Truthiness: what counts as False?\nIn `if x:`, Python evaluates `x` in a boolean context. Common falsy values include:\n- `False`\n- `None`\n- `0`, `0.0`\n- empty sequences/collections: `\"\"`, `[]`, `{}`, `set()`, `()`\n\n```python\nvalues = [0, 1, \"\", \"hi\", [], [1], None, False, True]\nfor v in values:\n    if v:\n        print(\"truthy:\", repr(v))\n    else:\n        print(\"falsy:\", repr(v))\n```python\n\nA practical pattern is checking emptiness directly:\n\n```python\nitems = []\nif not items:\n    print(\"no items\")\n```python\n\n---\n## 2) Short-circuit: and/or stop early\n### and\n`A and B` evaluates `A` first. If `A` is falsy, Python returns `A` immediately.\n\n```python\nprint(0 and 99)     # 0\nprint(5 and 99)     # 99\n```python\n\n### or\n`A or B` evaluates `A` first. If `A` is truthy, Python returns `A` immediately.\n\n```python\nprint(\"hi\" or \"bye\")  # hi\nprint(\"\" or \"bye\")    # bye\n```python\n\nThis makes \u201cdefaulting\u201d common:\n\n```python\nname = \"\"\ndisplay = name or \"(anonymous)\"\nprint(display)\n```python\n\n---\n## 3) Short-circuit is about evaluation, not just results\nBecause it stops early, it can prevent errors:\n\n```python\nobj = None\n\n# Safe: second part only runs if obj is not None\nif obj is not None and obj.get(\"k\") == 1:\n    print(\"match\")\nelse:\n    print(\"no\")\n```python\n\nIf you reversed it, you might call `.get()` on None.\n\n---\n## 4) any() and all(): readable conditionals over collections\nThese are often cleaner than manual loops.\n\n```python\nwords = [\"cat\", \"\", \"dog\"]\nprint(any(words))  # True (at least one truthy element)\nprint(all(words))  # False (not all are truthy)\n\nnums = [2, 4, 6]\nprint(all(n % 2 == 0 for n in nums))  # True\n```python\n\n---\n## 5) Practice block: validate inputs with short-circuit logic\n\n```python\ndef is_valid_username(s):\n    return s is not None and s.strip() and len(s.strip()) >= 3\n\nprint(is_valid_username(\" ana \"))\nprint(is_valid_username(\"  \"))\nprint(is_valid_username(None))\n```",
+        "difficulty": "moderate",
+        "doc_id": "doc-truthiness-and-short-circuit-logic-how-python-decides-true-false-and-why-it-matters-abbe1e506b",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "PSF Documentation License (Python docs)",
+          "source_file": "data/corpus_raw/conditionals_moderate_1.json",
+          "url": "https://docs.python.org/3/library/stdtypes.html"
+        },
+        "title": "Truthiness and short-circuit logic: how Python decides True/False and why it matters",
+        "type": "reference"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "closures",
+          "debugging",
+          "mutability",
+          "nonlocal",
+          "scope",
+          "variables"
+        ],
+        "content": "When you need state that survives across function calls, you often reach for closures. There are two common patterns:\n\n1) Use `nonlocal` to rebind an outer variable.\n2) Store state in a mutable container and mutate it.\n\nBoth work; the trade-off is readability and clarity.\n\n---\n## 1) Pattern A: nonlocal counter\n\n```python\ndef make_counter():\n    count = 0\n\n    def inc():\n        nonlocal count\n        count += 1\n        return count\n\n    return inc\n\nc = make_counter()\nprint(c(), c(), c())\n```python\n\nThis is compact, but `nonlocal` is easy to miss when scanning a large function.\n\n---\n## 2) Pattern B: mutate a container (no nonlocal)\n\n```python\ndef make_counter_box():\n    box = {\"count\": 0}\n\n    def inc():\n        box[\"count\"] += 1\n        return box[\"count\"]\n\n    return inc\n\nc2 = make_counter_box()\nprint(c2(), c2(), c2())\n```python\n\nThis avoids `nonlocal` but introduces a container.\n\n---\n## 3) Debug-friendly: expose state safely\n\n```python\ndef make_counter_with_state():\n    box = {\"count\": 0}\n\n    def inc():\n        box[\"count\"] += 1\n        return box[\"count\"]\n\n    def state():\n        # return a snapshot so callers can\u2019t mutate internal state accidentally\n        return {\"count\": box[\"count\"]}\n\n    return inc, state\n\ninc, state = make_counter_with_state()\ninc(); inc()\nprint(state())\n```python\n\n---\n## 4) A denser example mixing multiple bindings\n\n```python\ndef make_tracker(prefix):\n    events = []\n\n    def log(msg):\n        events.append(f\"{prefix}:{msg}\")\n        return len(events)\n\n    def last(n=1):\n        return events[-n:]\n\n    return log, last\n\nlog, last = make_tracker(\"SYS\")\nlog(\"start\")\nlog(\"ready\")\nprint(last())\nprint(last(2))\n```python\n\n---\n## 5) Practical rule of thumb\n- Use `nonlocal` when the meaning is clear and the closure is small.\n- Use a container when you want to attach multiple pieces of state or expose snapshots.",
+        "difficulty": "hard",
+        "doc_id": "doc-updating-outer-scope-state-nonlocal-vs-container-mutation-and-how-to-keep-it-readable-78109640c9",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/variables_hard_4.json",
+          "url": ""
+        },
+        "title": "Updating outer-scope state: nonlocal vs container mutation (and how to keep it readable)",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "f-strings",
+          "join",
+          "print",
+          "strings",
+          "type-conversion",
+          "variables"
+        ],
+        "content": "Variables often hold **pieces of text** that you combine into messages. Here are common beginner-friendly patterns.\n\n---\n## 1) Concatenation with +\n\n```python\nfirst = \"Good\"\nsecond = \"morning\"\nmsg = first + \" \" + second + \"!\"\nprint(msg)  # Good morning!\n```python\n\nConcatenation requires both sides to be strings:\n\n```python\nscore = 42\n# print(\"Score: \" + score)  # TypeError\nprint(\"Score: \" + str(score))\n```python\n\n---\n## 2) f-strings (usually easiest to read)\n\n```python\nname = \"Mika\"\nscore = 42\nprint(f\"{name} scored {score} points\")\n```python\n\nYou can format numbers too:\n\n```python\npi = 3.1415926\nprint(f\"pi\u2248{pi:.2f}\")\n```python\n\n---\n## 3) str.format()\n\n```python\nname = \"Mika\"\nscore = 42\nprint(\"{} scored {} points\".format(name, score))\n```python\n\n---\n## 4) join() for many strings\nWhen joining many parts, build a list and join.\n\n```python\nparts = [\"A\", \"B\", \"C\"]\nprint(\"-\".join(parts))  # A-B-C\n```python\n\n---\n## 5) A small, realistic example\n\n```python\nuser = \"ana\"\nitems = [\"apple\", \"banana\", \"cherry\"]\ncount = len(items)\n\nline1 = f\"User: {user}\"\nline2 = \"Items: \" + \", \".join(items)\nline3 = f\"Count: {count}\"\n\nprint(line1)\nprint(line2)\nprint(line3)\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-using-variables-to-build-text-output-concatenation-f-strings-and-join-c4e429d9a9",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/variables_easy_4.json",
+          "url": ""
+        },
+        "title": "Using variables to build text output: concatenation, f-strings, and join()",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "conditionals",
+          "input-validation",
+          "nested-if",
+          "none-check",
+          "ranges"
+        ],
+        "content": "Conditionals are often used to keep programs safe and predictable by validating input before using it.\n\n---\n## 1) Check if a string looks like a whole number\n\n```python\nraw = \"42\"\n\nif raw.isdigit():\n    n = int(raw)\n    print(\"number\", n)\nelse:\n    print(\"not a whole number\")\n```python\n\n---\n## 2) Range checking\n\n```python\nage = 20\n\nif age < 0:\n    print(\"invalid\")\nelif age < 13:\n    print(\"child\")\nelif age < 20:\n    print(\"teen\")\nelse:\n    print(\"adult\")\n```python\n\n---\n## 3) Handling optional values (None checks)\n\n```python\nvalue = None\n\nif value is None:\n    print(\"missing\")\nelse:\n    print(\"got\", value)\n```python\n\n---\n## 4) A balanced mini script: parse and respond\n\n```python\ntext = \" 7 \"\ntext = text.strip()\n\nif not text.isdigit():\n    print(\"please enter digits\")\nelse:\n    n = int(text)\n    if n % 2 == 0:\n        print(\"even\")\n    else:\n        print(\"odd\")\n\n    if n >= 10:\n        print(\"two digits or more\")\n    else:\n        print(\"single digit\")\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-validating-user-input-with-conditionals-digits-ranges-and-safe-defaults-e44427239d",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/conditionals_easy_4.json",
+          "url": ""
+        },
+        "title": "Validating user input with conditionals: digits, ranges, and safe defaults",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "assignment",
+          "expressions",
+          "nameerror",
+          "print",
+          "reassignment",
+          "type-conversion",
+          "variables"
+        ],
+        "content": "A **variable** is a *name* that refers to a value. In Python, you create (bind) a variable by using **assignment** with `=`.\n\n---\n## 1) Basic assignment and reading values\n\n```python\nlucky = 7\nprint(lucky)        # 7\nprint(lucky + 1)    # 8\n```python\n\nYou can use variables inside expressions, and Python will substitute their current values.\n\n---\n## 2) Reassignment (the name can be rebound)\nThe same variable name can be assigned a new value later.\n\n```python\nchanging = 3\nprint(changing)     # 3\n\nchanging = 9\nprint(changing)     # 9\n\nchanging = changing + 6\nprint(changing)     # 15\n```python\n\nA helpful way to read `x = x + 1` is: \u201ccompute `x + 1` using the old value, then store it back into `x`.\u201d\n\n---\n## 3) Right-hand side is evaluated first\nPython evaluates the right-hand side expression, then binds the left-hand name.\n\n```python\nx = 10\nx = x * 2 + 5\nprint(x)            # 25\n```python\n\n---\n## 4) Assigning one variable from another\nWhen you do `yellow = red`, the name `yellow` is set to the current value of `red`.\n\n```python\nred = 5\nblue = 10\n\nyellow = red\nprint(yellow, red, blue)  # 5 5 10\n\nred = blue\nprint(yellow, red, blue)  # 5 10 10\n```python\n\nNotice that `yellow` stays `5` after `red` changes.\n\n---\n## 5) Printing multiple values (useful for quick checks)\n\n```python\na = 1\nb = 2\nc = 3\nprint(a, b, c)      # 1 2 3\n```python\n\n---\n## 6) Common beginner pitfalls (with examples)\n### Using a name before assignment (NameError)\n\n```python\n# print(missing)     # NameError\nmissing = 123\nprint(missing)\n```python\n\n### Mixing types accidentally\n\n```python\nscore = 10\nlabel = \"Score: \"\n# print(label + score)    # TypeError\nprint(label + str(score))\n```python\n\n---\n## 7) A small, readable practice script\nThis combines assignment, reassignment, and printing.\n\n```python\nx = 2\nprint(\"start\", x)\n\nx = x + 3\nprint(\"after +3\", x)\n\ny = x\nx = 100\nprint(\"x\", x, \"y\", y)\n\nz = y * 10\nprint(\"z\", z)\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-variables-in-python-names-assignment-reassignment-and-reading-values-a86c7f1c23",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "CC BY-SA (Wikibooks)",
+          "source_file": "data/corpus_raw/variables_easy_1.json",
+          "url": "https://en.wikibooks.org/wiki/Python_Programming/Variables_and_Strings"
+        },
+        "title": "Variables in Python: names, assignment, reassignment, and reading values",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": true,
+        "concept_tags": [
+          "break",
+          "continue",
+          "loop-else",
+          "loops",
+          "menus",
+          "validation",
+          "while"
+        ],
+        "content": "While loops are great when you don\u2019t know in advance how many times you need to repeat something. Many beginner-friendly programs use them for menus, retries, or input validation.\n\n---\n## 1) A basic menu loop\n\n```python\nchoice = \"\"\nwhile choice != \"q\":\n    print(\"(a)dd  (l)ist  (q)uit\")\n    choice = input(\"Choice: \").strip().lower()\n\n    if choice == \"a\":\n        print(\"adding...\")\n    elif choice == \"l\":\n        print(\"listing...\")\n    elif choice == \"q\":\n        print(\"bye\")\n    else:\n        print(\"unknown choice\")\n```python\n\n---\n## 2) Retry pattern with a maximum attempt counter\n\n```python\nmax_tries = 3\ntries = 0\n\nwhile tries < max_tries:\n    pwd = input(\"Password: \")\n    if pwd == \"unicorn\":\n        print(\"ok\")\n        break\n    tries += 1\nelse:\n    print(\"too many tries\")\n```python\n\nNotice the `else`: it runs only if the loop finishes without `break`.\n\n---\n## 3) Input validation pattern\n\n```python\nraw = input(\"Enter a whole number: \").strip()\nwhile not raw.isdigit():\n    print(\"Please enter digits only\")\n    raw = input(\"Enter a whole number: \").strip()\n\nn = int(raw)\nprint(\"n =\", n)\n```python\n\n---\n## 4) A small practice script (mixed techniques)\n\n```python\nitems = []\n\nwhile True:\n    text = input(\"Add item (or 'done'): \").strip()\n    if text == \"done\":\n        break\n    if not text:\n        continue\n    items.append(text)\n\nprint(\"items:\", items)\n```",
+        "difficulty": "intro",
+        "doc_id": "doc-while-loop-patterns-easy-menus-retries-and-simple-validation-6c1217a4e0",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "",
+          "source_file": "data/corpus_raw/loops_easy_5.json",
+          "url": ""
+        },
+        "title": "While loop patterns (easy): menus, retries, and simple validation",
+        "type": "tutorial"
+      },
+      {
+        "ai_generated": false,
+        "concept_tags": [
+          "binding",
+          "debugging",
+          "global",
+          "scope",
+          "unboundlocalerror",
+          "variables"
+        ],
+        "content": "A frequent hard-level error is:\n\n> `UnboundLocalError: local variable 'x' referenced before assignment`\n\nThis happens because Python decides whether a name is **local** by scanning the function body for **any binding** to that name. If the name is assigned anywhere in the function, it is treated as local throughout that function (unless declared `global` or `nonlocal`).\n\n---\n## 1) Minimal example\n\n```python\nx = 10\n\ndef f():\n    print(x)  # Python thinks x is local here\n    x = 3     # because of this assignment\n\n# f() would raise UnboundLocalError\n```python\n\nWhy? Because `x = 3` makes `x` local to `f()`, so `print(x)` tries to read the local `x` before it has a value.\n\n---\n## 2) Fix pattern A: rename the local variable (best default)\nIf you didn\u2019t intend to modify the global `x`, use a different name.\n\n```python\nx = 10\n\ndef f():\n    print(x)      # reads global x\n    x_local = 3\n    return x_local\n\nprint(f())\nprint(x)          # still 10\n```python\n\n---\n## 3) Fix pattern B: pass input as arguments and return results (pure function style)\n\n```python\ndef f(x):\n    print(x)\n    x = 3\n    return x\n\nprint(f(10))\n```python\n\n---\n## 4) Fix pattern C: global (only if you truly mean shared module state)\n\n```python\nx = 10\n\ndef f():\n    global x\n    print(x)\n    x = 3\n\nf()\nprint(x)  # 3\n```python\n\n---\n## 5) A more realistic \u201cbranch\u201d example\nEven if the assignment happens only in one branch, it still makes the name local for the whole function.\n\n```python\nflag = False\nx = 100\n\ndef g():\n    if flag:\n        x = 5   # assignment exists \u2192 x is local in g\n    return x\n\n# g() would error if flag is False (it tries to return local x before assignment)\n```python\n\nA safe refactor is to always assign before use:\n\n```python\nflag = False\nx = 100\n\ndef g():\n    local_x = x\n    if flag:\n        local_x = 5\n    return local_x\n\nprint(g())\n```python\n\n---\n## 6) Related: comprehension variables can also create bindings\nSome confusing cases happen when a name becomes local because of a binding inside an expression (e.g., comprehensions).\n\n```python\ndef h():\n    # If you bind a name inside the function body, it can change locality expectations.\n    data = [1, 2, 3]\n    out = [v for v in data]\n    return out\n\nprint(h())\n```",
+        "difficulty": "hard",
+        "doc_id": "doc-why-unboundlocalerror-happens-assignment-makes-a-name-local-and-how-to-fix-it-safely-07825eb2a0",
+        "provenance": {
+          "author": "",
+          "date": "",
+          "license": "CC BY-SA (Stack Overflow; version depends on post date)",
+          "source_file": "data/corpus_raw/variables_hard_2.json",
+          "url": "https://stackoverflow.com/questions/10851906/how-can-i-fix-unboundlocalerror-local-variable-referenced-before-assignment"
+        },
+        "title": "Why UnboundLocalError happens: assignment makes a name local (and how to fix it safely)",
+        "type": "tutorial"
+      }
+    ]
+  }
+}

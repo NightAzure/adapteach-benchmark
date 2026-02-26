@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["artifact_type", "question", "answer", "concept"],
+  "properties": {
+    "artifact_type": { "const": "flashcard" },
+    "question": { "type": "string", "minLength": 1 },
+    "answer": { "type": "string", "minLength": 1 },
+    "concept": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

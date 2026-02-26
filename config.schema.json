@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["runtime", "llm", "retrieval", "pipelines"],
+  "properties": {
+    "runtime": {
+      "type": "object",
+      "required": ["log_dir", "runs_dir", "dry_run"],
+      "properties": {
+        "log_dir": { "type": "string", "minLength": 1 },
+        "runs_dir": { "type": "string", "minLength": 1 },
+        "dry_run": { "type": "string", "enum": ["none", "retrieval", "graph"] }
+      },
+      "additionalProperties": false
+    },
+    "llm": {
+      "type": "object",
+      "required": ["provider", "model", "version_tag", "prompt_template_version"],
+      "properties": {
+        "provider": { "type": "string", "enum": ["mock", "gemini", "ollama"] },
+        "model": { "type": "string", "minLength": 1 },
+        "version_tag": { "type": "string", "minLength": 1 },
+        "prompt_template_version": { "type": "string", "minLength": 1 },
+        "gemini_api_key_env": { "type": "string", "minLength": 1 },
+        "ollama_base_url": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "retrieval": {
+      "type": "object",
+      "required": ["chunking", "k", "fusion", "rerank_weights", "corpus_snapshot", "index_hash"],
+      "properties": {
+        "chunking": { "type": "string", "minLength": 1 },
+        "k": { "type": "integer", "minimum": 1 },
+        "fusion": { "type": "string", "minLength": 1 },
+        "rerank_weights": {
+          "type": "object",
+          "required": ["retrieval", "graph"],
+          "properties": {
+            "retrieval": { "type": "number" },
+            "graph": { "type": "number" }
+          },
+          "additionalProperties": false
+        },
+        "corpus_snapshot": { "type": "string", "minLength": 1 },
+        "index_hash": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "pipelines": {
+      "type": "object",
+      "required": ["active"],
+      "properties": {
+        "active": { "type": "string", "enum": ["A", "B", "C", "D", "E", "F"] }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

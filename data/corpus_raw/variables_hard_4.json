@@ -1,0 +1,19 @@
+{
+  "title": "Updating outer-scope state: nonlocal vs container mutation (and how to keep it readable)",
+  "content": "When you need state that survives across function calls, you often reach for closures. There are two common patterns:\n\n1) Use `nonlocal` to rebind an outer variable.\n2) Store state in a mutable container and mutate it.\n\nBoth work; the trade-off is readability and clarity.\n\n---\n## 1) Pattern A: nonlocal counter\n\n```python\ndef make_counter():\n    count = 0\n\n    def inc():\n        nonlocal count\n        count += 1\n        return count\n\n    return inc\n\nc = make_counter()\nprint(c(), c(), c())\n```\n\nThis is compact, but `nonlocal` is easy to miss when scanning a large function.\n\n---\n## 2) Pattern B: mutate a container (no nonlocal)\n\n```python\ndef make_counter_box():\n    box = {\"count\": 0}\n\n    def inc():\n        box[\"count\"] += 1\n        return box[\"count\"]\n\n    return inc\n\nc2 = make_counter_box()\nprint(c2(), c2(), c2())\n```\n\nThis avoids `nonlocal` but introduces a container.\n\n---\n## 3) Debug-friendly: expose state safely\n\n```python\ndef make_counter_with_state():\n    box = {\"count\": 0}\n\n    def inc():\n        box[\"count\"] += 1\n        return box[\"count\"]\n\n    def state():\n        # return a snapshot so callers can’t mutate internal state accidentally\n        return {\"count\": box[\"count\"]}\n\n    return inc, state\n\ninc, state = make_counter_with_state()\ninc(); inc()\nprint(state())\n```\n\n---\n## 4) A denser example mixing multiple bindings\n\n```python\ndef make_tracker(prefix):\n    events = []\n\n    def log(msg):\n        events.append(f\"{prefix}:{msg}\")\n        return len(events)\n\n    def last(n=1):\n        return events[-n:]\n\n    return log, last\n\nlog, last = make_tracker(\"SYS\")\nlog(\"start\")\nlog(\"ready\")\nprint(last())\nprint(last(2))\n```\n\n---\n## 5) Practical rule of thumb\n- Use `nonlocal` when the meaning is clear and the closure is small.\n- Use a container when you want to attach multiple pieces of state or expose snapshots.\n",
+  "type": "tutorial",
+  "concept_tags": ["variables", "scope", "closures", "nonlocal", "mutability", "debugging"],
+  "difficulty": "hard",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "created_at": "2026-02-09",
+    "intended_use": "educational corpus"
+  },
+  "provenance": {
+    "source": "ai_generated",
+    "generator": "ChatGPT",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": true
+}

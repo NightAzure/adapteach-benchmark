@@ -1,0 +1,21 @@
+{
+  "title": "Conditional expressions: using 'a if cond else b' responsibly",
+  "content": "Python supports a compact conditional expression:\n\n`value_if_true if condition else value_if_false`\n\nThis is often called a “ternary expression.” It can make code shorter, but it should still remain readable.\n\n---\n## 1) Basic usage\n\n```python\nx = 7\nlabel = \"even\" if x % 2 == 0 else \"odd\"\nprint(label)\n```\n\n---\n## 2) Prefer it for simple expressions\nA short conditional expression is great for small decisions.\n\n```python\nname = \"\"\ndisplay = name if name else \"(anonymous)\"\nprint(display)\n```\n\nFor more complex logic, a standard if/elif/else block is easier to maintain.\n\n---\n## 3) Using conditional expressions inside formatting\n\n```python\nscore = 82\nstatus = \"pass\" if score >= 75 else \"fail\"\nprint(f\"score={score} status={status}\")\n```\n\n---\n## 4) A compact mapping pattern\nSometimes you can replace a short if/else with a mapping, but the conditional expression is still helpful for quick cases.\n\n```python\nn = -3\nsign = \"pos\" if n > 0 else (\"zero\" if n == 0 else \"neg\")\nprint(sign)\n```\n\n---\n## 5) Practice block: sanitize a value\n\n```python\nraw = \"  42 \"\nclean = raw.strip()\nvalue = int(clean) if clean.isdigit() else None\nprint(value)\n```\n",
+  "type": "reference",
+  "concept_tags": ["conditionals", "conditional-expression", "ternary", "readability", "formatting"],
+  "difficulty": "moderate",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["simple ternary blocks", "nested ternary caution", "ternary with parsing/validation"]
+  },
+  "provenance": {
+    "url": "https://peps.python.org/pep-0308/",
+    "license": "Public domain (PEP text)",
+    "attribution": "PEP 308 authors (see PEP header)",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

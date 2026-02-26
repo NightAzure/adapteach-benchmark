@@ -1,0 +1,30 @@
+{"id": "obj1-test-001", "category": "concept_explanation", "topic": "variables", "query": "Explain Python name binding across local, global, and nonlocal scopes with a compact example."}
+{"id": "obj1-test-002", "category": "debugging", "topic": "variables", "query": "A closure inside a loop captures the final loop value for all lambdas. Explain and fix."}
+{"id": "obj1-test-003", "category": "misconception", "topic": "variables", "query": "Correct this misconception: `x += 1` always behaves exactly like `x = x + 1` for all objects."}
+{"id": "obj1-test-004", "category": "concept_explanation", "topic": "variables", "query": "Explain tuple unpacking with starred targets and one common error."}
+{"id": "obj1-test-005", "category": "debugging", "topic": "variables", "query": "A function mutates a list argument and causes side effects in caller code. Diagnose and fix."}
+{"id": "obj1-test-006", "category": "concept_explanation", "topic": "variables", "query": "Explain assignment, aliasing, and object identity in a small list/dict example."}
+{"id": "obj1-test-007", "category": "concept_explanation", "topic": "loops", "query": "Explain nested loops for grid traversal and how to reason about iteration counts."}
+{"id": "obj1-test-008", "category": "debugging", "topic": "loops", "query": "A `for` loop edits the same list while iterating and skips elements. Explain and fix."}
+{"id": "obj1-test-009", "category": "concept_explanation", "topic": "loops", "query": "Explain `break`, `continue`, and `loop-else` in one coherent example."}
+{"id": "obj1-test-010", "category": "misconception", "topic": "loops", "query": "Correct this misconception: `continue` exits the loop like `break`."}
+{"id": "obj1-test-011", "category": "debugging", "topic": "loops", "query": "A loop using `enumerate` has shifted index logic and wrong labels. Diagnose and fix."}
+{"id": "obj1-test-012", "category": "concept_explanation", "topic": "loops", "query": "Explain iterator exhaustion and why the second pass over an iterator may be empty."}
+{"id": "obj1-test-013", "category": "concept_explanation", "topic": "conditionals", "query": "Explain short-circuit behavior in `and`/`or` and why operand order matters."}
+{"id": "obj1-test-014", "category": "debugging", "topic": "conditionals", "query": "A chain of separate `if` statements should be mutually exclusive. Refactor to correct logic."}
+{"id": "obj1-test-015", "category": "concept_explanation", "topic": "conditionals", "query": "Explain boolean precedence with a minimal example needing parentheses."}
+{"id": "obj1-test-016", "category": "misconception", "topic": "conditionals", "query": "Correct this misconception: `elif` is unnecessary because separate `if` blocks are equivalent."}
+{"id": "obj1-test-017", "category": "debugging", "topic": "conditionals", "query": "A ternary expression returns opposite values due to inverted condition. Explain and correct."}
+{"id": "obj1-test-018", "category": "concept_explanation", "topic": "conditionals", "query": "Explain structural pattern matching (`match`) vs if-elif chains for simple command routing."}
+{"id": "obj1-test-019", "category": "concept_explanation", "topic": "functions", "query": "Explain positional-only and keyword-only parameters with one practical function API example."}
+{"id": "obj1-test-020", "category": "debugging", "topic": "functions", "query": "A recursive function lacks a base case and crashes. Diagnose and provide corrected logic."}
+{"id": "obj1-test-021", "category": "concept_explanation", "topic": "functions", "query": "Explain decorators with one wrapper example and what gets called first."}
+{"id": "obj1-test-022", "category": "misconception", "topic": "functions", "query": "Correct this misconception: decorators magically change results without wrapper logic."}
+{"id": "obj1-test-023", "category": "debugging", "topic": "functions", "query": "A mutable default argument accumulates values across calls. Explain and fix."}
+{"id": "obj1-test-024", "category": "concept_explanation", "topic": "functions", "query": "Explain closures and nonlocal updates for stateful function factories."}
+{"id": "obj1-test-025", "category": "debugging", "topic": "loops", "query": "A `while True` retry loop never exits after success due to control-flow bug. Fix it."}
+{"id": "obj1-test-026", "category": "concept_explanation", "topic": "conditionals", "query": "Explain safe input validation patterns using conditionals and guard checks."}
+{"id": "obj1-test-027", "category": "concept_explanation", "topic": "functions", "query": "Explain `functools.lru_cache` conceptually and when it helps."}
+{"id": "obj1-test-028", "category": "debugging", "topic": "variables", "query": "A student confuses class-body scope and function local scope. Clarify with corrected code."}
+{"id": "obj1-test-029", "category": "concept_explanation", "topic": "conditionals", "query": "Explain chained comparisons and common pitfalls in conditional checks."}
+{"id": "obj1-test-030", "category": "debugging", "topic": "functions", "query": "A function call breaks due to wrong `*args`/`**kwargs` unpacking. Explain and correct."}

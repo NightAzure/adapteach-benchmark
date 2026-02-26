@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["artifact_type", "prompt", "original_code", "mutated_code", "explanation", "concept"],
+  "properties": {
+    "artifact_type": { "const": "mutation" },
+    "prompt": { "type": "string", "minLength": 1 },
+    "original_code": { "type": "string", "minLength": 1 },
+    "mutated_code": { "type": "string", "minLength": 1 },
+    "correct_fix": { "type": "string" },
+    "explanation": { "type": "string", "minLength": 1 },
+    "concept": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}
