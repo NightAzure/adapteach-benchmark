@@ -242,36 +242,61 @@ ls bench/runs/run_*.jsonl
 ### 3.2 Auto-label all datasets
 
 Auto-labeling assigns a relevance score (0/1/2) to each retrieved (query, chunk) pair
-using cosine similarity with MiniLM-v2 — the same model used for retrieval.
+using **Gemini 2.5 Flash as an LLM judge** — more accurate than cosine similarity alone.
 
-Thresholds:
-- `2` = highly relevant (cosine ≥ 0.50)
-- `1` = partially relevant (cosine ≥ 0.32)
-- `0` = not relevant
+Pairs are sent in batches of 20 per API call. Labeling is **resumable** — if the script
+is interrupted, re-running it skips already-labeled pairs.
+
+**Free-tier call budget (10 RPM / 250 RPD):**
+
+| Dataset | ~Pairs | ~Batches (sz=20) | Est. time |
+|---|---|---|---|
+| custom | ~1,400 | ~70 | ~9 min |
+| cs1qa | ~5,200 | ~260 | ~2 days |
+| mbpp | ~6,000 | ~300 | ~2 days |
+| staqc | ~6,000 | ~300 | ~2 days |
+
+Run `custom` first (fits in one session). Run the others one dataset per day.
 
 ```bash
+# Step 1: export labeling sheets for all datasets (fast, no API)
 for TAG in custom cs1qa mbpp staqc; do
   RUNFILE=$(ls -t bench/runs/run_*_${TAG}.jsonl | grep -v "custom_full" | head -1)
-  echo "=== Labeling: $TAG ($RUNFILE) ==="
-
-  # Step A: export sheet of all retrieved (query, chunk) pairs
+  echo "=== Exporting sheet: $TAG ==="
   python bench/export_labeling_sheet.py \
     --run-file "$RUNFILE" \
     --configs B,C,D,E,F \
     --out-csv bench/labels/sheet_${TAG}.csv
+done
 
-  # Step B: auto-label using MiniLM cosine similarity
+# Step 2: auto-label with Gemini (run one dataset per day on free tier)
+for TAG in custom; do   # extend to cs1qa mbpp staqc on subsequent days
+  echo "=== Labeling: $TAG ==="
   python bench/auto_label.py \
+    --gemini \
     --sheet bench/labels/sheet_${TAG}.csv \
     --queries bench/queries_${TAG}.jsonl \
-    --out bench/labels/labels_${TAG}.csv
-
+    --out bench/labels/labels_${TAG}.csv \
+    --api-key $GEMINI_API_KEY \
+    --batch-size 20 \
+    --delay 7
   echo "Done: bench/labels/labels_${TAG}.csv"
 done
 ```
 
-Each dataset takes ~2–5 min (embedding pass over queries + chunks).
-Check label distribution output — a healthy split is ~30–50% relevant.
+Run inside tmux for large datasets (cs1qa/mbpp/staqc):
+```bash
+tmux new-session -d -s label_cs1qa
+tmux send-keys -t label_cs1qa "
+cd ~/adapteach-benchmark && source .venv/bin/activate &&
+python bench/auto_label.py --gemini \
+  --sheet bench/labels/sheet_cs1qa.csv \
+  --queries bench/queries_cs1qa.jsonl \
+  --out bench/labels/labels_cs1qa.csv \
+  --api-key \$GEMINI_API_KEY --batch-size 20 --delay 7
+" Enter
+# ctrl+b d to detach; tmux attach -t label_cs1qa to check progress
+```
 
 ---
 
