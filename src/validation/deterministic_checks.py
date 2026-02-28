@@ -79,10 +79,17 @@ def check_parsons(payload: dict[str, Any]) -> dict[str, Any]:
     return {"valid": ok, "errors": errors}
 
 
+def _coerce_str(v: Any) -> str:
+    """Normalize a value to string — handles cases where the LLM returns a list."""
+    if isinstance(v, list):
+        return " ".join(str(x) for x in v)
+    return str(v) if v is not None else ""
+
+
 def check_flashcard(payload: dict[str, Any]) -> dict[str, Any]:
-    q = payload.get("question", "").strip()
-    a = payload.get("answer", "").strip()
-    c = payload.get("concept", "").strip()
+    q = _coerce_str(payload.get("question", "")).strip()
+    a = _coerce_str(payload.get("answer", "")).strip()
+    c = _coerce_str(payload.get("concept", "")).strip()
     ok = bool(q and a and c)
     return {"valid": ok, "errors": [] if ok else ["Flashcard fields missing."]}
 
