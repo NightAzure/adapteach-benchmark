@@ -1,6 +1,7 @@
 import argparse
 import json
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -31,6 +32,10 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--model", default="")
     p.add_argument("--tag", default="",
                    help="Optional label appended to the output filename, e.g. 'custom', 'cs1qa'")
+    p.add_argument("--sample", type=int, default=0,
+                   help="Limit to first N queries (0 = all). Useful for free-tier API budget.")
+    p.add_argument("--delay", type=float, default=0.0,
+                   help="Seconds to sleep between LLM calls (default 0). Set ~7 for free-tier 10 RPM limit.")
     return p.parse_args()
 
 
@@ -39,6 +44,8 @@ def main() -> None:
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     query_rows = _read_jsonl(Path(args.query_set))
+    if args.sample > 0:
+        query_rows = query_rows[:args.sample]
     configs = [c.strip() for c in args.configs.split(",") if c.strip()]
     app_cfg = load_app_config()
     if args.provider:
@@ -74,6 +81,8 @@ def main() -> None:
                     "record": record,
                 }
                 handle.write(json.dumps(run_row, ensure_ascii=True) + "\n")
+                if args.delay > 0 and args.dry_run == "none":
+                    time.sleep(args.delay)
 
     print(json.dumps({"query_count": len(query_rows), "configs": configs, "output": str(out_file.as_posix())}, indent=2))
 

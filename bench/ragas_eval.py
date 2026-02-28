@@ -35,6 +35,7 @@ import json
 import os
 import sys
 import textwrap
+import time
 from collections import defaultdict
 from pathlib import Path
 
@@ -99,6 +100,7 @@ def build_golden(
     run_file: Path,
     out_path: Path,
     api_key: str,
+    delay: float = 7.0,
 ) -> None:
     """
     Generate ground-truth answers for each query using Gemini + the retrieved
@@ -113,7 +115,7 @@ def build_golden(
         )
 
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash")
 
     queries = {r["id"]: r["query"] for r in _load_jsonl(queries_path)}
     run_rows = _load_jsonl(run_file)
@@ -179,6 +181,9 @@ def build_golden(
                 f.flush()
                 written += 1
 
+            if delay > 0:
+                time.sleep(delay)
+
     print(f"\nDone. Wrote {written} new ground-truth entries to {out_path}")
 
 
@@ -211,7 +216,7 @@ def run_eval(
     # LLM judge + embeddings (Gemini)
     evaluator_llm = LangchainLLMWrapper(
         ChatGoogleGenerativeAI(
-            model="gemini-1.5-flash",
+            model="gemini-2.5-flash",
             temperature=0.0,
             google_api_key=api_key,
         )
@@ -342,6 +347,8 @@ def main() -> None:
     parser.add_argument("--out", type=Path, required=True, help="Output path (.jsonl for golden, .csv for eval)")
     parser.add_argument("--api-key", default=os.environ.get("GEMINI_API_KEY", os.environ.get("ADAPTEACH_LLM_GEMINI_API_KEY", "")), help="Google AI Studio API key")
     parser.add_argument("--configs", nargs="+", default=None, help="Configs to evaluate (default: all)")
+    parser.add_argument("--delay", type=float, default=7.0,
+                        help="Seconds to sleep between Gemini calls in --build-golden (default 7 for free tier 10 RPM). Set 0 to disable.")
 
     args = parser.parse_args()
 
@@ -356,6 +363,7 @@ def main() -> None:
             run_file=args.run_file,
             out_path=args.out,
             api_key=args.api_key,
+            delay=args.delay,
         )
     else:
         if not args.golden:
