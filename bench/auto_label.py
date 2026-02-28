@@ -133,7 +133,7 @@ def _parse_gemini_ratings(text: str, expected: int) -> list[int]:
     return [0] * expected
 
 
-def _gemini_label_batch(model: Any, pairs: list[tuple[str, str, str, str]]) -> list[int]:
+def _gemini_label_batch(client: Any, pairs: list[tuple[str, str, str, str]]) -> list[int]:
     """
     Call Gemini once for a batch of (query_id, chunk_id, query_text, chunk_preview) pairs.
     Returns a list of int ratings (0/1/2), one per pair.
@@ -146,7 +146,10 @@ def _gemini_label_batch(model: Any, pairs: list[tuple[str, str, str, str]]) -> l
     prompt = GEMINI_PROMPT_TEMPLATE.format(pairs_block=pairs_block)
 
     try:
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+        )
         return _parse_gemini_ratings(response.text, len(pairs))
     except Exception as e:
         print(f"  [error] Gemini API call failed: {e}")
@@ -162,12 +165,11 @@ def label_with_gemini(
     delay: float,
 ) -> list[dict[str, Any]]:
     try:
-        import google.generativeai as genai
+        from google import genai
     except ImportError:
-        raise SystemExit("google-generativeai not installed. Run: pip install google-generativeai")
+        raise SystemExit("google-genai not installed. Run: pip install google-genai")
 
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel("gemini-2.5-flash")
+    client = genai.Client(api_key=api_key)
 
     # Resume: skip already-labeled pairs
     done = _load_existing_labels(out_path)
@@ -209,7 +211,7 @@ def label_with_gemini(
             for r in batch
         ]
 
-        ratings = _gemini_label_batch(model, pairs)
+        ratings = _gemini_label_batch(client, pairs)
 
         for row, rating in zip(batch, ratings):
             score_dist[rating] += 1

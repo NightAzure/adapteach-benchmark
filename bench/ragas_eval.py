@@ -107,15 +107,14 @@ def build_golden(
     context from Config E (best config). Saves a JSONL with {id, query, ground_truth}.
     """
     try:
-        import google.generativeai as genai
+        from google import genai
     except ImportError:
         raise SystemExit(
-            "google-generativeai not installed. Run:\n"
-            "  pip install google-generativeai"
+            "google-genai not installed. Run:\n"
+            "  pip install google-genai"
         )
 
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel("gemini-2.5-flash")
+    client = genai.Client(api_key=api_key)
 
     queries = {r["id"]: r["query"] for r in _load_jsonl(queries_path)}
     run_rows = _load_jsonl(run_file)
@@ -168,7 +167,10 @@ def build_golden(
             """).strip()
 
             try:
-                response = model.generate_content(prompt)
+                response = client.models.generate_content(
+                    model="gemini-2.5-flash",
+                    contents=prompt,
+                )
                 ground_truth = response.text.strip()
                 print(f"  [ok] {qid}: {ground_truth[:80]}...")
             except Exception as e:
