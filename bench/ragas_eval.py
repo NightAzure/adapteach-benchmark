@@ -208,12 +208,24 @@ def run_eval(
     import warnings
     from langchain_google_genai import ChatGoogleGenerativeAI
     from ragas.llms import LangchainLLMWrapper
-    from ragas.embeddings import HuggingFaceEmbeddings
     from ragas import SingleTurnSample, EvaluationDataset, evaluate
     # Use OLD-style metric instances — the new ragas.metrics.collections classes
     # inherit from SimpleBaseMetric, which is NOT a subclass of the Metric ABC
     # that evaluate() checks. Only old-style metrics work with evaluate().
     from ragas.metrics import faithfulness, answer_relevancy, context_precision, context_recall
+
+    class _STEmbeddings:
+        """Minimal sentence-transformers adapter for old-style RAGAS metrics.
+        Avoids Google v1beta endpoint issues with GoogleGenerativeAIEmbeddings."""
+        def __init__(self, model_name: str):
+            from sentence_transformers import SentenceTransformer
+            self._model = SentenceTransformer(model_name)
+
+        def embed_query(self, text: str) -> list:
+            return self._model.encode(text, convert_to_numpy=True).tolist()
+
+        def embed_documents(self, texts: list) -> list:
+            return self._model.encode(texts, convert_to_numpy=True).tolist()
 
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", DeprecationWarning)
@@ -224,10 +236,7 @@ def run_eval(
                 google_api_key=api_key,
             )
         )
-        # Use local HuggingFace embeddings to avoid Google v1beta endpoint issues
-        evaluator_embeddings = HuggingFaceEmbeddings(
-            model="sentence-transformers/all-MiniLM-L6-v2"
-        )
+        evaluator_embeddings = _STEmbeddings("sentence-transformers/all-MiniLM-L6-v2")
 
     # Attach LLM/embeddings to the singleton metric instances
     faithfulness.llm = evaluator_llm
