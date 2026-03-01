@@ -119,22 +119,22 @@ def build_golden(
     queries = {r["id"]: r["query"] for r in _load_jsonl(queries_path)}
     run_rows = _load_jsonl(run_file)
 
-    # Use Config E context if available; fall back to C, D, B in order
-    preferred_configs = ["E", "D", "C", "B"]
+    # Use best available context by priority: E > F > D > C > B
+    preferred_configs = ["E", "F", "D", "C", "B"]
     best_context_by_qid: dict[str, list[str]] = {}
+    best_config_by_qid: dict[str, str] = {}
     for row in run_rows:
         qid = row.get("query_id") or row.get("id", "")
         config = row.get("config", "")
+        if config not in preferred_configs:
+            continue
         ctx = _contexts_from_record(row)
-        if qid not in best_context_by_qid and config in preferred_configs:
+        if qid not in best_context_by_qid:
             best_context_by_qid[qid] = ctx
-        elif qid in best_context_by_qid:
-            current_cfg = next(
-                (r.get("config", "") for r in run_rows if (r.get("query_id") or r.get("id")) == qid),
-                "Z",
-            )
-            if preferred_configs.index(config) < preferred_configs.index(current_cfg):
-                best_context_by_qid[qid] = ctx
+            best_config_by_qid[qid] = config
+        elif preferred_configs.index(config) < preferred_configs.index(best_config_by_qid[qid]):
+            best_context_by_qid[qid] = ctx
+            best_config_by_qid[qid] = config
 
     existing: dict[str, str] = {}
     if out_path.exists():
