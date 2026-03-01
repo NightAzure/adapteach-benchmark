@@ -208,13 +208,12 @@ def run_eval(
     import warnings
     from langchain_google_genai import ChatGoogleGenerativeAI
     from ragas.llms import LangchainLLMWrapper
+    from ragas.embeddings import HuggingFaceEmbeddings
     from ragas import SingleTurnSample, EvaluationDataset, evaluate
     # Use OLD-style metric instances — the new ragas.metrics.collections classes
     # inherit from SimpleBaseMetric, which is NOT a subclass of the Metric ABC
     # that evaluate() checks. Only old-style metrics work with evaluate().
-    # answer_relevancy excluded: requires embeddings (v1beta endpoint broken with
-    # langchain-google-genai) and produced nan due to output parsing failures anyway.
-    from ragas.metrics import faithfulness, context_precision, context_recall
+    from ragas.metrics import faithfulness, answer_relevancy, context_precision, context_recall
 
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", DeprecationWarning)
@@ -225,14 +224,20 @@ def run_eval(
                 google_api_key=api_key,
             )
         )
+        # Use local HuggingFace embeddings to avoid Google v1beta endpoint issues
+        evaluator_embeddings = HuggingFaceEmbeddings(
+            model="sentence-transformers/all-MiniLM-L6-v2"
+        )
 
-    # Attach LLM to the singleton metric instances
+    # Attach LLM/embeddings to the singleton metric instances
     faithfulness.llm = evaluator_llm
+    answer_relevancy.llm = evaluator_llm
+    answer_relevancy.embeddings = evaluator_embeddings
     context_precision.llm = evaluator_llm
     context_recall.llm = evaluator_llm
 
-    metrics = [faithfulness, context_precision, context_recall]
-    metric_names = ["faithfulness", "context_precision", "context_recall"]
+    metrics = [faithfulness, answer_relevancy, context_precision, context_recall]
+    metric_names = ["faithfulness", "answer_relevancy", "context_precision", "context_recall"]
 
     golden = _load_golden(golden_path)
     run_rows = _load_jsonl(run_file)
@@ -316,11 +321,11 @@ def run_eval(
 
         print(f"\nResults saved to {out_path}")
         print("\nSummary:")
-        print(f"{'Config':<10} {'Faithfulness':<14} {'Ctx.Precision':<16} {'Ctx.Recall'}")
-        print("-" * 45)
+        print(f"{'Config':<10} {'Faithfulness':<14} {'Ans.Relevancy':<16} {'Ctx.Precision':<16} {'Ctx.Recall'}")
+        print("-" * 65)
         for r in all_results:
             def _fmt(v): return f"{v:.4f}" if v is not None else "  N/A "
-            print(f"{r['config']:<10} {_fmt(r.get('faithfulness')):<14} {_fmt(r.get('context_precision')):<16} {_fmt(r.get('context_recall'))}")
+            print(f"{r['config']:<10} {_fmt(r.get('faithfulness')):<14} {_fmt(r.get('answer_relevancy')):<16} {_fmt(r.get('context_precision')):<16} {_fmt(r.get('context_recall'))}")
     else:
         print("No results to write.")
 
