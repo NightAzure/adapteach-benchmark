@@ -205,9 +205,9 @@ def run_eval(
 ) -> None:
     _require_ragas()
 
-    from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
-    from ragas.llms import LangchainLLMWrapper
-    from ragas.embeddings import LangchainEmbeddingsWrapper
+    from google import genai as _google_genai
+    from ragas.llms import llm_factory
+    from ragas.embeddings import GoogleEmbeddings
     from ragas import SingleTurnSample, EvaluationDataset, evaluate
     from ragas.metrics.collections import (
         Faithfulness,
@@ -216,24 +216,13 @@ def run_eval(
         ContextRecall,
     )
 
-    os.environ.setdefault("GOOGLE_API_KEY", api_key)
-
-    # LLM judge + embeddings (Gemini)
-    evaluator_llm = LangchainLLMWrapper(
-        ChatGoogleGenerativeAI(
-            model="gemini-2.5-flash",
-            temperature=0.0,
-            google_api_key=api_key,
-        )
-    )
-    evaluator_embeddings = LangchainEmbeddingsWrapper(
-        GoogleGenerativeAIEmbeddings(
-            model="models/embedding-001",
-            google_api_key=api_key,
-        )
+    _google_client = _google_genai.Client(api_key=api_key)
+    evaluator_llm = llm_factory("gemini-2.5-flash", client=_google_client)
+    evaluator_embeddings = GoogleEmbeddings(
+        model="gemini-embedding-001",
+        google_api_key=api_key,
     )
 
-    # Metrics — attach LLM/embeddings at construction per RAGAS 0.4 API
     metrics = [
         Faithfulness(llm=evaluator_llm),
         AnswerRelevancy(llm=evaluator_llm, embeddings=evaluator_embeddings),
