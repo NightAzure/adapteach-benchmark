@@ -217,7 +217,7 @@ def run_eval(
     )
 
     _google_client = _google_genai.Client(api_key=api_key)
-    evaluator_llm = llm_factory("gemini-2.5-flash", client=_google_client)
+    evaluator_llm = llm_factory("gemini-2.5-flash", client=_google_client, provider="google")
     evaluator_embeddings = GoogleEmbeddings(
         model="gemini-embedding-001",
         google_api_key=api_key,
