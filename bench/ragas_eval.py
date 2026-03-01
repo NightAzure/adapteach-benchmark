@@ -151,7 +151,10 @@ def build_golden(
                 continue
 
             context_texts = best_context_by_qid.get(qid, [])
-            context_block = "\n\n---\n\n".join(context_texts[:5]) if context_texts else "(no context available)"
+            if not context_texts:
+                print(f"  [skip] {qid}: no context in run file (not in sample)")
+                continue
+            context_block = "\n\n---\n\n".join(context_texts[:5])
 
             prompt = textwrap.dedent(f"""
                 You are an expert Python programming instructor.
