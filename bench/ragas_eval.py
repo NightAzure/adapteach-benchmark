@@ -205,34 +205,40 @@ def run_eval(
 ) -> None:
     _require_ragas()
 
-    from litellm import OpenAI as LiteLLMClient
-    from google import genai as _google_genai
-    from ragas.llms import llm_factory
-    from ragas.embeddings import GoogleEmbeddings
+    import warnings
+    from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
+    from ragas.llms import LangchainLLMWrapper
+    from ragas.embeddings import LangchainEmbeddingsWrapper
     from ragas import SingleTurnSample, EvaluationDataset, evaluate
-    from ragas.metrics.collections import (
-        Faithfulness,
-        AnswerRelevancy,
-        ContextPrecision,
-        ContextRecall,
-    )
+    # Use OLD-style metric instances — the new ragas.metrics.collections classes
+    # inherit from SimpleBaseMetric, which is NOT a subclass of the Metric ABC
+    # that evaluate() checks. Only old-style metrics work with evaluate().
+    from ragas.metrics import faithfulness, answer_relevancy, context_precision, context_recall
 
-    os.environ["GEMINI_API_KEY"] = api_key
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", DeprecationWarning)
+        evaluator_llm = LangchainLLMWrapper(
+            ChatGoogleGenerativeAI(
+                model="gemini-2.5-flash",
+                temperature=0.0,
+                google_api_key=api_key,
+            )
+        )
+        evaluator_embeddings = LangchainEmbeddingsWrapper(
+            GoogleGenerativeAIEmbeddings(
+                model="models/embedding-001",
+                google_api_key=api_key,
+            )
+        )
 
-    # LLM: LiteLLM client — RAGAS-recommended path for Gemini
-    _litellm_client = LiteLLMClient(api_key=api_key, model="gemini/gemini-2.5-flash")
-    evaluator_llm = llm_factory("gemini/gemini-2.5-flash", client=_litellm_client)
+    # Attach LLM/embeddings to the singleton metric instances
+    faithfulness.llm = evaluator_llm
+    answer_relevancy.llm = evaluator_llm
+    answer_relevancy.embeddings = evaluator_embeddings
+    context_precision.llm = evaluator_llm
+    context_recall.llm = evaluator_llm
 
-    # Embeddings: google-genai client passed directly
-    _google_client = _google_genai.Client(api_key=api_key)
-    evaluator_embeddings = GoogleEmbeddings(client=_google_client, model="gemini-embedding-001")
-
-    metrics = [
-        Faithfulness(llm=evaluator_llm),
-        AnswerRelevancy(llm=evaluator_llm, embeddings=evaluator_embeddings),
-        ContextPrecision(llm=evaluator_llm),
-        ContextRecall(llm=evaluator_llm),
-    ]
+    metrics = [faithfulness, answer_relevancy, context_precision, context_recall]
     metric_names = ["faithfulness", "answer_relevancy", "context_precision", "context_recall"]
 
     golden = _load_golden(golden_path)
