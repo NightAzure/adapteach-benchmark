@@ -205,6 +205,7 @@ def run_eval(
 ) -> None:
     _require_ragas()
 
+    from litellm import OpenAI as LiteLLMClient
     from google import genai as _google_genai
     from ragas.llms import llm_factory
     from ragas.embeddings import GoogleEmbeddings
@@ -216,12 +217,15 @@ def run_eval(
         ContextRecall,
     )
 
+    os.environ["GEMINI_API_KEY"] = api_key
+
+    # LLM: LiteLLM client — RAGAS-recommended path for Gemini
+    _litellm_client = LiteLLMClient(api_key=api_key, model="gemini/gemini-2.5-flash")
+    evaluator_llm = llm_factory("gemini/gemini-2.5-flash", client=_litellm_client)
+
+    # Embeddings: google-genai client passed directly
     _google_client = _google_genai.Client(api_key=api_key)
-    evaluator_llm = llm_factory("gemini-2.5-flash", client=_google_client, provider="google")
-    evaluator_embeddings = GoogleEmbeddings(
-        model="gemini-embedding-001",
-        google_api_key=api_key,
-    )
+    evaluator_embeddings = GoogleEmbeddings(client=_google_client, model="gemini-embedding-001")
 
     metrics = [
         Faithfulness(llm=evaluator_llm),
