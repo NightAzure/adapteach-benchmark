@@ -45,9 +45,8 @@ pip install -r requirements.lock
 Additional dependencies for Objective 2 (RAGAS evaluation) — **not in requirements.lock**:
 
 ```bash
-pip install "ragas==0.4.3" langchain-ollama langchain-core datasets
 # Only needed if using --provider gemini:
-# pip install langchain-google-genai google-genai
+pip install langchain-google-genai google-genai
 ```
 
 ---
