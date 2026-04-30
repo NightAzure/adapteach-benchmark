@@ -1,0 +1,4 @@
+pipeline:
+  input_schema: v1
+  output_schema: v1
+  timeout_seconds: 30

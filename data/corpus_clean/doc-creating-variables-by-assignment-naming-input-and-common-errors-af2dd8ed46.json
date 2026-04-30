@@ -1,0 +1,25 @@
+{
+  "ai_generated": false,
+  "concept_tags": [
+    "assignment",
+    "input",
+    "nameerror",
+    "naming",
+    "snake_case",
+    "type-conversion",
+    "unpacking",
+    "variables"
+  ],
+  "content": "Python does not require variable declarations. A variable is created when you assign to it.\n\n---\n## 1) Variables are created by assignment\n\n```python\nsome_var = 5\nprint(some_var)      # 5\n\nsome_var = some_var + 10\nprint(some_var)      # 15\n```python\n\n---\n## 2) Naming: use snake_case\nReadable names reduce mistakes and make code easier to scan.\n\n```python\nuser_age = 20\nmax_retries = 3\npi_estimate = 3.14\n\nprint(user_age, max_retries, pi_estimate)\n```python\n\n---\n## 3) Accessing an unassigned name raises NameError\n\n```python\nvalue = 10\nprint(value)\n\n# print(vaule)  # NameError (typo)\n```python\n\n---\n## 4) Input returns a string (convert when needed)\n\n```python\nraw = input(\"Enter a number: \")\nprint(type(raw))   # <class 'str'>\n\nn = int(raw)\nprint(n + 1)\n```python\n\nIf conversion fails, you\u2019ll get a ValueError. A safe beginner-friendly pattern:\n\n```python\nraw = input(\"Enter an integer: \")\nif raw.isdigit():\n    n = int(raw)\n    print(\"OK:\", n)\nelse:\n    print(\"Not an integer:\", raw)\n```python\n\n---\n## 5) Quick patterns that feel like \u201cvariable tools\u201d\n### Swap two variables\n\n```python\na = \"left\"\nb = \"right\"\na, b = b, a\nprint(a, b)  # right left\n```python\n\n### Multiple assignment (unpacking)\n\n```python\nx, y, z = 1, 2, 3\nprint(x, y, z)\n```python\n\n---\n## 6) Mini practice: predict the output\n\n```python\nx = 1\nx = x + 2\n\ny = x\nx = 50\n\nprint(\"x\", x)\nprint(\"y\", y)\n\nx, y = y, x\nprint(\"swap\", x, y)\n```",
+  "difficulty": "intro",
+  "doc_id": "doc-creating-variables-by-assignment-naming-input-and-common-errors-af2dd8ed46",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "CC BY-SA 3.0 (Learn X in Y Minutes docs)",
+    "source_file": "data/corpus_raw/variables_easy_2.json",
+    "url": "https://learnxinyminutes.com/python/"
+  },
+  "title": "Creating variables by assignment: naming, input, and common errors",
+  "type": "tutorial"
+}

@@ -1,0 +1,24 @@
+{
+  "ai_generated": true,
+  "concept_tags": [
+    "classes",
+    "closures",
+    "comprehensions",
+    "generators",
+    "late-binding",
+    "scope",
+    "variables"
+  ],
+  "content": "Some variable behaviors feel surprising because class bodies and comprehensions introduce rules that differ from plain function blocks.\n\n---\n## 1) Class bodies execute top-to-bottom\nA class body is executed when the class is created. Names are bound in the class namespace as the body runs.\n\n```python\nclass C:\n    a = 10\n    b = a + 5\n\nprint(C.a, C.b)  # 10 15\n```python\n\nOrder matters:\n\n```python\nclass D:\n    x = 1\n    y = x + 1\n\nprint(D.y)  # 2\n```python\n\n---\n## 2) List comprehensions vs generator expressions\nA list comprehension builds a list eagerly; a generator expression is lazy.\n\n```python\n# list comprehension\nnums = [i for i in range(3)]\nprint(nums)\n```python\n\n```python\n# generator expression\nit = (i for i in range(3))\nprint(list(it))\n```python\n\n---\n## 3) Generator of lambdas: late binding appears again\n\n```python\nfuncs = (lambda: i for i in range(3))\nprint([f() for f in funcs])  # typically [2, 2, 2]\n```python\n\nFix by capturing immediately:\n\n```python\nfuncs = (lambda i=i: i for i in range(3))\nprint([f() for f in funcs])  # [0, 1, 2]\n```python\n\n---\n## 4) A combined example: class builds functions safely\n\n```python\nclass Tools:\n    adders = []\n    for offset in (0, 10, 100):\n        adders.append(lambda x, offset=offset: x + offset)\n\nprint([f(5) for f in Tools.adders])  # [5, 15, 105]\n```python\n\n---\n## 5) Takeaways\n- If code is created in a loop, assume you must **capture loop variables explicitly**.\n- If you define lots of behavior in a class body, remember it executes immediately at import time.",
+  "difficulty": "hard",
+  "doc_id": "doc-scope-surprises-class-bodies-comprehensions-and-generator-lambda-capture-c1ad7f3f8f",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "",
+    "source_file": "data/corpus_raw/variables_hard_5.json",
+    "url": ""
+  },
+  "title": "Scope surprises: class bodies, comprehensions, and generator/lambda capture",
+  "type": "tutorial"
+}

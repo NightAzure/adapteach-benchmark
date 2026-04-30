@@ -1,0 +1,21 @@
+{
+  "title": "Moderate comparisons: chaining, membership checks, identity, and readable conditions",
+  "content": "Moderate conditionals often involve writing **clear comparisons** and avoiding subtle bugs.\n\n---\n## 1) Chained comparisons\nPython allows chained comparisons like `0 < x < 10`. This is usually clearer than writing two comparisons with `and`.\n\n```python\nx = 7\nif 0 < x < 10:\n    print(\"single digit positive\")\n```\n\nA more realistic example:\n\n```python\ntemp = 22\nif 18 <= temp <= 27:\n    print(\"comfortable\")\nelse:\n    print(\"adjust\")\n```\n\n---\n## 2) Membership tests: in / not in\nMembership checks are often clearer than multiple equality checks.\n\n```python\ncmd = \"status\"\nif cmd in {\"start\", \"stop\", \"status\"}:\n    print(\"known command\")\nelse:\n    print(\"unknown\")\n```\n\n---\n## 3) Identity vs equality: is vs ==\nUse `is` for singletons like `None`. Use `==` for value comparisons.\n\n```python\nvalue = None\nif value is None:\n    print(\"missing\")\n\nx = [1, 2]\ny = [1, 2]\nprint(x == y)  # True\nprint(x is y)  # False\n```\n\n---\n## 4) Common readability tip: avoid overly clever precedence\nParentheses can make intent obvious.\n\n```python\nage = 19\nhas_ticket = True\nvip = False\n\nif (age >= 18 and has_ticket) or vip:\n    print(\"enter\")\nelse:\n    print(\"no\")\n```\n\n---\n## 5) Practice block: classify a score with clear comparisons\n\n```python\ndef grade(score):\n    if score < 0 or score > 100:\n        return \"invalid\"\n    if score >= 90:\n        return \"A\"\n    if score >= 80:\n        return \"B\"\n    if score >= 70:\n        return \"C\"\n    return \"D\"\n\nfor s in [105, 95, 81, 70, 69]:\n    print(s, grade(s))\n```\n",
+  "type": "reference",
+  "concept_tags": ["conditionals", "comparisons", "chained-comparisons", "membership", "identity", "precedence"],
+  "difficulty": "moderate",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["chain comparisons", "in-set membership", "is vs ==", "parentheses for clarity"]
+  },
+  "provenance": {
+    "url": "https://docs.python.org/3/reference/expressions.html",
+    "license": "PSF Documentation License (Python docs)",
+    "attribution": "Python Software Foundation / Python Documentation Contributors",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

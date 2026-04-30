@@ -1,0 +1,21 @@
+{
+  "title": "Structural pattern matching: match/case for complex branching and data-shaped conditions",
+  "content": "Hard conditional logic often shows up when branching depends on the **shape** of data (tuples, dicts, nested structures). Python’s `match` statement supports *structural pattern matching*, which can replace long `if/elif` chains.\n\n---\n## 1) A basic match example\n\n```python\ndef http_status(code):\n    match code:\n        case 200:\n            return \"OK\"\n        case 404:\n            return \"Not Found\"\n        case 500:\n            return \"Server Error\"\n        case _:\n            return \"Unknown\"\n\nprint(http_status(200))\nprint(http_status(123))\n```\n\n`case _:` is a wildcard “default.”\n\n---\n## 2) Matching sequences (tuples/lists)\n\n```python\ndef describe_point(p):\n    match p:\n        case (0, 0):\n            return \"origin\"\n        case (0, y):\n            return f\"on y-axis at {y}\"\n        case (x, 0):\n            return f\"on x-axis at {x}\"\n        case (x, y):\n            return f\"point {x},{y}\"\n        case _:\n            return \"not a point\"\n\nprint(describe_point((0, 5)))\nprint(describe_point((3, 0)))\nprint(describe_point((2, 9)))\n```\n\n---\n## 3) Matching with guards (extra conditions)\nGuards let you add an `if` to a `case`.\n\n```python\ndef classify(n):\n    match n:\n        case x if x < 0:\n            return \"negative\"\n        case 0:\n            return \"zero\"\n        case x if x % 2 == 0:\n            return \"positive even\"\n        case _:\n            return \"positive odd\"\n\nfor v in [-3, 0, 2, 5]:\n    print(v, classify(v))\n```\n\n---\n## 4) Matching dictionaries (structured input)\n\n```python\ndef handle_event(evt):\n    match evt:\n        case {\"type\": \"login\", \"user\": user}:\n            return f\"login {user}\"\n        case {\"type\": \"score\", \"user\": user, \"value\": v} if isinstance(v, int):\n            return f\"score {user}={v}\"\n        case {\"type\": t}:\n            return f\"unknown event type {t}\"\n        case _:\n            return \"invalid\"\n\nprint(handle_event({\"type\": \"login\", \"user\": \"ana\"}))\nprint(handle_event({\"type\": \"score\", \"user\": \"ana\", \"value\": 10}))\nprint(handle_event({\"type\": \"score\", \"user\": \"ana\", \"value\": \"x\"}))\n```\n\n---\n## 5) When match helps\n- When data has multiple possible shapes.\n- When nested if/elif becomes hard to read.\n- When you want to capture parts of the data as variables.\n",
+  "type": "reference",
+  "concept_tags": ["conditionals", "match", "pattern-matching", "guards", "branching", "data-shapes"],
+  "difficulty": "hard",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["match/case blocks", "sequence patterns", "dict patterns", "guards with if"]
+  },
+  "provenance": {
+    "url": "https://peps.python.org/pep-0634/",
+    "license": "Public domain (PEP text)",
+    "attribution": "PEP 634 authors (see PEP header)",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

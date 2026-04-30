@@ -1,0 +1,19 @@
+{
+  "title": "Nested loop search: scanning a grid, tracking coordinates, and clean exit strategies",
+  "content": "Nested loops show up naturally when working with 2D data (grids, tables, boards). This example is moderate because it introduces coordinate tracking and multiple exit strategies.\n\n---\n## 1) Scan a grid and print coordinates\n\n```python\ngrid = [\n    [\".\", \".\", \".\"],\n    [\".\", \"X\", \".\"],\n    [\".\", \".\", \".\"],\n]\n\nfor r in range(len(grid)):\n    for c in range(len(grid[r])):\n        print(\"cell\", r, c, grid[r][c])\n```\n\n---\n## 2) Find the first 'X' using break + flag\n\n```python\nfound = False\npos = None\n\nfor r in range(len(grid)):\n    for c in range(len(grid[r])):\n        if grid[r][c] == \"X\":\n            found = True\n            pos = (r, c)\n            break\n    if found:\n        break\n\nprint(\"found\", found, \"pos\", pos)\n```\n\n---\n## 3) Alternative: wrap search in a function and return early\nReturning early is often the cleanest way to exit multiple loop layers.\n\n```python\ndef find_x(grid):\n    for r, row in enumerate(grid):\n        for c, value in enumerate(row):\n            if value == \"X\":\n                return (r, c)\n    return None\n\nprint(find_x(grid))\n```\n\n---\n## 4) Practice block: count neighbors around a coordinate\n\n```python\ndef neighbors(r, c):\n    return [\n        (r-1, c), (r+1, c),\n        (r, c-1), (r, c+1)\n    ]\n\nr0, c0 = 1, 1\ncount_dots = 0\n\nfor r, c in neighbors(r0, c0):\n    if 0 <= r < len(grid) and 0 <= c < len(grid[r]):\n        if grid[r][c] == \".\":\n            count_dots += 1\n\nprint(\"dots around X:\", count_dots)\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["loops", "nested-loops", "enumerate", "break", "search", "grids", "functions"],
+  "difficulty": "moderate",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "created_at": "2026-02-09",
+    "intended_use": "educational corpus"
+  },
+  "provenance": {
+    "source": "ai_generated",
+    "generator": "ChatGPT",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": true
+}

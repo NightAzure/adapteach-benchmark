@@ -1,0 +1,21 @@
+{
+  "title": "Variables in Python: names, assignment, reassignment, and reading values",
+  "content": "A **variable** is a *name* that refers to a value. In Python, you create (bind) a variable by using **assignment** with `=`.\n\n---\n## 1) Basic assignment and reading values\n\n```python\nlucky = 7\nprint(lucky)        # 7\nprint(lucky + 1)    # 8\n```\n\nYou can use variables inside expressions, and Python will substitute their current values.\n\n---\n## 2) Reassignment (the name can be rebound)\nThe same variable name can be assigned a new value later.\n\n```python\nchanging = 3\nprint(changing)     # 3\n\nchanging = 9\nprint(changing)     # 9\n\nchanging = changing + 6\nprint(changing)     # 15\n```\n\nA helpful way to read `x = x + 1` is: “compute `x + 1` using the old value, then store it back into `x`.”\n\n---\n## 3) Right-hand side is evaluated first\nPython evaluates the right-hand side expression, then binds the left-hand name.\n\n```python\nx = 10\nx = x * 2 + 5\nprint(x)            # 25\n```\n\n---\n## 4) Assigning one variable from another\nWhen you do `yellow = red`, the name `yellow` is set to the current value of `red`.\n\n```python\nred = 5\nblue = 10\n\nyellow = red\nprint(yellow, red, blue)  # 5 5 10\n\nred = blue\nprint(yellow, red, blue)  # 5 10 10\n```\n\nNotice that `yellow` stays `5` after `red` changes.\n\n---\n## 5) Printing multiple values (useful for quick checks)\n\n```python\na = 1\nb = 2\nc = 3\nprint(a, b, c)      # 1 2 3\n```\n\n---\n## 6) Common beginner pitfalls (with examples)\n### Using a name before assignment (NameError)\n\n```python\n# print(missing)     # NameError\nmissing = 123\nprint(missing)\n```\n\n### Mixing types accidentally\n\n```python\nscore = 10\nlabel = \"Score: \"\n# print(label + score)    # TypeError\nprint(label + str(score))\n```\n\n---\n## 7) A small, readable practice script\nThis combines assignment, reassignment, and printing.\n\n```python\nx = 2\nprint(\"start\", x)\n\nx = x + 3\nprint(\"after +3\", x)\n\ny = x\nx = 100\nprint(\"x\", x, \"y\", y)\n\nz = y * 10\nprint(\"z\", z)\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["variables", "assignment", "reassignment", "expressions", "print", "type-conversion", "nameerror"],
+  "difficulty": "intro",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "code-heavy educational corpus",
+    "chunking_hints": ["interleaved explanation and code", "many short runnable blocks", "includes common errors as commented lines"]
+  },
+  "provenance": {
+    "url": "https://en.wikibooks.org/wiki/Python_Programming/Variables_and_Strings",
+    "license": "CC BY-SA (Wikibooks)",
+    "attribution": "Wikibooks contributors",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

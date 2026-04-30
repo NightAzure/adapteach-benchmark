@@ -1,0 +1,19 @@
+{
+  "title": "Refactoring if/elif chains: dispatch tables for commands and categories",
+  "content": "As programs grow, long if/elif chains can become repetitive. A moderate technique is using a **dispatch table** (a dictionary mapping) when the logic is “choose behavior based on a key.”\n\n---\n## 1) The baseline: if/elif chain\n\n```python\ncmd = \"status\"\n\nif cmd == \"start\":\n    msg = \"starting\"\nelif cmd == \"stop\":\n    msg = \"stopping\"\nelif cmd == \"status\":\n    msg = \"showing status\"\nelse:\n    msg = \"unknown\"\n\nprint(msg)\n```\n\n---\n## 2) Dispatch table: cleaner for simple key-to-value choices\n\n```python\ncmd = \"status\"\n\nmessages = {\n    \"start\": \"starting\",\n    \"stop\": \"stopping\",\n    \"status\": \"showing status\",\n}\n\nmsg = messages.get(cmd, \"unknown\")\nprint(msg)\n```\n\n---\n## 3) Dispatch table with functions (choose actions)\n\n```python\ndef start():\n    return \"started\"\n\ndef stop():\n    return \"stopped\"\n\ndef status():\n    return \"ok\"\n\nactions = {\n    \"start\": start,\n    \"stop\": stop,\n    \"status\": status,\n}\n\ncmd = \"start\"\nresult = actions.get(cmd, lambda: \"unknown\")()\nprint(result)\n```\n\n---\n## 4) Guard conditions still matter\nSometimes you need both: a dispatch plus a conditional check.\n\n```python\ncmd = \"start\"\nuser_role = \"guest\"\n\nif cmd == \"start\" and user_role != \"admin\":\n    print(\"permission denied\")\nelse:\n    print(\"ok to proceed\")\n```\n\n---\n## 5) Practice block: categorize with a mapping\n\n```python\ncode = \"PH\"\ncountry = {\n    \"PH\": \"Philippines\",\n    \"JP\": \"Japan\",\n    \"US\": \"United States\",\n}.get(code, \"Unknown\")\n\nprint(country)\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["conditionals", "refactoring", "dispatch-table", "dict", "get", "readability"],
+  "difficulty": "moderate",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "created_at": "2026-02-09",
+    "intended_use": "educational corpus"
+  },
+  "provenance": {
+    "source": "ai_generated",
+    "generator": "ChatGPT",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": true
+}

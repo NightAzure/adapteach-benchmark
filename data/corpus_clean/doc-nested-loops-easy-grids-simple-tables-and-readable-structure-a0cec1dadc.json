@@ -1,0 +1,23 @@
+{
+  "ai_generated": true,
+  "concept_tags": [
+    "break",
+    "grids",
+    "loops",
+    "nested-loops",
+    "range",
+    "tables"
+  ],
+  "content": "Nested loops are loops inside loops. They\u2019re useful for working with grid-like data, building tables, or processing pairs of items.\n\n---\n## 1) Print a small multiplication table\n\n```python\nfor row in range(1, 4):\n    for col in range(1, 4):\n        print(row * col, end=\" \")\n    print()  # new line after each row\n```python\n\n---\n## 2) Loop through a \u201cgrid\u201d (list of lists)\n\n```python\ngrid = [\n    [1, 2, 3],\n    [4, 5, 6],\n]\n\nfor r in grid:\n    for value in r:\n        print(value)\n```python\n\n---\n## 3) Build a flattened list (turn 2D into 1D)\n\n```python\ngrid = [\n    [1, 2, 3],\n    [4, 5, 6],\n]\n\nflat = []\nfor r in grid:\n    for value in r:\n        flat.append(value)\n\nprint(flat)  # [1, 2, 3, 4, 5, 6]\n```python\n\n---\n## 4) Pairs: all combinations of two lists\n\n```python\ncolors = [\"red\", \"blue\"]\nsizes = [\"S\", \"M\", \"L\"]\n\nfor c in colors:\n    for s in sizes:\n        print(c, s)\n```python\n\n---\n## 5) Early exit from nested loops (simple technique)\nIf you want to stop both loops when you find something, one easy approach is a flag.\n\n```python\nfound = False\nfor r in range(3):\n    for c in range(3):\n        if r == 1 and c == 2:\n            found = True\n            break\n    if found:\n        break\n\nprint(\"found?\", found)\n```",
+  "difficulty": "intro",
+  "doc_id": "doc-nested-loops-easy-grids-simple-tables-and-readable-structure-a0cec1dadc",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "",
+    "source_file": "data/corpus_raw/loops_easy_4.json",
+    "url": ""
+  },
+  "title": "Nested loops (easy): grids, simple tables, and readable structure",
+  "type": "tutorial"
+}

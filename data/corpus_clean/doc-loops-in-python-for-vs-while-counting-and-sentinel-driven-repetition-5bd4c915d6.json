@@ -1,0 +1,24 @@
+{
+  "ai_generated": false,
+  "concept_tags": [
+    "counting",
+    "for",
+    "infinite-loop",
+    "loops",
+    "range",
+    "sentinel",
+    "while"
+  ],
+  "content": "Loops let you repeat a block of code. In Python, the two everyday loops are:\n\n- `for`: repeat once for each item in a sequence/iterable\n- `while`: repeat while a condition stays true\n\n---\n## 1) A simple `for` loop over a list\n\n```python\nnames = [\"Ana\", \"Ben\", \"Kai\"]\nfor name in names:\n    print(\"Hello\", name)\n```python\n\nThis reads naturally: \u201cfor each name in names, run the indented block.\u201d\n\n---\n## 2) Counting with `range()`\nUse `range(n)` to produce `0..n-1`.\n\n```python\nfor i in range(5):\n    print(i)\n# 0 1 2 3 4\n```python\n\nCounting from 1 to 5:\n\n```python\nfor i in range(1, 6):\n    print(i)\n# 1 2 3 4 5\n```python\n\nUsing a step:\n\n```python\nfor i in range(0, 10, 2):\n    print(i)\n# 0 2 4 6 8\n```python\n\n---\n## 3) A `while` loop for repeated actions\nA `while` loop checks its condition before each iteration.\n\n```python\ncount = 1\nwhile count <= 5:\n    print(\"count =\", count)\n    count += 1\n```python\n\n---\n## 4) Sentinel input loop (repeat until a target value)\nA common pattern is \u201ckeep asking until the user enters a special value.\u201d\n\n```python\npassword = \"unicorn\"\nentered = \"\"\n\nwhile entered != password:\n    entered = input(\"Password: \")\n\nprint(\"Welcome in\")\n```python\n\nThis loop stops when `entered` matches the sentinel value.\n\n---\n## 5) Avoiding infinite loops\nIf the condition never becomes false, the loop runs forever.\n\n```python\n# WARNING: infinite loop example\n# x = 1\n# while x > 0:\n#     print(x)\n#     x += 1\n```python\n\nA safe habit is to ensure your loop updates the variable that controls the condition.\n\n---\n## 6) A small practice script (for + while)\n\n```python\n# for loop: sum numbers 1..5\ns = 0\nfor i in range(1, 6):\n    s += i\nprint(\"sum\", s)\n\n# while loop: countdown\nn = 3\nwhile n > 0:\n    print(\"T-\", n)\n    n -= 1\nprint(\"Lift off\")\n```",
+  "difficulty": "intro",
+  "doc_id": "doc-loops-in-python-for-vs-while-counting-and-sentinel-driven-repetition-5bd4c915d6",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "CC BY-SA 4.0 (Wikibooks) / also dual-licensed with GFDL per Wikibooks policy",
+    "source_file": "data/corpus_raw/loops_easy_1.json",
+    "url": "https://en.wikibooks.org/wiki/Python_Programming/Loops"
+  },
+  "title": "Loops in Python: for vs while, counting, and sentinel-driven repetition",
+  "type": "tutorial"
+}

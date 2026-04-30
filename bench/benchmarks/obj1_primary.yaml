@@ -1,0 +1,13 @@
+name: obj1_primary
+dry_run: retrieval
+artifact_type: flashcard
+configs:
+  - A
+  - B
+  - C
+  - D
+  - E
+  - F
+datasets:
+  - name: custom
+    query_file: bench/queries_custom.jsonl

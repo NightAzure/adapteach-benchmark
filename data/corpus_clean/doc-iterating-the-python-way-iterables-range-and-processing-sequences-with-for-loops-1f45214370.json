@@ -1,0 +1,24 @@
+{
+  "ai_generated": false,
+  "concept_tags": [
+    "accumulation",
+    "filtering",
+    "for",
+    "iterables",
+    "len",
+    "loops",
+    "range"
+  ],
+  "content": "A moderate step in loops is shifting your mindset from \u201ccounting with indices\u201d to \u201citerating over **iterables**.\u201d Python\u2019s `for` loop is designed to work with any iterable: lists, sets, strings, ranges, and many custom objects.\n\n---\n## 1) for-loops iterate over items (not just numbers)\n\n```python\nfor ch in \"spam\":\n    print(ch)\n```python\n\n```python\nfor item in {\"a\", \"b\", \"c\"}:\n    print(item)\n```python\n\n---\n## 2) range(start, stop) is an iterable of numbers\n`range` produces numbers on demand (it does not build a giant list automatically).\n\n```python\nonetoten = range(1, 11)\nfor count in onetoten:\n    print(count)\n```python\n\n---\n## 3) Processing a list: accumulate a result\nModerate loop work often means building a computed output.\n\n```python\nnums = [2, 4, 6, 8]\n\ntotal = 0\nfor n in nums:\n    total += n\nprint(\"total\", total)\n```python\n\n---\n## 4) Counting + values (two common approaches)\n### Approach A: iterate values directly (preferred when possible)\n\n```python\nnums = [10, 20, 30]\nfor n in nums:\n    print(n)\n```python\n\n### Approach B: iterate indices only when needed\n\n```python\nnums = [10, 20, 30]\nfor i in range(len(nums)):\n    print(i, nums[i])\n```python\n\n---\n## 5) A slightly larger example: compute min/max and ignore bad items\n\n```python\ndata = [\"10\", \"x\", \"5\", \"-\", \"7\", \"3\"]\nvalues = []\n\nfor token in data:\n    if token.isdigit():\n        values.append(int(token))\n\nif values:\n    print(\"min\", min(values))\n    print(\"max\", max(values))\n    print(\"sum\", sum(values))\nelse:\n    print(\"no valid numbers\")\n```python\n\n---\n## 6) Practice: loop with a running average\n\n```python\nnums = [10, 20, 30, 40]\ncount = 0\ns = 0\n\nfor n in nums:\n    count += 1\n    s += n\n    print(\"after\", count, \"items avg=\", s / count)\n```",
+  "difficulty": "moderate",
+  "doc_id": "doc-iterating-the-python-way-iterables-range-and-processing-sequences-with-for-loops-1f45214370",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "CC BY-SA 4.0 (Wikibooks) / also dual-licensed with GFDL per Wikibooks policy",
+    "source_file": "data/corpus_raw/loops_moderate_2.json",
+    "url": "https://en.wikibooks.org/wiki/Python_Programming/Loops"
+  },
+  "title": "Iterating the Python way: iterables, range(), and processing sequences with for-loops",
+  "type": "tutorial"
+}

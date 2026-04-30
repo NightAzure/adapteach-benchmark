@@ -1,0 +1,90 @@
+{
+  "datasets": [
+    {
+      "name": "custom",
+      "path": "/mnt/data/work/adapteach-benchmark/bench/queries_custom.jsonl",
+      "origin": "frozen_local",
+      "refreshable": false,
+      "count": 120,
+      "sha256": "f6e969d4629dfbd79bd5669ec0fb2fa192812c5e8a2c75ab74fa9296f2442013",
+      "sample_ids": [
+        "obj1-dev-001",
+        "obj1-dev-002",
+        "obj1-dev-003"
+      ],
+      "sample_topics": [
+        "loops",
+        "variables"
+      ],
+      "urls": [],
+      "note": ""
+    },
+    {
+      "name": "cs1qa",
+      "path": "/mnt/data/work/adapteach-benchmark/bench/queries_cs1qa.jsonl",
+      "origin": "official_github",
+      "refreshable": true,
+      "count": 437,
+      "sha256": "5a2fb401b845617a5e7ed1778db7b789d722a0d7941af9ad3e0b4fced93d1f39",
+      "sample_ids": [
+        "cs1qa-f2679f0fae",
+        "cs1qa-b594347c63",
+        "cs1qa-6b64365b20"
+      ],
+      "sample_topics": [
+        "conditionals",
+        "functions",
+        "loops",
+        "variables"
+      ],
+      "urls": [
+        "https://raw.githubusercontent.com/cyoon47/CS1QA/main/data/final/cleaned/equal/train_cleaned.jsonl",
+        "https://raw.githubusercontent.com/cyoon47/CS1QA/main/data/final/cleaned/equal/dev_cleaned.jsonl",
+        "https://raw.githubusercontent.com/cyoon47/CS1QA/main/data/final/cleaned/equal/test_cleaned.jsonl"
+      ],
+      "note": ""
+    },
+    {
+      "name": "mbpp",
+      "path": "/mnt/data/work/adapteach-benchmark/bench/queries_mbpp.jsonl",
+      "origin": "official_github",
+      "refreshable": true,
+      "count": 500,
+      "sha256": "f323911d3cb480153f7ac1659118a2f217b7981e9eda9a3e8c444b8acee32551",
+      "sample_ids": [
+        "mbpp-c358527e96",
+        "mbpp-27dd199b94",
+        "mbpp-0b7cbb5943"
+      ],
+      "sample_topics": [
+        "conditionals",
+        "functions",
+        "variables"
+      ],
+      "urls": [
+        "https://raw.githubusercontent.com/google-research/google-research/master/mbpp/mbpp.jsonl"
+      ],
+      "note": ""
+    },
+    {
+      "name": "staqc",
+      "path": "/mnt/data/work/adapteach-benchmark/bench/queries_staqc.jsonl",
+      "origin": "frozen_local",
+      "refreshable": false,
+      "count": 500,
+      "sha256": "08bbba9c8610092e4b997861baad204e1f12f6000254186ef0d589b560c3b578",
+      "sample_ids": [
+        "staqc-9a300c4710",
+        "staqc-f46ba5e636",
+        "staqc-6caedbb561"
+      ],
+      "sample_topics": [
+        "conditionals",
+        "functions",
+        "variables"
+      ],
+      "urls": [],
+      "note": "The repo ships a frozen StaQC query extract. Refresh is intentionally disabled because upstream formats vary and often break reproducibility."
+    }
+  ]
+}

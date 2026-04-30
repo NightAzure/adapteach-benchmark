@@ -1,0 +1,23 @@
+{
+  "ai_generated": false,
+  "concept_tags": [
+    "api-design",
+    "functions",
+    "pep-570",
+    "positional-only",
+    "signatures",
+    "special-parameters"
+  ],
+  "content": "Positional-only parameters let you define function arguments that **cannot** be passed by keyword. This is useful when you want to:\n- prevent callers from depending on parameter names\n- keep flexibility to rename parameters later\n- match conventions of built-in functions\n\nSyntax: parameters **before** `/` are positional-only.\n\n---\n## 1) Basic example\n\n```python\ndef divide(a, b, /):\n    return a / b\n\nprint(divide(10, 2))\n# divide(a=10, b=2) would raise TypeError\n```python\n\n---\n## 2) Mixing positional-only with other kinds\n\n```python\n# a, b: positional-only\n# c: positional-or-keyword\n# d: keyword-only\n\ndef demo(a, b, /, c, *, d):\n    return a, b, c, d\n\nprint(demo(1, 2, 3, d=4))\n# demo(a=1, b=2, c=3, d=4) fails because a and b are positional-only\n```python\n\n---\n## 3) Why it\u2019s useful (practical API perspective)\nIf you expose a function with keywords, callers may write:\n\n```python\n# caller code\nresult = demo(a=1, b=2, c=3, d=4)\n```python\n\nIf you later rename `a` to `x`, the call breaks. Positional-only reduces this risk.\n\n---\n## 4) Signature clarity vs *args tricks\nBefore `/`, libraries sometimes used `*args` to force positional usage, but that hides the signature.\nWith `/`, you can keep a clean signature while enforcing positional-only behavior.\n\n---\n## 5) Practice: design a stable numeric API\n\n```python\ndef clamp(n, /, lo=0, hi=100):\n    if n < lo:\n        return lo\n    if n > hi:\n        return hi\n    return n\n\nprint(clamp(5))\nprint(clamp(5, lo=3))\nprint(clamp(5, hi=4))\n# clamp(n=5) would fail because n is positional-only\n```",
+  "difficulty": "moderate",
+  "doc_id": "doc-positional-only-parameters-pep-570-using-to-control-function-call-semantics-a5d400b365",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "Public domain (PEP text)",
+    "source_file": "data/corpus_raw/functions_moderate_2.json",
+    "url": "https://peps.python.org/pep-0570/"
+  },
+  "title": "Positional-only parameters (PEP 570): using '/' to control function call semantics",
+  "type": "reference"
+}

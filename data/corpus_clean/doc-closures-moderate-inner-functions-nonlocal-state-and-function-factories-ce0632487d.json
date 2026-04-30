@@ -1,0 +1,23 @@
+{
+  "ai_generated": true,
+  "concept_tags": [
+    "caching",
+    "closures",
+    "function-factory",
+    "functions",
+    "nested-functions",
+    "nonlocal"
+  ],
+  "content": "Functions can be nested in Python. When an inner function uses variables from the outer scope, it forms a **closure**.\n\n---\n## 1) Nested functions\n\n```python\ndef outer():\n    msg = \"hello\"\n\n    def inner():\n        return msg\n\n    return inner\n\nf = outer()\nprint(f())\n```python\n\n`inner()` still remembers `msg` even after `outer()` has finished.\n\n---\n## 2) Function factory: build functions that customize behavior\n\n```python\ndef make_multiplier(factor):\n    def mul(x):\n        return x * factor\n    return mul\n\nby2 = make_multiplier(2)\nby10 = make_multiplier(10)\n\nprint(by2(7))\nprint(by10(7))\n```python\n\n---\n## 3) Capturing changing state with nonlocal\nIf you want to *modify* a captured variable, use `nonlocal`.\n\n```python\ndef make_counter():\n    count = 0\n\n    def inc():\n        nonlocal count\n        count += 1\n        return count\n\n    return inc\n\nc = make_counter()\nprint(c())\nprint(c())\nprint(c())\n```python\n\n---\n## 4) A realistic closure: configurable validator\n\n```python\ndef make_range_checker(lo, hi):\n    def check(n):\n        return lo <= n <= hi\n    return check\n\nis_age = make_range_checker(0, 120)\nprint(is_age(20))\nprint(is_age(999))\n```python\n\n---\n## 5) Practice block: build a tiny \"memoize\" wrapper (simple caching)\nThis is a gentle intro to decorators without introducing decorator syntax yet.\n\n```python\ndef memoize_1arg(func):\n    cache = {}\n\n    def wrapped(x):\n        if x in cache:\n            return cache[x]\n        cache[x] = func(x)\n        return cache[x]\n\n    return wrapped\n\ndef slow_square(n):\n    # imagine expensive work here\n    return n * n\n\nfast_square = memoize_1arg(slow_square)\nprint(fast_square(10))\nprint(fast_square(10))  # cached\n```",
+  "difficulty": "moderate",
+  "doc_id": "doc-closures-moderate-inner-functions-nonlocal-state-and-function-factories-ce0632487d",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "",
+    "source_file": "data/corpus_raw/functions_moderate_5.json",
+    "url": ""
+  },
+  "title": "Closures (moderate): inner functions, nonlocal state, and function factories",
+  "type": "tutorial"
+}

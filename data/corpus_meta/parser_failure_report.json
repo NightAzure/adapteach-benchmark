@@ -1,0 +1,99 @@
+{
+  "chunker": "ast-v1",
+  "doc_count": 100,
+  "failure_count": 40,
+  "failure_examples": [
+    {
+      "ast_reason": "syntax_error_ast",
+      "doc_id": "doc-10-brief-tour-of-the-standard-library-28f2830678",
+      "fallback_chunk_count": 33,
+      "parse_backend": "fixed",
+      "parsed": false,
+      "reason": "fallback_fixed",
+      "tree_sitter_reason": "tree_sitter_error_nodes"
+    },
+    {
+      "ast_reason": "syntax_error_ast",
+      "doc_id": "doc-10organizing-files-8fe90908f0",
+      "fallback_chunk_count": 109,
+      "parse_backend": "fixed",
+      "parsed": false,
+      "reason": "fallback_fixed",
+      "tree_sitter_reason": "tree_sitter_error_nodes"
+    },
+    {
+      "ast_reason": "syntax_error_ast",
+      "doc_id": "doc-11debugging-3032b7dc3e",
+      "fallback_chunk_count": 107,
+      "parse_backend": "fixed",
+      "parsed": false,
+      "reason": "fallback_fixed",
+      "tree_sitter_reason": "tree_sitter_error_nodes"
+    },
+    {
+      "ast_reason": "syntax_error_ast",
+      "doc_id": "doc-1python-basics-c6c24cef47",
+      "fallback_chunk_count": 86,
+      "parse_backend": "fixed",
+      "parsed": false,
+      "reason": "fallback_fixed",
+      "tree_sitter_reason": "tree_sitter_error_nodes"
+    },
+    {
+      "ast_reason": "syntax_error_ast",
+      "doc_id": "doc-2flow-control-c08fec5c50",
+      "fallback_chunk_count": 152,
+      "parse_backend": "fixed",
+      "parsed": false,
+      "reason": "fallback_fixed",
+      "tree_sitter_reason": "tree_sitter_error_nodes"
+    },
+    {
+      "ast_reason": "syntax_error_ast",
+      "doc_id": "doc-3-an-informal-introduction-to-python-b84ef065ad",
+      "fallback_chunk_count": 55,
+      "parse_backend": "fixed",
+      "parsed": false,
+      "reason": "fallback_fixed",
+      "tree_sitter_reason": "tree_sitter_error_nodes"
+    },
+    {
+      "ast_reason": "syntax_error_ast",
+      "doc_id": "doc-3functions-ab49f2a8a9",
+      "fallback_chunk_count": 114,
+      "parse_backend": "fixed",
+      "parsed": false,
+      "reason": "fallback_fixed",
+      "tree_sitter_reason": "tree_sitter_error_nodes"
+    },
+    {
+      "ast_reason": "syntax_error_ast",
+      "doc_id": "doc-4-more-control-flow-tools-d5287d137f",
+      "fallback_chunk_count": 116,
+      "parse_backend": "fixed",
+      "parsed": false,
+      "reason": "fallback_fixed",
+      "tree_sitter_reason": "tree_sitter_error_nodes"
+    },
+    {
+      "ast_reason": "syntax_error_ast",
+      "doc_id": "doc-4lists-8d4c6036cb",
+      "fallback_chunk_count": 179,
+      "parse_backend": "fixed",
+      "parsed": false,
+      "reason": "fallback_fixed",
+      "tree_sitter_reason": "tree_sitter_error_nodes"
+    },
+    {
+      "ast_reason": "syntax_error_ast",
+      "doc_id": "doc-5-data-structures-5b0746c54d",
+      "fallback_chunk_count": 73,
+      "parse_backend": "fixed",
+      "parsed": false,
+      "reason": "fallback_fixed",
+      "tree_sitter_reason": "tree_sitter_error_nodes"
+    }
+  ],
+  "parse_rate": 60.0,
+  "parsed_docs": 60
+}

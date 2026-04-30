@@ -1,0 +1,19 @@
+{
+  "title": "While loop patterns (easy): menus, retries, and simple validation",
+  "content": "While loops are great when you don’t know in advance how many times you need to repeat something. Many beginner-friendly programs use them for menus, retries, or input validation.\n\n---\n## 1) A basic menu loop\n\n```python\nchoice = \"\"\nwhile choice != \"q\":\n    print(\"(a)dd  (l)ist  (q)uit\")\n    choice = input(\"Choice: \").strip().lower()\n\n    if choice == \"a\":\n        print(\"adding...\")\n    elif choice == \"l\":\n        print(\"listing...\")\n    elif choice == \"q\":\n        print(\"bye\")\n    else:\n        print(\"unknown choice\")\n```\n\n---\n## 2) Retry pattern with a maximum attempt counter\n\n```python\nmax_tries = 3\ntries = 0\n\nwhile tries < max_tries:\n    pwd = input(\"Password: \")\n    if pwd == \"unicorn\":\n        print(\"ok\")\n        break\n    tries += 1\nelse:\n    print(\"too many tries\")\n```\n\nNotice the `else`: it runs only if the loop finishes without `break`.\n\n---\n## 3) Input validation pattern\n\n```python\nraw = input(\"Enter a whole number: \").strip()\nwhile not raw.isdigit():\n    print(\"Please enter digits only\")\n    raw = input(\"Enter a whole number: \").strip()\n\nn = int(raw)\nprint(\"n =\", n)\n```\n\n---\n## 4) A small practice script (mixed techniques)\n\n```python\nitems = []\n\nwhile True:\n    text = input(\"Add item (or 'done'): \").strip()\n    if text == \"done\":\n        break\n    if not text:\n        continue\n    items.append(text)\n\nprint(\"items:\", items)\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["loops", "while", "break", "continue", "loop-else", "validation", "menus"],
+  "difficulty": "intro",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "created_at": "2026-02-09",
+    "intended_use": "educational corpus"
+  },
+  "provenance": {
+    "source": "ai_generated",
+    "generator": "ChatGPT",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": true
+}

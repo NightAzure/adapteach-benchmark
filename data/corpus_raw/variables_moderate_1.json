@@ -1,0 +1,21 @@
+{
+  "title": "Augmented assignment: how += works, evaluation order, and mutability effects",
+  "content": "Augmented assignment combines an operation and an assignment into one statement, like `x += 1`. It’s convenient, but it also introduces a few important details that matter when variables refer to **mutable** objects.\n\n---\n## 1) The basic idea\n\n```python\nx = 10\nx += 5\nprint(x)  # 15\n```\n\nYou can think of `x += 5` as “take the current value of `x`, add 5, then store it back into `x`.”\n\n---\n## 2) The target is evaluated once\nIn augmented assignment, the *target expression* is evaluated once, then updated.\n\n```python\nitems = [10, 20, 30]\ni = 1\n\nitems[i] += 100\nprint(items)  # [10, 120, 30]\n```\n\nThis matters when the target expression is more complex or has side effects.\n\n---\n## 3) Different operators exist\nPython supports many augmented operators.\n\n```python\nx = 7\nx *= 3\nprint(x)  # 21\n\nx //= 4\nprint(x)  # 5\n\nx **= 2\nprint(x)  # 25\n```\n\n---\n## 4) Mutability: += may mutate in place\nA key moderate-level concept is that `+=` can behave differently depending on the type.\n\n### Lists: often mutate in place\n\n```python\nlst = [1, 2]\nalias = lst\n\nlst += [3, 4]\nprint(lst)   # [1, 2, 3, 4]\nprint(alias) # [1, 2, 3, 4]  (same object)\n```\n\n### Tuples: cannot mutate, so a new tuple is created\n\n```python\nt = (1, 2)\nold = t\n\nt += (3,)\nprint(old)  # (1, 2)\nprint(t)    # (1, 2, 3)\n```\n\nA quick way to see “same object or new object” is to compare identities:\n\n```python\nlst = [1, 2]\nprint(id(lst))\n\nlst += [3]\nprint(id(lst))  # often the same (in-place)\n\ns = \"hi\"\nprint(id(s))\n\ns += \"!\"\nprint(id(s))    # different (strings are immutable)\n```\n\n---\n## 5) Augmented assignment on attributes and items\n\n```python\nclass Box:\n    def __init__(self, v):\n        self.v = v\n\nb = Box(10)\nb.v += 7\nprint(b.v)  # 17\n\nm = {\"count\": 1}\nm[\"count\"] += 1\nprint(m)    # {'count': 2}\n```\n\n---\n## 6) Common confusion (good to know)\n- Augmented assignment targets cannot be unpacking targets.\n\n```python\n# a, b += (1, 2)  # not allowed\n```\n\n---\n## 7) Mixed example to practice reading code\n\n```python\nnums = [0, 1, 2]\nnums[0] += 10\n\nx = 2\nx *= 5\n\nname = \"A\"\nname += \"B\"\n\nprint(nums)   # [10, 1, 2]\nprint(x)      # 10\nprint(name)   # AB\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["variables", "assignment", "augmented-assignment", "mutability", "identity", "lists", "tuples", "strings"],
+  "difficulty": "moderate",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["many short code blocks", "in-place vs new-object contrast", "id() identity blocks", "targets include item/attribute"]
+  },
+  "provenance": {
+    "url": "https://docs.python.org/3/reference/simple_stmts.html",
+    "license": "PSF Documentation License (Python docs)",
+    "attribution": "Python Software Foundation / Python Documentation Contributors",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

@@ -1,0 +1,24 @@
+{
+  "ai_generated": false,
+  "concept_tags": [
+    "aggregation",
+    "enumerate",
+    "for",
+    "indexing",
+    "loops",
+    "parallel-iteration",
+    "zip"
+  ],
+  "content": "After you know basic loops, a very useful moderate technique is **parallel iteration**: walking through two or more sequences at the same time. The built-ins `zip()` and `enumerate()` are common tools for this.\n\n---\n## 1) zip(): pair items by position\n\n```python\nnames = [\"Ana\", \"Ben\", \"Kai\"]\nscores = [10, 25, 18]\n\nfor name, score in zip(names, scores):\n    print(name, \"scored\", score)\n```python\n\nIf the lists have different lengths, `zip` stops at the shortest.\n\n```python\nnames = [\"Ana\", \"Ben\", \"Kai\"]\nscores = [10, 25]\n\nfor name, score in zip(names, scores):\n    print(name, score)\n# prints only Ana/Ben\n```python\n\n---\n## 2) enumerate(): add an index\n\n```python\nitems = [\"a\", \"b\", \"c\"]\nfor i, v in enumerate(items):\n    print(i, v)\n```python\n\nStart indexing from 1:\n\n```python\nfor i, v in enumerate(items, start=1):\n    print(i, v)\n```python\n\n---\n## 3) Combine enumerate + zip: index + paired values\n\n```python\nnames = [\"Ana\", \"Ben\", \"Kai\"]\nscores = [10, 25, 18]\n\nfor i, (name, score) in enumerate(zip(names, scores), start=1):\n    print(i, name, score)\n```python\n\n---\n## 4) A more realistic example: align columns and compute totals\n\n```python\nproducts = [\"pen\", \"notebook\", \"tape\"]\nprices = [1.50, 3.00, 2.25]\nqty = [2, 1, 3]\n\ngrand = 0.0\nfor i, (p, price, q) in enumerate(zip(products, prices, qty), start=1):\n    line = price * q\n    grand += line\n    print(i, p, \"line=\", line)\n\nprint(\"grand=\", grand)\n```python\n\n---\n## 5) Practice: detect mismatched lists early (simple check)\nSometimes you *want* to ensure lengths match.\n\n```python\nif len(products) != len(prices) or len(prices) != len(qty):\n    print(\"length mismatch\")\nelse:\n    for p, price, q in zip(products, prices, qty):\n        print(p, price, q)\n```",
+  "difficulty": "moderate",
+  "doc_id": "doc-parallel-iteration-with-zip-and-enumerate-iterate-multiple-sequences-with-an-index-deed0d77ae",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "Copyright (site content); verify reuse permissions before redistribution",
+    "source_file": "data/corpus_raw/loops_moderate_3.json",
+    "url": "https://note.nkmk.me/en/python-for-enumerate-zip/"
+  },
+  "title": "Parallel iteration with zip() and enumerate(): iterate multiple sequences with an index",
+  "type": "tutorial"
+}

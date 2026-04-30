@@ -1,0 +1,23 @@
+{
+  "ai_generated": true,
+  "concept_tags": [
+    "generators",
+    "itertools",
+    "loops",
+    "parsing",
+    "pipelines",
+    "single-pass"
+  ],
+  "content": "This mini-project shows why hard looping concepts matter: you can build a readable data-processing pipeline without deeply nested loops.\n\n---\n## 1) The data\nImagine a stream of tokens from logs or configuration lines.\n\n```python\ntokens = [\n    \"USER ana\",\n    \"SCORE 10\",\n    \"USER ben\",\n    \"SCORE 25\",\n    \"USER ana\",\n    \"SCORE 5\",\n    \"JUNK ???\",\n]\n```python\n\n---\n## 2) Parse the stream into structured events\n\n```python\ndef parse(tokens):\n    for line in tokens:\n        parts = line.split()\n        if len(parts) != 2:\n            continue\n        kind, value = parts\n        if kind not in (\"USER\", \"SCORE\"):\n            continue\n        yield (kind, value)\n\nevents = parse(tokens)\nprint(list(events))\n```python\n\nNote: `events` is now consumed because we converted it to a list. In real code, avoid consuming the stream unless you mean to.\n\n---\n## 3) Keep it streaming: compute totals in one pass\n\n```python\ndef totals_by_user(tokens):\n    current_user = None\n    totals = {}\n\n    for kind, value in parse(tokens):\n        if kind == \"USER\":\n            current_user = value\n        elif kind == \"SCORE\" and current_user is not None and value.isdigit():\n            totals[current_user] = totals.get(current_user, 0) + int(value)\n\n    return totals\n\nprint(totals_by_user(tokens))\n```python\n\n---\n## 4) Add a streaming filter + transformation layer\n\n```python\ndef only_scores(tokens):\n    for kind, value in parse(tokens):\n        if kind == \"SCORE\" and value.isdigit():\n            yield int(value)\n\nprint(sum(only_scores(tokens)))\n```python\n\n---\n## 5) Use itertools to combine streams\n\n```python\nimport itertools\n\nmore = [\"SCORE 7\", \"SCORE x\", \"SCORE 3\"]\nall_tokens = itertools.chain(tokens, more)\n\nprint(sum(only_scores(all_tokens)))  # sums digits only\n```python\n\n---\n## 6) Practice block: take only the first N numeric scores\n\n```python\nimport itertools\n\nscores = only_scores(tokens)\nprint(list(itertools.islice(scores, 2)))\n```",
+  "difficulty": "hard",
+  "doc_id": "doc-building-a-loop-pipeline-parse-tokens-transform-streams-and-produce-a-report-3d5ba4846e",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "",
+    "source_file": "data/corpus_raw/loops_hard_5.json",
+    "url": ""
+  },
+  "title": "Building a loop pipeline: parse tokens, transform streams, and produce a report",
+  "type": "tutorial"
+}

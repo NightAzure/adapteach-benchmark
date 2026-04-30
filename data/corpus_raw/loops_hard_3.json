@@ -1,0 +1,21 @@
+{
+  "title": "Generator expressions: lazy looping, one-pass behavior, and common patterns",
+  "content": "Generator expressions are a compact way to build a lazy iterator. They often replace loops that “build a list just to consume it once.”\n\n---\n## 1) Generator expression vs list comprehension\nList comprehensions build the whole list immediately:\n\n```python\nsquares_list = [x * x for x in range(10)]\nprint(squares_list)\n```\n\nGenerator expressions are lazy (produce items on demand):\n\n```python\nsquares_gen = (x * x for x in range(10))\nprint(squares_gen)          # generator object\nprint(next(squares_gen))    # 0\nprint(next(squares_gen))    # 1\n```\n\n---\n## 2) Common “reduce” patterns: sum/min/max\nA classic use is feeding a generator directly into a reducer.\n\n```python\nlines = [\"a\", \"abcd\", \"xy\", \"\"]\n\nlongest = max((len(line) for line in lines if line))\nprint(longest)  # 4\n```\n\n```python\nnums = [1, 2, 3, 4]\nprint(sum(n * n for n in nums))  # 30\n```\n\n---\n## 3) One-pass behavior (easy to forget)\nOnce you consume a generator, it’s exhausted.\n\n```python\ng = (x for x in range(3))\nprint(list(g))  # [0, 1, 2]\nprint(list(g))  # []\n```\n\nIf you need two passes, recreate it:\n\n```python\nprint(list(x for x in range(3)))\nprint(list(x for x in range(3)))\n```\n\n---\n## 4) Nested generator expressions (powerful but can get dense)\n\n```python\npairs = ((a, b) for a in range(3) for b in range(3) if a != b)\nprint(list(pairs))\n```\n\n---\n## 5) A readable pipeline-style example\n\n```python\ntext = [\"10\", \"x\", \"5\", \"-\", \"7\"]\n\nnums = (int(t) for t in text if t.isdigit())\nprint(sum(nums))\n```\n\n---\n## 6) Practical takeaways\n- Generator expressions are great for large inputs.\n- They are lazy and single-pass.\n- Keep them readable; if it becomes too dense, expand into a generator function or a loop.\n",
+  "type": "reference",
+  "concept_tags": ["loops", "generators", "generator-expressions", "lazy-evaluation", "memory-efficiency", "pipelines"],
+  "difficulty": "hard",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["generator vs list contrast", "reducers like sum/max", "exhaustion examples", "nested genexp example"]
+  },
+  "provenance": {
+    "url": "https://peps.python.org/pep-0289/",
+    "license": "Public domain (PEP text)",
+    "attribution": "PEP 289 authors (see PEP header)",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Truthiness and short-circuit logic: how Python decides True/False and why it matters",
+  "content": "Moderate conditional logic is less about syntax and more about understanding how expressions are evaluated.\n\nTwo key ideas:\n1) **Truth value testing** (“truthiness”): many objects count as True or False in `if`.\n2) **Short-circuit evaluation**: `and` / `or` may stop early and return one of the operands.\n\n---\n## 1) Truthiness: what counts as False?\nIn `if x:`, Python evaluates `x` in a boolean context. Common falsy values include:\n- `False`\n- `None`\n- `0`, `0.0`\n- empty sequences/collections: `\"\"`, `[]`, `{}`, `set()`, `()`\n\n```python\nvalues = [0, 1, \"\", \"hi\", [], [1], None, False, True]\nfor v in values:\n    if v:\n        print(\"truthy:\", repr(v))\n    else:\n        print(\"falsy:\", repr(v))\n```\n\nA practical pattern is checking emptiness directly:\n\n```python\nitems = []\nif not items:\n    print(\"no items\")\n```\n\n---\n## 2) Short-circuit: and/or stop early\n### and\n`A and B` evaluates `A` first. If `A` is falsy, Python returns `A` immediately.\n\n```python\nprint(0 and 99)     # 0\nprint(5 and 99)     # 99\n```\n\n### or\n`A or B` evaluates `A` first. If `A` is truthy, Python returns `A` immediately.\n\n```python\nprint(\"hi\" or \"bye\")  # hi\nprint(\"\" or \"bye\")    # bye\n```\n\nThis makes “defaulting” common:\n\n```python\nname = \"\"\ndisplay = name or \"(anonymous)\"\nprint(display)\n```\n\n---\n## 3) Short-circuit is about evaluation, not just results\nBecause it stops early, it can prevent errors:\n\n```python\nobj = None\n\n# Safe: second part only runs if obj is not None\nif obj is not None and obj.get(\"k\") == 1:\n    print(\"match\")\nelse:\n    print(\"no\")\n```\n\nIf you reversed it, you might call `.get()` on None.\n\n---\n## 4) any() and all(): readable conditionals over collections\nThese are often cleaner than manual loops.\n\n```python\nwords = [\"cat\", \"\", \"dog\"]\nprint(any(words))  # True (at least one truthy element)\nprint(all(words))  # False (not all are truthy)\n\nnums = [2, 4, 6]\nprint(all(n % 2 == 0 for n in nums))  # True\n```\n\n---\n## 5) Practice block: validate inputs with short-circuit logic\n\n```python\ndef is_valid_username(s):\n    return s is not None and s.strip() and len(s.strip()) >= 3\n\nprint(is_valid_username(\" ana \"))\nprint(is_valid_username(\"  \"))\nprint(is_valid_username(None))\n```\n",
+  "type": "reference",
+  "concept_tags": ["conditionals", "truthiness", "boolean-ops", "short-circuit", "and", "or", "not", "any", "all"],
+  "difficulty": "moderate",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["truthiness table loop", "and/or return values", "safe guard pattern", "any/all generator examples"]
+  },
+  "provenance": {
+    "url": "https://docs.python.org/3/library/stdtypes.html",
+    "license": "PSF Documentation License (Python docs)",
+    "attribution": "Python Software Foundation / Python Documentation Contributors",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

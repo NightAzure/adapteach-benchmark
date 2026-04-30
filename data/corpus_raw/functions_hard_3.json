@@ -1,0 +1,21 @@
+{
+  "title": "Introspecting functions (hard): inspect.signature, parameters, annotations, and wrapper effects",
+  "content": "If you’re building tooling around code (parsers, generators, analyzers), function introspection becomes important. The `inspect` module provides a stable way to examine call signatures.\n\n---\n## 1) Read a function signature\n\n```python\nimport inspect\n\ndef f(a, b=10, *, c: int = 1, **kw) -> str:\n    return \"ok\"\n\nsig = inspect.signature(f)\nprint(sig)\n\nfor name, p in sig.parameters.items():\n    print(name, p.kind, p.default, p.annotation)\n\nprint(\"return\", sig.return_annotation)\n```\n\n---\n## 2) Why wrappers can break introspection\nA decorator wrapper often looks like `(*args, **kwargs)` which hides real parameters.\n\n```python\ndef deco(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n    return wrapper\n\n@deco\ndef add(a, b):\n    return a + b\n\nimport inspect\nprint(inspect.signature(add))  # shows (*args, **kwargs) not (a, b)\n```\n\n---\n## 3) How wraps helps tools\n`functools.wraps` sets metadata (and commonly improves introspection behavior in practice).\n\n```python\nimport functools, inspect\n\ndef deco(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n    return wrapper\n\n@deco\ndef add(a, b):\n    return a + b\n\nprint(add.__name__)\nprint(inspect.signature(add))\n```\n\n---\n## 4) Practical pattern: inspect + validation\n\n```python\nimport inspect\n\ndef accepts_two_args(fn):\n    sig = inspect.signature(fn)\n    params = [p for p in sig.parameters.values()\n              if p.kind in (p.POSITIONAL_ONLY, p.POSITIONAL_OR_KEYWORD)]\n    return len(params) == 2\n\nprint(accepts_two_args(lambda a, b: a + b))\nprint(accepts_two_args(lambda a, *, b: a + b))\n```\n\n---\n## 5) A larger example: build a tiny call planner\nThis shows how tooling might build a call using defaults.\n\n```python\nimport inspect\n\ndef plan_call(fn):\n    sig = inspect.signature(fn)\n    kwargs = {}\n    for name, p in sig.parameters.items():\n        if p.default is not inspect.Parameter.empty:\n            kwargs[name] = p.default\n    return kwargs\n\n\ndef connect(host, port=443, *, timeout=5, secure=True):\n    return host, port, timeout, secure\n\nprint(plan_call(connect))\n```\n",
+  "type": "reference",
+  "concept_tags": ["functions", "inspect", "signature", "introspection", "annotations", "wrappers", "tooling"],
+  "difficulty": "hard",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["signature parsing", "wrapper hides signature", "wraps improves metadata", "parameter kind filtering", "default-based call planning"]
+  },
+  "provenance": {
+    "url": "https://docs.python.org/3/library/inspect.html",
+    "license": "PSF Documentation License (Python docs)",
+    "attribution": "Python Software Foundation / Python Documentation Contributors",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Combining conditions: and/or/not, parentheses, and readable checks",
+  "content": "As programs grow, you often combine several checks in one decision. The goal is to keep conditions readable.\n\n---\n## 1) Basic and/or/not\n\n```python\nlogged_in = True\nis_admin = False\n\nif logged_in and is_admin:\n    print(\"admin panel\")\nelse:\n    print(\"regular view\")\n```\n\n```python\nrole = \"editor\"\n\nif role == \"admin\" or role == \"editor\":\n    print(\"can edit\")\nelse:\n    print(\"read only\")\n```\n\n```python\nname = \"\"\nif not name:\n    print(\"name required\")\n```\n\n---\n## 2) Parentheses for clarity\n\n```python\nage = 19\nhas_ticket = True\nvip = False\n\nif (age >= 18 and has_ticket) or vip:\n    print(\"enter\")\nelse:\n    print(\"no entry\")\n```\n\n---\n## 3) A slightly larger example: validate a password\n\n```python\npwd = \"Abc123\"\n\nhas_len = len(pwd) >= 6\nhas_digit = any(ch.isdigit() for ch in pwd)\nhas_upper = any(ch.isupper() for ch in pwd)\n\nif has_len and has_digit and has_upper:\n    print(\"strong enough\")\nelse:\n    print(\"try again\")\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["conditionals", "and", "or", "not", "parentheses", "readability", "guards"],
+  "difficulty": "intro",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "created_at": "2026-02-09",
+    "intended_use": "educational corpus"
+  },
+  "provenance": {
+    "source": "ai_generated",
+    "generator": "ChatGPT",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": true
+}

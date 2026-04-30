@@ -1,0 +1,437 @@
+{"id": "cs1qa-f2679f0fae", "category": "debugging", "topic": "variables", "query": "When using a string, adding numbers to the string is not good.\nCurrently, the string appears as '303'. How do I make it '3', '0'?\nI tried to separate the single string, but when I think about it, I think I just need to remove the end of '303'"}
+{"id": "cs1qa-b594347c63", "category": "concept_explanation", "topic": "variables", "query": "When I want to use for in the for term, can I just change the variable from i to j?\nIn C language, the for section is set to {},\nI wonder if Python simply uses spaces..."}
+{"id": "cs1qa-6b64365b20", "category": "concept_explanation", "topic": "functions", "query": "Is it possible to apply a function called move to a layer object?"}
+{"id": "cs1qa-60c977fab9", "category": "concept_explanation", "topic": "conditionals", "query": "When checking input\nif statement\nCan't I use it?"}
+{"id": "cs1qa-f3478663b7", "category": "concept_explanation", "topic": "conditionals", "query": "Can you help me if the problem is not solved well??"}
+{"id": "cs1qa-f81c011c32", "category": "debugging", "topic": "conditionals", "query": "Is there a problem with the code that says if a+b> c and a+c>b and b+c>a: print ('Yes')?No matter what number you put in, no..ㅠ"}
+{"id": "cs1qa-5b357de005", "category": "concept_explanation", "topic": "conditionals", "query": "How does a beeper appear as a conditional statement?"}
+{"id": "cs1qa-7bd61e978e", "category": "concept_explanation", "topic": "functions", "query": "Do you understand how the turnback function is used and what it is for?"}
+{"id": "cs1qa-0f4843b256", "category": "concept_explanation", "topic": "conditionals", "query": "Should I increase tries even if I ate False in is_vaild?"}
+{"id": "cs1qa-22231507a2", "category": "concept_explanation", "topic": "loops", "query": "Is there a way to implement the last task only with if and while without using separate flags?I thought about it for an hour before, but there was no answer."}
+{"id": "cs1qa-c598f7acf0", "category": "concept_explanation", "topic": "conditionals", "query": "Should I use num_pad for comparison?"}
+{"id": "cs1qa-59bf3f6596", "category": "concept_explanation", "topic": "conditionals", "query": "Why is the condition like that in print_cards?"}
+{"id": "cs1qa-02cc1027c0", "category": "concept_explanation", "topic": "functions", "query": "Could you please briefly explain the harvest1~3 functions?"}
+{"id": "cs1qa-08e5a836d8", "category": "concept_explanation", "topic": "functions", "query": "What does the withdrawal function do?"}
+{"id": "cs1qa-6c039b619a", "category": "concept_explanation", "topic": "variables", "query": "What is a bird??(What variable does it contain?)"}
+{"id": "cs1qa-48589a50d9", "category": "debugging", "topic": "conditionals", "query": "Does it matter if the picture of the card is cut off in the corner on the screen?"}
+{"id": "cs1qa-c41ef92673", "category": "debugging", "topic": "variables", "query": "Could you please tell me the wrong part in dec_to_any_string?"}
+{"id": "cs1qa-f66078131c", "category": "debugging", "topic": "variables", "query": "Is that because the global _scene is in the create_world function"}
+{"id": "cs1qa-f09588e2ab", "category": "concept_explanation", "topic": "variables", "query": "Is there a way to get lb or ub value to count_integers function and write it?"}
+{"id": "cs1qa-13b2f3aabf", "category": "concept_explanation", "topic": "functions", "query": "Can you explain the function of print_cards() function?"}
+{"id": "cs1qa-fdf28cc733", "category": "concept_explanation", "topic": "variables", "query": "Does an empty string feel like a space bar?"}
+{"id": "cs1qa-0a7dd772da", "category": "debugging", "topic": "loops", "query": "Why is this out of range?"}
+{"id": "cs1qa-13bbfeba39", "category": "concept_explanation", "topic": "functions", "query": "Could you please explain what functions hubo_run() and hubo_round() are respectively?"}
+{"id": "cs1qa-9f9594b0dd", "category": "concept_explanation", "topic": "functions", "query": "Can you explain the climb_up(n) function??"}
+{"id": "cs1qa-29aea5e6c2", "category": "debugging", "topic": "conditionals", "query": "Can you see this code too?.. I finished writing the code, but the execution result is different."}
+{"id": "cs1qa-a8a2ad1263", "category": "concept_explanation", "topic": "variables", "query": "How is the dec_list function and the dec_string function different?"}
+{"id": "cs1qa-8af8735a9b", "category": "concept_explanation", "topic": "variables", "query": "Is rad type default or deg type default angle in Python?"}
+{"id": "cs1qa-e35b345bd3", "category": "concept_explanation", "topic": "variables", "query": "What is the role of dec_to_any_string??"}
+{"id": "cs1qa-77a169fd2d", "category": "concept_explanation", "topic": "loops", "query": "how do i make a for loop decrement by 2?"}
+{"id": "cs1qa-345f39cba3", "category": "concept_explanation", "topic": "functions", "query": "What exactly should the hand function have?'"}
+{"id": "cs1qa-2a78c7f421", "category": "debugging", "topic": "conditionals", "query": "Why am I getting an invalid syntax error in else????"}
+{"id": "cs1qa-53921c4cbb", "category": "concept_explanation", "topic": "conditionals", "query": "When writing the draw card function, wouldn't we need to know the size of the card to adjust the spacing?\nCome to think of it, does it matter a lot if we're going to overlap it anyway?"}
+{"id": "cs1qa-3f60f2a033", "category": "concept_explanation", "topic": "variables", "query": "Can I use either dec_to_any_list or dec_to_any_string in the main function?"}
+{"id": "cs1qa-cc71c3fd70", "category": "concept_explanation", "topic": "loops", "query": "When I want to put a loop statement in the loop statement as follows, is it possible to perform four arithmetic operations at the place where the original number is entered?"}
+{"id": "cs1qa-1461db49f4", "category": "concept_explanation", "topic": "variables", "query": "Is i only a variable and N is a fixed constant?Are you using a value other than 30 given in the basic code?"}
+{"id": "cs1qa-608aaa225d", "category": "concept_explanation", "topic": "conditionals", "query": "How did you determine if it was a window?\nIs there a reason you're so salty?"}
+{"id": "cs1qa-fde346a287", "category": "concept_explanation", "topic": "conditionals", "query": "How do I know if the pictures on the cards corresponding to the two numbers I entered are the same?"}
+{"id": "cs1qa-abd4f3327c", "category": "concept_explanation", "topic": "loops", "query": "Why did you use the while statement??"}
+{"id": "cs1qa-b68ff3a778", "category": "concept_explanation", "topic": "conditionals", "query": "What is the case for num1 and num2 that return False when is_valid?"}
+{"id": "cs1qa-c5ba763ad5", "category": "debugging", "topic": "functions", "query": "How do I set the condition to execute the function called skew(img,vertical,20)???\nI tried running it and it says name not defined in direction==vertical..!"}
+{"id": "cs1qa-bd0acdefd2", "category": "concept_explanation", "topic": "functions", "query": "Could you please explain what the run() function does?"}
+{"id": "cs1qa-dab0843108", "category": "concept_explanation", "topic": "conditionals", "query": "What should I do if the is_valid function returns True in a problem situation?Should I exit the code?"}
+{"id": "cs1qa-441ab89396", "category": "concept_explanation", "topic": "variables", "query": "When using balance, can I change it to a global function?"}
+{"id": "cs1qa-da36cec01c", "category": "concept_explanation", "topic": "functions", "query": "Can you explain what kind of function the function called supermove() does among the functions you created??"}
+{"id": "cs1qa-6eeaf2df57", "category": "concept_explanation", "topic": "variables", "query": "Are there any global variables created or modified within the defined function?"}
+{"id": "cs1qa-ad856d0b62", "category": "concept_explanation", "topic": "variables", "query": "When we first started, we declared a list outside of the function, so we treated it as a global variable, right?\nAnd if you redefine the list in a function like list=[1,2,3], it will be treated differently even if it has the same name as the list outside, right?"}
+{"id": "cs1qa-2c612df640", "category": "concept_explanation", "topic": "loops", "query": "Are you talking about taking input and moving while moving without any input?"}
+{"id": "cs1qa-0a1e0a88e2", "category": "concept_explanation", "topic": "functions", "query": "How did you write the jump function"}
+{"id": "cs1qa-54e1d5b778", "category": "concept_explanation", "topic": "variables", "query": "should I make the body parts global variables?"}
+{"id": "cs1qa-c8e3bec9c9", "category": "concept_explanation", "topic": "variables", "query": "Can't float convert a string to a number?"}
+{"id": "cs1qa-7bd45e3b81", "category": "concept_explanation", "topic": "conditionals", "query": "Is it correct to understand that if it is included in the correct_list it should show cards or num_pads?"}
+{"id": "cs1qa-bba08b9271", "category": "concept_explanation", "topic": "loops", "query": "Could you just give me a hint? ㅠㅠ I don't know how long to specify the loop when the number of lines is odd or even."}
+{"id": "cs1qa-f51e44fbdd", "category": "concept_explanation", "topic": "variables", "query": "How is \"\" different from a string function?"}
+{"id": "cs1qa-ab92ce498f", "category": "concept_explanation", "topic": "conditionals", "query": "When I press the space bar, I made the while statement escape by returning False, but is it different from that..??"}
+{"id": "cs1qa-be1a708fb5", "category": "debugging", "topic": "conditionals", "query": "When you first declare the class, you don't have to write down the state of all cards as true?It says there is no definition"}
+{"id": "cs1qa-3e29bf8a2f", "category": "concept_explanation", "topic": "variables", "query": "What does setDepth do when stacking cards in draw_card?Which variables were you stacked in order?"}
+{"id": "cs1qa-b267e47403", "category": "concept_explanation", "topic": "functions", "query": "What are writer and writerow functions?"}
+{"id": "cs1qa-5543016224", "category": "concept_explanation", "topic": "functions", "query": "What does the reader function do to the result?"}
+{"id": "cs1qa-cbd223284e", "category": "concept_explanation", "topic": "loops", "query": "How do I set the code to repeat according to the width and height in the last task?"}
+{"id": "cs1qa-8abc18d68d", "category": "concept_explanation", "topic": "variables", "query": "What do the av and st variables do?"}
+{"id": "cs1qa-ce6a824dd0", "category": "debugging", "topic": "conditionals", "query": "Why elif num1 == num2: I get an error here..."}
+{"id": "cs1qa-df91877c68", "category": "concept_explanation", "topic": "functions", "query": "Could you briefly explain the abc function"}
+{"id": "cs1qa-a57a7cde61", "category": "concept_explanation", "topic": "loops", "query": "Can't we say for i in range(6) and use i in the for statement to operate?"}
+{"id": "cs1qa-075889f0da", "category": "concept_explanation", "topic": "functions", "query": "Can I receive it as an input function?"}
+{"id": "cs1qa-dacede8670", "category": "concept_explanation", "topic": "functions", "query": "Can we write blackjack create.deck function like this?"}
+{"id": "cs1qa-de0da4a374", "category": "concept_explanation", "topic": "functions", "query": "What is the __init__ function\nHow is it used in black jack"}
+{"id": "cs1qa-1f2e7c5a7b", "category": "concept_explanation", "topic": "functions", "query": "Can you explain what the print_cards() function is about in 3?"}
+{"id": "cs1qa-7fe56a14c0", "category": "concept_explanation", "topic": "variables", "query": "What are the variables sum1 and sum2 store?"}
+{"id": "cs1qa-020e97650e", "category": "concept_explanation", "topic": "variables", "query": "Is angle an integer or a real number?"}
+{"id": "cs1qa-0a899d4176", "category": "concept_explanation", "topic": "variables", "query": "Is there any way to declare it as a global variable when trying to use the layer object used in draw_animate in show_animation?It says to implement in a function, so I thought a lot about what to do, but I would appreciate it if you let me know."}
+{"id": "cs1qa-5127b2b4f7", "category": "concept_explanation", "topic": "variables", "query": "Can't I use a variable called streets...?"}
+{"id": "cs1qa-3625d35856", "category": "concept_explanation", "topic": "variables", "query": "Are geometry objects like tiger and sq_n also variables?"}
+{"id": "cs1qa-6db866978c", "category": "concept_explanation", "topic": "functions", "query": "Could you briefly explain the harvest up and down functions?"}
+{"id": "cs1qa-8eecaa1141", "category": "concept_explanation", "topic": "functions", "query": "What does check mean to return to the original screen?Are you talking about when everyone shows the number part?"}
+{"id": "cs1qa-0cd9e5b397", "category": "concept_explanation", "topic": "variables", "query": "What is the last value of x when you run the code with n= 31?(ex.sin((16/29)*pi) is)"}
+{"id": "cs1qa-eff9c11cc8", "category": "concept_explanation", "topic": "functions", "query": "What exactly is a function called carries_beepers()?"}
+{"id": "cs1qa-c44c13fa8b", "category": "concept_explanation", "topic": "conditionals", "query": "How do I check the number of pairs of cards matched instead of the length of the correct_list in Memento??"}
+{"id": "cs1qa-7809df0998", "category": "concept_explanation", "topic": "functions", "query": "Do we get input outside or inside function skew?"}
+{"id": "cs1qa-0398f11203", "category": "concept_explanation", "topic": "variables", "query": "Is there a way to reverse the order in strings?\nSolving using list seems to be solved, but it seems that the order of solving using str must be changed."}
+{"id": "cs1qa-3d6a893541", "category": "debugging", "topic": "functions", "query": "Can you check why it doesn't work in 2 now?\nWhen a tuple called a prints, only the last ('ZW','Zimbabwe')\nIs printed"}
+{"id": "cs1qa-19e9afbdf9", "category": "concept_explanation", "topic": "loops", "query": "How do you use break?Can I use it when I want to exit the while statement?"}
+{"id": "cs1qa-473307d38d", "category": "concept_explanation", "topic": "conditionals", "query": "What are the conditions for showing cards in print_card?"}
+{"id": "cs1qa-b126389113", "category": "concept_explanation", "topic": "loops", "query": "Is there a reason you used while to give coins?"}
+{"id": "cs1qa-d7b4fc3ecf", "category": "concept_explanation", "topic": "functions", "query": "Is there a function to check the number of beepers you have?"}
+{"id": "cs1qa-d5c71a44fe", "category": "concept_explanation", "topic": "functions", "query": "Does the front_is_clear() function work for beepers, not walls?"}
+{"id": "cs1qa-1b9b74d7a3", "category": "concept_explanation", "topic": "conditionals", "query": "Could you please explain what A,B,C means?\nIf the decimal system is passed, is it necessary to convert it in a different way than before?"}
+{"id": "cs1qa-5d5342de5b", "category": "concept_explanation", "topic": "functions", "query": "Can you explain zig and zag functions?"}
+{"id": "cs1qa-f8582f2b28", "category": "debugging", "topic": "variables", "query": "When drawing a picture, I created leftwing and rightwing objects and drew them, but when I try to rotate using a variable again in the show_animation function, an error occurs that the variable is not defined.I would like to ask a question in this regard"}
+{"id": "cs1qa-a4b50c4d15", "category": "concept_explanation", "topic": "functions", "query": "Is the unit of the rotate function degree and the unit of the sin cos function correct?"}
+{"id": "cs1qa-ed4ac85bbd", "category": "concept_explanation", "topic": "variables", "query": "When writing the check() function, what variable should be used for the picture for the number?"}
+{"id": "cs1qa-ae5c688ba3", "category": "concept_explanation", "topic": "functions", "query": "Is there a reason that only the legs were made outside the function??"}
+{"id": "cs1qa-e7f548e3f5", "category": "concept_explanation", "topic": "functions", "query": "Can you briefly explain the function of each function?"}
+{"id": "cs1qa-1481c97d96", "category": "concept_explanation", "topic": "conditionals", "query": "Why is the condition checked???"}
+{"id": "cs1qa-1559999d5a", "category": "concept_explanation", "topic": "conditionals", "query": "Is there any difference between the condition when it reaches the floor and when it reaches the ceiling.. ????"}
+{"id": "cs1qa-2fb5803caa", "category": "concept_explanation", "topic": "conditionals", "query": "Could you please tell me why I set the conditions this way?"}
+{"id": "cs1qa-45f6daef38", "category": "concept_explanation", "topic": "functions", "query": "Can you explain the right_up_move() function?"}
+{"id": "cs1qa-608905ca09", "category": "concept_explanation", "topic": "functions", "query": "Should I change the print_cards() function..?"}
+{"id": "cs1qa-14c02b8539", "category": "concept_explanation", "topic": "variables", "query": "Can you explain the role of dec_to_any_list and dec_to_any_string?"}
+{"id": "cs1qa-5b144ed258", "category": "concept_explanation", "topic": "functions", "query": "Are the Image and Text classes used in step 2 always available when the cs1graphics module is called...??"}
+{"id": "cs1qa-a187588119", "category": "concept_explanation", "topic": "conditionals", "query": "What are the conditions for showing the card?"}
+{"id": "cs1qa-6596e8cd9c", "category": "debugging", "topic": "functions", "query": "Can you tell what's wrong with the bird_move(self) function at 163 when executing interactive()?"}
+{"id": "cs1qa-04731971d8", "category": "concept_explanation", "topic": "variables", "query": "What is the meaning of the turn variable used here?"}
+{"id": "cs1qa-d606e085d0", "category": "debugging", "topic": "conditionals", "query": "Why doesn't the if statement work here??"}
+{"id": "cs1qa-d507e43cdc", "category": "concept_explanation", "topic": "functions", "query": "What do you do in the initialize function"}
+{"id": "cs1qa-41d588f0ff", "category": "concept_explanation", "topic": "variables", "query": "Is it that hexadecimal values only work for base 16?"}
+{"id": "cs1qa-8197844fe0", "category": "concept_explanation", "topic": "functions", "query": "Could you briefly explain what the one_cycle function of tasks 3 and 4 does?"}
+{"id": "cs1qa-3bc14fc09c", "category": "concept_explanation", "topic": "variables", "query": "Can you change the string too?"}
+{"id": "cs1qa-3b88ac2aba", "category": "concept_explanation", "topic": "variables", "query": "What type of money should I convert?I don't understand well"}
+{"id": "cs1qa-68b898b88d", "category": "concept_explanation", "topic": "functions", "query": "What are number and number_back functions?"}
+{"id": "cs1qa-0993eddbd7", "category": "concept_explanation", "topic": "variables", "query": "Should the result of a list be a string?"}
+{"id": "cs1qa-2b627aa99b", "category": "concept_explanation", "topic": "conditionals", "query": "What are the termination conditions?"}
+{"id": "cs1qa-73272af5c1", "category": "concept_explanation", "topic": "variables", "query": "When you put an input function in elice, how do you actually input the input value?"}
+{"id": "cs1qa-454fe73efe", "category": "concept_explanation", "topic": "functions", "query": "Why did you define a separate function called pick()?"}
+{"id": "cs1qa-30548a62ac", "category": "concept_explanation", "topic": "variables", "query": "How do I set the condition on line 110?\nWhen it was a list, I simply thought of the length\nI am not sure what to do when using the new datatype."}
+{"id": "cs1qa-d51a913172", "category": "concept_explanation", "topic": "functions", "query": "Could you please tell me the function that represents the coordinates of the figures?"}
+{"id": "cs1qa-3bc2e052c7", "category": "concept_explanation", "topic": "conditionals", "query": "Is the top conditional statement wrong?"}
+{"id": "cs1qa-d684821d9e", "category": "concept_explanation", "topic": "loops", "query": "could you at least teach me how to break a nest for loop?\ni have a condition being met in the innermost loop\nand when that is met i want to get out of all the loops"}
+{"id": "cs1qa-43cca0f7b8", "category": "concept_explanation", "topic": "functions", "query": "What exactly does the print_cards() function do"}
+{"id": "cs1qa-6ffb8fc551", "category": "concept_explanation", "topic": "functions", "query": "What is boost() function?"}
+{"id": "cs1qa-dbeacad348", "category": "concept_explanation", "topic": "functions", "query": "What is the __init__ function and how is it used in the Memento problem?"}
+{"id": "cs1qa-9246f97b73", "category": "concept_explanation", "topic": "variables", "query": "Where is the first part of initializing cards, and what is the type of each element in the cards??"}
+{"id": "cs1qa-6cac38acba", "category": "concept_explanation", "topic": "variables", "query": "Is there a char variable type in Python?"}
+{"id": "cs1qa-7f815a4394", "category": "concept_explanation", "topic": "variables", "query": "When moving elements such as country name from a file to a list, the length is different, so it is a little difficult. Can you help me?(i.e. s[i][2] prints the third character of the line, not the country name)"}
+{"id": "cs1qa-8c800c88db", "category": "concept_explanation", "topic": "functions", "query": "Could you briefly explain what the move_and_pick function does?"}
+{"id": "cs1qa-ed0a72a1ca", "category": "debugging", "topic": "loops", "query": "When I run it strangely, Download tpmon.csv appears between 1834 and 1835, and when I open the file, it appears cut off in the middle.I'm not sure what's wrong"}
+{"id": "cs1qa-14b6862021", "category": "concept_explanation", "topic": "functions", "query": "Which part should I fix?Should I fix the main function?"}
+{"id": "cs1qa-baf6392050", "category": "concept_explanation", "topic": "functions", "query": "How does the function carries_beepers work?"}
+{"id": "cs1qa-0d32fcddb3", "category": "concept_explanation", "topic": "functions", "query": "Do I have to write a function myself using the for statement in order to think in terms of spacing?"}
+{"id": "cs1qa-77bd427f02", "category": "concept_explanation", "topic": "functions", "query": "Is there a function in the cs1graphic module to rotate around an anchor point?"}
+{"id": "cs1qa-899fed952f", "category": "concept_explanation", "topic": "variables", "query": "Can't I separate and use the object already merged into the self layer again????\nSo, in this code, the light consisting of lightballs is combined into the self layer. Is it possible to convert only this light layer??"}
+{"id": "cs1qa-bc75933f7b", "category": "concept_explanation", "topic": "functions", "query": "Could you explain the left_up and right_down functions?"}
+{"id": "cs1qa-8460a4c77d", "category": "concept_explanation", "topic": "conditionals", "query": "Is the random function used in 3-2-1?\nIf there is no library, can I just declare the function I will use?"}
+{"id": "cs1qa-378dec3c77", "category": "concept_explanation", "topic": "variables", "query": "Is there a function that tells the current position of the object\nOr, when creating a class, calculate the location and make it self.location=x,y like this\nCan I find it with mario.location"}
+{"id": "cs1qa-fc5b4cc204", "category": "debugging", "topic": "functions", "query": "Is the image function wrong?"}
+{"id": "cs1qa-4b39414649", "category": "concept_explanation", "topic": "functions", "query": "What are you doing inside a function called pick()?"}
+{"id": "cs1qa-57bcc5a2b7", "category": "concept_explanation", "topic": "variables", "query": "Is the final result only a list or a string?"}
+{"id": "cs1qa-00125b951c", "category": "concept_explanation", "topic": "loops", "query": "When I run the for loop from line 20 again, I have to open and read the txt file again. Why should I read it again even though I read it on line 3?"}
+{"id": "cs1qa-2be13e3d7f", "category": "concept_explanation", "topic": "conditionals", "query": "Is it possible to use an if statement here?"}
+{"id": "cs1qa-120efc9ca0", "category": "concept_explanation", "topic": "functions", "query": "How should I use a function called my_robot.facing_north()?It doesn't seem to be doing that right like normal move() or turn_left(), can you help?"}
+{"id": "cs1qa-bb63853045", "category": "concept_explanation", "topic": "functions", "query": "What does the is_valid function do?"}
+{"id": "cs1qa-ca0a07f4fe", "category": "concept_explanation", "topic": "variables", "query": "When downloaded\nkaist1.txt\nkaist2.txt\nkaist3.txt\nDoes it float like this?"}
+{"id": "cs1qa-dac60123d0", "category": "concept_explanation", "topic": "functions", "query": "How can I make the sleep(n) function?"}
+{"id": "cs1qa-1e96563c02", "category": "concept_explanation", "topic": "conditionals", "query": "Can I repeat the if multiple times without using elif like the is valid function in my code?"}
+{"id": "cs1qa-eb1caf00cd", "category": "concept_explanation", "topic": "conditionals", "query": "How is the function different from carries_beepers and drop_beepers?"}
+{"id": "cs1qa-8e205ec310", "category": "concept_explanation", "topic": "variables", "query": "Can global variables created inside a function be accessed from outside the function?"}
+{"id": "cs1qa-d7134d7f56", "category": "concept_explanation", "topic": "variables", "query": "Can the global keyword be prefixed with a variable?"}
+{"id": "cs1qa-36bb1d35c9", "category": "concept_explanation", "topic": "conditionals", "query": "What should I write after img_path to access the desired image?\nIf you refer to Memento, you should access it in the form of Image(img_path+\"?\"), but I don't know the back part..."}
+{"id": "cs1qa-a2698f1e35", "category": "concept_explanation", "topic": "functions", "query": "Can I take input from within the function?Or can I leave the function and receive it outside?"}
+{"id": "cs1qa-02d8c1d929", "category": "concept_explanation", "topic": "functions", "query": "What exactly does the parameter mean?"}
+{"id": "cs1qa-446629f443", "category": "concept_explanation", "topic": "loops", "query": "What does valid range mean in is_valid function"}
+{"id": "cs1qa-6992d3e39b", "category": "concept_explanation", "topic": "functions", "query": "How do I use the animal created by the first function when executing the second function?"}
+{"id": "cs1qa-193a484ddc", "category": "concept_explanation", "topic": "functions", "query": "Can you see what the root1 function does?"}
+{"id": "cs1qa-282bcbdaa3", "category": "concept_explanation", "topic": "loops", "query": "Is there any reason you split the range in half?"}
+{"id": "cs1qa-0fb9bedd4d", "category": "debugging", "topic": "variables", "query": "When each input text is opened and then synthesized, only a specific string of each text continues to appear. Can you see why?"}
+{"id": "cs1qa-c391549c2f", "category": "concept_explanation", "topic": "functions", "query": "What method did you use to change the balance amount in the deposit and withdrawal functions?"}
+{"id": "cs1qa-bb4c455f08", "category": "concept_explanation", "topic": "conditionals", "query": "Why is the while statement termination condition if n==25:?"}
+{"id": "cs1qa-fd5708b572", "category": "concept_explanation", "topic": "functions", "query": "Could you please briefly explain the function of the go_straight function?"}
+{"id": "cs1qa-f24a02fb11", "category": "concept_explanation", "topic": "variables", "query": "When you img.set, can only integers be entered in the coordinates?"}
+{"id": "cs1qa-bf2fd75579", "category": "concept_explanation", "topic": "loops", "query": "How can we use float increments in for loop?"}
+{"id": "cs1qa-d23f7d2375", "category": "concept_explanation", "topic": "functions", "query": "Are you asking me to use the input function?"}
+{"id": "cs1qa-b3e5bf5e39", "category": "concept_explanation", "topic": "loops", "query": "Is there any way to get the coordinates of the current tail's position while starting interactive and moving?"}
+{"id": "cs1qa-83e0d06428", "category": "concept_explanation", "topic": "variables", "query": "When you first create an object and put it in the list, is it done in the initialize function?\nOr does creating 24 instances mean that you have to create 24 first?"}
+{"id": "cs1qa-c17cc06795", "category": "concept_explanation", "topic": "variables", "query": "Is it okay to use for i in range~~ several times within one code?Using the same variable i?"}
+{"id": "cs1qa-ae66037f25", "category": "concept_explanation", "topic": "variables", "query": "When receiving angle\nI am wondering if I should consider receiving it as an integer or even receiving it by mistake"}
+{"id": "cs1qa-2422b16a09", "category": "concept_explanation", "topic": "functions", "query": "Why does the sin function suddenly appear in the example code?And what is N?"}
+{"id": "cs1qa-89f39ec874", "category": "concept_explanation", "topic": "functions", "query": "Do you know exactly what ord and chr functions do?"}
+{"id": "cs1qa-ab60bdca7e", "category": "concept_explanation", "topic": "loops", "query": "Why does the while statement exit when there is a wall on the left and right?"}
+{"id": "cs1qa-52ed9868d1", "category": "concept_explanation", "topic": "functions", "query": "How should I change the check function?"}
+{"id": "cs1qa-cf855e3316", "category": "concept_explanation", "topic": "functions", "query": "Why is the print cards function at the bottom of the check function?Can I not have it?"}
+{"id": "cs1qa-85e125d580", "category": "concept_explanation", "topic": "variables", "query": "What values did you assign to the attributes?"}
+{"id": "cs1qa-d55ce87714", "category": "concept_explanation", "topic": "conditionals", "query": "How do I determine if it is the same card??"}
+{"id": "cs1qa-78586f0f7d", "category": "concept_explanation", "topic": "loops", "query": "Is it possible to make it go back to the beginning inside the while statement?"}
+{"id": "cs1qa-f6ed8cead1", "category": "concept_explanation", "topic": "variables", "query": "Is there a way to change only one character in a string?"}
+{"id": "cs1qa-f67b065d95", "category": "concept_explanation", "topic": "functions", "query": "Is it correct that csv.reader acts as a function of returning a list after splitting the work performed by those two lines based on commas...?"}
+{"id": "cs1qa-e04250c00d", "category": "concept_explanation", "topic": "variables", "query": "When declaring the class, what is the difference between declaring it as class Card: and declaring it as class Card(object):??"}
+{"id": "cs1qa-0c70abf54f", "category": "concept_explanation", "topic": "conditionals", "query": "Can I use && to put two conditions in an if conditional statement?"}
+{"id": "cs1qa-a3f9d32509", "category": "concept_explanation", "topic": "variables", "query": "Can you tell me what function name I should use to shuffle the cards?"}
+{"id": "cs1qa-bcee55dd4a", "category": "concept_explanation", "topic": "variables", "query": "Is the base input range any integer except 0?"}
+{"id": "cs1qa-328fc6d84d", "category": "concept_explanation", "topic": "functions", "query": "Could you explain what kind of implication is the go_and_back function?"}
+{"id": "cs1qa-bbe18d2d8e", "category": "concept_explanation", "topic": "loops", "query": "Why do you add 1 in every loop in the for function?"}
+{"id": "cs1qa-421d5b878d", "category": "concept_explanation", "topic": "variables", "query": "How did you write the code to print the country name when you input the country code at the end?"}
+{"id": "cs1qa-db780eb875", "category": "concept_explanation", "topic": "variables", "query": "What do you mean by string format?"}
+{"id": "cs1qa-d62c289e74", "category": "concept_explanation", "topic": "functions", "query": "What is the rabbit's ribbon function?"}
+{"id": "cs1qa-198bd6fdad", "category": "concept_explanation", "topic": "functions", "query": "How do you interpret memento's print function with two consecutive indexes after card?\nNo I wonder what the cards[i][0] mean"}
+{"id": "cs1qa-c89bd59dd7", "category": "concept_explanation", "topic": "variables", "query": "Can't I get and use the variable declared in the module file?"}
+{"id": "cs1qa-bd91667aa2", "category": "concept_explanation", "topic": "functions", "query": "What does the print_cards function do?"}
+{"id": "cs1qa-1d861a3aed", "category": "concept_explanation", "topic": "conditionals", "query": "How can I express myself if I want to stop the robot?"}
+{"id": "cs1qa-0c4243bbe7", "category": "concept_explanation", "topic": "variables", "query": "How do I make the print value different for different input values...?"}
+{"id": "cs1qa-5314b75361", "category": "concept_explanation", "topic": "conditionals", "query": "Is the test time extended until 9:15?Should I just give up if I press Start at 6 and it ends at 9?"}
+{"id": "cs1qa-e9b94b609c", "category": "concept_explanation", "topic": "functions", "query": "What is the __init function"}
+{"id": "cs1qa-649fe128ca", "category": "concept_explanation", "topic": "variables", "query": "Does Python work as local variables even if variables in def are declared global variables with the same name?"}
+{"id": "cs1qa-21ece93e87", "category": "concept_explanation", "topic": "conditionals", "query": "What should be done if the value of is_valid() is False??"}
+{"id": "cs1qa-2323f063f5", "category": "concept_explanation", "topic": "functions", "query": "When receiving a card image\ndef image(self):\n        return Image(img_path+self.suit+self.face)\nIsn't it like this?"}
+{"id": "cs1qa-8de828165c", "category": "concept_explanation", "topic": "conditionals", "query": "What if I just don't want to do anything"}
+{"id": "cs1qa-8aa200636a", "category": "concept_explanation", "topic": "conditionals", "query": "Should the process of specifying a layer separately be included unconditionally?!"}
+{"id": "cs1qa-faed07d7d4", "category": "concept_explanation", "topic": "conditionals", "query": "What if I try to withdraw more money than I have in the first task?"}
+{"id": "cs1qa-db811c87e9", "category": "concept_explanation", "topic": "functions", "query": "Are you saying that the definition should be done inside a function?"}
+{"id": "cs1qa-04252389b5", "category": "debugging", "topic": "variables", "query": "When I added horse1.color=\"blue\" in the show_animation function, I expected the color of the object to change to blue (line 60), but it was not.I am wondering where the mistake was made."}
+{"id": "cs1qa-cffee72e03", "category": "concept_explanation", "topic": "functions", "query": "Why did you use the facing north function on lines 21-22?"}
+{"id": "cs1qa-b4d9abf53c", "category": "concept_explanation", "topic": "conditionals", "query": "What is the role of the else statement on line 35?"}
+{"id": "cs1qa-f4cad26cd6", "category": "debugging", "topic": "functions", "query": "Is the declaration of the class function wrong?"}
+{"id": "cs1qa-b1f7c2dfb5", "category": "concept_explanation", "topic": "loops", "query": "how to stop while loop if I am on beeper?"}
+{"id": "cs1qa-d1c10a7e69", "category": "debugging", "topic": "variables", "query": "Why does global tries on line 124 cause a syntax error??"}
+{"id": "cs1qa-078606c5aa", "category": "concept_explanation", "topic": "conditionals", "query": "Is there a way to comment sections of the code together\nI mean we can use the # symbol but it works only for 1 line\nI was wondering if there's a keyboard shortcut for commenting portion of a code as in matlab"}
+{"id": "cs1qa-944eb08194", "category": "concept_explanation", "topic": "functions", "query": "What list is shuffled using the shuffle function?"}
+{"id": "cs1qa-9fd327dddd", "category": "concept_explanation", "topic": "variables", "query": "Can't variables defined outside __init__ in Class (example below) be called from outside like instance.(variable)?\n\n\nclass abc:\n    a=123\n\ninstance=abc()\nHow can I load a..?"}
+{"id": "cs1qa-bbf25c165f", "category": "concept_explanation", "topic": "loops", "query": "When outputting this, is the first tuple + second tuple required for each country, or does the second appear after all the first tuples come out?"}
+{"id": "cs1qa-5738bfdc8b", "category": "debugging", "topic": "variables", "query": "When I create a card string function like this and do card.card_string(), what should I put in when there is no self"}
+{"id": "cs1qa-9594e1137e", "category": "concept_explanation", "topic": "variables", "query": "Is the value put inside the tan function in radians?"}
+{"id": "cs1qa-d0be55338d", "category": "concept_explanation", "topic": "variables", "query": "Why attach (object) when creating a class?"}
+{"id": "cs1qa-767961b878", "category": "concept_explanation", "topic": "functions", "query": "Is it correct to put such code in the main function?"}
+{"id": "cs1qa-5e52ae8931", "category": "concept_explanation", "topic": "conditionals", "query": "is valid checks if num1 and num2 are in my range and not in the correct list?\nIf all of these conditions are satisfied, is it returning false?"}
+{"id": "cs1qa-fa69ada854", "category": "debugging", "topic": "variables", "query": "What's the problem? Balance is a global variable, so isn't it reflected even when calculated in a function?"}
+{"id": "cs1qa-985bcf2d05", "category": "concept_explanation", "topic": "variables", "query": "How do you think about count integers...?"}
+{"id": "cs1qa-530b234b20", "category": "concept_explanation", "topic": "functions", "query": "Should you ever know how the blackjack main function works?"}
+{"id": "cs1qa-8d2247ee76", "category": "concept_explanation", "topic": "variables", "query": "How do I prevent \"\" from being placed inside a string element when receiving an element from a list?"}
+{"id": "cs1qa-dd000114a0", "category": "concept_explanation", "topic": "functions", "query": "Are you receiving it outside the function?"}
+{"id": "cs1qa-56a06fa1dc", "category": "concept_explanation", "topic": "functions", "query": "Could you explain briefly what functions even and odd are each?"}
+{"id": "cs1qa-1c76de6168", "category": "concept_explanation", "topic": "functions", "query": "What is the difference between min, max, len and count, append?\nI am curious about the difference between function and method"}
+{"id": "cs1qa-7b894fc241", "category": "concept_explanation", "topic": "conditionals", "query": "What is the intention of the if statement in line 53?"}
+{"id": "cs1qa-fdb2c8e0de", "category": "concept_explanation", "topic": "conditionals", "query": "Does exception handling get rid of the condition in my function?"}
+{"id": "cs1qa-9dbdc13a64", "category": "concept_explanation", "topic": "functions", "query": "Could you explain in detail the checking window function?"}
+{"id": "cs1qa-af82f687bf", "category": "concept_explanation", "topic": "variables", "query": "Could you briefly explain the role of the variable T?"}
+{"id": "cs1qa-61736fdf4f", "category": "concept_explanation", "topic": "functions", "query": "What method did you use to make the list or stirng in the desired order?"}
+{"id": "cs1qa-2910fe0eec", "category": "concept_explanation", "topic": "functions", "query": "Did you mean to define a new east-facing function using the facing_north function?"}
+{"id": "cs1qa-d1f1373c13", "category": "concept_explanation", "topic": "conditionals", "query": "What should I do if it exceeds the decimal system?"}
+{"id": "cs1qa-7b0d777608", "category": "concept_explanation", "topic": "functions", "query": "What is the function of carries_beepers()?"}
+{"id": "cs1qa-9bb479e61c", "category": "concept_explanation", "topic": "functions", "query": "How do you ever use the randint function?"}
+{"id": "cs1qa-9b3fe0fdeb", "category": "concept_explanation", "topic": "variables", "query": "Is the int function converting decimals to integers?\nAnd if so, is it rounding down to the decimal point?"}
+{"id": "cs1qa-2dcab56059", "category": "concept_explanation", "topic": "functions", "query": "Can I put a function that shows the whole picture in 3-2-1 at first???"}
+{"id": "cs1qa-a87d10824f", "category": "concept_explanation", "topic": "variables", "query": "Does return mean to return return as a function value in an empty string?"}
+{"id": "cs1qa-eb8edfedbf", "category": "concept_explanation", "topic": "loops", "query": "Why did you run loop() first before while?"}
+{"id": "cs1qa-8629ff5652", "category": "concept_explanation", "topic": "conditionals", "query": "Does the condition vary from person to person?"}
+{"id": "cs1qa-76ebc4f218", "category": "concept_explanation", "topic": "conditionals", "query": "Is the check function the same or different but visible pictures corresponding to two numbers?"}
+{"id": "cs1qa-268f60689b", "category": "concept_explanation", "topic": "conditionals", "query": "When moving forward, if the left side is empty, I know it as a window and I drop a beeper, but I don't know how to stop when I do that, and how to do it in world2 Can you please explain the direction??"}
+{"id": "cs1qa-b47af508bd", "category": "concept_explanation", "topic": "functions", "query": "What do you mean there should be no input in the bank function?"}
+{"id": "cs1qa-821199ee07", "category": "concept_explanation", "topic": "variables", "query": "What is the value of x in the last for statement?Not sin(x), but x!"}
+{"id": "cs1qa-652583f8c7", "category": "concept_explanation", "topic": "loops", "query": "Why did you run sets() first before entering while?"}
+{"id": "cs1qa-75df1d6925", "category": "concept_explanation", "topic": "variables", "query": "How do you'visualize' flipping the card?\nI know that the photo file has the same name, but it would be nice if I could write an if statement with the name, how do I flip the screen?.ㅜㅜ\nYou have to code between ###### and #####?"}
+{"id": "cs1qa-b871253203", "category": "concept_explanation", "topic": "functions", "query": "Can you explain the jump function and the number that goes into the jump function?"}
+{"id": "cs1qa-78d113a8a2", "category": "debugging", "topic": "conditionals", "query": "Does it not terminate even if there is a break condition in the function?"}
+{"id": "cs1qa-f5e98a3051", "category": "concept_explanation", "topic": "functions", "query": "What is the north() function?"}
+{"id": "cs1qa-f98392706a", "category": "concept_explanation", "topic": "variables", "query": "Why do you float after receiving input like x=float(input()) on lines 3-5?"}
+{"id": "cs1qa-3964c54ae7", "category": "concept_explanation", "topic": "variables", "query": "Do you assume the n you enter is an integer?"}
+{"id": "cs1qa-6bc9c51978", "category": "concept_explanation", "topic": "loops", "query": "When getting character_count_per_line\nWhat is the reason for using for loop?"}
+{"id": "cs1qa-016032773c", "category": "concept_explanation", "topic": "functions", "query": "Is there a rounding function in Python?hehe\nOr should I make it?"}
+{"id": "cs1qa-f451da1e48", "category": "concept_explanation", "topic": "functions", "query": "Is the number of tries checked in the check function?"}
+{"id": "cs1qa-f59f55964b", "category": "debugging", "topic": "functions", "query": "When we get the value in line 74\ncard.value is a method so it doesn't add up.\ncard.value should originally be returned as a number, right?"}
+{"id": "cs1qa-7b184416f7", "category": "concept_explanation", "topic": "conditionals", "query": "What is the reason for the condition of print_cards like that??"}
+{"id": "cs1qa-90b70292d6", "category": "concept_explanation", "topic": "conditionals", "query": "What does the else statement from number 11 do?"}
+{"id": "cs1qa-3045063473", "category": "concept_explanation", "topic": "functions", "query": "What is the role of  functions left_turnup() and right_turnup()?"}
+{"id": "cs1qa-bda2584d9e", "category": "concept_explanation", "topic": "loops", "query": "Is it supposed to set 2 random thresholds?So there are 3 ranges?"}
+{"id": "cs1qa-aeaee6576a", "category": "debugging", "topic": "conditionals", "query": "When resetting the card, only num_pads are set, so if you use depth, the card doesn't seem to appear."}
+{"id": "cs1qa-dd9de20282", "category": "concept_explanation", "topic": "functions", "query": "Why did you declare a separate state function in the Card class?"}
+{"id": "cs1qa-5a22b8d7fb", "category": "concept_explanation", "topic": "functions", "query": "Could you please briefly explain the round_back function."}
+{"id": "cs1qa-23fc09ecec", "category": "debugging", "topic": "functions", "query": "Should I use the return bank?"}
+{"id": "cs1qa-36d77c7e9a", "category": "concept_explanation", "topic": "functions", "query": "Can you explain what the harvest_slope() and replace() functions do?"}
+{"id": "cs1qa-67eb0938de", "category": "concept_explanation", "topic": "functions", "query": "can you explain how the function merge works?"}
+{"id": "cs1qa-1fdeb8d6dd", "category": "debugging", "topic": "variables", "query": "Could you please explain again what's wrong with drawing integers?"}
+{"id": "cs1qa-bc6faf144f", "category": "concept_explanation", "topic": "functions", "query": "What is the function to randomly shuffle cards when initialized?"}
+{"id": "cs1qa-87f63c908d", "category": "concept_explanation", "topic": "variables", "query": "When creating an object within a for statement, how do I put the iteration i of the for statement in the object name?"}
+{"id": "cs1qa-fca2e6c76b", "category": "concept_explanation", "topic": "functions", "query": "Can I create a new function to print the card at first?"}
+{"id": "cs1qa-9990fc9307", "category": "concept_explanation", "topic": "functions", "query": "Is there a function that converts a number to base 10 or more...?"}
+{"id": "cs1qa-478d3aca7c", "category": "concept_explanation", "topic": "loops", "query": "Can you explain the logic inside your while loop?"}
+{"id": "cs1qa-6fc4e072f9", "category": "debugging", "topic": "variables", "query": "When organizing country names and country codes\nLike example data\nKR not like this\n\"KR\" is organized in this way\nQuotes are not removed by strip."}
+{"id": "cs1qa-b0e5e2fb62", "category": "concept_explanation", "topic": "variables", "query": "how to start draw_card(dealer, player)\nI can't feel it\nFirst of all, I am wondering what value comes into the dealer and the player and can draw the card"}
+{"id": "cs1qa-1ba538aee4", "category": "concept_explanation", "topic": "functions", "query": "Could you briefly explain the turn_right function?"}
+{"id": "cs1qa-94b6197257", "category": "concept_explanation", "topic": "variables", "query": "Can we use global to make declarations in draw and access them from other functions?"}
+{"id": "cs1qa-f399d7c25f", "category": "concept_explanation", "topic": "variables", "query": "Is the latitude in code_location[i][1][0] and the name in code_name[i][1]?"}
+{"id": "cs1qa-af128e72e6", "category": "debugging", "topic": "variables", "query": "When creating a new list by reading the csv file in the first, it says that the data type should be float during the latitude and longitude tuple creation process.\nLines 13~16 correspond to country_location_inside_tuple, but if you use the method of using float(x[1]), float(x[2]) directly for x[1], x[2] in front of this, an error has occurred.It."}
+{"id": "cs1qa-8aae65d96c", "category": "concept_explanation", "topic": "loops", "query": "Can you briefly explain why you repeated 4 times in the first for statement?"}
+{"id": "cs1qa-17bbb8605c", "category": "concept_explanation", "topic": "functions", "query": "When an attribute called state is added, the number of pairs matched according to the state should eventually come out. So, shouldn't there be lists or tuples that function similar to correct_list?"}
+{"id": "cs1qa-f993e0e5a4", "category": "concept_explanation", "topic": "loops", "query": "can you help me?I'm making it while thinking about what I made blackjack in that lecture, but I don't know exactly how to make it."}
+{"id": "cs1qa-6fc60ec1ef", "category": "debugging", "topic": "variables", "query": "When creating a function that doesn't exist in cs1robots, can't we use def?\nWhen I run it, it keeps saying that this function doesn't exist.\nWhen I run it, I don't know what's wrong with AttributeError:'Robot' object has no attribute'zig'"}
+{"id": "cs1qa-4e347f29df", "category": "concept_explanation", "topic": "functions", "query": "Could you please explain what the back_stair() function is doing?"}
+{"id": "cs1qa-c78e50eebc", "category": "concept_explanation", "topic": "variables", "query": "Are there any other functions other than the rotate function among the functions that rotate the object?rotate(a) is a function that adds a to the angle of the object. Is there any function that makes the angle of the object a?"}
+{"id": "cs1qa-3975e98d6b", "category": "concept_explanation", "topic": "functions", "query": "Could you please explain what function smart_hurdles #3 does?"}
+{"id": "cs1qa-a9608f2c34", "category": "concept_explanation", "topic": "conditionals", "query": "Is there any reason why you specified 1 for the number of beepers in Robot(beepers=1)?"}
+{"id": "cs1qa-04889c6e49", "category": "concept_explanation", "topic": "functions", "query": "Can you explain the one_way function in step 4?"}
+{"id": "cs1qa-8a1424a49c", "category": "concept_explanation", "topic": "variables", "query": "Can the number of iterations be a variable?"}
+{"id": "cs1qa-13a1413b2b", "category": "concept_explanation", "topic": "functions", "query": "Are you saying to put it as an argument of the split function to receive it, and to put it in place with \"?"}
+{"id": "cs1qa-1283e7ec88", "category": "concept_explanation", "topic": "functions", "query": "Could you briefly explain the function of the harvest function?"}
+{"id": "cs1qa-de362e7f19", "category": "concept_explanation", "topic": "variables", "query": "When setting new_w and new_h, the value of tan(angle) is used. In this case, if the integer value is not displayed and new_img cannot be created, should another function be used?"}
+{"id": "cs1qa-6a7e8df468", "category": "concept_explanation", "topic": "conditionals", "query": "Should I modify the main() function in this question as well?"}
+{"id": "cs1qa-f2f806cf99", "category": "concept_explanation", "topic": "functions", "query": "Is it correct that the output of any list function is a list and any string function converts the list into a string?\nOh, not that, but both return values are strings. Is there a different method?"}
+{"id": "cs1qa-de7f3724f1", "category": "debugging", "topic": "loops", "query": "When the angle is negative, it keeps showing out of range, but I'm not sure where the error appears."}
+{"id": "cs1qa-f4e5cbb53f", "category": "concept_explanation", "topic": "functions", "query": "Is there a command to terminate the function?"}
+{"id": "cs1qa-d4484cb4cd", "category": "concept_explanation", "topic": "functions", "query": "How did you implement the check function in step 3?"}
+{"id": "cs1qa-158ea776de", "category": "debugging", "topic": "variables", "query": "Do you have a question.In the first line of the given scv document, there is a string called \"Latitude\" in the place of latitiude, so if you change the data type to float, an error occurs."}
+{"id": "cs1qa-1cfbdae554", "category": "concept_explanation", "topic": "functions", "query": "Should I make the function look the same as in the example?"}
+{"id": "cs1qa-7a4135fd66", "category": "concept_explanation", "topic": "loops", "query": "Is there a way to make it read from the second line when using a loop?"}
+{"id": "cs1qa-7b822bfb63", "category": "concept_explanation", "topic": "conditionals", "query": "How do you determine if the pictures corresponding to num1 and num2 are the same?"}
+{"id": "cs1qa-ef00729a37", "category": "debugging", "topic": "functions", "query": "Could you please let me know for some reason why the previous method doesn't work?"}
+{"id": "cs1qa-f9fbee577a", "category": "concept_explanation", "topic": "functions", "query": "What does back_goup() function in 3?"}
+{"id": "cs1qa-9399e63bb1", "category": "concept_explanation", "topic": "variables", "query": "Is s.join(list1) putting all the elements of list1 into the string s?\nI am confused about the order and ask a question\nIs s leading and list1 trailing?"}
+{"id": "cs1qa-6d84788716", "category": "concept_explanation", "topic": "variables", "query": "When creating an object with Worm(600, 400,'big'), what part does each parameter specify?"}
+{"id": "cs1qa-ad763c905b", "category": "concept_explanation", "topic": "functions", "query": "Is it using the time function to show once in Memento?"}
+{"id": "cs1qa-46bb220b6f", "category": "concept_explanation", "topic": "functions", "query": "What is the function of each function?"}
+{"id": "cs1qa-0e5211a275", "category": "concept_explanation", "topic": "conditionals", "query": "What exactly does the print_cards() function do?I have no idea how to change the conditions, so I ask a question."}
+{"id": "cs1qa-f922b9c1ed", "category": "concept_explanation", "topic": "loops", "query": "When writing from a file, if you want to break a line / you have to do n in the opposite direction / but the opposite direction is not on the keyboard. How do I do this?"}
+{"id": "cs1qa-6ee763b503", "category": "concept_explanation", "topic": "variables", "query": "What does the variable a b c do?"}
+{"id": "cs1qa-c1d9dea532", "category": "concept_explanation", "topic": "loops", "query": "Are you saying that if you enter two numbers while viewing the correct answer card, the card corresponding to that number should appear?"}
+{"id": "cs1qa-c800a06c05", "category": "concept_explanation", "topic": "variables", "query": "What value do you return?"}
+{"id": "cs1qa-93ba0e56de", "category": "concept_explanation", "topic": "conditionals", "query": "When examining each component with for l in list\nIf you don't break for a certain condition,\nThe code didn't finish running\nDoes that mean that you keep looking at the ingredients in the list?"}
+{"id": "cs1qa-eb22392d07", "category": "concept_explanation", "topic": "variables", "query": "What role does the value play in the card class?"}
+{"id": "cs1qa-3413d768db", "category": "concept_explanation", "topic": "variables", "query": "How do I move the previously created objects in the show animation function?"}
+{"id": "cs1qa-b082cc9a7f", "category": "concept_explanation", "topic": "loops", "query": "Is there a command that lets you exit immediately when you want to exit the while statement in the middle?"}
+{"id": "cs1qa-27ab57950b", "category": "debugging", "topic": "variables", "query": "When a,b,c were not handled as float variables, the code didn't work properly. I would like to ask why you must handle float variables!"}
+{"id": "cs1qa-fffa3086f3", "category": "concept_explanation", "topic": "variables", "query": "What does the up variable do in your code?"}
+{"id": "cs1qa-0a3810f7e5", "category": "concept_explanation", "topic": "variables", "query": "Can't we say 40 + 40*int(sin(x)), not int(40 + 40*(sin(x)))?Please tell us what the reason is by comparing the difference between the two values."}
+{"id": "cs1qa-a114009c3a", "category": "debugging", "topic": "conditionals", "query": "Could you please identify where is wrong with my code?"}
+{"id": "cs1qa-3fd51e4fe8", "category": "concept_explanation", "topic": "loops", "query": "How to divide multiple times using a while statement?\nShouldn't we continue to redefine and share that share?"}
+{"id": "cs1qa-48fece38ff", "category": "concept_explanation", "topic": "loops", "query": "What does the while statement in Lines 30~31 do?"}
+{"id": "cs1qa-3e96ac77ae", "category": "concept_explanation", "topic": "variables", "query": "Why did you use n-1 instead of n in x = float(i) / (n-1) * 2 * pi on line 9?"}
+{"id": "cs1qa-f2eff5174b", "category": "debugging", "topic": "variables", "query": "When tan(angle) is an integer, it works, but the rest do not work, and I don't know why."}
+{"id": "cs1qa-3497fd18a5", "category": "concept_explanation", "topic": "functions", "query": "Can you explain what the function collect() does?"}
+{"id": "cs1qa-d707e90ac9", "category": "concept_explanation", "topic": "functions", "query": "Can you simply tell me why you used the facing_north() function on line 15 in the first task return?"}
+{"id": "cs1qa-f0f25afbd4", "category": "concept_explanation", "topic": "loops", "query": "Where the character count per line\nIt seems to mean the number of characters per line. If so, is the method of finding the range through the if statement twice?"}
+{"id": "cs1qa-ecee67b512", "category": "concept_explanation", "topic": "conditionals", "query": "Should I put def init() in the class Card unconditionally?\nIsn't that just a class card on line 16?"}
+{"id": "cs1qa-091691a2f2", "category": "concept_explanation", "topic": "loops", "query": "What is the for loop code??"}
+{"id": "cs1qa-e420bb51fc", "category": "concept_explanation", "topic": "variables", "query": "What method did you use to change the balance amount, which is a global variable within the deposit and withdrawal functions?"}
+{"id": "cs1qa-4459fb1631", "category": "concept_explanation", "topic": "functions", "query": "What does turn_around() function do?"}
+{"id": "cs1qa-21371fa750", "category": "concept_explanation", "topic": "conditionals", "query": "Can we just change the order of if statements and solve it?"}
+{"id": "cs1qa-e9964aa028", "category": "concept_explanation", "topic": "functions", "query": "What do you call the information embedded in the card class, such as suit, face, state, and img?"}
+{"id": "cs1qa-a0645e0e0e", "category": "concept_explanation", "topic": "variables", "query": "Is it enough to just return “WRONG_INFORMATION” when I need to return an error string?"}
+{"id": "cs1qa-9b5e14f983", "category": "concept_explanation", "topic": "functions", "query": "Is there a function that lets you see how many beepers are in that field?"}
+{"id": "cs1qa-dc96ce6ef1", "category": "concept_explanation", "topic": "variables", "query": "Should I change it to a global variable?"}
+{"id": "cs1qa-a4f40319b1", "category": "concept_explanation", "topic": "functions", "query": "what the trash_can() function does\nexplain it to me please!"}
+{"id": "cs1qa-61cd279ab8", "category": "debugging", "topic": "conditionals", "query": "When is_triangle is true and when it is False, it doesn't seem to be distinguishable. Is it like an indent error?"}
+{"id": "cs1qa-35a71f2e48", "category": "concept_explanation", "topic": "variables", "query": "What should I do in dec_to_any_string?"}
+{"id": "cs1qa-2f7aa12df6", "category": "concept_explanation", "topic": "functions", "query": "Can I change the create deck function like that?"}
+{"id": "cs1qa-a0336e0dfe", "category": "concept_explanation", "topic": "variables", "query": "What is the purpose of the variable n?"}
+{"id": "cs1qa-b485d69260", "category": "concept_explanation", "topic": "functions", "query": "What does the pick_and_go function do"}
+{"id": "cs1qa-5dd4f413e8", "category": "concept_explanation", "topic": "conditionals", "query": "When using left_is_clear, I am not sure how to tell the difference between the place where the door should be placed and the point where it should be turned to the left."}
+{"id": "cs1qa-50134cc1f0", "category": "concept_explanation", "topic": "conditionals", "query": "Is it normal for the dealer and player to have different cards?"}
+{"id": "cs1qa-0d59eb7111", "category": "concept_explanation", "topic": "functions", "query": "Can you please explain what you are doing in a function called checkandpick()?"}
+{"id": "cs1qa-e83df09355", "category": "concept_explanation", "topic": "loops", "query": "Why does the for statement break once in the middle?"}
+{"id": "cs1qa-47ca9135dc", "category": "debugging", "topic": "variables", "query": "When i took the 2 blades of helicopter and added the to one layer named propeller and then tried to rote propeller the blades did not move\nWhen i wrote code to rotate each blade separately it did  but when I assigned them to layer propeller and tried rotating propeller the blades did not move"}
+{"id": "cs1qa-f3678747a9", "category": "concept_explanation", "topic": "variables", "query": "Can I get the sum of the values of the card objects in the hand list?"}
+{"id": "cs1qa-c8faf5e955", "category": "concept_explanation", "topic": "functions", "query": "Can't I just remove the draw_animal function?"}
+{"id": "cs1qa-adbd9e9041", "category": "concept_explanation", "topic": "conditionals", "query": "Why is the condition required on line 15?"}
+{"id": "cs1qa-3c80d45457", "category": "concept_explanation", "topic": "loops", "query": "Is it to write in CSV format to divide the year and average by, or for each year?"}
+{"id": "cs1qa-d0ab8ad6da", "category": "concept_explanation", "topic": "functions", "query": "What is the function of the go and plant function?"}
+{"id": "cs1qa-83e615c116", "category": "debugging", "topic": "loops", "query": "Can you help me last time for the reason of my error as image index out of range?"}
+{"id": "cs1qa-0d6e63ef3e", "category": "concept_explanation", "topic": "variables", "query": "When I check the code, there doesn't seem to be a part that converts to float. Can you explain why you think so??"}
+{"id": "cs1qa-e430f1c06e", "category": "concept_explanation", "topic": "variables", "query": "when doing count_integer\nCan't we compare from minimum integer to maximum integer only for drawing integer?"}
+{"id": "cs1qa-04b3007f0d", "category": "concept_explanation", "topic": "functions", "query": "What does line functions mean?"}
+{"id": "cs1qa-54174308e9", "category": "concept_explanation", "topic": "variables", "query": "Is every input considered as strings?"}
+{"id": "cs1qa-0fd0189b5d", "category": "concept_explanation", "topic": "functions", "query": "Does the interactive function mean keyboard input?"}
+{"id": "cs1qa-4bb76cb0b9", "category": "concept_explanation", "topic": "variables", "query": "what is the difference between dec_to_any_list and  dec_to_any_string other than the return should be list and str respectively\nalso are we to implement both of these in the main func or either one will do"}
+{"id": "cs1qa-d74aa7c77d", "category": "debugging", "topic": "conditionals", "query": "What's wrong with abs if there is a problem?"}
+{"id": "cs1qa-f7c5e33bf1", "category": "concept_explanation", "topic": "functions", "query": "Are all the lines in the file deleted after using for line in f like the readline function?"}
+{"id": "cs1qa-172b0d1c51", "category": "concept_explanation", "topic": "functions", "query": "Can we make a new layer, based on the parameters of old layer. So that we don't have to write everything again."}
+{"id": "cs1qa-7ba61c929d", "category": "concept_explanation", "topic": "functions", "query": "What does it mean to divide the original function by 30?"}
+{"id": "cs1qa-1f57815c12", "category": "concept_explanation", "topic": "functions", "query": "What is the function NE() for?"}
+{"id": "cs1qa-1bd2ab58fb", "category": "concept_explanation", "topic": "conditionals", "query": "What is the function to check if there is a beeper and plant it?"}
+{"id": "cs1qa-a56308c0dc", "category": "concept_explanation", "topic": "functions", "query": "Could you briefly explain the role of the one() function?"}
+{"id": "cs1qa-2cab9ca105", "category": "concept_explanation", "topic": "conditionals", "query": "When performing the task, I wonder if the robot should turn to the right and place the beeper on the window."}
+{"id": "cs1qa-4d52922dd7", "category": "concept_explanation", "topic": "conditionals", "query": "What can I put in the conditional statement until it goes to 1, 1...?ㅠㅠ"}
+{"id": "cs1qa-cb2353cd1f", "category": "concept_explanation", "topic": "functions", "query": "What was the function to color the r, g, b at some location?"}
+{"id": "cs1qa-927cc2b072", "category": "concept_explanation", "topic": "variables", "query": "Can i start two variable function like this?"}
+{"id": "cs1qa-54bcdbdcff", "category": "concept_explanation", "topic": "variables", "query": "Is the value received in return be that the type is method?"}
+{"id": "cs1qa-157b49d0e0", "category": "concept_explanation", "topic": "conditionals", "query": "How did you check if the cards were the same?"}
+{"id": "cs1qa-9c545eef35", "category": "concept_explanation", "topic": "conditionals", "query": "Are there such conditions in the problem?"}
+{"id": "cs1qa-2ffbe1fbea", "category": "concept_explanation", "topic": "functions", "query": "Do you mean that drawing a shape means that you have to input information about the components of the layer in the draw_animal function?"}
+{"id": "cs1qa-d0eab41a03", "category": "debugging", "topic": "functions", "query": "Can you please check why the interactive function in my code is not working now?"}
+{"id": "cs1qa-9f7d06ef96", "category": "concept_explanation", "topic": "functions", "query": "What are the functions of the down and climb functions?"}
+{"id": "cs1qa-9d4edfaa6f", "category": "concept_explanation", "topic": "functions", "query": "Can you please explain exactly what the print_cards function is doing?"}
+{"id": "cs1qa-d0eb9ac6b3", "category": "concept_explanation", "topic": "loops", "query": "Could you possibly know what the exact meaning of while true is?Is it like an infinite loop?"}
+{"id": "cs1qa-12f3b5107b", "category": "concept_explanation", "topic": "variables", "query": "What type of parameter is the first parameter received to execute is_triangle?"}
+{"id": "cs1qa-749233f4bf", "category": "debugging", "topic": "conditionals", "query": "When I run it, it's okay if the number of streets is even, but when it's odd, it hits the wall and it stops."}
+{"id": "cs1qa-87073323a9", "category": "concept_explanation", "topic": "variables", "query": "Can you explain what the a,b,c,d variables are?"}
+{"id": "cs1qa-7bda10227b", "category": "concept_explanation", "topic": "variables", "query": "When creating a list that stores card objects\nIf there is a card object in the first deck\nCan deck[1].state be considered the same as card.state?"}
+{"id": "cs1qa-e29504c21b", "category": "concept_explanation", "topic": "variables", "query": "When putting a path or polygon into a layout, how do you display the position relative to the reference point of the layout?"}
+{"id": "cs1qa-a0d71d6dad", "category": "concept_explanation", "topic": "variables", "query": "What kind of role is a variable?"}
+{"id": "cs1qa-4db8b0160b", "category": "debugging", "topic": "variables", "query": "how...?Originally, i was trying to increase the value added every time the for statement is returned...\nIs there any other expression...?"}
+{"id": "cs1qa-3f485f01b7", "category": "concept_explanation", "topic": "conditionals", "query": "How did you flip the matched cards upside down instead of using the correct_list?"}
+{"id": "cs1qa-29354dd704", "category": "concept_explanation", "topic": "loops", "query": "Why do you do go _straight once before entering while?"}
+{"id": "cs1qa-026d873816", "category": "concept_explanation", "topic": "loops", "query": "Is there any reason why the previous part was not processed with plant_plant and was written outside the loop?"}
+{"id": "cs1qa-d69544397c", "category": "concept_explanation", "topic": "conditionals", "query": "Could you tell me the conditions for stopping at the end?"}
+{"id": "cs1qa-14e42b19c2", "category": "concept_explanation", "topic": "variables", "query": "Can you tell me why you set the range of i in count_integers line 37 in the second task like that?"}
+{"id": "cs1qa-8220ae5a05", "category": "concept_explanation", "topic": "functions", "query": "What function value does carries_beepers return?"}
+{"id": "cs1qa-890d918100", "category": "concept_explanation", "topic": "functions", "query": "Is it returned as a tuple?"}
+{"id": "cs1qa-cfff220cf6", "category": "concept_explanation", "topic": "variables", "query": "How do I declare a global variable in a function?"}
+{"id": "cs1qa-8f93da2a3e", "category": "concept_explanation", "topic": "functions", "query": "Can you explain the function leftturn?"}
+{"id": "cs1qa-00eb6958d3", "category": "concept_explanation", "topic": "loops", "query": "Should I write a while statement inside a while statement?"}
+{"id": "cs1qa-73068c1402", "category": "debugging", "topic": "variables", "query": "When I randomly added print(type(cards[1])) to line 95, an error occurred."}
+{"id": "cs1qa-d21e80a718", "category": "concept_explanation", "topic": "functions", "query": "What did you conceive of set1 and set2 as functions that each do?"}
+{"id": "cs1qa-714a4914ca", "category": "concept_explanation", "topic": "conditionals", "query": "Why should I check if it's the wrong way?"}
+{"id": "cs1qa-c9aebb2de1", "category": "concept_explanation", "topic": "conditionals", "query": "Can you explain what each if-else does, and why it repeated 9 times?"}
+{"id": "cs1qa-ebe7bc57be", "category": "concept_explanation", "topic": "variables", "query": "Does the readlines() function print the read contents as a list rather than a string?"}
+{"id": "cs1qa-bb6e90c384", "category": "concept_explanation", "topic": "variables", "query": "What role did you use the n and j variables for?"}
+{"id": "cs1qa-25576a5ed6", "category": "concept_explanation", "topic": "functions", "query": "What does the clear_a_line function do in step 4?"}
+{"id": "cs1qa-99c851b81f", "category": "concept_explanation", "topic": "loops", "query": "Can I add a break statement at the end of the while statement?"}
+{"id": "cs1qa-8bebfb9ae4", "category": "concept_explanation", "topic": "functions", "query": "Can I add a function that displays the score status on the graphic to the main function?\nOr should I just change the 5 functions above?"}
+{"id": "cs1qa-914c4963b0", "category": "concept_explanation", "topic": "loops", "query": "Is there any reason you repeated the cross() function 9 times in total?"}
+{"id": "cs1qa-a669501613", "category": "concept_explanation", "topic": "variables", "query": "What does the a variable do"}
+{"id": "cs1qa-6ccbd600fa", "category": "debugging", "topic": "conditionals", "query": "Can you tell if the picture is not visible for some reason?"}
+{"id": "cs1qa-eb10bcea90", "category": "concept_explanation", "topic": "functions", "query": "Can you explain your logic in the withdraw function?"}
+{"id": "cs1qa-2e87606fc2", "category": "concept_explanation", "topic": "functions", "query": "Can you briefly tell me what ```main()``` function does?"}
+{"id": "cs1qa-7b0b0ae594", "category": "concept_explanation", "topic": "functions", "query": "What does the round function do, round up/down/round?"}
+{"id": "cs1qa-cf014163b8", "category": "concept_explanation", "topic": "functions", "query": "was the readline function reading line by line??"}
+{"id": "cs1qa-5af63c3275", "category": "concept_explanation", "topic": "loops", "query": "Is there a special reason for writing it by dividing it according to the range of sin(x)?"}
+{"id": "cs1qa-6072073130", "category": "concept_explanation", "topic": "variables", "query": "Why did you do a=set(num_list) in the count_integers(num_list) function?"}
+{"id": "cs1qa-c3fa4cd5c3", "category": "concept_explanation", "topic": "conditionals", "query": "Is num1 included in the if conditional statement in print_cards?"}
+{"id": "cs1qa-f1899a13ff", "category": "concept_explanation", "topic": "functions", "query": "Can you simply tell me what the count function is doing?"}
+{"id": "cs1qa-0d878f5449", "category": "concept_explanation", "topic": "variables", "query": "How did you get rid of numbers out of range in count_integers function?\nIn other words, if the list in which 5~12 was entered, what did you remove (0, 0), (1, 0), ..., (4, 0)?"}
+{"id": "cs1qa-fb0813ae4b", "category": "debugging", "topic": "variables", "query": "Does index out of range mean that an incorrect value has been entered?\nIf you run into problems, the x+ceil((h-y)*tan(angle)))) part seems to be the most likely."}
+{"id": "cs1qa-7a2f65b421", "category": "concept_explanation", "topic": "conditionals", "query": "How do I change the else statement..?\nSince there is a wall in front, shouldn't the if be executed?"}
+{"id": "cs1qa-8d236ed431", "category": "debugging", "topic": "conditionals", "query": "When I was doing the Harvest again task, I wrote and executed the line and checked to see if there was anything wrong.I went until the end of the day and suddenly said that there was an error."}
+{"id": "cs1qa-ac6dac7528", "category": "concept_explanation", "topic": "conditionals", "query": "Can I modify the condition other than if i%2===0 in print_cards?"}
+{"id": "cs1qa-82b54a2c62", "category": "concept_explanation", "topic": "variables", "query": "What does the counter variable do?"}
+{"id": "cs1qa-1374813e08", "category": "concept_explanation", "topic": "functions", "query": "Can you explain the show_animation() function?"}
+{"id": "cs1qa-85cee6e12d", "category": "debugging", "topic": "functions", "query": "Does it matter whether create world() is above or below the def function?\nI thought it wasn't there, but undefined floated in the middle, so I moved the def function location and create_world()"}
+{"id": "cs1qa-1dddc53ad7", "category": "concept_explanation", "topic": "loops", "query": "Can you briefly explain what one_loop() does?"}
+{"id": "cs1qa-f364cd6a6b", "category": "concept_explanation", "topic": "functions", "query": "what the jump_one_hurdle() function is doing\nPlease explain~"}
+{"id": "cs1qa-a59a707561", "category": "concept_explanation", "topic": "functions", "query": "What is the function of withdrawal?"}
+{"id": "cs1qa-3a63f54a64", "category": "concept_explanation", "topic": "variables", "query": "Could you briefly explain the meaning of the variable t?"}
+{"id": "cs1qa-83aa10cb14", "category": "concept_explanation", "topic": "loops", "query": "Is the arrangement of the beeper in the edit world saved together?"}
+{"id": "cs1qa-32a4edb2ef", "category": "concept_explanation", "topic": "variables", "query": "What is the object that the outer for statement repeats?"}
+{"id": "cs1qa-da63ed55b4", "category": "concept_explanation", "topic": "loops", "query": "How should the loops 1 and 2 be tied together?"}
+{"id": "cs1qa-53adfab9d5", "category": "concept_explanation", "topic": "variables", "query": "Why do we need a reference point when there is no shape?"}
+{"id": "cs1qa-8a6f61d61b", "category": "debugging", "topic": "conditionals", "query": "Can it be as if I wrote it from line 59?\nBut when I do that, an error pops up..."}
+{"id": "cs1qa-9c0ddf1a56", "category": "concept_explanation", "topic": "loops", "query": "Why did you use the while statement in line 32?"}
+{"id": "cs1qa-7970e8b6cf", "category": "concept_explanation", "topic": "loops", "query": "Is it right to shuffle your cards by doing random.shuffle for each of the two lists?"}
+{"id": "cs1qa-7a3cbca719", "category": "concept_explanation", "topic": "conditionals", "query": "Can I not check if rad is isdigit()?"}
+{"id": "cs1qa-6aedb08398", "category": "concept_explanation", "topic": "loops", "query": "What is the target of the inner for statement repeating?"}
+{"id": "cs1qa-6e0d312779", "category": "concept_explanation", "topic": "variables", "query": "Is the state information stored differently for each card, or is the information of the card class itself (that is, do all card class objects have the same state information)?"}
+{"id": "cs1qa-dd38b45775", "category": "concept_explanation", "topic": "variables", "query": "When using in when trying to find two consecutive numbers that already exist in the correct list, what value should be found..??"}
+{"id": "cs1qa-556e8360b6", "category": "debugging", "topic": "functions", "query": "What is the main function for?\nWhen I try to run it, I get an indentation error there"}
+{"id": "cs1qa-972715e551", "category": "concept_explanation", "topic": "functions", "query": "Is there a thread-like function in python??"}
+{"id": "cs1qa-486a5439e3", "category": "concept_explanation", "topic": "functions", "query": "can you explain your is_triangle function?"}
+{"id": "cs1qa-fd5b3f8134", "category": "concept_explanation", "topic": "variables", "query": "Why should I do float(l) instead of l in return s/float(l)?"}
+{"id": "cs1qa-9a0010e872", "category": "concept_explanation", "topic": "conditionals", "query": "Are you saying that it doesn't matter if the result has a meaningless decimal point?"}
+{"id": "cs1qa-a46ea1fb81", "category": "concept_explanation", "topic": "functions", "query": "Can you briefly explain the function of the jump_one_hurdle function?"}
+{"id": "cs1qa-0c5006b213", "category": "concept_explanation", "topic": "functions", "query": "Can we keep b every time we run the function?"}
+{"id": "cs1qa-0cec7145ed", "category": "concept_explanation", "topic": "functions", "query": "Can you briefly explain what the u_turn function does?"}

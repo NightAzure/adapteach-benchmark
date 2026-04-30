@@ -1,0 +1,24 @@
+{
+  "ai_generated": true,
+  "concept_tags": [
+    "caching",
+    "defaults",
+    "dicts",
+    "functions",
+    "lists",
+    "mutable-defaults",
+    "testing"
+  ],
+  "content": "One of the most important moderate-level function details is that **default parameter values are evaluated once**, when the function is defined. If the default is mutable (like a list or dict), it can keep state between calls.\n\n---\n## 1) The surprising behavior\n\n```python\ndef add_tag(tag, tags=[]):\n    tags.append(tag)\n    return tags\n\nprint(add_tag(\"a\"))\nprint(add_tag(\"b\"))\nprint(add_tag(\"c\"))\n```python\n\nThis keeps growing because `tags` is the same list object each time.\n\n---\n## 2) The common safe pattern: default to None\n\n```python\ndef add_tag(tag, tags=None):\n    if tags is None:\n        tags = []\n    tags.append(tag)\n    return tags\n\nprint(add_tag(\"a\"))\nprint(add_tag(\"b\"))\n```python\n\n---\n## 3) Same pitfall with dict defaults\n\n```python\ndef count_word(word, counts={}):\n    counts[word] = counts.get(word, 0) + 1\n    return counts\n\nprint(count_word(\"hi\"))\nprint(count_word(\"hi\"))\n```python\n\nSafe version:\n\n```python\ndef count_word(word, counts=None):\n    if counts is None:\n        counts = {}\n    counts[word] = counts.get(word, 0) + 1\n    return counts\n\nprint(count_word(\"hi\"))\nprint(count_word(\"hi\"))\n```python\n\n---\n## 4) When a mutable default is actually OK\nSometimes you *want* caching. In that case, document it clearly.\n\n```python\ndef fib(n, _cache={0: 0, 1: 1}):\n    if n in _cache:\n        return _cache[n]\n    _cache[n] = fib(n - 1) + fib(n - 2)\n    return _cache[n]\n\nprint(fib(10))\nprint(fib(12))\n```python\n\n---\n## 5) Lightweight tests to catch regressions\n\n```python\ndef add_tag_safe(tag, tags=None):\n    if tags is None:\n        tags = []\n    tags.append(tag)\n    return tags\n\nassert add_tag_safe(\"x\") == [\"x\"]\nassert add_tag_safe(\"y\") == [\"y\"]\nprint(\"tests passed\")\n```",
+  "difficulty": "moderate",
+  "doc_id": "doc-mutable-default-arguments-moderate-why-it-happens-and-safe-design-patterns-77be358d12",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "",
+    "source_file": "data/corpus_raw/functions_moderate_4.json",
+    "url": ""
+  },
+  "title": "Mutable default arguments (moderate): why it happens and safe design patterns",
+  "type": "tutorial"
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Flexible function inputs (easy): *args, **kwargs, and keyword-only parameters",
+  "content": "Sometimes you want a function that can accept a variable number of inputs. Python supports this with `*args` and `**kwargs`.\n\n---\n## 1) *args collects extra positional arguments into a tuple\n\n```python\ndef add_many(*args):\n    total = 0\n    for n in args:\n        total += n\n    return total\n\nprint(add_many(1, 2, 3))\nprint(add_many(10))\nprint(add_many())\n```\n\n---\n## 2) **kwargs collects extra keyword arguments into a dict\n\n```python\ndef show_fields(**kwargs):\n    for k, v in kwargs.items():\n        print(k, \"=\", v)\n\nshow_fields(name=\"Ana\", age=20)\n```\n\n---\n## 3) Mix normal params + *args + **kwargs\n\n```python\ndef user_info(name, age=18, *skills, **extra):\n    return {\n        \"name\": name,\n        \"age\": age,\n        \"skills\": list(skills),\n        \"extra\": dict(extra),\n    }\n\nprint(user_info(\"Ben\", 20, \"Python\", \"Django\", city=\"Manila\"))\n```\n\n---\n## 4) Keyword-only parameters (easy intro)\nA `*` in the signature can force parameters to be passed by name.\n\n```python\ndef greet(*, name):\n    return \"Hello \" + name\n\nprint(greet(name=\"Ana\"))\n# greet(\"Ana\") would be an error because name is keyword-only\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["functions", "args", "kwargs", "keyword-only", "defaults"],
+  "difficulty": "intro",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "created_at": "2026-02-09",
+    "intended_use": "educational corpus"
+  },
+  "provenance": {
+    "source": "ai_generated",
+    "generator": "ChatGPT",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": true
+}

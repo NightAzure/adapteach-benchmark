@@ -1,0 +1,18 @@
+name: obj1_full
+dry_run: retrieval
+artifact_type: flashcard
+configs:
+  - B
+  - C
+  - D
+  - E
+  - F
+datasets:
+  - name: custom
+    query_file: bench/queries_custom.jsonl
+  - name: cs1qa
+    query_file: bench/queries_cs1qa.jsonl
+  - name: mbpp
+    query_file: bench/queries_mbpp.jsonl
+  - name: staqc
+    query_file: bench/queries_staqc.jsonl

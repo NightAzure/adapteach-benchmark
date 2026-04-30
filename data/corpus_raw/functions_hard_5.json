@@ -1,0 +1,19 @@
+{
+  "title": "Tool-friendly wrappers (hard): preserving metadata, __wrapped__, and inspection-aware patterns",
+  "content": "When you wrap functions, you can accidentally break tools that rely on signatures and metadata. A strong baseline is using `functools.wraps`, which also sets `__wrapped__`.\n\n---\n## 1) Wrapper that preserves doc/name\n\n```python\nimport functools\n\ndef timed(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        # placeholder timing logic\n        return func(*args, **kwargs)\n    return wrapper\n\n@timed\ndef add(a: int, b: int) -> int:\n    \"\"\"Add two integers.\"\"\"\n    return a + b\n\nprint(add.__name__)\nprint(add.__doc__)\n```\n\n---\n## 2) Using inspect.signature on wrapped functions\n\n```python\nimport inspect\nprint(inspect.signature(add))\n```\n\n---\n## 3) A “precheck” decorator that keeps behavior readable\n\n```python\nimport functools\n\ndef require_ints(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        for x in args:\n            if not isinstance(x, int):\n                raise TypeError(\"positional args must be int\")\n        for k, v in kwargs.items():\n            if not isinstance(v, int):\n                raise TypeError(f\"{k} must be int\")\n        return func(*args, **kwargs)\n    return wrapper\n\n@require_ints\ndef mul(a: int, b: int) -> int:\n    return a * b\n\nprint(mul(2, 3))\n# mul(2, \"x\") would raise TypeError\n```\n\n---\n## 4) Practice block: wrapper + caching in a tooling-friendly way\n\n```python\nimport functools\n\n@functools.lru_cache(maxsize=128)\ndef slow_square(n: int) -> int:\n    return n * n\n\nprint(slow_square(10))\nprint(slow_square.cache_info())\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["functions", "wrappers", "decorators", "wraps", "__wrapped__", "inspect", "lru_cache"],
+  "difficulty": "hard",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "created_at": "2026-02-09",
+    "intended_use": "educational corpus"
+  },
+  "provenance": {
+    "source": "ai_generated",
+    "generator": "ChatGPT",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": true
+}

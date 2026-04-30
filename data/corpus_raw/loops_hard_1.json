@@ -1,0 +1,21 @@
+{
+  "title": "How for-loops really work: iterables, iterators, next(), and StopIteration",
+  "content": "Hard-level loop knowledge starts with understanding what a `for` loop is *actually doing*.\n\nIn Python, `for x in iterable:` is driven by the **iterator protocol**:\n- An **iterable** can produce an **iterator**.\n- An **iterator** produces values one-at-a-time via `__next__()`.\n- When exhausted, `__next__()` raises `StopIteration`.\n\n---\n## 1) Iterables vs iterators (mental model)\n- **Iterable**: something you can loop over (it can produce an iterator)\n- **Iterator**: something you can call `next()` on until it’s exhausted\n\n```python\nnums = [10, 20, 30]\n\nit = iter(nums)          # iterator\nprint(next(it))          # 10\nprint(next(it))          # 20\nprint(next(it))          # 30\n# next(it) would raise StopIteration\n```\n\nA key detail: once an iterator is exhausted, it stays exhausted.\n\n```python\nit = iter([1, 2])\nprint(list(it))  # [1, 2]\nprint(list(it))  # []  (already consumed)\n```\n\n---\n## 2) What the for-loop roughly does\nA simplified view:\n\n```python\n# conceptual, not exact interpreter code\nit = iter(iterable)\nwhile True:\n    try:\n        x = next(it)\n    except StopIteration:\n        break\n    # loop body runs here\n```\n\nThis is why iterators are perfect for streaming data: they don’t require loading everything into memory first.\n\n---\n## 3) Custom iterator class (stateful iteration)\nWhen implementing your own iterator, you typically provide:\n- `__iter__()` returning the iterator object\n- `__next__()` returning the next item or raising `StopIteration`\n\n```python\nclass CountUpTo:\n    def __init__(self, n):\n        self.n = n\n        self.i = 0\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.i >= self.n:\n            raise StopIteration\n        self.i += 1\n        return self.i\n\nfor x in CountUpTo(5):\n    print(x)\n```\n\n---\n## 4) Generator functions are iterators too\nA generator function automatically creates an iterator.\n\n```python\ndef count_up_to(n):\n    i = 0\n    while i < n:\n        i += 1\n        yield i\n\nfor x in count_up_to(5):\n    print(x)\n```\n\n---\n## 5) Practical consequence: one-pass iterators\nSome objects (like file handles, generator objects, many iterator tools) are **consumed** as you loop.\nIf you need to loop twice, you usually must recreate the iterator.\n\n```python\ndef make_iter():\n    for i in range(3):\n        yield i\n\nit = make_iter()\nprint(list(it))  # [0, 1, 2]\nprint(list(it))  # []\n\nit2 = make_iter()\nprint(list(it2)) # [0, 1, 2]\n```\n\n---\n## 6) A dense practice block (consumption + next + for)\n\n```python\ndata = [\"a\", \"b\", \"c\"]\nit = iter(data)\n\nprint(next(it))\n\nfor x in it:\n    print(\"loop:\", x)\n\nprint(list(it))  # empty, already exhausted\n```\n",
+  "type": "reference",
+  "concept_tags": ["loops", "for", "iterables", "iterators", "next", "stopiteration", "generator"],
+  "difficulty": "hard",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["iterator protocol explanation", "custom iterator class", "generator alternative", "iterator exhaustion examples"]
+  },
+  "provenance": {
+    "url": "https://docs.python.org/3/library/stdtypes.html",
+    "license": "PSF Documentation License (Python docs)",
+    "attribution": "Python Software Foundation / Python Documentation Contributors",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

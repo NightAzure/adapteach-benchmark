@@ -1,0 +1,21 @@
+{
+  "title": "Extended unpacking (*rest): splitting sequences, safe patterns, and common errors",
+  "content": "Extended iterable unpacking lets you capture “the remaining items” in a sequence using a starred target. This is extremely useful when parsing structured data like lines, tokens, or tuples.\n\n---\n## 1) First/rest pattern\n\n```python\nfirst, *rest = [10, 20, 30, 40]\nprint(first)  # 10\nprint(rest)   # [20, 30, 40]\n```\n\n---\n## 2) Head/middle/tail pattern\n\n```python\nhead, *middle, tail = (1, 2, 3, 4, 5)\nprint(head)    # 1\nprint(middle)  # [2, 3, 4]\nprint(tail)    # 5\n```\n\n---\n## 3) Practical parsing example (tokenizing)\n\n```python\ncmd = \"git commit -m 'hello'\".split()\nprogram, subcmd, *args = cmd\n\nprint(program)  # git\nprint(subcmd)   # commit\nprint(args)     # ['-m', \"'hello'\"]\n```\n\n---\n## 4) Nested unpacking (moderate complexity)\n\n```python\nrecord = (\"user1\", (10, 20), [\"admin\", \"active\"])\nname, (x, y), flags = record\nprint(name, x, y, flags)\n```\n\n---\n## 5) Common errors to recognize\n### Too many values to unpack\n\n```python\n# a, b = (1, 2, 3)  # ValueError: too many values to unpack\n```\n\n### Not enough values to unpack\n\n```python\n# a, b, c = (1, 2)  # ValueError: not enough values to unpack\n```\n\n### Only one starred target is allowed\n\n```python\n# a, *b, *c = range(5)  # invalid\n```\n\n---\n## 6) A chunk-friendly “many shapes” practice section\n\n```python\nvalues = [1, 2, 3, 4]\na, *b, c = values\nprint(a, b, c)  # 1 [2, 3] 4\n```\n\n```python\npair = (\"x\", 1)\nkey, val = pair\nprint(key, val)\n```\n\n```python\nletters = \"ABCDE\"\n*prefix, last = letters\nprint(prefix, last)  # ['A','B','C','D'] E\n```\n",
+  "type": "reference",
+  "concept_tags": ["variables", "assignment", "unpacking", "extended-unpacking", "parsing", "errors"],
+  "difficulty": "moderate",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["starred targets", "practical token parsing", "nested unpacking", "error-recognition blocks"]
+  },
+  "provenance": {
+    "url": "https://peps.python.org/pep-3132/",
+    "license": "Public domain (PEP text)",
+    "attribution": "PEP authors (see PEP header)",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

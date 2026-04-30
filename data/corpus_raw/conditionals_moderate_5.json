@@ -1,0 +1,19 @@
+{
+  "title": "Short-circuit conditionals in practice: safe guards and optional values",
+  "content": "Short-circuit logic is not only about concision—it’s a practical tool to avoid errors and avoid unnecessary work.\n\n---\n## 1) Guarding attribute access\n\n```python\nuser = None\n\nif user is not None and user.get(\"active\"):\n    print(\"active user\")\nelse:\n    print(\"no active user\")\n```\n\n---\n## 2) Avoid expensive work unless needed\n\n```python\nimport time\n\ndef expensive():\n    time.sleep(0.1)\n    return True\n\nflag = False\n\nif flag and expensive():\n    print(\"ran\")\nelse:\n    print(\"skipped\")\n```\n\nBecause `flag` is False, `expensive()` is never called.\n\n---\n## 3) Defaulting with or (with a caution)\n\n```python\nname = \"\"\ndisplay = name or \"(anonymous)\"\nprint(display)\n```\n\nThis works well when empty values should fall back to a default. If empty is meaningful, be explicit:\n\n```python\nname = \"\"\nif name == \"\":\n    display = \"(empty string)\"\nelse:\n    display = name\nprint(display)\n```\n\n---\n## 4) any/all with generator expressions\n\n```python\npassword = \"Abc123\"\n\nhas_digit = any(ch.isdigit() for ch in password)\nhas_upper = any(ch.isupper() for ch in password)\nlong_enough = len(password) >= 6\n\nif has_digit and has_upper and long_enough:\n    print(\"ok\")\nelse:\n    print(\"try again\")\n```\n\n---\n## 5) Practice block: validate a record safely\n\n```python\nrecord = {\"name\": \"ana\", \"age\": \"20\"}\n\nname_ok = bool(record.get(\"name\"))\nage_text = record.get(\"age\")\nage_ok = age_text is not None and age_text.isdigit() and 0 <= int(age_text) <= 120\n\nif name_ok and age_ok:\n    print(\"valid\")\nelse:\n    print(\"invalid\")\n```\n",
+  "type": "tutorial",
+  "concept_tags": ["conditionals", "short-circuit", "guards", "truthiness", "any", "all", "validation"],
+  "difficulty": "moderate",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "created_at": "2026-02-09",
+    "intended_use": "educational corpus"
+  },
+  "provenance": {
+    "source": "ai_generated",
+    "generator": "ChatGPT",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": true
+}

@@ -1,0 +1,7 @@
+pipeline:
+  name: F
+  retrieval_enabled: true
+  hybrid: false
+  graph_expansion: false
+  graph_context: true
+  chunking: ast

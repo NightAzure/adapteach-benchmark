@@ -1,0 +1,24 @@
+{
+  "ai_generated": false,
+  "concept_tags": [
+    "arguments",
+    "callables",
+    "functions",
+    "locals",
+    "parameters",
+    "pure-functions",
+    "scope"
+  ],
+  "content": "A function is a callable piece of code that can accept arguments and optionally return a value.\n\n---\n## 1) A function as a reusable \u201crecipe\u201d\n\n```python\ndef headline(text):\n    return text.strip().title()\n\nprint(headline(\"  hello world  \"))\nprint(headline(\"python functions\"))\n```python\n\n---\n## 2) Parameters vs arguments\n- **Parameters**: names in the function definition\n- **Arguments**: actual values passed in calls\n\n```python\ndef multiply(a, b):\n    return a * b\n\nprint(multiply(6, 7))\n```python\n\n---\n## 3) Local variables live inside the function\nVariables created inside a function normally exist only within that function.\n\n```python\nx = \"global\"\n\ndef demo():\n    x = \"local\"\n    return x\n\nprint(demo())\nprint(x)\n```python\n\n---\n## 4) Pure functions (easy-to-test)\nA pure-style function depends only on inputs and returns outputs (no hidden state).\n\n```python\ndef clamp(n, lo, hi):\n    if n < lo:\n        return lo\n    if n > hi:\n        return hi\n    return n\n\nprint(clamp(5, 0, 10))\nprint(clamp(-2, 0, 10))\nprint(clamp(99, 0, 10))\n```python\n\n---\n## 5) A slightly larger example: compute basic stats\n\n```python\ndef stats(nums):\n    if not nums:\n        return None\n    return {\n        \"count\": len(nums),\n        \"min\": min(nums),\n        \"max\": max(nums),\n        \"sum\": sum(nums),\n        \"avg\": sum(nums) / len(nums),\n    }\n\nprint(stats([10, 20, 30]))\nprint(stats([]))\n```",
+  "difficulty": "intro",
+  "doc_id": "doc-functions-as-callables-easy-inputs-outputs-and-simple-scoping-intuition-204adfda5a",
+  "provenance": {
+    "author": "",
+    "date": "",
+    "license": "CC BY-SA 4.0 (Wikibooks) / also dual-licensed with GFDL per Wikibooks policy",
+    "source_file": "data/corpus_raw/functions_easy_2.json",
+    "url": "https://en.wikibooks.org/wiki/Python_Programming/Functions"
+  },
+  "title": "Functions as callables (easy): inputs, outputs, and simple scoping intuition",
+  "type": "tutorial"
+}

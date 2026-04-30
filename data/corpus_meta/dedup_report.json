@@ -1,0 +1,205 @@
+{
+  "removed": [
+    {
+      "doc_id": "doc-10-brief-tour-of-the-standard-library-c920325095",
+      "duplicate_of": "doc-10-brief-tour-of-the-standard-library-28f2830678",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-10organizing-files-f7702aa76d",
+      "duplicate_of": "doc-10organizing-files-8fe90908f0",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-11debugging-7933c6989b",
+      "duplicate_of": "doc-11debugging-3032b7dc3e",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-1python-basics-da8a4f1f2b",
+      "duplicate_of": "doc-1python-basics-c6c24cef47",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-2flow-control-f6bf228683",
+      "duplicate_of": "doc-2flow-control-c08fec5c50",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-3-an-informal-introduction-to-python-e76373279b",
+      "duplicate_of": "doc-3-an-informal-introduction-to-python-b84ef065ad",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-3functions-c58f99dfc9",
+      "duplicate_of": "doc-3functions-ab49f2a8a9",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-4-more-control-flow-tools-d570a03a3f",
+      "duplicate_of": "doc-4-more-control-flow-tools-d5287d137f",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-4lists-f440ec7f03",
+      "duplicate_of": "doc-4lists-8d4c6036cb",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-5-data-structures-9e0f874940",
+      "duplicate_of": "doc-5-data-structures-5b0746c54d",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-5dictionaries-and-structuring-data-ac9d0524eb",
+      "duplicate_of": "doc-5dictionaries-and-structuring-data-52e7d636e1",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-6-modules-fa079bc7c6",
+      "duplicate_of": "doc-6-modules-f6847329c8",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-6manipulating-strings-ee1d7c4b1e",
+      "duplicate_of": "doc-6manipulating-strings-3078131358",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-7-input-and-output-d85d2ff6c8",
+      "duplicate_of": "doc-7-input-and-output-6350c56c82",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-7pattern-matching-with-regular-expressions-e23c467a20",
+      "duplicate_of": "doc-7pattern-matching-with-regular-expressions-14d02f7187",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-8-errors-and-exceptions-bab909b879",
+      "duplicate_of": "doc-8-errors-and-exceptions-4be803f400",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-8input-validation-eef838fbd3",
+      "duplicate_of": "doc-8input-validation-775383f118",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-9-classes-f4119802b1",
+      "duplicate_of": "doc-9-classes-d7daee5b86",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-9reading-and-writing-files-d98a8490d2",
+      "duplicate_of": "doc-9reading-and-writing-files-715d325b82",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-built-in-exceptions-85679f9902",
+      "duplicate_of": "doc-built-in-exceptions-2d19674db7",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-built-in-functions-ff544a5a7f",
+      "duplicate_of": "doc-built-in-functions-5009a63261",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-built-in-types-bdf5b7b8aa",
+      "duplicate_of": "doc-built-in-types-10cf62e085",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-1-the-way-of-the-program-c3ca6fee60",
+      "duplicate_of": "doc-chapter-1-the-way-of-the-program-06335be0a8",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-10-lists-8ed5a370c7",
+      "duplicate_of": "doc-chapter-10-lists-3a00a91ee0",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-11-dictionaries-7940beb6f2",
+      "duplicate_of": "doc-chapter-11-dictionaries-5d588bf9ea",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-12-tuples-b0238e4324",
+      "duplicate_of": "doc-chapter-12-tuples-821d2530d4",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-13-case-study-data-structure-selection-f56fd1a486",
+      "duplicate_of": "doc-chapter-13-case-study-data-structure-selection-f05d897455",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-14-files-b04c654c62",
+      "duplicate_of": "doc-chapter-14-files-4dcfd85da9",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-15-classes-and-objects-efa83dfde7",
+      "duplicate_of": "doc-chapter-15-classes-and-objects-9467cf0dec",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-16-classes-and-functions-e01c3fcb16",
+      "duplicate_of": "doc-chapter-16-classes-and-functions-130c309393",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-19-the-goodies-6a36b1a63e",
+      "duplicate_of": "doc-chapter-19-the-goodies-3a303ea7ff",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-2-variables-expressions-and-statements-dcf56f9129",
+      "duplicate_of": "doc-chapter-2-variables-expressions-and-statements-021d779cec",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-3-functions-f94d027c6b",
+      "duplicate_of": "doc-chapter-3-functions-c49902cedc",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-4-case-study-interface-design-c6f0e16980",
+      "duplicate_of": "doc-chapter-4-case-study-interface-design-3b8d3e6d00",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-5-conditionals-and-recursion-c39bdee513",
+      "duplicate_of": "doc-chapter-5-conditionals-and-recursion-0e72a852c9",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-6-fruitful-functions-35e6480158",
+      "duplicate_of": "doc-chapter-6-fruitful-functions-19f263827a",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-7-iteration-845bbc2b75",
+      "duplicate_of": "doc-chapter-7-iteration-4fefdcb3c2",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-8-strings-6effd65caa",
+      "duplicate_of": "doc-chapter-8-strings-689ec2f30c",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-chapter-9-case-study-word-play-a7331e0e76",
+      "duplicate_of": "doc-chapter-9-case-study-word-play-5f128ed3ca",
+      "reason": "exact_or_near_exact"
+    },
+    {
+      "doc_id": "doc-glossary-66dad09dd3",
+      "duplicate_of": "doc-glossary-4e4a714c7f",
+      "reason": "exact_or_near_exact"
+    }
+  ],
+  "removed_count": 40
+}

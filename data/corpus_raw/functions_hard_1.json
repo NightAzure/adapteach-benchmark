@@ -1,0 +1,21 @@
+{
+  "title": "Decorators (hard): what @decorator means, stacking decorators, and readable function transformations",
+  "content": "Decorators are a way to transform a function (or method) at definition time. The `@decorator` syntax makes transformations explicit and keeps them close to the function they affect.\n\n---\n## 1) Mental model: @decorator rewrites the function binding\nConceptually, this:\n\n```python\n@decorator\ndef f(x):\n    return x + 1\n```\n\nis like:\n\n```python\ndef f(x):\n    return x + 1\n\nf = decorator(f)\n```\n\nThis “rebinding” happens when the function definition is executed.\n\n---\n## 2) A simple decorator: log calls\n\n```python\ndef log_calls(func):\n    def wrapper(*args, **kwargs):\n        print(\"calling\", func.__name__, args, kwargs)\n        result = func(*args, **kwargs)\n        print(\"returned\", result)\n        return result\n    return wrapper\n\n@log_calls\ndef add(a, b):\n    return a + b\n\nprint(add(2, 3))\n```\n\n---\n## 3) Stacking decorators (order matters)\n\n```python\ndef d1(func):\n    def w(*a, **k):\n        print(\"d1 before\")\n        r = func(*a, **k)\n        print(\"d1 after\")\n        return r\n    return w\n\n\ndef d2(func):\n    def w(*a, **k):\n        print(\"d2 before\")\n        r = func(*a, **k)\n        print(\"d2 after\")\n        return r\n    return w\n\n@d1\n@d2\ndef work():\n    print(\"work\")\n\nwork()\n```\n\nThink of it as:\n\n```python\n# roughly\nwork = d1(d2(work))\n```\n\n---\n## 4) Decorators are common for method transformations\nA classic motivation is avoiding “wrap then assign” patterns for things like `staticmethod` / `classmethod`.\n\n```python\nclass C:\n    @staticmethod\n    def f(x):\n        return x * 2\n\nprint(C.f(10))\n```\n\n---\n## 5) A bigger example: permission check decorator\n\n```python\ndef require_admin(func):\n    def wrapper(user, *args, **kwargs):\n        if user.get(\"role\") != \"admin\":\n            raise PermissionError(\"admin only\")\n        return func(user, *args, **kwargs)\n    return wrapper\n\n@require_admin\ndef delete_post(user, post_id):\n    return f\"deleted {post_id}\"\n\nadmin = {\"role\": \"admin\"}\nguest = {\"role\": \"guest\"}\n\nprint(delete_post(admin, 123))\n# delete_post(guest, 123) would raise PermissionError\n```\n",
+  "type": "reference",
+  "concept_tags": ["functions", "decorators", "pep-318", "stacking", "wrapping", "methods", "staticmethod", "classmethod"],
+  "difficulty": "hard",
+  "metadata": {
+    "language": "en",
+    "domain": "programming/python",
+    "retrieved_at": "2026-02-09",
+    "intended_use": "educational corpus",
+    "chunking_hints": ["@ syntax rewrite equivalence", "decorator stacking order", "method decorator example", "permission-check decorator"]
+  },
+  "provenance": {
+    "url": "https://peps.python.org/pep-0318/",
+    "license": "Public domain (PEP text)",
+    "attribution": "PEP 318 authors (see PEP header)",
+    "retrieved_at": "2026-02-09"
+  },
+  "ai_generated": false
+}

@@ -1,0 +1,653 @@
+{
+  "length_distribution_words": {
+    "count": 100,
+    "max": 29486,
+    "mean": 2344.42,
+    "median": 325.5,
+    "min": 140,
+    "p90": 5813
+  },
+  "per_concept_coverage": {
+    "OOP": 6,
+    "__wrapped__": 1,
+    "accumulation": 1,
+    "aggregation": 1,
+    "algorithms": 2,
+    "aliasing": 2,
+    "all": 3,
+    "and": 2,
+    "and-or": 1,
+    "annotations": 1,
+    "any": 3,
+    "api-design": 2,
+    "args": 2,
+    "arguments": 3,
+    "assert": 1,
+    "assignment": 7,
+    "assignment-expression": 1,
+    "attributes": 1,
+    "augmented-assignment": 2,
+    "binding": 2,
+    "blocks": 2,
+    "boolean": 1,
+    "boolean-logic": 1,
+    "boolean-ops": 2,
+    "branching": 1,
+    "break": 7,
+    "bugs": 1,
+    "built_in_functions": 1,
+    "cache": 1,
+    "caching": 2,
+    "callables": 1,
+    "chain": 1,
+    "chained-comparisons": 1,
+    "classes": 5,
+    "classmethod": 1,
+    "closures": 5,
+    "common_errors": 1,
+    "comparisons": 4,
+    "composition": 1,
+    "comprehensions": 2,
+    "conditional-expression": 1,
+    "conditionals": 18,
+    "continue": 5,
+    "control_flow": 3,
+    "copy": 2,
+    "counting": 2,
+    "cycle": 1,
+    "data-shapes": 1,
+    "data_structures": 4,
+    "data_types": 5,
+    "debugging": 9,
+    "decorator-factory": 1,
+    "decorators": 4,
+    "deepcopy": 2,
+    "def": 1,
+    "defaults": 5,
+    "dict": 1,
+    "dictionaries": 4,
+    "dicts": 5,
+    "directories": 1,
+    "dispatch-table": 1,
+    "docstrings": 2,
+    "elif": 2,
+    "else": 3,
+    "enumerate": 3,
+    "equality": 1,
+    "error_handling": 5,
+    "errors": 1,
+    "exceptions": 4,
+    "exhaustion": 1,
+    "expressions": 2,
+    "extended-unpacking": 1,
+    "f-strings": 1,
+    "file_io": 4,
+    "filtering": 1,
+    "for": 8,
+    "formatting": 3,
+    "free-variables": 1,
+    "function-factory": 1,
+    "functions": 21,
+    "functools": 1,
+    "generator": 1,
+    "generator-expressions": 1,
+    "generators": 4,
+    "get": 1,
+    "global": 2,
+    "grids": 2,
+    "groupby": 1,
+    "guard-clauses": 2,
+    "guards": 3,
+    "identity": 3,
+    "if": 3,
+    "imports": 1,
+    "indentation": 1,
+    "indexing": 4,
+    "infinite-loop": 1,
+    "inheritance": 2,
+    "input": 2,
+    "input-validation": 2,
+    "inspect": 2,
+    "introspection": 1,
+    "islice": 1,
+    "items": 1,
+    "iterables": 2,
+    "iteration": 2,
+    "iterators": 3,
+    "itertools": 2,
+    "join": 1,
+    "key_value": 1,
+    "keyword-arguments": 2,
+    "keyword-only": 3,
+    "kwargs": 2,
+    "lambdas": 1,
+    "late-binding": 2,
+    "lazy-evaluation": 1,
+    "len": 1,
+    "lists": 11,
+    "locals": 1,
+    "logging": 1,
+    "loop-else": 4,
+    "loops": 20,
+    "lru_cache": 2,
+    "match": 1,
+    "membership": 2,
+    "memoization": 1,
+    "memory-efficiency": 1,
+    "menus": 1,
+    "methods": 1,
+    "modules": 2,
+    "mutability": 5,
+    "mutable-defaults": 2,
+    "nameerror": 2,
+    "naming": 1,
+    "nested-functions": 1,
+    "nested-if": 1,
+    "nested-loops": 3,
+    "next": 1,
+    "none": 1,
+    "none-check": 1,
+    "nonlocal": 3,
+    "normalization": 1,
+    "not": 2,
+    "numbers": 2,
+    "objects": 3,
+    "operator_overloading": 1,
+    "operators": 3,
+    "or": 2,
+    "os": 1,
+    "parallel-iteration": 1,
+    "parameters": 4,
+    "parentheses": 1,
+    "parsing": 6,
+    "partial": 1,
+    "pathlib": 2,
+    "pattern-matching": 1,
+    "pattern_matching": 1,
+    "pep-3102": 1,
+    "pep-318": 1,
+    "pep-570": 1,
+    "pipelines": 4,
+    "positional-only": 2,
+    "practice": 1,
+    "precedence": 2,
+    "print": 3,
+    "product": 1,
+    "pure-functions": 1,
+    "range": 5,
+    "ranges": 1,
+    "readability": 7,
+    "reading_writing": 1,
+    "reassignment": 2,
+    "recursion": 4,
+    "refactoring": 2,
+    "regex": 1,
+    "retry": 1,
+    "return": 2,
+    "return-types": 1,
+    "return_values": 3,
+    "scope": 12,
+    "search": 1,
+    "search-patterns": 1,
+    "searching": 1,
+    "sentinel": 1,
+    "sets": 3,
+    "shallow-copy": 1,
+    "short-circuit": 3,
+    "signature": 1,
+    "signatures": 1,
+    "single-pass": 1,
+    "slicing": 3,
+    "snake_case": 1,
+    "sorting": 3,
+    "special-parameters": 2,
+    "special_methods": 1,
+    "stacking": 1,
+    "standard_library": 1,
+    "staticmethod": 1,
+    "stopiteration": 1,
+    "string_methods": 2,
+    "strings": 11,
+    "tables": 1,
+    "ternary": 2,
+    "testing": 3,
+    "tooling": 1,
+    "truthiness": 5,
+    "tuples": 5,
+    "type-conversion": 4,
+    "type-hints": 1,
+    "unboundlocalerror": 1,
+    "unpacking": 6,
+    "validation": 4,
+    "variables": 19,
+    "walrus": 1,
+    "while": 3,
+    "wrappers": 2,
+    "wrapping": 1,
+    "wraps": 3,
+    "zip": 1
+  },
+  "thin_areas": [
+    {
+      "concept": "__wrapped__",
+      "count": 1
+    },
+    {
+      "concept": "accumulation",
+      "count": 1
+    },
+    {
+      "concept": "aggregation",
+      "count": 1
+    },
+    {
+      "concept": "and-or",
+      "count": 1
+    },
+    {
+      "concept": "annotations",
+      "count": 1
+    },
+    {
+      "concept": "assert",
+      "count": 1
+    },
+    {
+      "concept": "assignment-expression",
+      "count": 1
+    },
+    {
+      "concept": "attributes",
+      "count": 1
+    },
+    {
+      "concept": "boolean",
+      "count": 1
+    },
+    {
+      "concept": "boolean-logic",
+      "count": 1
+    },
+    {
+      "concept": "branching",
+      "count": 1
+    },
+    {
+      "concept": "bugs",
+      "count": 1
+    },
+    {
+      "concept": "built_in_functions",
+      "count": 1
+    },
+    {
+      "concept": "cache",
+      "count": 1
+    },
+    {
+      "concept": "callables",
+      "count": 1
+    },
+    {
+      "concept": "chain",
+      "count": 1
+    },
+    {
+      "concept": "chained-comparisons",
+      "count": 1
+    },
+    {
+      "concept": "classmethod",
+      "count": 1
+    },
+    {
+      "concept": "common_errors",
+      "count": 1
+    },
+    {
+      "concept": "composition",
+      "count": 1
+    },
+    {
+      "concept": "conditional-expression",
+      "count": 1
+    },
+    {
+      "concept": "cycle",
+      "count": 1
+    },
+    {
+      "concept": "data-shapes",
+      "count": 1
+    },
+    {
+      "concept": "decorator-factory",
+      "count": 1
+    },
+    {
+      "concept": "def",
+      "count": 1
+    },
+    {
+      "concept": "dict",
+      "count": 1
+    },
+    {
+      "concept": "directories",
+      "count": 1
+    },
+    {
+      "concept": "dispatch-table",
+      "count": 1
+    },
+    {
+      "concept": "equality",
+      "count": 1
+    },
+    {
+      "concept": "errors",
+      "count": 1
+    },
+    {
+      "concept": "exhaustion",
+      "count": 1
+    },
+    {
+      "concept": "extended-unpacking",
+      "count": 1
+    },
+    {
+      "concept": "f-strings",
+      "count": 1
+    },
+    {
+      "concept": "filtering",
+      "count": 1
+    },
+    {
+      "concept": "free-variables",
+      "count": 1
+    },
+    {
+      "concept": "function-factory",
+      "count": 1
+    },
+    {
+      "concept": "functools",
+      "count": 1
+    },
+    {
+      "concept": "generator",
+      "count": 1
+    },
+    {
+      "concept": "generator-expressions",
+      "count": 1
+    },
+    {
+      "concept": "get",
+      "count": 1
+    },
+    {
+      "concept": "groupby",
+      "count": 1
+    },
+    {
+      "concept": "imports",
+      "count": 1
+    },
+    {
+      "concept": "indentation",
+      "count": 1
+    },
+    {
+      "concept": "infinite-loop",
+      "count": 1
+    },
+    {
+      "concept": "introspection",
+      "count": 1
+    },
+    {
+      "concept": "islice",
+      "count": 1
+    },
+    {
+      "concept": "items",
+      "count": 1
+    },
+    {
+      "concept": "join",
+      "count": 1
+    },
+    {
+      "concept": "key_value",
+      "count": 1
+    },
+    {
+      "concept": "lambdas",
+      "count": 1
+    },
+    {
+      "concept": "lazy-evaluation",
+      "count": 1
+    },
+    {
+      "concept": "len",
+      "count": 1
+    },
+    {
+      "concept": "locals",
+      "count": 1
+    },
+    {
+      "concept": "logging",
+      "count": 1
+    },
+    {
+      "concept": "match",
+      "count": 1
+    },
+    {
+      "concept": "memoization",
+      "count": 1
+    },
+    {
+      "concept": "memory-efficiency",
+      "count": 1
+    },
+    {
+      "concept": "menus",
+      "count": 1
+    },
+    {
+      "concept": "methods",
+      "count": 1
+    },
+    {
+      "concept": "naming",
+      "count": 1
+    },
+    {
+      "concept": "nested-functions",
+      "count": 1
+    },
+    {
+      "concept": "nested-if",
+      "count": 1
+    },
+    {
+      "concept": "next",
+      "count": 1
+    },
+    {
+      "concept": "none",
+      "count": 1
+    },
+    {
+      "concept": "none-check",
+      "count": 1
+    },
+    {
+      "concept": "normalization",
+      "count": 1
+    },
+    {
+      "concept": "operator_overloading",
+      "count": 1
+    },
+    {
+      "concept": "os",
+      "count": 1
+    },
+    {
+      "concept": "parallel-iteration",
+      "count": 1
+    },
+    {
+      "concept": "parentheses",
+      "count": 1
+    },
+    {
+      "concept": "partial",
+      "count": 1
+    },
+    {
+      "concept": "pattern-matching",
+      "count": 1
+    },
+    {
+      "concept": "pattern_matching",
+      "count": 1
+    },
+    {
+      "concept": "pep-3102",
+      "count": 1
+    },
+    {
+      "concept": "pep-318",
+      "count": 1
+    },
+    {
+      "concept": "pep-570",
+      "count": 1
+    },
+    {
+      "concept": "practice",
+      "count": 1
+    },
+    {
+      "concept": "product",
+      "count": 1
+    },
+    {
+      "concept": "pure-functions",
+      "count": 1
+    },
+    {
+      "concept": "ranges",
+      "count": 1
+    },
+    {
+      "concept": "reading_writing",
+      "count": 1
+    },
+    {
+      "concept": "regex",
+      "count": 1
+    },
+    {
+      "concept": "retry",
+      "count": 1
+    },
+    {
+      "concept": "return-types",
+      "count": 1
+    },
+    {
+      "concept": "search",
+      "count": 1
+    },
+    {
+      "concept": "search-patterns",
+      "count": 1
+    },
+    {
+      "concept": "searching",
+      "count": 1
+    },
+    {
+      "concept": "sentinel",
+      "count": 1
+    },
+    {
+      "concept": "shallow-copy",
+      "count": 1
+    },
+    {
+      "concept": "signature",
+      "count": 1
+    },
+    {
+      "concept": "signatures",
+      "count": 1
+    },
+    {
+      "concept": "single-pass",
+      "count": 1
+    },
+    {
+      "concept": "snake_case",
+      "count": 1
+    },
+    {
+      "concept": "special_methods",
+      "count": 1
+    },
+    {
+      "concept": "stacking",
+      "count": 1
+    },
+    {
+      "concept": "standard_library",
+      "count": 1
+    },
+    {
+      "concept": "staticmethod",
+      "count": 1
+    },
+    {
+      "concept": "stopiteration",
+      "count": 1
+    },
+    {
+      "concept": "tables",
+      "count": 1
+    },
+    {
+      "concept": "tooling",
+      "count": 1
+    },
+    {
+      "concept": "type-hints",
+      "count": 1
+    },
+    {
+      "concept": "unboundlocalerror",
+      "count": 1
+    },
+    {
+      "concept": "walrus",
+      "count": 1
+    },
+    {
+      "concept": "wrapping",
+      "count": 1
+    },
+    {
+      "concept": "zip",
+      "count": 1
+    }
+  ],
+  "thin_threshold": 2
+}
