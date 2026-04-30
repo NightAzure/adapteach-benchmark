@@ -60,7 +60,7 @@ def build_chunk_lookup() -> dict[str, str]:
     # Text chunks — regenerated from corpus docs
     for doc_path in sorted(CORPUS_DIR.glob("*.json")):
         doc = json.loads(doc_path.read_text(encoding="utf-8"))
-        doc_id = doc.get("doc_id") or doc_path.stem
+        doc_id = doc_path.stem
         content = doc.get("content", "")
         lookup.update(_fixed_split_ids(content, doc_id))
 

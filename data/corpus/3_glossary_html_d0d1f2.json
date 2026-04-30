@@ -8,21 +8,5 @@
     "OOP",
     "scope",
     "data_types"
-  ],
-  "difficulty": "intro",
-  "metadata": {
-    "language": "en",
-    "domain": "programming/python",
-    "retrieved_at": "2026-02-24",
-    "intended_use": "educational corpus",
-    "source": "python_docs"
-  },
-  "provenance": {
-    "url": "https://docs.python.org/3/glossary.html",
-    "license": "PSF Documentation License",
-    "attribution": "Python Software Foundation",
-    "retrieved_at": "2026-02-24"
-  },
-  "ai_generated": false,
-  "doc_id": "scraped-https-docs-python-org-3-glossary-html-d0d1f20d"
+  ]
 }

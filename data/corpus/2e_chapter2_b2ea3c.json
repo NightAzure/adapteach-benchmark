@@ -7,21 +7,5 @@
     "control_flow",
     "loops",
     "boolean"
-  ],
-  "difficulty": "intro",
-  "metadata": {
-    "language": "en",
-    "domain": "programming/python",
-    "retrieved_at": "2026-02-24",
-    "intended_use": "educational corpus",
-    "source": "atbs"
-  },
-  "provenance": {
-    "url": "https://automatetheboringstuff.com/2e/chapter2/",
-    "license": "CC BY-NC-SA 3.0",
-    "attribution": "Al Sweigart, automatetheboringstuff.com",
-    "retrieved_at": "2026-02-24"
-  },
-  "ai_generated": false,
-  "doc_id": "scraped-https-automatetheboringstuff-com-2e-chapter2-b2ea3c06"
+  ]
 }

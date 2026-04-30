@@ -8,21 +8,5 @@
     "functions",
     "scope",
     "control_flow"
-  ],
-  "difficulty": "intro",
-  "metadata": {
-    "language": "en",
-    "domain": "programming/python",
-    "retrieved_at": "2026-02-24",
-    "intended_use": "educational corpus",
-    "source": "python_docs"
-  },
-  "provenance": {
-    "url": "https://docs.python.org/3/tutorial/controlflow.html",
-    "license": "PSF Documentation License",
-    "attribution": "Python Software Foundation",
-    "retrieved_at": "2026-02-24"
-  },
-  "ai_generated": false,
-  "doc_id": "scraped-https-docs-python-org-3-tutorial-controlflow-html-1e970dd9"
+  ]
 }

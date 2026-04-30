@@ -6,21 +6,5 @@
     "exceptions",
     "debugging",
     "error_handling"
-  ],
-  "difficulty": "intro",
-  "metadata": {
-    "language": "en",
-    "domain": "programming/python",
-    "retrieved_at": "2026-02-24",
-    "intended_use": "educational corpus",
-    "source": "python_docs"
-  },
-  "provenance": {
-    "url": "https://docs.python.org/3/tutorial/errors.html",
-    "license": "PSF Documentation License",
-    "attribution": "Python Software Foundation",
-    "retrieved_at": "2026-02-24"
-  },
-  "ai_generated": false,
-  "doc_id": "scraped-https-docs-python-org-3-tutorial-errors-html-418c6ed6"
+  ]
 }

@@ -6,21 +6,5 @@
     "OOP",
     "classes",
     "objects"
-  ],
-  "difficulty": "intermediate",
-  "metadata": {
-    "language": "en",
-    "domain": "programming/python",
-    "retrieved_at": "2026-02-24",
-    "intended_use": "educational corpus",
-    "source": "atbs"
-  },
-  "provenance": {
-    "url": "https://automatetheboringstuff.com/2e/chapter11/",
-    "license": "CC BY-NC-SA 3.0",
-    "attribution": "Al Sweigart, automatetheboringstuff.com",
-    "retrieved_at": "2026-02-24"
-  },
-  "ai_generated": false,
-  "doc_id": "scraped-https-automatetheboringstuff-com-2e-chapter11-7cf7f6d3"
+  ]
 }

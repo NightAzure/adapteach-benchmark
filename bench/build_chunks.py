@@ -194,6 +194,7 @@ def main() -> None:
 
     for doc_file in doc_files:
         doc = json.loads(doc_file.read_text(encoding="utf-8"))
+        doc["doc_id"] = doc_file.stem
         fixed, ast_c, text_c, ok = chunk_document(doc)
 
         all_chunks.extend(fixed)

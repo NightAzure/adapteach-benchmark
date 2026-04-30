@@ -7,21 +7,5 @@
     "indexing",
     "slicing",
     "mutability"
-  ],
-  "difficulty": "intro",
-  "metadata": {
-    "language": "en",
-    "domain": "programming/python",
-    "retrieved_at": "2026-02-24",
-    "intended_use": "educational corpus",
-    "source": "think_python"
-  },
-  "provenance": {
-    "url": "https://greenteapress.com/thinkpython2/html/thinkpython2008.html",
-    "license": "CC BY-NC 3.0",
-    "attribution": "Allen B. Downey, greenteapress.com",
-    "retrieved_at": "2026-02-24"
-  },
-  "ai_generated": false,
-  "doc_id": "scraped-https-greenteapress-com-thinkpython2-html-thinkpython2008-ht-e12c4df1"
+  ]
 }
