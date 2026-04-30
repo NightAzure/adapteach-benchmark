@@ -9,7 +9,7 @@ help:
 	@echo ""
 	@echo "  setup          Install dependencies from requirements.lock"
 	@echo "  datasets       Validate shipped query files"
-	@echo "  chunks         Build chunk_manifest.json from corpus_clean (AST + text fallback)"
+	@echo "  chunks         Build chunk_manifest.json from corpus/ (AST + text fallback)"
 	@echo "  index          Build vector indexes for snapshot $(SNAPSHOT_ID)"
 	@echo "  labels         Build deterministic silver labels (primary benchmark)"
 	@echo "  reproduce      Full primary benchmark run: datasets → chunks → index → labels → obj1-primary → obj1-score"

@@ -1,5 +1,5 @@
 """
-Build chunk_manifest.json from corpus_clean documents.
+Build chunk_manifest.json from corpus documents.
 
 Per document:
   - Always produces fixed-v1 chunks (used by configs A–C).
@@ -21,7 +21,7 @@ from pathlib import Path
 
 CHUNK_SIZE = 450
 CHUNKER_VERSION = "ast-v1"
-CORPUS_CLEAN_DIR = Path("data/corpus_clean")
+CORPUS_DIR = Path("data/corpus")
 META_DIR = Path("data/corpus_meta")
 
 
@@ -182,9 +182,9 @@ def chunk_document(doc: dict) -> tuple[list[dict], list[dict], list[dict], bool]
 def main() -> None:
     META_DIR.mkdir(parents=True, exist_ok=True)
 
-    doc_files = sorted(CORPUS_CLEAN_DIR.glob("*.json"))
+    doc_files = sorted(CORPUS_DIR.glob("*.json"))
     if not doc_files:
-        print(f"No documents found in {CORPUS_CLEAN_DIR}", file=sys.stderr)
+        print(f"No documents found in {CORPUS_DIR}", file=sys.stderr)
         sys.exit(1)
 
     all_chunks: list[dict] = []

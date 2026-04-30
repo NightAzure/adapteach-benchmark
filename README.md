@@ -18,8 +18,7 @@ adapteach-benchmark/
 │   └── results/            # Generated score CSVs (git-ignored)
 ├── configs/                # Pipeline configs A–F + defaults.yaml
 ├── data/
-│   ├── corpus_clean/       # 101 cleaned corpus documents (JSON)
-│   ├── corpus_raw/         # Raw scraped source documents
+│   ├── corpus/             # 100 corpus documents (JSON)
 │   ├── corpus_meta/        # Chunk manifest, corpus manifest, stats
 │   └── snapshots/          # Frozen chunk snapshots for index building
 ├── scripts/                # Utility scripts (corpus scraper)
@@ -87,7 +86,7 @@ python bench/fetch_datasets.py --mode refresh --sources cs1qa mbpp
 
 ### Corpus Documents
 
-The 101 documents in `data/corpus_clean/` were assembled from multiple public sources:
+The 100 documents in `data/corpus/` were assembled from multiple public sources:
 
 | Source | License | Notes |
 |--------|---------|-------|
@@ -108,12 +107,12 @@ If you need to rebuild the corpus from scratch (e.g., for a derivative project):
 
 ```bash
 pip install requests beautifulsoup4
-python scripts/scrape_corpus.py --out-dir data/corpus_raw/scraped/ --sources all
+python scripts/scrape_corpus.py --out-dir data/corpus/ --sources all
 ```
 
 The scraper fetches from the same public URLs with rate limiting (1.2 s between requests).
 Post-scraping, the AI-edited enhancements to individual documents are not reproducible
-from the scraper alone — those edits exist only in `data/corpus_clean/`.
+from the scraper alone — those edits exist only in `data/corpus/`.
 
 ---
 

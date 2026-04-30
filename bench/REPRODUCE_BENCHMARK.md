@@ -122,7 +122,9 @@ disabled intentionally due to upstream format inconsistency.
 
 ## Step 2: Build Chunk Manifest
 
-Parse the corpus into retrievable chunks (AST-based for code, fixed-size for text):
+Parse the corpus into retrievable chunks (AST-based for code, fixed-size for text).
+
+> **Note:** `data/corpus/` ships pre-populated with 100 documents. No ingest step is needed — run the command below directly.
 
 ```bash
 make chunks
@@ -538,7 +540,7 @@ These values are hardcoded in the pipeline and match the reported experimental s
 
 ### Corpus Documents
 
-The corpus in `data/corpus_clean/` was assembled from multiple public sources:
+The corpus in `data/corpus/` was assembled from multiple public sources:
 
 | Source | License | Count | Redistribution |
 |--------|---------|-------|----------------|
@@ -555,17 +557,17 @@ appropriate for a CS1 tutoring context. The AI-editing step augmented chapters t
 primarily prose with inline code demonstrations tied to the queried concept tags.
 
 **Redistribution restriction:** Because a significant portion of the corpus derives from
-CC BY-NC-SA and CC BY-NC licensed works, **the full `data/corpus_clean/` directory cannot
+CC BY-NC-SA and CC BY-NC licensed works, **the full `data/corpus/` directory cannot
 be redistributed in derivative projects or used in commercial applications without explicit
 permission from the original authors** (Al Sweigart for ATBS; Allen Downey for Think Python).
 
-**To rebuild the raw corpus from scratch:**
+**To rebuild the corpus from scratch:**
 
 ```bash
 pip install requests beautifulsoup4
-python scripts/scrape_corpus.py --out-dir data/corpus_raw/scraped/ --sources all
+python scripts/scrape_corpus.py --out-dir data/corpus/ --sources all
 ```
 
 Available source targets: `python_docs`, `atbs`, `think_python`, or `all`.
-The scraper applies rate limiting (1.2 s per request). The AI-edited cleaning step
-is not reproducible from the scraper alone — those edits exist only in `data/corpus_clean/`.
+The scraper applies rate limiting (1.2 s per request). The AI-edited enhancements
+are not reproducible from the scraper alone — those edits exist only in `data/corpus/`.

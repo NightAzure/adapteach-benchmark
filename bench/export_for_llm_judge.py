@@ -19,7 +19,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CORPUS_DIR = ROOT / "data" / "corpus_clean"
+CORPUS_DIR = ROOT / "data" / "corpus"
 MANIFEST_PATH = ROOT / "data" / "corpus_meta" / "chunk_manifest.json"
 LABELS_DIR = ROOT / "bench" / "labels"
 OUT_DIR = ROOT / "bench" / "llm_judge" / "input"

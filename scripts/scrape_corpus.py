@@ -1,6 +1,6 @@
 """
 Corpus scraper for AdapTeach — downloads Python educational content from
-open-licensed sources and saves them in the corpus_raw JSON format.
+open-licensed sources and saves them in the corpus JSON format.
 
 Sources:
   - Python official tutorial (PSF Documentation License)
@@ -8,9 +8,9 @@ Sources:
   - Think Python 2e (CC BY-NC 3.0)
 
 Usage:
-  py scripts/scrape_corpus.py --out-dir data/corpus_raw/scraped/ --sources all
-  py scripts/scrape_corpus.py --out-dir data/corpus_raw/scraped/ --sources python_docs
-  py scripts/scrape_corpus.py --out-dir data/corpus_raw/scraped/ --sources atbs think_python
+  py scripts/scrape_corpus.py --out-dir data/corpus/ --sources all
+  py scripts/scrape_corpus.py --out-dir data/corpus/ --sources python_docs
+  py scripts/scrape_corpus.py --out-dir data/corpus/ --sources atbs think_python
 """
 
 from __future__ import annotations
@@ -554,7 +554,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Scrape Python educational corpus")
     parser.add_argument(
         "--out-dir",
-        default="data/corpus_raw/scraped/",
+        default="data/corpus/",
         help="Output directory for scraped JSON files",
     )
     parser.add_argument(
