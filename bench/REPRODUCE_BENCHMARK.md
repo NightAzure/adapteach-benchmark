@@ -146,20 +146,19 @@ Chunk parameters (hardcoded):
 
 ## Step 3: Build Retrieval Indexes
 
-Build the vector (dense) and BM25 keyword indexes from the frozen corpus snapshot:
+Build the vector (dense) and BM25 keyword indexes from the chunk manifest:
 
 ```bash
 make index
-# or: python -m src.indexing.build_indexes --snapshot-id 1538fae68752ebed
+# or: python -m src.indexing.build_indexes
 ```
 
-The snapshot ID `1538fae68752ebed` identifies the exact frozen version of the corpus used
-in the reported results. Do not change this unless you are building a new corpus version.
+The index ID is derived automatically from the chunker and embedder versions — no manual ID needed.
 
 Outputs written to `indexes/<index_id>/`:
 - `vector_index.json` — semantic embeddings (all-MiniLM-L6-v2, 384-dim, L2-normalized)
 - `bm25_index.json` — BM25 parameters (k1=1.2, b=0.75), token index, document frequencies
-- `manifest.json` — index metadata (snapshot_id, embedder version, creation timestamp)
+- `manifest.json` — index metadata (chunker version, embedder version, creation timestamp)
 - `build_log.json` — build status and file paths
 
 **Embedder fallback:** If `sentence-transformers` fails to load (e.g., missing PyTorch),
@@ -480,7 +479,7 @@ The `--delay 7.0` is recommended for the Gemini free tier to avoid rate limit er
 | `make setup` | Install dependencies from requirements.lock |
 | `make datasets` | Validate shipped query files |
 | `make chunks` | Build chunk manifest from corpus |
-| `make index` | Build vector + BM25 indexes (snapshot 1538fae68752ebed) |
+| `make index` | Build vector + BM25 indexes from chunk manifest |
 | `make labels` | Build silver labels (primary benchmark / custom dataset) |
 | `make reproduce` | Full primary run: datasets → chunks → index → labels → obj1-primary → obj1-score |
 | `make obj1-primary` | Run Obj1 with primary benchmark spec (all configs, custom queries) |
@@ -506,7 +505,6 @@ These values are hardcoded in the pipeline and match the reported experimental s
 
 | Parameter | Value | Location |
 |-----------|-------|----------|
-| Corpus snapshot ID | `1538fae68752ebed` | Makefile, `config.yaml` |
 | Chunk size | 450 characters | `bench/build_chunks.py` |
 | Retrieval top-k | 5 | `config.yaml` |
 | RRF fusion k | 5 | `config.yaml` |

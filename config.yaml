@@ -18,8 +18,6 @@ retrieval:
   rerank_weights:
     retrieval: 0.7
     graph: 0.3
-  corpus_snapshot: 1538fae68752ebed
-  index_hash: 760e73c3d474f0174c9c2ab9d104180487a8b0f6a368a513b832b52b32d91238
 
 pipelines:
   active: E

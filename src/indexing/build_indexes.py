@@ -232,16 +232,14 @@ def build_bm25_index(chunks: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-def _index_hash_payload(snapshot_id: str, chunker_version: str, embedder_version: str) -> dict[str, str]:
+def _index_hash_payload(chunker_version: str, embedder_version: str) -> dict[str, str]:
     return {
-        "snapshot_id": snapshot_id,
         "chunker_version": chunker_version,
         "embedder_version": embedder_version,
     }
 
 
 def build_indexes(
-    snapshot_id: str,
     meta_dir: Path = Path("data/corpus_meta"),
     indexes_dir: Path = Path("indexes"),
     embedder_version: str = "minilm-v2",
@@ -257,7 +255,7 @@ def build_indexes(
     vector_index = build_vector_index(chunks, embedder_version=embedder_version, batch_size=batch_size)
     bm25_index = build_bm25_index(chunks)
 
-    hash_payload = _index_hash_payload(snapshot_id, chunker_version, embedder_version)
+    hash_payload = _index_hash_payload(chunker_version, embedder_version)
     index_hash = hashlib.sha256(json.dumps(hash_payload, sort_keys=True).encode("utf-8")).hexdigest()
     index_id = index_hash[:16]
     index_dir = indexes_dir / index_id
@@ -268,7 +266,6 @@ def build_indexes(
     manifest = {
         "index_id": index_id,
         "index_hash": index_hash,
-        "snapshot_id": snapshot_id,
         "chunker_version": chunker_version,
         "embedder_version": embedder_version,
         "created_at": datetime.now(timezone.utc).isoformat(),
@@ -294,7 +291,6 @@ def build_indexes(
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Build deterministic vector+BM25 indexes")
-    parser.add_argument("--snapshot-id", required=True)
     parser.add_argument("--meta-dir", default="data/corpus_meta")
     parser.add_argument("--indexes-dir", default="indexes")
     parser.add_argument("--embedder-version", default="minilm-v2")
@@ -305,7 +301,6 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     out = build_indexes(
-        snapshot_id=args.snapshot_id,
         meta_dir=Path(args.meta_dir),
         indexes_dir=Path(args.indexes_dir),
         embedder_version=args.embedder_version,

@@ -1,5 +1,4 @@
 PYTHON ?= python
-SNAPSHOT_ID ?= 1538fae68752ebed
 
 .PHONY: help setup chunks index datasets labels reproduce \
         obj1-primary obj1-full obj1-score obj1-smoke obj2 test
@@ -10,7 +9,7 @@ help:
 	@echo "  setup          Install dependencies from requirements.lock"
 	@echo "  datasets       Validate shipped query files"
 	@echo "  chunks         Build chunk_manifest.json from corpus/ (AST + text fallback)"
-	@echo "  index          Build vector indexes for snapshot $(SNAPSHOT_ID)"
+	@echo "  index          Build vector + BM25 indexes from chunk manifest"
 	@echo "  labels         Build deterministic silver labels (primary benchmark)"
 	@echo "  reproduce      Full primary benchmark run: datasets → chunks → index → labels → obj1-primary → obj1-score"
 	@echo ""
@@ -34,7 +33,7 @@ chunks:
 	$(PYTHON) bench/build_chunks.py
 
 index:
-	$(PYTHON) -m src.indexing.build_indexes --snapshot-id $(SNAPSHOT_ID)
+	$(PYTHON) -m src.indexing.build_indexes
 
 labels:
 	$(PYTHON) bench/build_silver_labels.py --benchmark bench/benchmarks/obj1_primary.yaml
