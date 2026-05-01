@@ -55,8 +55,21 @@ def main() -> None:
 
     query_total = 0
     query_counts: dict[str, int] = {}
+
+    # Pre-count totals for progress display
+    all_datasets = spec.get('datasets', [])
+    total_runs = 0
+    for dataset in all_datasets:
+        query_file = ROOT / dataset['query_file']
+        rows = read_jsonl(query_file)
+        n = min(len(rows), args.sample_per_dataset) if args.sample_per_dataset > 0 else len(rows)
+        total_runs += n * len(configs)
+
+    completed = 0
+    run_start = time.perf_counter()
+
     with run_path.open('w', encoding='utf-8') as handle:
-        for dataset in spec.get('datasets', []):
+        for dataset in all_datasets:
             dataset_name = dataset['name']
             query_file = ROOT / dataset['query_file']
             query_rows = read_jsonl(query_file)
@@ -87,8 +100,18 @@ def main() -> None:
                         'response': response,
                         'record': record,
                     }, ensure_ascii=False) + '\n')
+                    completed += 1
+                    elapsed = time.perf_counter() - run_start
+                    eta = (elapsed / completed) * (total_runs - completed) if completed else 0
+                    print(
+                        f"\r[{completed}/{total_runs}] dataset={dataset_name} config={cfg_name} "
+                        f"elapsed={elapsed:.0f}s eta={eta:.0f}s",
+                        end='', flush=True, file=sys.stderr,
+                    )
                     if args.delay > 0 and dry_run == 'none':
                         time.sleep(args.delay)
+
+    print(file=sys.stderr)
 
     manifest = {
         'benchmark': bench_name,
