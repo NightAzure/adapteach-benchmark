@@ -97,37 +97,32 @@ def load_silver_labels() -> list[dict]:
 # ---------------------------------------------------------------------------
 
 JUDGE_SYSTEM = (
-    "You are a relevance judge. You will be given query-chunk pairs. "
-    "For each pair, output ONLY a score: 0, 1, or 2. Nothing else."
+    "You are a relevance scoring tool. "
+    "You output ONLY CSV lines in the format: row_id,score — nothing else. "
+    "Score: 0=not relevant, 1=partially relevant, 2=directly relevant. "
+    "No explanations. No headers. No markdown. Just the CSV lines."
 )
 
 JUDGE_PROMPT_TEMPLATE = """\
-Score each row for relevance. Return ONLY a CSV block — no intro, no explanation, no summary.
+Score each row below. For each row output exactly: row_id,score
+Score meaning: 0=not relevant 1=partial 2=directly relevant
+Output ONLY the csv lines, nothing else.
 
-Scoring:
-  0 = Not relevant
-  1 = Partially relevant
-  2 = Directly relevant
-
-Return format (no header, inside a code block):
-```csv
-row_id,llm_score
-```
-
-Input rows:
 {rows_csv}
 """
 
 
 def call_ollama(base_url: str, model: str, prompt: str, timeout: int = 120) -> str:
-    url = base_url.rstrip("/") + "/api/generate"
+    url = base_url.rstrip("/") + "/api/chat"
     payload = {
         "model": model,
-        "system": JUDGE_SYSTEM,
-        "prompt": prompt,
         "stream": False,
         "think": False,
         "options": {"temperature": 0},
+        "messages": [
+            {"role": "system", "content": JUDGE_SYSTEM},
+            {"role": "user", "content": prompt},
+        ],
     }
     req = urllib.request.Request(
         url,
@@ -138,8 +133,7 @@ def call_ollama(base_url: str, model: str, prompt: str, timeout: int = 120) -> s
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             body = json.loads(resp.read().decode("utf-8"))
-        # /api/generate returns "response"; /api/chat returns "message.content"
-        text = body.get("response") or body.get("message", {}).get("content", "")
+        text = body.get("message", {}).get("content", "")
         return str(text).strip()
     except urllib.error.URLError as e:
         raise RuntimeError(f"Ollama unreachable at {base_url} — is it running? ({e})") from e
