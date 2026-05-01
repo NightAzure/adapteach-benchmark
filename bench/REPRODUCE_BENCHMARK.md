@@ -334,10 +334,10 @@ files ready for `import_llm_scores.py`.
 
 | Model | Pull command | VRAM needed | Notes |
 |-------|-------------|-------------|-------|
-| `qwen3.6:27b` | `ollama pull qwen3.6:27b` | ~17 GB | Latest Qwen release (May 2026) |
-| `qwen3.5:27b` | `ollama pull qwen3.5:27b` | ~17 GB | Strong instruction following |
-| `qwen3.5:9b`  | `ollama pull qwen3.5:9b`  | ~7 GB  | Fast; good for testing |
-| `llama3.3:70b`| `ollama pull llama3.3:70b`| ~43 GB | Highest accuracy |
+| `qwen3.5:9b`  | `ollama pull qwen3.5:9b`  | ~7 GB  | **Recommended** — fits on 16GB GPU, fast |
+| `qwen3.6:27b` | `ollama pull qwen3.6:27b` | ~17 GB | Latest Qwen; requires 20GB+ VRAM |
+| `qwen3.5:27b` | `ollama pull qwen3.5:27b` | ~17 GB | Strong; requires 20GB+ VRAM |
+| `llama3.3:70b`| `ollama pull llama3.3:70b`| ~43 GB | Highest accuracy; requires 48GB+ VRAM |
 
 **Step 1 — Pull a model and start Ollama**
 

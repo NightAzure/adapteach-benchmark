@@ -24,12 +24,12 @@ circular evaluation.
 > To validate that the lexically-constructed labels are not systematically misaligned
 > with semantic relevance, we cross-validate them against two independent signals.
 > First, an LLM-as-judge procedure: for each query-chunk pair in the custom dataset,
-> we prompt [GPT-4 / Gemini 1.5 Pro — fill in whichever you used] to independently
-> score chunk relevance on a 0–2 scale (0 = not relevant, 1 = partially relevant,
-> 2 = directly relevant). We measure Cohen's κ between the LLM scores and our silver
-> labels across all [N] pairs. Second, as a supplementary check, we compute Spearman ρ
-> between the silver label ranking and cosine similarity rankings from all-MiniLM-L6-v2
-> over the top-10 retrieved chunks per query.
+> we prompt [name the model you used, e.g. Qwen3.6-27B / GPT-4o / Gemini 1.5 Pro] to
+> independently score chunk relevance on a 0–2 scale (0 = not relevant, 1 = partially
+> relevant, 2 = directly relevant). We measure Cohen's κ between the LLM scores and our
+> silver labels across all [N] pairs. Second, as a supplementary check, we compute
+> Spearman ρ between the silver label ranking and cosine similarity rankings from
+> all-MiniLM-L6-v2 over the top-10 retrieved chunks per query.
 
 **Then add the results inline or in a table:**
 
@@ -63,7 +63,7 @@ circular evaluation.
 **Add a sentence noting the validation scripts are available in the reproducibility package:**
 
 > Label validation scripts and per-query agreement statistics are included in the
-> benchmark repository (`bench/export_for_llm_judge.py`, `bench/import_llm_scores.py`,
+> benchmark repository (`bench/run_llm_judge.py`, `bench/import_llm_scores.py`,
 > `bench/validate_silver_labels.py`).
 
 ---
@@ -74,7 +74,7 @@ Add a small table or inline values:
 
 | Validation method | Metric | Value |
 |-------------------|--------|-------|
-| LLM-as-judge (GPT-4 / Gemini) | Cohen's κ | [fill in] |
+| LLM-as-judge ([model name]) | Cohen's κ | [fill in] |
 | Semantic cross-validation | Mean Spearman ρ | [fill in] |
 | Semantic cross-validation | Queries with ρ > 0.60 | [fill in %] |
 
@@ -84,7 +84,8 @@ Add a small table or inline values:
 
 | File | Purpose |
 |------|---------|
-| `bench/export_for_llm_judge.py` | Exports batched CSVs for manual LLM judging |
+| `bench/run_llm_judge.py` | Automated LLM judging via local Ollama (recommended) |
+| `bench/export_for_llm_judge.py` | Exports batched CSVs for manual LLM judging (ChatGPT / Gemini) |
 | `bench/import_llm_scores.py` | Imports LLM scores, computes Cohen's κ |
 | `bench/validate_silver_labels.py` | Semantic cross-validation via Spearman ρ |
 | `bench/REPRODUCE_BENCHMARK.md` | Updated with Step 6b validation instructions |

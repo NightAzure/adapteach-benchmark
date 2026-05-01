@@ -36,8 +36,8 @@ MANIFEST_PATH = ROOT / "data" / "corpus_meta" / "chunk_manifest.json"
 SCORES_DIR = ROOT / "bench" / "llm_judge" / "scores"
 
 CHUNK_SIZE = 450
-DEFAULT_MODEL = "qwen3.5:27b"
-DEFAULT_BATCH_SIZE = 50
+DEFAULT_MODEL = "qwen3.5:9b"
+DEFAULT_BATCH_SIZE = 30
 MAX_CHUNK_CHARS = 400
 
 
@@ -146,11 +146,17 @@ def call_ollama(base_url: str, model: str, prompt: str, timeout: int = 120) -> s
 # Response parsing
 # ---------------------------------------------------------------------------
 
-def parse_scores(response: str, expected_ids: list[str]) -> dict[str, int]:
-    """Extract row_id,score pairs from model response. Handles code blocks and bare CSV."""
-    # Prefer content inside ```csv ... ``` block
-    block_match = re.search(r"```(?:csv)?\s*\n(.*?)```", response, re.DOTALL)
-    raw = block_match.group(1) if block_match else response
+def parse_scores(response: str, expected_ids: list[str], debug: bool = False) -> dict[str, int]:
+    """Extract row_id,score pairs from model response."""
+    # Strip Qwen3 thinking blocks <think>...</think>
+    cleaned = re.sub(r"<think>.*?</think>", "", response, flags=re.DOTALL).strip()
+
+    if debug:
+        print(f"\n--- RAW RESPONSE ---\n{response[:1000]}\n--- END ---", file=sys.stderr)
+
+    # Prefer content inside ```csv ... ``` or ``` ... ``` block
+    block_match = re.search(r"```(?:csv)?\s*\n(.*?)```", cleaned, re.DOTALL)
+    raw = block_match.group(1) if block_match else cleaned
 
     scores: dict[str, int] = {}
     for line in raw.splitlines():
@@ -161,7 +167,7 @@ def parse_scores(response: str, expected_ids: list[str]) -> dict[str, int]:
         if len(parts) >= 2:
             row_id = parts[0].strip()
             try:
-                score = int(parts[1].strip())
+                score = int(parts[-1].strip())
                 if score in (0, 1, 2):
                     scores[row_id] = score
             except ValueError:
@@ -184,6 +190,7 @@ def run(
     batch_size: int,
     resume: bool,
     timeout: int,
+    debug: bool = False,
 ) -> None:
     print("Building chunk lookup...")
     chunk_lookup = build_chunk_lookup()
@@ -274,7 +281,7 @@ def run(
             print(f"\nFATAL: {e}")
             sys.exit(1)
 
-        scores = parse_scores(response, expected_ids)
+        scores = parse_scores(response, expected_ids, debug=debug)
         all_scores.update(scores)
 
         # Write batch score file
@@ -299,10 +306,12 @@ def parse_args() -> argparse.Namespace:
                         help="Ollama base URL (default: http://localhost:11434)")
     parser.add_argument("--batch-size", type=int, default=DEFAULT_BATCH_SIZE,
                         help=f"Pairs per Ollama call (default: {DEFAULT_BATCH_SIZE})")
-    parser.add_argument("--timeout", type=int, default=180,
+    parser.add_argument("--timeout", type=int, default=600,
                         help="Seconds to wait per Ollama call (default: 180)")
     parser.add_argument("--resume", action="store_true",
                         help="Skip batches whose output file already exists")
+    parser.add_argument("--debug", action="store_true",
+                        help="Print raw model response for the first batch (for diagnosing parse failures)")
     return parser.parse_args()
 
 
@@ -314,6 +323,7 @@ def main() -> None:
         batch_size=args.batch_size,
         resume=args.resume,
         timeout=args.timeout,
+        debug=args.debug,
     )
 
 
