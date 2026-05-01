@@ -2,18 +2,30 @@ from __future__ import annotations
 
 import hashlib
 import json
+import warnings
 from pathlib import Path
 from typing import Any
 
 import yaml
 
 
-def read_jsonl(path: Path) -> list[dict[str, Any]]:
+def read_jsonl(path: Path, *, skip_invalid: bool = False) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    for line in path.read_bytes().decode('utf-8').splitlines():
+    for line_no, line in enumerate(path.read_bytes().decode('utf-8').splitlines(), start=1):
         line = line.strip()
         if line:
-            rows.append(json.loads(line))
+            try:
+                rows.append(json.loads(line))
+            except json.JSONDecodeError as exc:
+                preview = line[:160]
+                message = (
+                    f"Invalid JSONL in {path} at line {line_no}, "
+                    f"column {exc.colno}: {exc.msg}. "
+                    f"Line preview: {preview!r}"
+                )
+                if not skip_invalid:
+                    raise ValueError(message) from exc
+                warnings.warn(f"{message}; skipping line", RuntimeWarning)
     return rows
 
 

@@ -56,7 +56,7 @@ def latest_run(runs_dir: Path) -> Path | None:
 
 def load_retrieved_chunks(run_file: Path) -> dict[str, set[tuple[str, str]]]:
     """Return {query_id: set of (chunk_id, doc_id)} retrieved across all configs."""
-    rows = read_jsonl(run_file)
+    rows = read_jsonl(run_file, skip_invalid=True)
     result: dict[str, set[tuple[str, str]]] = defaultdict(set)
     for row in rows:
         qid = row.get("query_id", "")
