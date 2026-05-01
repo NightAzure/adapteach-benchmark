@@ -28,7 +28,7 @@
     },
     "retrieval": {
       "type": "object",
-      "required": ["chunking", "k", "fusion", "rerank_weights", "corpus_snapshot", "index_hash"],
+      "required": ["chunking", "k", "fusion", "rerank_weights"],
       "properties": {
         "chunking": { "type": "string", "minLength": 1 },
         "k": { "type": "integer", "minimum": 1 },
@@ -41,9 +41,7 @@
             "graph": { "type": "number" }
           },
           "additionalProperties": false
-        },
-        "corpus_snapshot": { "type": "string", "minLength": 1 },
-        "index_hash": { "type": "string", "minLength": 1 }
+        }
       },
       "additionalProperties": false
     },
