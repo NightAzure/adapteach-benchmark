@@ -128,7 +128,6 @@ def export(batch_size: int, max_chunk_chars: int) -> None:
             "query_text": query,
             "chunk_id": chunk_id,
             "chunk_text": truncated,
-            "silver_label": relevance,
         })
 
     if missing:
@@ -139,7 +138,7 @@ def export(batch_size: int, max_chunk_chars: int) -> None:
     n_batches = (total + batch_size - 1) // batch_size
     print(f"\nWriting {total} rows across {n_batches} batch file(s) → {OUT_DIR}")
 
-    fieldnames = ["row_id", "query_id", "query_text", "chunk_id", "chunk_text", "silver_label"]
+    fieldnames = ["row_id", "query_id", "query_text", "chunk_id", "chunk_text"]
 
     for i in range(n_batches):
         batch = rows_out[i * batch_size : (i + 1) * batch_size]
@@ -162,35 +161,39 @@ def export(batch_size: int, max_chunk_chars: int) -> None:
 
 
 PROMPT_TEXT = """
-You are an expert relevance judge for an educational Python programming assistant.
+TASK: Score each row in the attached CSV for relevance. Output ONLY a CSV — no intro, no explanation, no summary.
 
-I will give you a CSV file. Each row contains:
-- row_id: a unique identifier
-- query_text: a learner's question about Python programming
-- chunk_text: a passage from an educational document
+=== INPUT FORMAT ===
+The CSV has these columns:
+  row_id        — unique identifier, copy this exactly into your output
+  query_text    — a learner's Python programming question
+  chunk_text    — a passage from an educational document
 
-Your task: judge how relevant each chunk is to its query.
-
-Scoring rubric:
-  0 = Not relevant — the chunk does not address the query topic
+=== SCORING RUBRIC ===
+  0 = Not relevant     — chunk does not address the query topic at all
   1 = Partially relevant — related topic but does not directly answer the query
-  2 = Directly relevant — the chunk answers or strongly supports the query
+  2 = Directly relevant  — chunk answers or strongly supports the query
 
-Rules:
-- Read BOTH the query and the chunk before scoring
-- Focus on whether the chunk helps answer the specific question asked
-- Ignore formatting or length — judge only relevance of content
-- Be consistent: same relevance level → same score
+=== OUTPUT FORMAT ===
+Return a code block containing ONLY these two columns, one row per input row, NO header line:
 
-Output format — return ONLY a CSV with exactly these two columns, no header, nothing else:
+```csv
 row_id,llm_score
+```
 
-Example output:
+Example (your entire response should look exactly like this):
+```csv
 obj1-dev-001__text-abc123,2
 obj1-dev-001__text-def456,0
 obj1-dev-002__text-ghi789,1
+```
 
-Do not explain, summarize, or add any other text. Only the CSV rows.
+STRICT RULES:
+- Every row_id from the input must appear exactly once in your output
+- Scores must be exactly 0, 1, or 2 — no decimals, no other values
+- Do NOT include a header row
+- Do NOT write anything outside the code block
+- Do NOT summarize, explain, or comment
 """
 
 
