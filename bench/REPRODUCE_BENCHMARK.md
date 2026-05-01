@@ -314,47 +314,106 @@ provided. Both are optional but strongly recommended before reporting results.
 
 ### Option A: LLM-as-Judge cross-validation (primary)
 
-Uses an external LLM (ChatGPT or Gemini) to independently score chunk relevance for each
-query-chunk pair. Agreement with silver labels is measured via Cohen's κ.
+Uses an LLM to independently score chunk relevance for each query-chunk pair.
+Agreement with silver labels is measured via Cohen's κ.
 
 **κ ≥ 0.60** = substantial independent validation, cite as methodological support.
 **κ 0.40–0.60** = moderate agreement, acknowledge as a limitation.
 **κ < 0.40** = weak alignment, consider revising labels.
 
-#### Step 1 — Export judging batches
+Two sub-options are provided: **automated local** (recommended) and **manual external**.
+
+---
+
+#### Option A1: Automated local judging via Ollama (recommended)
+
+Fully automated — no copy-pasting. Calls a local Ollama model directly and writes score
+files ready for `import_llm_scores.py`.
+
+**Recommended models** (pull one first):
+
+| Model | Pull command | VRAM needed | Notes |
+|-------|-------------|-------------|-------|
+| `qwen3.6:27b` | `ollama pull qwen3.6:27b` | ~17 GB | Latest Qwen release (May 2026) |
+| `qwen3.5:27b` | `ollama pull qwen3.5:27b` | ~17 GB | Strong instruction following |
+| `qwen3.5:9b`  | `ollama pull qwen3.5:9b`  | ~7 GB  | Fast; good for testing |
+| `llama3.3:70b`| `ollama pull llama3.3:70b`| ~43 GB | Highest accuracy |
+
+**Step 1 — Pull a model and start Ollama**
 
 ```bash
-python bench/export_for_llm_judge.py
+ollama pull qwen3.6:27b
+ollama serve   # if not already running
 ```
 
-Outputs written to `bench/llm_judge/input/`:
-- `judge_input_batch_01.csv` through `judge_input_batch_09.csv` (80 rows each)
-- `../PROMPT.txt` — instructions to paste into ChatGPT / Gemini
+**Step 2 — Run the automated judge**
 
-Each CSV has columns: `row_id, query_id, query_text, chunk_id, chunk_text, silver_label`
-(chunk text is truncated to 300 characters to fit within chat context windows).
+```bash
+python bench/run_llm_judge.py --model qwen3.6:27b
+```
 
-#### Step 2 — Run each batch through ChatGPT or Gemini
+Shows live progress with ETA. Writes `judge_scores_batch_XX.csv` directly to
+`bench/llm_judge/scores/`. If interrupted, use `--resume` to skip completed batches:
 
-For each batch file:
-1. Open ChatGPT (GPT-4 or above) or Gemini 1.5 Pro / 2.0 Flash
-2. Upload `judge_input_batch_XX.csv` as a file attachment
-3. Paste the full contents of `PROMPT.txt` as your message
-4. The model returns only two-column CSV rows: `row_id,llm_score`
-5. Copy the response and save it as `judge_scores_batch_XX.csv` in `bench/llm_judge/scores/`
+```bash
+python bench/run_llm_judge.py --model qwen3.6:27b --resume
+```
 
-The prompt instructs the model to return **only** bare CSV rows with no headers or
-explanation. GPT-4 and Gemini 1.5+ follow this reliably. If stray text appears,
-`import_llm_scores.py` skips non-numeric lines automatically.
+**CLI flags:**
 
-#### Step 3 — Compute Cohen's κ
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--model` | `qwen3.5:27b` | Ollama model tag |
+| `--ollama-url` | `http://localhost:11434` | Ollama server URL |
+| `--batch-size` | `50` | Pairs per Ollama call |
+| `--timeout` | `180` | Seconds per call before timeout |
+| `--resume` | off | Skip batches whose output file already exists |
+
+**Step 3 — Compute Cohen's κ**
 
 ```bash
 python bench/import_llm_scores.py
 ```
 
-Reads all `judge_scores_batch_*.csv` from `bench/llm_judge/scores/`, merges with silver
-labels by `row_id`, and prints agreement statistics.
+---
+
+#### Option A2: Manual judging via ChatGPT or Gemini
+
+Use this if you do not have Ollama or a GPU available.
+
+**Step 1 — Export judging batches**
+
+```bash
+python bench/export_for_llm_judge.py --batch-size 200
+```
+
+Outputs written to `bench/llm_judge/input/`:
+- `judge_input_batch_01.csv`, `judge_input_batch_02.csv`, … (200 rows each)
+- `../PROMPT.txt` — instructions to paste into the chat interface
+
+Each CSV has columns: `row_id, query_id, query_text, chunk_id, chunk_text`
+(chunk text truncated to 300 characters to fit within chat context windows).
+
+**Step 2 — Run each batch through a chat LLM**
+
+For each batch file:
+1. Open ChatGPT (GPT-4o or above) or Gemini 1.5 Pro / 2.0 Flash
+2. Upload `judge_input_batch_XX.csv` as a file attachment
+3. Paste the full contents of `PROMPT.txt` as your message
+4. Copy the CSV code block from the response
+5. Save it as `judge_scores_batch_XX.csv` in `bench/llm_judge/scores/`
+
+**Step 3 — Compute Cohen's κ**
+
+```bash
+python bench/import_llm_scores.py
+```
+
+---
+
+Regardless of which option is used, `import_llm_scores.py` reads all
+`judge_scores_batch_*.csv` from `bench/llm_judge/scores/`, merges with silver labels
+by `row_id`, and prints agreement statistics.
 
 Output written to `bench/results/llm_judge_summary.json`:
 - `cohens_kappa` — primary agreement metric
@@ -493,7 +552,8 @@ The `--delay 7.0` is recommended for the Gemini free tier to avoid rate limit er
 
 | Script | Description |
 |--------|-------------|
-| `python bench/export_for_llm_judge.py` | Export batched CSVs for manual LLM judging |
+| `python bench/run_llm_judge.py` | **Automated** local LLM judging via Ollama (recommended) |
+| `python bench/export_for_llm_judge.py` | Export batched CSVs for manual judging (ChatGPT / Gemini) |
 | `python bench/import_llm_scores.py` | Import LLM scores and compute Cohen's κ |
 | `python bench/validate_silver_labels.py` | Semantic cross-validation (Spearman ρ) |
 
