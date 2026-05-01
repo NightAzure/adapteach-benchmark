@@ -170,9 +170,11 @@ Expected runtime: ~5 minutes on CPU with sentence-transformers loaded.
 
 ---
 
-## Step 4: Build Silver Labels
+## Step 4: Build Candidate Labels (Silver Labels)
 
-Generate deterministic relevance labels for all query-chunk pairs:
+Generate lexical candidate labels used as input to the qrels pipeline (Step 6b).
+These are **not** the final ground-truth labels — they serve as the silver-positive
+source in the judging pool. Final ground truth comes from the LLM judge in Step 6b.
 
 **Primary benchmark (custom dataset only — recommended for initial runs):**
 
@@ -195,19 +197,17 @@ Outputs written to `bench/labels/`:
 
 **Label schema:** `query_id, query, chunk_id, doc_id, relevance, silver_score, label_source, notes`
 
-**Relevance scale:**
-- `2` — Highly relevant (top 2 scoring chunks per query)
-- `1` — Relevant (next 4 scoring chunks per query)
-- `0` — Not relevant (below threshold)
-
 **Scoring signals (hardcoded weights):**
 - Lexical F1 (text overlap): 55%
 - Title overlap: 25%
 - Topic match (concept tags): 35%
 - Category bonuses, chunk length/type bonuses applied on top
 
-Minimum score to receive any label: **0.20**. Labels are fully deterministic — identical
-results on every run given the same chunk manifest.
+Minimum score threshold: **0.55** (used in Step 6b pool building). Labels are fully
+deterministic — identical results on every run given the same chunk manifest.
+
+> **Note:** `make reproduce` uses these silver labels directly for a quick initial
+> scoring pass. For the final paper results, run Step 6b to build LLM-validated qrels.
 
 ---
 
@@ -268,12 +268,24 @@ Written to `bench/runs/`:
 
 ## Step 6: Score Objective 1
 
-Score the latest run against silver labels, compute metrics, and run significance tests:
+Score the latest run against relevance labels, compute metrics, and run significance tests.
+
+**Quick pass against silver labels** (before running Step 6b):
 
 ```bash
 make obj1-score
 # or: python bench/score_obj1.py --reference-config B
 ```
+
+**Final paper results against LLM-validated qrels** (after Step 6b):
+
+```bash
+python bench/score_obj1.py --reference-config B --labels-dir bench/labels
+```
+
+`score_obj1.py` reads all `*.csv` files in `--labels-dir` matching `silver_labels_*` or
+`qrels_*`. After running Step 6b, both will be present; qrels take precedence for any
+query_id that appears in both (last-write-wins in the labels dict).
 
 ### CLI flags for score_obj1.py
 
@@ -281,7 +293,7 @@ make obj1-score
 |------|---------|-------------|
 | `--run-file` | (latest in bench/runs/) | Specific run JSONL to score |
 | `--runs-dir` | `bench/runs/` | Directory to find latest run |
-| `--labels-dir` | `bench/labels/` | Directory with silver label CSVs |
+| `--labels-dir` | `bench/labels/` | Directory with label CSVs (silver or qrels) |
 | `--reference-config` | `B` | Config used as significance test baseline |
 | `--out-dir` | `bench/results/obj1_latest/` | Output directory |
 | `--seed` | `13` | Random seed for bootstrap/randomization tests |
@@ -305,30 +317,51 @@ Written to `bench/results/obj1_latest/`:
 
 ---
 
-## Step 6b: Validate Silver Label Quality (Recommended)
+## Step 6b: Build LLM-Validated Qrels (Recommended)
 
-Silver labels are generated using a lexical scoring function (keyword overlap, title match,
-concept tags). To address the circularity concern — where keyword-based labels could
-systematically favour keyword-based retrievers — two independent validation checks are
-provided. Both are optional but strongly recommended before reporting results.
+The lexical silver labels are used only as a candidate nominator. Final ground-truth
+relevance labels come from a blind LLM judge scoring a four-source pool that includes
+positives, hard negatives, retrieved chunks from every config, and random negatives.
+This eliminates circularity: dense and semantic retrievers get credit for chunks the
+lexical scorer would have missed.
 
-### Option A: LLM-as-Judge cross-validation (primary)
-
-Uses an LLM to independently score chunk relevance for each query-chunk pair.
-Agreement with silver labels is measured via Cohen's κ.
-
-**κ ≥ 0.60** = substantial independent validation, cite as methodological support.
-**κ 0.40–0.60** = moderate agreement, acknowledge as a limitation.
-**κ < 0.40** = weak alignment, consider revising labels.
-
-Two sub-options are provided: **automated local** (recommended) and **manual external**.
+**Full pipeline:**
+```
+build_judge_pool.py → run_llm_judge.py → build_qrels.py → score_obj1.py
+```
 
 ---
 
-#### Option A1: Automated local judging via Ollama (recommended)
+### Step 1 — Build the judging pool
 
-Fully automated — no copy-pasting. Calls a local Ollama model directly and writes score
-files ready for `import_llm_scores.py`.
+```bash
+python bench/build_judge_pool.py --benchmark bench/benchmarks/obj1_full.yaml
+```
+
+Reads the latest run file from `bench/runs/` automatically. Outputs
+`bench/judge_pool/pool.csv` with columns:
+`query_id, query_text, dataset, chunk_id, doc_id, chunk_text, source, silver_score`
+
+Pool sources per query:
+- `silver_positive` — chunks rated ≥ 0.55 by lexical scorer
+- `hard_negative` — top-3 topic-matching chunks rejected by lexical scorer
+- `retrieved` — all chunks retrieved by any config in the run file
+- `random_negative` — 2 randomly sampled chunks with no topic connection
+
+**CLI flags:**
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--benchmark` | `bench/benchmarks/obj1_full.yaml` | Benchmark spec |
+| `--run-file` | latest in `bench/runs/` | Run JSONL to extract retrieved chunks |
+| `--min-score` | `0.55` | Lexical score threshold for silver positives |
+| `--n-hard-neg` | `3` | Hard negatives per query |
+| `--n-random-neg` | `2` | Random negatives per query |
+| `--seed` | `42` | Random seed for reproducibility |
+
+---
+
+### Step 2 — Score the pool with a local LLM
 
 **Recommended models** (pull one first):
 
@@ -339,98 +372,84 @@ files ready for `import_llm_scores.py`.
 | `qwen3.5:27b` | `ollama pull qwen3.5:27b` | ~17 GB | Strong; requires 20GB+ VRAM |
 | `llama3.3:70b`| `ollama pull llama3.3:70b`| ~43 GB | Highest accuracy; requires 48GB+ VRAM |
 
-**Step 1 — Pull a model and start Ollama**
-
 ```bash
-ollama pull qwen3.6:27b
-ollama serve   # if not already running
+ollama pull qwen3.5:9b
+python bench/run_llm_judge.py --model qwen3.5:9b --pool-file bench/judge_pool/pool.csv
 ```
 
-**Step 2 — Run the automated judge**
+Shows live progress with ETA. If interrupted, resume without re-scoring completed batches:
 
 ```bash
-python bench/run_llm_judge.py --model qwen3.6:27b
-```
-
-Shows live progress with ETA. Writes `judge_scores_batch_XX.csv` directly to
-`bench/llm_judge/scores/`. If interrupted, use `--resume` to skip completed batches:
-
-```bash
-python bench/run_llm_judge.py --model qwen3.6:27b --resume
+python bench/run_llm_judge.py --model qwen3.5:9b --pool-file bench/judge_pool/pool.csv --resume
 ```
 
 **CLI flags:**
 
 | Flag | Default | Description |
 |------|---------|-------------|
-| `--model` | `qwen3.5:27b` | Ollama model tag |
-| `--ollama-url` | `http://localhost:11434` | Ollama server URL |
-| `--batch-size` | `50` | Pairs per Ollama call |
-| `--timeout` | `180` | Seconds per call before timeout |
+| `--model` | `qwen3.5:9b` | Ollama model tag |
+| `--pool-file` | *(empty)* | Pool CSV from build_judge_pool.py (use this for qrels) |
+| `--batch-size` | `30` | Pairs per Ollama call |
+| `--timeout` | `600` | Seconds per call before timeout |
 | `--resume` | off | Skip batches whose output file already exists |
-
-**Step 3 — Compute Cohen's κ**
-
-```bash
-python bench/import_llm_scores.py
-```
 
 ---
 
-#### Option A2: Manual judging via ChatGPT or Gemini
+### Step 3 — Build qrels from LLM scores
 
-Use this if you do not have Ollama or a GPU available.
+```bash
+python bench/build_qrels.py
+```
 
-**Step 1 — Export judging batches**
+Reads `bench/judge_pool/pool.csv` and all `judge_scores_batch_*.csv` files.
+Outputs one file per dataset in `bench/labels/`:
+- `bench/labels/qrels_custom.csv`
+- `bench/labels/qrels_cs1qa.csv`
+- `bench/labels/qrels_mbpp.csv`
+- `bench/labels/qrels_staqc.csv`
+
+Schema matches `silver_labels_*.csv` exactly — `score_obj1.py` can read them directly.
+Only pairs with relevance ≥ 1 are written (zeros are implicit).
+
+---
+
+### Step 4 — Re-score Objective 1 against qrels
+
+```bash
+python bench/score_obj1.py --reference-config B --labels-dir bench/labels
+```
+
+`score_obj1.py` will now load the `qrels_*.csv` files alongside any remaining
+`silver_labels_*.csv` files. To use qrels exclusively, either remove or rename
+the old silver label files, or point `--labels-dir` to a directory containing
+only the qrels.
+
+---
+
+### Alternative: Manual judging via ChatGPT or Gemini
+
+If you do not have Ollama available, export the pool as batched CSVs for manual scoring:
 
 ```bash
 python bench/export_for_llm_judge.py --batch-size 200
 ```
 
-Outputs written to `bench/llm_judge/input/`:
-- `judge_input_batch_01.csv`, `judge_input_batch_02.csv`, … (200 rows each)
-- `../PROMPT.txt` — instructions to paste into the chat interface
+Then follow the manual workflow in `bench/llm_judge/input/PROMPT.txt`.
+After collecting scores, run `build_qrels.py` as above.
 
-Each CSV has columns: `row_id, query_id, query_text, chunk_id, chunk_text`
-(chunk text truncated to 300 characters to fit within chat context windows).
+---
 
-**Step 2 — Run each batch through a chat LLM**
+### Diagnostic: Cohen's κ against silver labels
 
-For each batch file:
-1. Open ChatGPT (GPT-4o or above) or Gemini 1.5 Pro / 2.0 Flash
-2. Upload `judge_input_batch_XX.csv` as a file attachment
-3. Paste the full contents of `PROMPT.txt` as your message
-4. Copy the CSV code block from the response
-5. Save it as `judge_scores_batch_XX.csv` in `bench/llm_judge/scores/`
-
-**Step 3 — Compute Cohen's κ**
+To measure how much the LLM judge disagreed with the old silver labels (useful for
+reporting in the manuscript limitations section):
 
 ```bash
 python bench/import_llm_scores.py
 ```
 
----
-
-Regardless of which option is used, `import_llm_scores.py` reads all
-`judge_scores_batch_*.csv` from `bench/llm_judge/scores/`, merges with silver labels
-by `row_id`, and prints agreement statistics.
-
-Output written to `bench/results/llm_judge_summary.json`:
-- `cohens_kappa` — primary agreement metric
-- `pct_exact_agreement` — fraction of pairs with identical scores
-- `pct_within_one` — fraction of pairs within 1 score point
-- `score_distribution` — label distribution for both raters
-- `disagreement_breakdown` — count of each silver→llm discrepancy pattern
-
-**CLI flags for import_llm_scores.py:**
-
-| Flag | Default | Description |
-|------|---------|-------------|
-| `--scores-dir` | `bench/llm_judge/scores/` | Directory with judge score CSVs |
-| `--out` | `bench/results/llm_judge_summary.json` | Summary output path |
-
-**Dependencies:** `scikit-learn` (for `cohen_kappa_score`). If not installed, κ is
-computed via a built-in fallback — no additional install required.
+Output: `bench/results/llm_judge_summary.json` with Cohen's κ, exact agreement,
+and disagreement breakdown. This is diagnostic only — the qrels are the ground truth.
 
 ---
 
@@ -552,10 +571,12 @@ The `--delay 7.0` is recommended for the Gemini free tier to avoid rate limit er
 
 | Script | Description |
 |--------|-------------|
-| `python bench/run_llm_judge.py` | **Automated** local LLM judging via Ollama (recommended) |
-| `python bench/export_for_llm_judge.py` | Export batched CSVs for manual judging (ChatGPT / Gemini) |
-| `python bench/import_llm_scores.py` | Import LLM scores and compute Cohen's κ |
-| `python bench/validate_silver_labels.py` | Semantic cross-validation (Spearman ρ) |
+| `python bench/build_judge_pool.py` | Build 4-source judging pool (positives + hard/random negatives + retrieved) |
+| `python bench/run_llm_judge.py --pool-file bench/judge_pool/pool.csv` | Score pool with local Ollama LLM |
+| `python bench/build_qrels.py` | Merge LLM scores → per-dataset qrels CSVs (ground truth for scoring) |
+| `python bench/import_llm_scores.py` | Diagnostic: Cohen's κ between LLM scores and silver labels |
+| `python bench/export_for_llm_judge.py` | Export batched CSVs for manual judging (ChatGPT / Gemini fallback) |
+| `python bench/validate_silver_labels.py` | Supplementary: semantic cross-validation (Spearman ρ) |
 
 ---
 
@@ -575,7 +596,10 @@ These values are hardcoded in the pipeline and match the reported experimental s
 | Embedding fallback | Hash-based (64-dim) | `src/indexing/build_indexes.py` |
 | Silver label high-k | 2 (relevance = 2) | `bench/build_silver_labels.py` |
 | Silver label mid-k | 4 (relevance = 1) | `bench/build_silver_labels.py` |
-| Silver label min-score | 0.20 | `bench/build_silver_labels.py` |
+| Silver label min-score | 0.55 (candidate pool threshold) | `bench/build_judge_pool.py` |
+| Judge pool hard negatives | 3 per query | `bench/build_judge_pool.py` |
+| Judge pool random negatives | 2 per query | `bench/build_judge_pool.py` |
+| Judge pool random seed | 42 | `bench/build_judge_pool.py` |
 | Bootstrap CI iterations | 2000 | `bench/score_obj1.py` |
 | Significance test iterations | 5000 | `bench/score_obj1.py` |
 | Random seed | 13 | `bench/score_obj1.py` |

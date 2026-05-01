@@ -92,6 +92,28 @@ def load_silver_labels() -> list[dict]:
     return rows
 
 
+def load_from_pool(pool_file: Path) -> list[dict]:
+    """Load judging rows from a pre-built pool CSV (bench/build_judge_pool.py output).
+
+    The pool CSV has columns: query_id, query_text, chunk_id, chunk_text (already truncated).
+    Returns list of dicts with keys: row_id, query_text, chunk_text — same shape as
+    the rows_to_score list built from silver labels.
+    """
+    rows: list[dict] = []
+    with pool_file.open(encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            query_id = row.get("query_id", "")
+            chunk_id = row.get("chunk_id", "")
+            if not query_id or not chunk_id:
+                continue
+            rows.append({
+                "row_id": f"{query_id}__{chunk_id}",
+                "query_text": row.get("query_text", ""),
+                "chunk_text": row.get("chunk_text", ""),
+            })
+    return rows
+
+
 # ---------------------------------------------------------------------------
 # Ollama call
 # ---------------------------------------------------------------------------
@@ -189,37 +211,45 @@ def run(
     resume: bool,
     timeout: int,
     debug: bool = False,
+    pool_file: Path | None = None,
 ) -> None:
-    print("Building chunk lookup...")
-    chunk_lookup = build_chunk_lookup()
-    print(f"  {len(chunk_lookup):,} chunks indexed")
+    if pool_file and pool_file.exists():
+        print(f"Loading judging pool from: {pool_file}")
+        rows_to_score = load_from_pool(pool_file)
+        print(f"  {len(rows_to_score):,} pairs loaded from pool")
+    else:
+        if pool_file:
+            print(f"Warning: Pool file not found ({pool_file}), falling back to silver labels.")
+        print("Building chunk lookup...")
+        chunk_lookup = build_chunk_lookup()
+        print(f"  {len(chunk_lookup):,} chunks indexed")
 
-    print("Loading silver labels...")
-    labels = load_silver_labels()
-    print(f"  {len(labels):,} labeled pairs")
+        print("Loading silver labels...")
+        labels = load_silver_labels()
+        print(f"  {len(labels):,} labeled pairs")
 
-    # Build rows to score (same logic as export_for_llm_judge.py)
-    rows_to_score: list[dict] = []
-    missing = 0
-    for label in labels:
-        qid = label["query_id"]
-        query = label["query"]
-        chunk_id = label.get("chunk_id", "")
-        content = chunk_lookup.get(chunk_id)
-        if not content:
-            missing += 1
-            continue
-        truncated = content[:MAX_CHUNK_CHARS]
-        if len(content) > MAX_CHUNK_CHARS:
-            truncated += "…"
-        rows_to_score.append({
-            "row_id": f"{qid}__{chunk_id}",
-            "query_text": query,
-            "chunk_text": truncated,
-        })
+        # Build rows to score (same logic as export_for_llm_judge.py)
+        rows_to_score = []
+        missing = 0
+        for label in labels:
+            qid = label["query_id"]
+            query = label["query"]
+            chunk_id = label.get("chunk_id", "")
+            content = chunk_lookup.get(chunk_id)
+            if not content:
+                missing += 1
+                continue
+            truncated = content[:MAX_CHUNK_CHARS]
+            if len(content) > MAX_CHUNK_CHARS:
+                truncated += "…"
+            rows_to_score.append({
+                "row_id": f"{qid}__{chunk_id}",
+                "query_text": query,
+                "chunk_text": truncated,
+            })
 
-    if missing:
-        print(f"  Warning: {missing} pairs had no chunk content (skipped)")
+        if missing:
+            print(f"  Warning: {missing} pairs had no chunk content (skipped)")
 
     SCORES_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -310,11 +340,18 @@ def parse_args() -> argparse.Namespace:
                         help="Skip batches whose output file already exists")
     parser.add_argument("--debug", action="store_true",
                         help="Print raw model response for the first batch (for diagnosing parse failures)")
+    parser.add_argument("--pool-file", default="",
+                        help="Path to pool.csv from build_judge_pool.py; when provided and the file exists, "
+                             "score from the pool instead of silver labels")
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
+    pool_file = Path(args.pool_file) if args.pool_file else None
+    # Resolve relative paths against ROOT
+    if pool_file and not pool_file.is_absolute():
+        pool_file = ROOT / pool_file
     run(
         model=args.model,
         base_url=args.ollama_url,
@@ -322,6 +359,7 @@ def main() -> None:
         resume=args.resume,
         timeout=args.timeout,
         debug=args.debug,
+        pool_file=pool_file,
     )
 
 
