@@ -2,30 +2,50 @@ from __future__ import annotations
 
 import hashlib
 import json
-import warnings
 from pathlib import Path
 from typing import Any
 
 import yaml
 
 
-def read_jsonl(path: Path, *, skip_invalid: bool = False) -> list[dict[str, Any]]:
+def _escape_newlines_in_strings(text: str) -> str:
+    """Escape literal newlines/carriage-returns that appear inside JSON strings.
+
+    Valid JSON forbids unescaped control characters in strings (RFC 7159 §7).
+    If a writer emitted them anyway, splitlines() breaks the record across
+    multiple file lines and json.loads fails.  This pass fixes the raw text
+    before parsing so the rest of read_jsonl can stay simple.
+    """
+    out: list[str] = []
+    in_string = False
+    escaped = False
+    for ch in text:
+        if escaped:
+            out.append(ch)
+            escaped = False
+        elif ch == '\\' and in_string:
+            out.append(ch)
+            escaped = True
+        elif ch == '"':
+            in_string = not in_string
+            out.append(ch)
+        elif in_string and ch == '\n':
+            out.append('\\n')
+        elif in_string and ch == '\r':
+            out.append('\\r')
+        else:
+            out.append(ch)
+    return ''.join(out)
+
+
+def read_jsonl(path: Path) -> list[dict[str, Any]]:
+    raw = path.read_bytes().decode('utf-8', errors='replace')
+    fixed = _escape_newlines_in_strings(raw)
     rows: list[dict[str, Any]] = []
-    for line_no, line in enumerate(path.read_bytes().decode('utf-8').splitlines(), start=1):
+    for line in fixed.splitlines():
         line = line.strip()
         if line:
-            try:
-                rows.append(json.loads(line))
-            except json.JSONDecodeError as exc:
-                preview = line[:160]
-                message = (
-                    f"Invalid JSONL in {path} at line {line_no}, "
-                    f"column {exc.colno}: {exc.msg}. "
-                    f"Line preview: {preview!r}"
-                )
-                if not skip_invalid:
-                    raise ValueError(message) from exc
-                warnings.warn(f"{message}; skipping line", RuntimeWarning)
+            rows.append(json.loads(line))
     return rows
 
 
