@@ -126,6 +126,7 @@ def call_ollama(base_url: str, model: str, prompt: str, timeout: int = 120) -> s
         "system": JUDGE_SYSTEM,
         "prompt": prompt,
         "stream": False,
+        "think": False,
         "options": {"temperature": 0},
     }
     req = urllib.request.Request(
@@ -137,7 +138,9 @@ def call_ollama(base_url: str, model: str, prompt: str, timeout: int = 120) -> s
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             body = json.loads(resp.read().decode("utf-8"))
-        return str(body.get("response", "")).strip()
+        # /api/generate returns "response"; /api/chat returns "message.content"
+        text = body.get("response") or body.get("message", {}).get("content", "")
+        return str(text).strip()
     except urllib.error.URLError as e:
         raise RuntimeError(f"Ollama unreachable at {base_url} — is it running? ({e})") from e
 
@@ -152,7 +155,8 @@ def parse_scores(response: str, expected_ids: list[str], debug: bool = False) ->
     cleaned = re.sub(r"<think>.*?</think>", "", response, flags=re.DOTALL).strip()
 
     if debug:
-        print(f"\n--- RAW RESPONSE ---\n{response[:1000]}\n--- END ---", file=sys.stderr)
+        preview = response[:2000] if response else "(empty)"
+        print(f"\n--- RAW RESPONSE ({len(response)} chars) ---\n{preview}\n--- END ---", file=sys.stderr)
 
     # Prefer content inside ```csv ... ``` or ``` ... ``` block
     block_match = re.search(r"```(?:csv)?\s*\n(.*?)```", cleaned, re.DOTALL)
