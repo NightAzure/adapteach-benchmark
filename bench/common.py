@@ -10,7 +10,7 @@ import yaml
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    for line in path.read_text(encoding='utf-8').splitlines():
+    for line in path.read_bytes().decode('utf-8').splitlines():
         line = line.strip()
         if line:
             rows.append(json.loads(line))
@@ -19,7 +19,7 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
 
 def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open('w', encoding='utf-8') as handle:
+    with path.open('w', encoding='utf-8', newline='\n') as handle:
         for row in rows:
             handle.write(json.dumps(row, ensure_ascii=False) + '\n')
 
