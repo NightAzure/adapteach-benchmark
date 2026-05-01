@@ -15,10 +15,18 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    for line in path.read_text(encoding='utf-8').splitlines():
-        line = line.strip()
-        if line:
-            rows.append(json.loads(line))
+    with path.open('r', encoding='utf-8', newline='') as f:
+        buf = ''
+        for raw_line in f:
+            buf += raw_line
+            try:
+                obj = json.loads(buf.strip())
+                rows.append(obj)
+                buf = ''
+            except json.JSONDecodeError:
+                pass  # line was split by embedded newline — accumulate and retry
+    if buf.strip():
+        rows.append(json.loads(buf.strip()))
     return rows
 
 

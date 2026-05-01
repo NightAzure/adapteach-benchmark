@@ -68,7 +68,7 @@ def main() -> None:
     completed = 0
     run_start = time.perf_counter()
 
-    with run_path.open('w', encoding='utf-8') as handle:
+    with run_path.open('w', encoding='utf-8', newline='\n') as handle:
         for dataset in all_datasets:
             dataset_name = dataset['name']
             query_file = ROOT / dataset['query_file']
