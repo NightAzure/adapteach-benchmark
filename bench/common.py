@@ -41,11 +41,22 @@ def _escape_newlines_in_strings(text: str) -> str:
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
     raw = path.read_bytes().decode('utf-8', errors='replace')
     fixed = _escape_newlines_in_strings(raw)
+    lines = [l.strip() for l in fixed.split('\n') if l.strip()]
     rows: list[dict[str, Any]] = []
-    for line in fixed.splitlines():
-        line = line.strip()
-        if line:
+    for i, line in enumerate(lines):
+        try:
             rows.append(json.loads(line))
+        except json.JSONDecodeError as exc:
+            # Truncated last line from an interrupted write — skip with warning.
+            if i == len(lines) - 1:
+                import warnings
+                warnings.warn(
+                    f"read_jsonl: skipping truncated last line in {path.name} "
+                    f"(char {exc.pos}): {line[:80]!r}…",
+                    stacklevel=2,
+                )
+            else:
+                raise
     return rows
 
 
