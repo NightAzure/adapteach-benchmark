@@ -212,6 +212,7 @@ def run(
     timeout: int,
     debug: bool = False,
     pool_file: Path | None = None,
+    retries: int = 2,
 ) -> None:
     if pool_file and pool_file.exists():
         print(f"Loading judging pool from: {pool_file}")
@@ -310,6 +311,30 @@ def run(
             sys.exit(1)
 
         scores = parse_scores(response, expected_ids, debug=debug)
+
+        # Retry rows the model dropped, up to `retries` times.
+        missing_rows = [r for r in batch if r["row_id"] not in scores]
+        for attempt in range(retries):
+            if not missing_rows:
+                break
+            print(f"\n    retrying {len(missing_rows)} missing rows (attempt {attempt + 1}/{retries}) ...", end=" ", flush=True)
+            retry_ids = [r["row_id"] for r in missing_rows]
+            retry_csv_lines = ["row_id,query_text,chunk_text"]
+            for r in missing_rows:
+                query_safe = r["query_text"].replace('"', '""').replace("\n", " ")
+                chunk_safe = r["chunk_text"].replace('"', '""').replace("\n", " ")
+                retry_csv_lines.append(f'"{r["row_id"]}","{query_safe}","{chunk_safe}"')
+            retry_prompt = JUDGE_PROMPT_TEMPLATE.format(rows_csv="\n".join(retry_csv_lines))
+            try:
+                retry_response = call_ollama(base_url, model, retry_prompt, timeout=timeout)
+            except RuntimeError as e:
+                print(f"\nFATAL: {e}")
+                sys.exit(1)
+            retry_scores = parse_scores(retry_response, retry_ids, debug=debug)
+            scores.update(retry_scores)
+            missing_rows = [r for r in missing_rows if r["row_id"] not in scores]
+            print(f"recovered {len(retry_scores)}/{len(retry_ids)}", end="")
+
         all_scores.update(scores)
 
         # Write batch score file
@@ -318,7 +343,7 @@ def run(
                 score = scores.get(row_id, "")
                 f.write(f"{row_id},{score}\n")
 
-        print(f"scored {len(scores)}/{len(expected_ids)}")
+        print(f"\n  scored {len(scores)}/{len(expected_ids)}")
 
     total_scored = sum(1 for v in all_scores.values() if isinstance(v, int))
     print(f"\nDone. {total_scored}/{total} pairs scored.")
@@ -338,6 +363,8 @@ def parse_args() -> argparse.Namespace:
                         help="Seconds to wait per Ollama call (default: 180)")
     parser.add_argument("--resume", action="store_true",
                         help="Skip batches whose output file already exists")
+    parser.add_argument("--retries", type=int, default=2,
+                        help="Times to retry rows missing from a batch response (default: 2)")
     parser.add_argument("--debug", action="store_true",
                         help="Print raw model response for the first batch (for diagnosing parse failures)")
     parser.add_argument("--pool-file", default="",
@@ -360,6 +387,7 @@ def main() -> None:
         timeout=args.timeout,
         debug=args.debug,
         pool_file=pool_file,
+        retries=args.retries,
     )
 
 
