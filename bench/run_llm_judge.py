@@ -126,11 +126,17 @@ JUDGE_SYSTEM = (
 )
 
 JUDGE_PROMPT_TEMPLATE = """\
-Score each row below. For each row output exactly: row_id,score
-Score meaning: 0=not relevant 1=partial 2=directly relevant
-Output ONLY the csv lines, nothing else.
+Below is a table of query-chunk pairs to score for relevance.
+Score: 0=not relevant, 1=partially relevant, 2=directly relevant.
 
+### INPUT (do NOT echo this back)
 {rows_csv}
+
+### OUTPUT INSTRUCTIONS
+For every row_id above, output exactly one line: row_id,score
+Do NOT include the query or chunk text. Do NOT add headers. Example:
+some-row-id__chunk-abc,2
+another-row-id__chunk-def,0
 """
 
 
