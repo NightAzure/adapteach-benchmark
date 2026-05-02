@@ -178,6 +178,7 @@ def parse_scores(response: str, expected_ids: list[str], debug: bool = False) ->
     block_match = re.search(r"```(?:csv)?\s*\n(.*?)```", cleaned, re.DOTALL)
     raw = block_match.group(1) if block_match else cleaned
 
+    expected_set = set(expected_ids)
     scores: dict[str, int] = {}
     for line in raw.splitlines():
         line = line.strip()
@@ -185,7 +186,9 @@ def parse_scores(response: str, expected_ids: list[str], debug: bool = False) ->
             continue
         parts = line.split(",")
         if len(parts) >= 2:
-            row_id = parts[0].strip()
+            row_id = parts[0].strip().strip('"')
+            if row_id not in expected_set:
+                continue  # ignore hallucinated or header row_ids
             try:
                 score = int(parts[-1].strip())
                 if score in (0, 1, 2):
@@ -332,8 +335,9 @@ def run(
                 sys.exit(1)
             retry_scores = parse_scores(retry_response, retry_ids, debug=debug)
             scores.update(retry_scores)
+            newly_recovered = sum(1 for rid in retry_ids if rid in retry_scores)
             missing_rows = [r for r in missing_rows if r["row_id"] not in scores]
-            print(f"recovered {len(retry_scores)}/{len(retry_ids)}", end="")
+            print(f"recovered {newly_recovered}/{len(retry_ids)}", end="")
 
         all_scores.update(scores)
 
