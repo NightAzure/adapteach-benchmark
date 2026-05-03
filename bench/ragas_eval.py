@@ -305,19 +305,30 @@ def run_eval(
             continue
 
         if test_ar:
-            probe = samples[:5]
+            from langchain_core.callbacks import BaseCallbackHandler
+
+            class _LLMLogger(BaseCallbackHandler):
+                def on_llm_end(self, response, **kwargs):
+                    for gen_list in response.generations:
+                        for gen in gen_list:
+                            text = getattr(gen, "text", "") or ""
+                            print(f"    [LLM raw] {text[:300]!r}")
+
+            probe = samples[:2]
             print(f"  [--test-ar] Running answer_relevancy on {len(probe)} samples from config {cfg}...")
+            print(f"  Sample 0 answer (first 200 chars): {probe[0].response[:200]!r}")
             probe_dataset = EvaluationDataset(samples=probe)
             probe_result = evaluate(
                 probe_dataset,
                 metrics=[answer_relevancy],
                 show_progress=False,
-                raise_exceptions=False,
+                raise_exceptions=True,
+                callbacks=[_LLMLogger()],
             )
             probe_df = probe_result.to_pandas()
             for i, row in probe_df.iterrows():
-                print(f"    sample {i}: answer_relevancy={row.get('answer_relevancy', 'N/A'):.4f}  "
-                      f"q={probe[i].user_input[:60]!r}")
+                score = row.get("answer_relevancy", float("nan"))
+                print(f"    sample {i}: answer_relevancy={score:.4f}  q={probe[i].user_input[:60]!r}")
             mean_val = probe_df["answer_relevancy"].mean(skipna=True) if "answer_relevancy" in probe_df.columns else float("nan")
             print(f"  mean answer_relevancy = {mean_val:.4f}")
             return
