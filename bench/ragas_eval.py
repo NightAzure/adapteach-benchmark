@@ -289,9 +289,18 @@ def run_eval(
     golden = _load_golden(golden_path)
     run_rows = _load_jsonl(run_file)
 
+    # Pre-filter to only queries that have a golden entry — everything else
+    # is silently skipped later anyway, so evaluating it wastes time.
+    golden_ids = set(golden.keys())
+    run_rows_filtered = [r for r in run_rows if (r.get("query_id") or r.get("id", "")) in golden_ids]
+    dropped = len(run_rows) - len(run_rows_filtered)
+    print(f"Golden set: {len(golden_ids)} queries. "
+          f"Run file: {len(run_rows)} rows → {len(run_rows_filtered)} rows match golden "
+          f"({dropped} without golden entry skipped before evaluation).")
+
     # Group rows by config
     by_config: dict[str, list[dict]] = defaultdict(list)
-    for row in run_rows:
+    for row in run_rows_filtered:
         cfg = row.get("config", "?")
         if configs and cfg not in configs:
             continue
@@ -319,13 +328,13 @@ def run_eval(
             if not isinstance(response, str):
                 response = ""
             contexts = [] if is_config_a else _contexts_from_record(row)
-            reference = golden.get(qid, "")
+            reference = golden[qid]  # guaranteed present after pre-filter
 
             sample = SingleTurnSample(
                 user_input=query,
                 response=response,
                 retrieved_contexts=contexts,
-                reference=reference if reference else None,
+                reference=reference,
             )
             samples.append(sample)
 
