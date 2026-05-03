@@ -34,7 +34,7 @@ def parse_args() -> argparse.Namespace:
     evaluate.add_argument('--api-key', default='')
     evaluate.add_argument('--configs', default='A,B,D,E,F')
     evaluate.add_argument('--timeout', type=int, default=600)
-    evaluate.add_argument('--gemini-rpm', type=int, default=15)
+    evaluate.add_argument('--gemini-rpm', type=int, default=8)
     return parser.parse_args()
 
 

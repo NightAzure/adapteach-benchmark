@@ -221,7 +221,7 @@ def run_eval(
             from langchain_google_genai import ChatGoogleGenerativeAI
             evaluator_llm = LangchainLLMWrapper(
                 ChatGoogleGenerativeAI(
-                    model="gemini-2.5-flash",
+                    model="gemini-2.5-flash-lite",
                     temperature=0.0,
                     google_api_key=api_key,
                     rate_limiter=InMemoryRateLimiter(
@@ -236,6 +236,7 @@ def run_eval(
     faithfulness.llm = evaluator_llm
     answer_relevancy.llm = evaluator_llm
     answer_relevancy.embeddings = evaluator_embeddings
+    answer_relevancy.strictness = 1
     context_precision.llm = evaluator_llm
     context_recall.llm = evaluator_llm
 
