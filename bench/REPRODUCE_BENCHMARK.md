@@ -386,7 +386,7 @@ python bench/run_obj1.py \
 
 This produces `bench/runs/run_<timestamp>_obj1_primary.jsonl` with 720 rows (120 queries × 6 configs A–F) including generated answers. Note the exact filename — you will pass it to Sub-steps B and C.
 
-Estimated time: ~30–60 minutes on the Gemini free tier (15 RPM limit). Use `--delay 4` if you hit rate limit errors.
+Estimated time: ~30–60 minutes on the Gemini free tier (10 RPM limit). Use `--delay 6` if you hit rate limit errors.
 
 ---
 
@@ -401,7 +401,8 @@ python bench/run_obj2.py build-golden \
   --run-file bench/runs/run_<timestamp>_obj1_primary.jsonl \
   --out bench/results/golden_custom.jsonl \
   --provider gemini \
-  --api-key $GEMINI_API_KEY
+  --api-key $GEMINI_API_KEY \
+  --delay 7
 ```
 
 Replace `<timestamp>` with the actual filename from Sub-step A.
@@ -418,7 +419,7 @@ python bench/run_obj2.py evaluate \
   --provider gemini \
   --api-key $GEMINI_API_KEY \
   --configs A,B,C,D,E,F \
-  --gemini-rpm 15
+  --gemini-rpm 60
 ```
 
 RAGAS evaluates only queries present in the golden file (~120 samples). Each config runs sequentially; progress is checkpointed to the CSV after each config — if interrupted, re-running skips already-completed configs automatically.
@@ -432,7 +433,7 @@ RAGAS evaluates only queries present in the golden file (~120 samples). Each con
 
 Config A reports only `answer_relevancy` (no retrieved contexts to evaluate).
 
-**Rate limit note:** The Gemini free tier allows 15 RPM. RAGAS makes ~6 sequential LLM calls per sample — at 120 samples × 5 configs (B–F), this is ~3,600 calls; allow several hours or spread across days. The resume checkpoint means you can stop and continue anytime.
+**Rate limit note:** `--gemini-rpm 60` is appropriate for paid tier (flash-lite supports ~1,000 RPM). RAGAS's own sequential processing per sample is the real throughput ceiling — setting higher won't speed things up. On free tier (30 RPM for flash-lite), use `--gemini-rpm 25` instead.
 
 To reduce load or speed up a partial re-run, limit to specific configs:
 
@@ -500,11 +501,11 @@ These values are hardcoded in the pipeline and match the reported experimental s
 | Significance test iterations | 5000 | `bench/score_obj1.py` |
 | Random seed | 13 | `bench/score_obj1.py` |
 | Obj1 judge model | `qwen3.5:9b` (Ollama) | `bench/run_llm_judge.py` |
-| Obj2 eval model | `gemini-2.5-flash` | `bench/ragas_eval.py` |
-| Obj2 golden model | `gemini-2.5-flash` | `bench/ragas_eval.py` |
+| Obj2 eval model | `gemini-2.5-flash-lite` (RAGAS judge) | `bench/ragas_eval.py` |
+| Obj2 golden model | `gemini-2.5-flash` (golden generation) | `bench/ragas_eval.py` |
 | Obj2 RAGAS batch size | 4 samples per batch | `bench/ragas_eval.py` |
 | Obj2 max contexts per sample | 3 | `bench/ragas_eval.py` |
-| Obj2 default Gemini RPM | 15 | `bench/run_obj2.py` |
+| Obj2 default Gemini RPM | 60 (paid tier); use 25 on free tier | `bench/run_obj2.py` |
 | Ollama base URL | `http://localhost:11434` | `.env` |
 
 ---

@@ -185,7 +185,8 @@ def run_eval(
     from ragas.llms import LangchainLLMWrapper
     from ragas import SingleTurnSample, EvaluationDataset, evaluate
     from ragas.run_config import RunConfig
-    from ragas.metrics import faithfulness, answer_relevancy, context_precision, context_recall
+    from ragas.metrics import faithfulness, AnswerRelevancy, context_precision, context_recall
+    answer_relevancy = AnswerRelevancy(strictness=1)
 
     class _STEmbeddings:
         def __init__(self, model_name: str):
@@ -236,7 +237,6 @@ def run_eval(
     faithfulness.llm = evaluator_llm
     answer_relevancy.llm = evaluator_llm
     answer_relevancy.embeddings = evaluator_embeddings
-    answer_relevancy.strictness = 1
     context_precision.llm = evaluator_llm
     context_recall.llm = evaluator_llm
 
