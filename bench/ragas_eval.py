@@ -233,6 +233,7 @@ def run_eval(
     import warnings
     from ragas.llms import LangchainLLMWrapper
     from ragas import SingleTurnSample, EvaluationDataset, evaluate
+    from ragas.run_config import RunConfig
     # Use OLD-style metric instances — the new ragas.metrics.collections classes
     # inherit from SimpleBaseMetric, which is NOT a subclass of the Metric ABC
     # that evaluate() checks. Only old-style metrics work with evaluate().
@@ -355,6 +356,7 @@ def run_eval(
                 show_progress=True,
                 raise_exceptions=False,
                 batch_size=4,
+                run_config=RunConfig(timeout=timeout, max_retries=2, max_wait=60),
             )
             df = result.to_pandas()
 
