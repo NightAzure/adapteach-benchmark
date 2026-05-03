@@ -47,11 +47,14 @@ def main() -> None:
     run_path = out_dir / f'run_{timestamp}_{bench_name}.jsonl'
     manifest_path = out_dir / f'run_{timestamp}_{bench_name}.manifest.json'
 
+    _PROVIDER_DEFAULT_MODELS = {'gemini': 'gemini-2.5-flash', 'ollama': 'mistral', 'mock': 'mock-model'}
     app_cfg = load_app_config()
     if args.provider:
         app_cfg['llm']['provider'] = args.provider
     if args.model:
         app_cfg['llm']['model'] = args.model
+    elif args.provider and args.provider in _PROVIDER_DEFAULT_MODELS:
+        app_cfg['llm']['model'] = _PROVIDER_DEFAULT_MODELS[args.provider]
 
     query_total = 0
     query_counts: dict[str, int] = {}

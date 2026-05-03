@@ -224,7 +224,7 @@ def run_eval(
                     model="gemini-2.5-flash-lite",
                     temperature=0.5,
                     google_api_key=api_key,
-                    model_kwargs={"response_mime_type": "application/json"},
+                    response_mime_type="application/json",
                     rate_limiter=InMemoryRateLimiter(
                         requests_per_second=gemini_rpm / 60,
                         check_every_n_seconds=1,
