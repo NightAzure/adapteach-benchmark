@@ -178,6 +178,7 @@ def run_eval(
     ollama_model: str = "mistral",
     timeout: int = 600,
     gemini_rpm: int = 10,
+    test_ar: bool = False,
 ) -> None:
     _require_ragas()
 
@@ -302,6 +303,24 @@ def run_eval(
         if not samples:
             print(f"  No samples for config {cfg}, skipping.")
             continue
+
+        if test_ar:
+            probe = samples[:5]
+            print(f"  [--test-ar] Running answer_relevancy on {len(probe)} samples from config {cfg}...")
+            probe_dataset = EvaluationDataset(samples=probe)
+            probe_result = evaluate(
+                probe_dataset,
+                metrics=[answer_relevancy],
+                show_progress=False,
+                raise_exceptions=False,
+            )
+            probe_df = probe_result.to_pandas()
+            for i, row in probe_df.iterrows():
+                print(f"    sample {i}: answer_relevancy={row.get('answer_relevancy', 'N/A'):.4f}  "
+                      f"q={probe[i].user_input[:60]!r}")
+            mean_val = probe_df["answer_relevancy"].mean(skipna=True) if "answer_relevancy" in probe_df.columns else float("nan")
+            print(f"  mean answer_relevancy = {mean_val:.4f}")
+            return
 
         try:
             dataset = EvaluationDataset(samples=samples)

@@ -35,6 +35,8 @@ def parse_args() -> argparse.Namespace:
     evaluate.add_argument('--configs', default='A,B,D,E,F')
     evaluate.add_argument('--timeout', type=int, default=600)
     evaluate.add_argument('--gemini-rpm', type=int, default=60)
+    evaluate.add_argument('--test-ar', action='store_true',
+                          help='Run answer_relevancy on 5 samples only and print per-sample scores, then exit.')
     return parser.parse_args()
 
 
@@ -64,6 +66,7 @@ def main() -> None:
         ollama_model=args.ollama_model,
         timeout=args.timeout,
         gemini_rpm=args.gemini_rpm,
+        test_ar=args.test_ar,
     )
 
 
