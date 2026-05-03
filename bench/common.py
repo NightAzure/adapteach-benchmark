@@ -9,13 +9,6 @@ import yaml
 
 
 def _escape_newlines_in_strings(text: str) -> str:
-    """Escape literal newlines/carriage-returns that appear inside JSON strings.
-
-    Valid JSON forbids unescaped control characters in strings (RFC 7159 §7).
-    If a writer emitted them anyway, splitlines() breaks the record across
-    multiple file lines and json.loads fails.  This pass fixes the raw text
-    before parsing so the rest of read_jsonl can stay simple.
-    """
     out: list[str] = []
     in_string = False
     escaped = False
@@ -47,7 +40,6 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
         try:
             rows.append(json.loads(line))
         except json.JSONDecodeError as exc:
-            # Truncated last line from an interrupted write — skip with warning.
             if i == len(lines) - 1:
                 import warnings
                 warnings.warn(

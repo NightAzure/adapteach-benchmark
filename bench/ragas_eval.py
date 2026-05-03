@@ -1,37 +1,3 @@
-"""
-RAGAS evaluation for AdapTeach — Objective 2 comparative component analysis.
-
-Uses RAGAS 0.4.x API (tested against ragas==0.4.3).
-Primary LLM provider: Ollama (local). Gemini available via --provider gemini.
-
-Modes:
-  --build-golden   Generate ground-truth answers for your query set (run once before --eval).
-  --eval           Run RAGAS metrics across all configs in a benchmark run JSONL.
-
-Usage (Ollama — default):
-  # Step 1 — generate ground truth
-  py bench/ragas_eval.py --build-golden \\
-      --queries bench/queries_test.jsonl \\
-      --run-file bench/runs/run_<ts>.jsonl \\
-      --out bench/golden_test.jsonl
-
-  # Step 2 — evaluate
-  py bench/ragas_eval.py --eval \\
-      --run-file bench/runs/run_<ts>.jsonl \\
-      --golden bench/golden_test.jsonl \\
-      --out bench/results/ragas_results.csv
-
-Usage (Gemini fallback):
-  py bench/ragas_eval.py --build-golden --provider gemini --api-key YOUR_KEY ...
-  py bench/ragas_eval.py --eval --provider gemini --api-key YOUR_KEY ...
-
-Install (Ollama):
-  pip install "ragas==0.4.3" langchain-ollama langchain-core datasets
-
-Install (Gemini):
-  pip install "ragas==0.4.3" langchain-google-genai langchain-core datasets google-genai
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -44,14 +10,10 @@ import time
 from collections import defaultdict
 from pathlib import Path
 
-# ---------------------------------------------------------------------------
-# Lazy imports — only pulled in when actually running RAGAS so that
-# --build-golden can work with just google-generativeai installed.
-# ---------------------------------------------------------------------------
 
 def _require_ragas() -> None:
     try:
-        import ragas  # noqa: F401
+        import ragas
     except ImportError:
         raise SystemExit(
             "RAGAS not installed. Run:\n"
@@ -59,10 +21,6 @@ def _require_ragas() -> None:
             "  (or langchain-google-genai instead of langchain-ollama for --provider gemini)"
         )
 
-
-# ---------------------------------------------------------------------------
-# Load helpers
-# ---------------------------------------------------------------------------
 
 def _load_jsonl(path: Path) -> list[dict]:
     rows = []
@@ -74,19 +32,24 @@ def _load_jsonl(path: Path) -> list[dict]:
     return rows
 
 
+def _append_csv(path: Path, fieldnames: list[str], row: dict) -> None:
+    write_header = not path.exists() or path.stat().st_size == 0
+    with path.open("a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        if write_header:
+            writer.writeheader()
+        writer.writerow(row)
+
+
 def _load_golden(path: Path) -> dict[str, str]:
-    """Returns {query_id: ground_truth_answer}."""
     rows = _load_jsonl(path)
     return {r["id"]: r["ground_truth"] for r in rows if "ground_truth" in r}
 
 
-def _contexts_from_record(record: dict) -> list[str]:
-    """Extract retrieved context strings from a run record.
+_MAX_CONTEXTS = 3
 
-    Handles both flat format (context at top level) and our nested format
-    where context lives under record["response"]["context"].
-    """
-    # Nested format: response.context
+
+def _contexts_from_record(record: dict) -> list[str]:
     response = record.get("response") or {}
     context_items = response.get("context") or record.get("context") or []
     texts = []
@@ -94,12 +57,8 @@ def _contexts_from_record(record: dict) -> list[str]:
         text = item.get("text") or item.get("content") or ""
         if text:
             texts.append(text.strip())
-    return texts
+    return texts[:_MAX_CONTEXTS]
 
-
-# ---------------------------------------------------------------------------
-# Build golden dataset
-# ---------------------------------------------------------------------------
 
 def build_golden(
     queries_path: Path,
@@ -111,10 +70,6 @@ def build_golden(
     ollama_url: str = "http://localhost:11434",
     ollama_model: str = "mistral",
 ) -> None:
-    """
-    Generate ground-truth answers for each query using the configured LLM +
-    retrieved context from Config E (best config). Saves JSONL with {id, query, ground_truth}.
-    """
     import urllib.request
 
     if provider == "ollama":
@@ -144,7 +99,6 @@ def build_golden(
     queries = {r["id"]: r["query"] for r in _load_jsonl(queries_path)}
     run_rows = _load_jsonl(run_file)
 
-    # Use best available context by priority: E > F > D > C > B
     preferred_configs = ["E", "F", "D", "C", "B"]
     best_context_by_qid: dict[str, list[str]] = {}
     best_config_by_qid: dict[str, str] = {}
@@ -213,10 +167,6 @@ def build_golden(
     print(f"\nDone. Wrote {written} new ground-truth entries to {out_path}")
 
 
-# ---------------------------------------------------------------------------
-# RAGAS evaluation
-# ---------------------------------------------------------------------------
-
 def run_eval(
     run_file: Path,
     golden_path: Path,
@@ -227,6 +177,7 @@ def run_eval(
     ollama_url: str = "http://localhost:11434",
     ollama_model: str = "mistral",
     timeout: int = 600,
+    gemini_rpm: int = 10,
 ) -> None:
     _require_ragas()
 
@@ -234,13 +185,9 @@ def run_eval(
     from ragas.llms import LangchainLLMWrapper
     from ragas import SingleTurnSample, EvaluationDataset, evaluate
     from ragas.run_config import RunConfig
-    # Use OLD-style metric instances — the new ragas.metrics.collections classes
-    # inherit from SimpleBaseMetric, which is NOT a subclass of the Metric ABC
-    # that evaluate() checks. Only old-style metrics work with evaluate().
     from ragas.metrics import faithfulness, answer_relevancy, context_precision, context_recall
 
     class _STEmbeddings:
-        """Minimal sentence-transformers adapter for old-style RAGAS metrics."""
         def __init__(self, model_name: str):
             from sentence_transformers import SentenceTransformer
             self._model = SentenceTransformer(model_name)
@@ -260,11 +207,6 @@ def run_eval(
                 raise SystemExit(
                     "langchain-ollama not installed. Run:\n  pip install langchain-ollama"
                 )
-            # Disable Qwen3 thinking blocks — with thinking ON the model reasons
-            # for minutes before responding, always hitting the timeout on long
-            # RAGAS prompts. `think=False` is passed as a direct kwarg (supported
-            # in langchain_ollama>=0.2) and also via num_ctx to ensure the full
-            # prompt fits without truncation-induced slowdowns.
             evaluator_llm = LangchainLLMWrapper(
                 ChatOllama(
                     model=ollama_model,
@@ -275,17 +217,22 @@ def run_eval(
                 )
             )
         else:
+            from langchain_core.rate_limiters import InMemoryRateLimiter
             from langchain_google_genai import ChatGoogleGenerativeAI
             evaluator_llm = LangchainLLMWrapper(
                 ChatGoogleGenerativeAI(
                     model="gemini-2.5-flash",
                     temperature=0.0,
                     google_api_key=api_key,
+                    rate_limiter=InMemoryRateLimiter(
+                        requests_per_second=gemini_rpm / 60,
+                        check_every_n_seconds=1,
+                        max_bucket_size=gemini_rpm,
+                    ),
                 )
             )
         evaluator_embeddings = _STEmbeddings("sentence-transformers/all-MiniLM-L6-v2")
 
-    # Attach LLM/embeddings to the singleton metric instances
     faithfulness.llm = evaluator_llm
     answer_relevancy.llm = evaluator_llm
     answer_relevancy.embeddings = evaluator_embeddings
@@ -294,16 +241,11 @@ def run_eval(
 
     all_metrics = [faithfulness, answer_relevancy, context_precision, context_recall]
     metric_names = ["faithfulness", "answer_relevancy", "context_precision", "context_recall"]
-    # Config A: no retrieval context — only answer_relevancy is meaningful.
-    # faithfulness is undefined (nothing to ground against); context metrics are N/A.
-    # We report faithfulness=0.000 by convention and context metrics as None.
     config_a_metrics = [answer_relevancy]
 
     golden = _load_golden(golden_path)
     run_rows = _load_jsonl(run_file)
 
-    # Pre-filter to only queries that have a golden entry — everything else
-    # is silently skipped later anyway, so evaluating it wastes time.
     golden_ids = set(golden.keys())
     run_rows_filtered = [r for r in run_rows if (r.get("query_id") or r.get("id", "")) in golden_ids]
     dropped = len(run_rows) - len(run_rows_filtered)
@@ -311,7 +253,6 @@ def run_eval(
           f"Run file: {len(run_rows)} rows → {len(run_rows_filtered)} rows match golden "
           f"({dropped} without golden entry skipped before evaluation).")
 
-    # Group rows by config
     by_config: dict[str, list[dict]] = defaultdict(list)
     for row in run_rows_filtered:
         cfg = row.get("config", "?")
@@ -320,36 +261,44 @@ def run_eval(
         by_config[cfg].append(row)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
+    fieldnames = ["config"] + metric_names
+
+    completed_configs: set[str] = set()
     all_results: list[dict] = []
+    if out_path.exists():
+        with out_path.open(newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                if row.get("config"):
+                    completed_configs.add(row["config"])
+                    all_results.append(row)
+        if completed_configs:
+            print(f"Resuming — already completed: {sorted(completed_configs)}")
 
     for cfg in sorted(by_config.keys()):
         rows = by_config[cfg]
+        if cfg in completed_configs:
+            print(f"\n── Config {cfg} — skipped (already in output CSV) ──")
+            continue
         is_config_a = cfg == "A"
         active_metrics = config_a_metrics if is_config_a else all_metrics
-        print(f"\n── Config {cfg} ({len(rows)} samples){' [answer_relevancy only — no retrieval]' if is_config_a else ''} ──")
+        print(f"\n── Config {cfg} ({len(rows)} samples){' [answer_relevancy only]' if is_config_a else ''} ──")
 
         samples = []
         for row in rows:
             qid = row.get("query_id") or row.get("id", "")
             query = row.get("query", "")
             resp_obj = row.get("response") or {}
-            response = (
-                resp_obj.get("answer")
-                or row.get("answer")
-                or ""
-            )
+            response = resp_obj.get("answer") or row.get("answer") or ""
             if not isinstance(response, str):
                 response = ""
             contexts = [] if is_config_a else _contexts_from_record(row)
-            reference = golden[qid]  # guaranteed present after pre-filter
-
-            sample = SingleTurnSample(
+            reference = golden[qid]
+            samples.append(SingleTurnSample(
                 user_input=query,
                 response=response,
                 retrieved_contexts=contexts,
                 reference=reference,
-            )
-            samples.append(sample)
+            ))
 
         if not samples:
             print(f"  No samples for config {cfg}, skipping.")
@@ -370,45 +319,38 @@ def run_eval(
             means: dict[str, float | None] = {}
             for m in metric_names:
                 if is_config_a and m == "faithfulness":
-                    means[m] = 0.0  # undefined by convention: no context to ground against
+                    means[m] = 0.0
                 elif is_config_a and m in ("context_precision", "context_recall"):
-                    means[m] = None  # N/A: no context was provided
+                    means[m] = None
                 elif m in df.columns:
                     means[m] = round(float(df[m].mean(skipna=True)), 4)
                 else:
                     means[m] = None
 
             print(f"  Results: {means}")
-            all_results.append({"config": cfg, **means})
+            result_row = {"config": cfg, **means}
+            all_results.append(result_row)
+            _append_csv(out_path, fieldnames, result_row)
 
         except Exception as e:
             import traceback
             print(f"  RAGAS evaluation failed for config {cfg}: {e}")
             traceback.print_exc()
-            all_results.append({"config": cfg, **{m: None for m in metric_names}})
+            result_row = {"config": cfg, **{m: None for m in metric_names}}
+            all_results.append(result_row)
+            _append_csv(out_path, fieldnames, result_row)
 
-    # Write CSV
     if all_results:
-        fieldnames = ["config"] + metric_names
-        with out_path.open("w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=fieldnames)
-            writer.writeheader()
-            writer.writerows(all_results)
-
         print(f"\nResults saved to {out_path}")
         print("\nSummary:")
         print(f"{'Config':<10} {'Faithfulness':<14} {'Ans.Relevancy':<16} {'Ctx.Precision':<16} {'Ctx.Recall'}")
         print("-" * 65)
         for r in all_results:
-            def _fmt(v): return f"{v:.4f}" if v is not None else "  N/A "
+            def _fmt(v): return f"{float(v):.4f}" if v is not None and v != "" else "  N/A "
             print(f"{r['config']:<10} {_fmt(r.get('faithfulness')):<14} {_fmt(r.get('answer_relevancy')):<16} {_fmt(r.get('context_precision')):<16} {_fmt(r.get('context_recall'))}")
     else:
         print("No results to write.")
 
-
-# ---------------------------------------------------------------------------
-# CLI
-# ---------------------------------------------------------------------------
 
 def main() -> None:
     import sys as _sys
@@ -422,25 +364,19 @@ def main() -> None:
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     mode = parser.add_mutually_exclusive_group(required=True)
-    mode.add_argument("--build-golden", action="store_true", help="Generate ground-truth answers using the configured LLM")
-    mode.add_argument("--eval", action="store_true", help="Run RAGAS evaluation on a benchmark run file")
+    mode.add_argument("--build-golden", action="store_true")
+    mode.add_argument("--eval", action="store_true")
 
-    parser.add_argument("--run-file", type=Path, required=True, help="Path to benchmark run JSONL")
-    parser.add_argument("--queries", type=Path, help="Queries JSONL (required for --build-golden)")
-    parser.add_argument("--golden", type=Path, help="Golden test set JSONL (required for --eval)")
-    parser.add_argument("--out", type=Path, required=True, help="Output path (.jsonl for golden, .csv for eval)")
-    parser.add_argument("--provider", default="ollama",
-                        choices=["ollama", "gemini"],
-                        help="LLM provider (default: ollama). Use 'gemini' with --api-key.")
-    parser.add_argument("--ollama-url", default=os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434"),
-                        help="Ollama base URL (default: http://localhost:11434)")
-    parser.add_argument("--ollama-model", default=os.environ.get("OLLAMA_MODEL", "mistral"),
-                        help="Ollama model name (default: mistral)")
-    parser.add_argument("--api-key", default=os.environ.get("GEMINI_API_KEY", os.environ.get("ADAPTEACH_LLM_GEMINI_API_KEY", "")),
-                        help="Google AI Studio API key (only required when --provider gemini)")
-    parser.add_argument("--configs", nargs="+", default=None, help="Configs to evaluate (default: all)")
-    parser.add_argument("--delay", type=float, default=0.0,
-                        help="Seconds to sleep between LLM calls in --build-golden (default 0). Set to 7 when using Gemini free tier.")
+    parser.add_argument("--run-file", type=Path, required=True)
+    parser.add_argument("--queries", type=Path)
+    parser.add_argument("--golden", type=Path)
+    parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--provider", default="ollama", choices=["ollama", "gemini"])
+    parser.add_argument("--ollama-url", default=os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434"))
+    parser.add_argument("--ollama-model", default=os.environ.get("OLLAMA_MODEL", "mistral"))
+    parser.add_argument("--api-key", default=os.environ.get("GEMINI_API_KEY", os.environ.get("ADAPTEACH_LLM_GEMINI_API_KEY", "")))
+    parser.add_argument("--configs", nargs="+", default=None)
+    parser.add_argument("--delay", type=float, default=0.0)
 
     args = parser.parse_args()
 

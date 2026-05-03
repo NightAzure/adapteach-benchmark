@@ -12,17 +12,16 @@ Covers Objective 1 (retrieval evaluation, configs A–F) and Objective 2 (RAGAS 
 | Requirement | Version | Notes |
 |-------------|---------|-------|
 | Python | 3.10+ | Tested on 3.10 and 3.11 |
-| Ollama | Any recent | Must be installed and running as a local server |
-| LLM model | `mistral` (default) | Pull with `ollama pull mistral` before running |
-| Gemini API key | — | Optional; only needed if you choose `--provider gemini` for Obj2 |
+| Ollama | Any recent | Required for Obj 1 LLM judge (Step 6) |
+| Gemini API key | — | Required for Obj 2 (generation + RAGAS evaluation) |
 
-Install Ollama from https://ollama.com, then pull the model:
+Install Ollama from https://ollama.com, then pull the judge model used in Step 6:
 
 ```bash
-ollama pull mistral
+ollama pull qwen3.5:9b
 ```
 
-Confirm Ollama is serving at `http://localhost:11434` (default). You can verify with:
+Confirm Ollama is serving at `http://localhost:11434` (default):
 
 ```bash
 curl http://localhost:11434/api/tags
@@ -32,7 +31,7 @@ curl http://localhost:11434/api/tags
 
 - **RAM:** 8 GB minimum; 16 GB recommended (sentence-transformers loads a 90 MB model)
 - **Disk:** ~500 MB for indexes + run outputs
-- **GPU:** Not required; all inference runs on CPU via Ollama
+- **GPU:** Not required for Obj 1; Ollama runs on CPU. Gemini is remote for Obj 2.
 
 ### Python Dependencies
 
@@ -45,8 +44,7 @@ pip install -r requirements.lock
 Additional dependencies for Objective 2 (RAGAS evaluation) — **not in requirements.lock**:
 
 ```bash
-# Only needed if using --provider gemini:
-pip install langchain-google-genai google-genai
+pip install "ragas==0.4.3" langchain-google-genai langchain-core datasets sentence-transformers
 ```
 
 ---
@@ -63,17 +61,18 @@ Edit `.env`:
 
 ```env
 OLLAMA_BASE_URL=http://localhost:11434
-OLLAMA_MODEL=mistral
-# GEMINI_API_KEY=your_key_here   # Objective 2 only
+OLLAMA_MODEL=qwen3.5:9b
+GEMINI_API_KEY=your_key_here
 ```
+
+The `GEMINI_API_KEY` is used by Obj 2 commands. Alternatively, pass it via `--api-key` on the command line.
 
 To override any `config.yaml` value without editing the file, use the `ADAPTEACH__` prefix
 with double-underscores as separators:
 
 ```bash
-export ADAPTEACH__LLM__PROVIDER=ollama
+export ADAPTEACH__LLM__PROVIDER=gemini
 export ADAPTEACH__RETRIEVAL__K=5
-export ADAPTEACH__LLM__MODEL=mistral
 ```
 
 Config precedence (highest to lowest): shell env vars > `ADAPTEACH__` overrides > `config.yaml`.
@@ -210,10 +209,11 @@ deterministic — identical results on every run given the same chunk manifest.
 
 ## Step 5: Run Objective 1 — Retrieval Benchmark
 
+Runs retrieval only (`dry_run: retrieval`); no LLM generation. Config A is included in the primary run but is functionally a no-retrieval baseline (empty retrieved sets).
+
 ### Primary benchmark (recommended — faster, high-signal)
 
-Runs 120 custom queries across all 6 configs (A–F). Dry-run mode skips LLM generation
-and evaluates retrieval only:
+Runs 120 custom queries across all 6 configs (A–F):
 
 ```bash
 make obj1-primary
@@ -224,15 +224,14 @@ Total eval rows: 120 queries × 6 configs = 720 rows.
 
 ### Full benchmark (complete — all datasets)
 
-Runs 1,557 queries across configs B–F (Config A is excluded from the full run spec):
+Runs 1,557 queries across configs B–F (Config A excluded from full spec; no-retrieval baseline is evaluated on the custom set only):
 
 ```bash
 make obj1-full
 # or: python bench/run_obj1.py --benchmark bench/benchmarks/obj1_full.yaml
 ```
 
-Total eval rows: 1,557 queries × 5 configs = 7,785 rows. Allow 20–60 minutes depending
-on hardware and whether generation is enabled.
+Total eval rows: 1,557 queries × 5 configs = 7,785 rows. Allow 20–60 minutes depending on hardware.
 
 ### Smoke test (quick verification)
 
@@ -249,7 +248,8 @@ make obj1-smoke
 | `--benchmark` | `obj1_primary.yaml` | YAML benchmark spec |
 | `--configs` | (from spec) | Override config list, e.g. `B,D,E` |
 | `--provider` | (from config.yaml) | LLM provider: `ollama`, `gemini`, `mock` |
-| `--model` | (from config.yaml) | Model name, e.g. `mistral` |
+| `--model` | (from config.yaml) | Model name, e.g. `gemini-2.5-flash` |
+| `--api-key` | (from `.env`) | API key for Gemini |
 | `--delay` | 0 | Seconds between requests (rate limiting) |
 | `--dry-run` | `retrieval` | `none` (full gen), `retrieval` (skip gen), `graph` |
 | `--sample-per-dataset` | 0 (all) | Limit queries per dataset for quick tests |
@@ -296,10 +296,7 @@ Pool sources per query:
 
 ### 2. Score the pool with a local LLM
 
-Pull the model and run the judge:
-
 ```bash
-ollama pull qwen3.5:9b
 python bench/run_llm_judge.py --model qwen3.5:9b --pool-file bench/judge_pool/pool.csv
 ```
 
@@ -361,71 +358,93 @@ Outputs written to `bench/results/obj1_latest/`:
 
 ## Step 7: Objective 2 — RAGAS Evaluation
 
-Objective 2 evaluates generation quality using the RAGAS framework. It is **not** part of
-`make reproduce` and must be run separately.
+Objective 2 evaluates generation quality (faithfulness, answer relevancy, context precision, context recall) using the RAGAS framework across all six configs including the no-retrieval baseline (Config A).
 
-**Default provider: Ollama (local, no API key needed).** Gemini is available as an
-optional fallback via `--provider gemini --api-key YOUR_KEY`.
-
-Install the extra dependencies (not in requirements.lock):
+**Default provider: Gemini 2.5 Flash.** Set your API key once and all three sub-steps use it:
 
 ```bash
-pip install "ragas==0.4.3" langchain-ollama langchain-core datasets
+export GEMINI_API_KEY=your_key_here
+# or add GEMINI_API_KEY=your_key_here to .env
 ```
 
-### Sub-step A: Build golden reference answers
+> **Ollama alternative:** Replace `--provider gemini --api-key $GEMINI_API_KEY` with `--provider ollama --ollama-model qwen3.5:9b` in all commands below.
+
+---
+
+### Sub-step A: Run generation across all configs (A–F)
+
+The primary benchmark spec runs in retrieval-only mode by default (no LLM answers). For RAGAS, you need a separate generation run with all six configs including Config A:
+
+```bash
+python bench/run_obj1.py \
+  --benchmark bench/benchmarks/obj1_primary.yaml \
+  --dry-run none \
+  --provider gemini \
+  --api-key $GEMINI_API_KEY \
+  --out-dir bench/runs
+```
+
+This produces `bench/runs/run_<timestamp>_obj1_primary.jsonl` with 720 rows (120 queries × 6 configs A–F) including generated answers. Note the exact filename — you will pass it to Sub-steps B and C.
+
+Estimated time: ~30–60 minutes on the Gemini free tier (15 RPM limit). Use `--delay 4` if you hit rate limit errors.
+
+---
+
+### Sub-step B: Build golden reference answers
 
 Golden answers are LLM-generated reference responses used as RAGAS ground truth.
-Run once against an existing Obj1 run file:
+Run once — resumes automatically if interrupted:
 
 ```bash
 python bench/run_obj2.py build-golden \
   --queries bench/queries_custom.jsonl \
   --run-file bench/runs/run_<timestamp>_obj1_primary.jsonl \
-  --out bench/results/golden_custom.jsonl
+  --out bench/results/golden_custom.jsonl \
+  --provider gemini \
+  --api-key $GEMINI_API_KEY
 ```
 
-Replace `<timestamp>` with the actual filename from `bench/runs/`. The command uses
-Ollama + `mistral` by default (reads `OLLAMA_BASE_URL` and `OLLAMA_MODEL` from `.env`).
-No rate-limiting delay is needed for local Ollama (default `--delay 0`).
+Replace `<timestamp>` with the actual filename from Sub-step A.
 
-### Sub-step B: Run RAGAS evaluation
+---
+
+### Sub-step C: Evaluate with RAGAS
 
 ```bash
 python bench/run_obj2.py evaluate \
   --run-file bench/runs/run_<timestamp>_obj1_primary.jsonl \
   --golden bench/results/golden_custom.jsonl \
   --out bench/results/obj2_ragas.csv \
-  --configs A,B,D,E,F
-```
-
-Default configs evaluated: A, B, D, E, F (C is omitted as it differs only in BM25 fusion,
-not generation).
-
-**Output:** `bench/results/obj2_ragas.csv` with RAGAS metrics: faithfulness, answer
-relevancy, context precision, context recall per config.
-
-Or use the Makefile shortcut (uses `.env` defaults):
-
-```bash
-make obj2
-```
-
-### Optional: Gemini provider
-
-If you want to use Gemini instead of Ollama for golden answer generation or evaluation:
-
-```bash
-python bench/run_obj2.py build-golden \
   --provider gemini \
   --api-key $GEMINI_API_KEY \
-  --delay 7.0 \
-  --queries bench/queries_custom.jsonl \
-  --run-file bench/runs/run_<timestamp>_obj1_primary.jsonl \
-  --out bench/results/golden_custom.jsonl
+  --configs A,B,C,D,E,F \
+  --gemini-rpm 15
 ```
 
-The `--delay 7.0` is recommended for the Gemini free tier to avoid rate limit errors.
+RAGAS evaluates only queries present in the golden file (~120 samples). Each config runs sequentially; progress is checkpointed to the CSV after each config — if interrupted, re-running skips already-completed configs automatically.
+
+**Output:** `bench/results/obj2_ragas.csv`
+
+| Config | faithfulness | answer_relevancy | context_precision | context_recall |
+|--------|-------------|-----------------|-------------------|----------------|
+| A | 0.0 (N/A — no retrieval) | ✓ | N/A | N/A |
+| B–F | ✓ | ✓ | ✓ | ✓ |
+
+Config A reports only `answer_relevancy` (no retrieved contexts to evaluate).
+
+**Rate limit note:** The Gemini free tier allows 15 RPM. RAGAS makes ~6 sequential LLM calls per sample — at 120 samples × 5 configs (B–F), this is ~3,600 calls; allow several hours or spread across days. The resume checkpoint means you can stop and continue anytime.
+
+To reduce load or speed up a partial re-run, limit to specific configs:
+
+```bash
+python bench/run_obj2.py evaluate \
+  --run-file bench/runs/run_<timestamp>_obj1_primary.jsonl \
+  --golden bench/results/golden_custom.jsonl \
+  --out bench/results/obj2_ragas.csv \
+  --provider gemini \
+  --api-key $GEMINI_API_KEY \
+  --configs D,E,F
+```
 
 ---
 
@@ -480,9 +499,13 @@ These values are hardcoded in the pipeline and match the reported experimental s
 | Bootstrap CI iterations | 2000 | `bench/score_obj1.py` |
 | Significance test iterations | 5000 | `bench/score_obj1.py` |
 | Random seed | 13 | `bench/score_obj1.py` |
-| Default LLM | mistral (Ollama) | `config.yaml`, `.env` |
+| Obj1 judge model | `qwen3.5:9b` (Ollama) | `bench/run_llm_judge.py` |
+| Obj2 eval model | `gemini-2.5-flash` | `bench/ragas_eval.py` |
+| Obj2 golden model | `gemini-2.5-flash` | `bench/ragas_eval.py` |
+| Obj2 RAGAS batch size | 4 samples per batch | `bench/ragas_eval.py` |
+| Obj2 max contexts per sample | 3 | `bench/ragas_eval.py` |
+| Obj2 default Gemini RPM | 15 | `bench/run_obj2.py` |
 | Ollama base URL | `http://localhost:11434` | `.env` |
-| Obj2 LLM delay | 0 s (Ollama default); 7 s recommended for Gemini free tier | `bench/run_obj2.py` |
 
 ---
 

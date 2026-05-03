@@ -11,33 +11,30 @@ from bench import ragas_eval
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description='Clean wrapper for Objective 2 automated evaluation.')
+    parser = argparse.ArgumentParser(description='Objective 2 automated evaluation.')
     sub = parser.add_subparsers(dest='command', required=True)
 
-    build = sub.add_parser('build-golden', help='Generate frozen ground-truth answers for a query set.')
+    build = sub.add_parser('build-golden')
     build.add_argument('--queries', required=True)
     build.add_argument('--run-file', required=True)
     build.add_argument('--out', required=True)
-    build.add_argument('--provider', default='ollama', choices=['ollama', 'gemini'],
-                       help='LLM provider (default: ollama)')
+    build.add_argument('--provider', default='ollama', choices=['ollama', 'gemini'])
     build.add_argument('--ollama-url', default='http://localhost:11434')
     build.add_argument('--ollama-model', default='mistral')
-    build.add_argument('--api-key', default='', help='Gemini API key (only required when --provider gemini)')
-    build.add_argument('--delay', type=float, default=0.0,
-                       help='Seconds between LLM calls (default 0; set ~7 when using Gemini free tier)')
+    build.add_argument('--api-key', default='')
+    build.add_argument('--delay', type=float, default=0.0)
 
-    evaluate = sub.add_parser('evaluate', help='Run RAGAS metrics over an existing run file.')
+    evaluate = sub.add_parser('evaluate')
     evaluate.add_argument('--run-file', required=True)
     evaluate.add_argument('--golden', required=True)
     evaluate.add_argument('--out', required=True)
-    evaluate.add_argument('--provider', default='ollama', choices=['ollama', 'gemini'],
-                          help='LLM provider (default: ollama)')
+    evaluate.add_argument('--provider', default='ollama', choices=['ollama', 'gemini'])
     evaluate.add_argument('--ollama-url', default='http://localhost:11434')
     evaluate.add_argument('--ollama-model', default='mistral')
-    evaluate.add_argument('--api-key', default='', help='Gemini API key (only required when --provider gemini)')
-    evaluate.add_argument('--configs', default='A,B,D,E,F', help='Comma-separated configs to evaluate.')
-    evaluate.add_argument('--timeout', type=int, default=600,
-                          help='Seconds to wait per Ollama call (default: 600)')
+    evaluate.add_argument('--api-key', default='')
+    evaluate.add_argument('--configs', default='A,B,D,E,F')
+    evaluate.add_argument('--timeout', type=int, default=600)
+    evaluate.add_argument('--gemini-rpm', type=int, default=15)
     return parser.parse_args()
 
 
@@ -66,6 +63,7 @@ def main() -> None:
         ollama_url=args.ollama_url,
         ollama_model=args.ollama_model,
         timeout=args.timeout,
+        gemini_rpm=args.gemini_rpm,
     )
 
 

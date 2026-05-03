@@ -1,22 +1,3 @@
-"""
-Automated LLM judge for silver label cross-validation.
-
-Calls a local Ollama model to score query-chunk pairs for relevance (0/1/2),
-then saves results directly to bench/llm_judge/scores/ for import_llm_scores.py.
-
-Recommended models (ollama pull first):
-  qwen3.5:27b   — ~17GB VRAM, best quality/speed balance
-  qwen3.5:9b    — ~7GB VRAM, fast, still accurate
-  qwen3.6:27b   — ~17GB VRAM, latest Qwen release
-  llama3.3:70b  — ~43GB VRAM, highest accuracy
-
-Usage:
-    python bench/run_llm_judge.py
-    python bench/run_llm_judge.py --model qwen3.5:27b
-    python bench/run_llm_judge.py --model qwen3.6:27b --batch-size 50
-    python bench/run_llm_judge.py --resume   # skip already-scored batches
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -40,10 +21,6 @@ DEFAULT_MODEL = "qwen3.5:9b"
 DEFAULT_BATCH_SIZE = 30
 MAX_CHUNK_CHARS = 400
 
-
-# ---------------------------------------------------------------------------
-# Chunk content lookup (mirrors export_for_llm_judge.py)
-# ---------------------------------------------------------------------------
 
 def _hash(text: str) -> str:
     import hashlib
@@ -93,12 +70,6 @@ def load_silver_labels() -> list[dict]:
 
 
 def load_from_pool(pool_file: Path) -> list[dict]:
-    """Load judging rows from a pre-built pool CSV (bench/build_judge_pool.py output).
-
-    The pool CSV has columns: query_id, query_text, chunk_id, chunk_text (already truncated).
-    Returns list of dicts with keys: row_id, query_text, chunk_text — same shape as
-    the rows_to_score list built from silver labels.
-    """
     rows: list[dict] = []
     with pool_file.open(encoding="utf-8") as f:
         for row in csv.DictReader(f):
@@ -113,10 +84,6 @@ def load_from_pool(pool_file: Path) -> list[dict]:
             })
     return rows
 
-
-# ---------------------------------------------------------------------------
-# Ollama call
-# ---------------------------------------------------------------------------
 
 JUDGE_SYSTEM = (
     "You are a relevance scoring tool. "
@@ -167,20 +134,13 @@ def call_ollama(base_url: str, model: str, prompt: str, timeout: int = 120) -> s
         raise RuntimeError(f"Ollama unreachable at {base_url} — is it running? ({e})") from e
 
 
-# ---------------------------------------------------------------------------
-# Response parsing
-# ---------------------------------------------------------------------------
-
 def parse_scores(response: str, expected_ids: list[str], debug: bool = False) -> dict[str, int]:
-    """Extract row_id,score pairs from model response."""
-    # Strip Qwen3 thinking blocks <think>...</think>
     cleaned = re.sub(r"<think>.*?</think>", "", response, flags=re.DOTALL).strip()
 
     if debug:
         preview = response[:2000] if response else "(empty)"
         print(f"\n--- RAW RESPONSE ({len(response)} chars) ---\n{preview}\n--- END ---", file=sys.stderr)
 
-    # Prefer content inside ```csv ... ``` or ``` ... ``` block
     block_match = re.search(r"```(?:csv)?\s*\n(.*?)```", cleaned, re.DOTALL)
     raw = block_match.group(1) if block_match else cleaned
 
@@ -194,7 +154,7 @@ def parse_scores(response: str, expected_ids: list[str], debug: bool = False) ->
         if len(parts) >= 2:
             row_id = parts[0].strip().strip('"')
             if row_id not in expected_set:
-                continue  # ignore hallucinated or header row_ids
+                continue
             try:
                 score = int(parts[-1].strip())
                 if score in (0, 1, 2):
@@ -208,10 +168,6 @@ def parse_scores(response: str, expected_ids: list[str], debug: bool = False) ->
 
     return scores
 
-
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
 
 def run(
     model: str,
@@ -238,7 +194,6 @@ def run(
         labels = load_silver_labels()
         print(f"  {len(labels):,} labeled pairs")
 
-        # Build rows to score (same logic as export_for_llm_judge.py)
         rows_to_score = []
         missing = 0
         for label in labels:
@@ -276,7 +231,6 @@ def run(
 
         if resume and out_path.exists():
             print(f"  Batch {batch_num:02d}/{n_batches} — skipped (already exists)")
-            # Load existing scores into all_scores
             with out_path.open(encoding="utf-8") as f:
                 for line in f:
                     line = line.strip()
@@ -293,7 +247,6 @@ def run(
         batch = rows_to_score[batch_idx * batch_size: (batch_idx + 1) * batch_size]
         expected_ids = [r["row_id"] for r in batch]
 
-        # Build CSV input for the model
         rows_csv_lines = ["row_id,query_text,chunk_text"]
         for r in batch:
             query_safe = r["query_text"].replace('"', '""').replace("\n", " ")
@@ -321,7 +274,6 @@ def run(
 
         scores = parse_scores(response, expected_ids, debug=debug)
 
-        # Retry rows the model dropped, up to `retries` times.
         missing_rows = [r for r in batch if r["row_id"] not in scores]
         for attempt in range(retries):
             if not missing_rows:
@@ -347,7 +299,6 @@ def run(
 
         all_scores.update(scores)
 
-        # Write batch score file
         with out_path.open("w", newline="", encoding="utf-8") as f:
             for row_id in expected_ids:
                 score = scores.get(row_id, "")
@@ -370,7 +321,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--batch-size", type=int, default=DEFAULT_BATCH_SIZE,
                         help=f"Pairs per Ollama call (default: {DEFAULT_BATCH_SIZE})")
     parser.add_argument("--timeout", type=int, default=600,
-                        help="Seconds to wait per Ollama call (default: 180)")
+                        help="Seconds to wait per Ollama call (default: 600)")
     parser.add_argument("--resume", action="store_true",
                         help="Skip batches whose output file already exists")
     parser.add_argument("--retries", type=int, default=2,
@@ -378,15 +329,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--debug", action="store_true",
                         help="Print raw model response for the first batch (for diagnosing parse failures)")
     parser.add_argument("--pool-file", default="",
-                        help="Path to pool.csv from build_judge_pool.py; when provided and the file exists, "
-                             "score from the pool instead of silver labels")
+                        help="Path to pool.csv from build_judge_pool.py")
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
     pool_file = Path(args.pool_file) if args.pool_file else None
-    # Resolve relative paths against ROOT
     if pool_file and not pool_file.is_absolute():
         pool_file = ROOT / pool_file
     run(
