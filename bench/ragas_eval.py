@@ -226,6 +226,7 @@ def run_eval(
     provider: str = "ollama",
     ollama_url: str = "http://localhost:11434",
     ollama_model: str = "mistral",
+    timeout: int = 600,
 ) -> None:
     _require_ragas()
 
@@ -258,8 +259,12 @@ def run_eval(
                 raise SystemExit(
                     "langchain-ollama not installed. Run:\n  pip install langchain-ollama"
                 )
+            # Disable Qwen3 thinking blocks — RAGAS's output parser can't handle
+            # <think>...</think> preambles. Safe to pass for all models; non-thinking
+            # models ignore it.
             evaluator_llm = LangchainLLMWrapper(
-                ChatOllama(model=ollama_model, base_url=ollama_url, temperature=0.0)
+                ChatOllama(model=ollama_model, base_url=ollama_url, temperature=0.0,
+                           request_timeout=timeout, model_kwargs={"think": False})
             )
         else:
             from langchain_google_genai import ChatGoogleGenerativeAI
@@ -342,9 +347,8 @@ def run_eval(
             print(f"  No samples for config {cfg}, skipping.")
             continue
 
-        dataset = EvaluationDataset(samples=samples)
-
         try:
+            dataset = EvaluationDataset(samples=samples)
             result = evaluate(
                 dataset=dataset,
                 metrics=active_metrics,
@@ -368,7 +372,9 @@ def run_eval(
             all_results.append({"config": cfg, **means})
 
         except Exception as e:
+            import traceback
             print(f"  RAGAS evaluation failed for config {cfg}: {e}")
+            traceback.print_exc()
             all_results.append({"config": cfg, **{m: None for m in metric_names}})
 
     # Write CSV

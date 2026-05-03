@@ -36,6 +36,8 @@ def parse_args() -> argparse.Namespace:
     evaluate.add_argument('--ollama-model', default='mistral')
     evaluate.add_argument('--api-key', default='', help='Gemini API key (only required when --provider gemini)')
     evaluate.add_argument('--configs', default='A,B,D,E,F', help='Comma-separated configs to evaluate.')
+    evaluate.add_argument('--timeout', type=int, default=600,
+                          help='Seconds to wait per Ollama call (default: 600)')
     return parser.parse_args()
 
 
@@ -63,6 +65,7 @@ def main() -> None:
         provider=args.provider,
         ollama_url=args.ollama_url,
         ollama_model=args.ollama_model,
+        timeout=args.timeout,
     )
 
 
