@@ -224,6 +224,7 @@ def run_eval(
                     model="gemini-2.5-flash-lite",
                     temperature=0.5,
                     google_api_key=api_key,
+                    model_kwargs={"response_mime_type": "application/json"},
                     rate_limiter=InMemoryRateLimiter(
                         requests_per_second=gemini_rpm / 60,
                         check_every_n_seconds=1,
@@ -236,6 +237,7 @@ def run_eval(
     faithfulness.llm = evaluator_llm
     answer_relevancy.llm = evaluator_llm
     answer_relevancy.embeddings = evaluator_embeddings
+    answer_relevancy.strictness = 1
     context_precision.llm = evaluator_llm
     context_recall.llm = evaluator_llm
 
