@@ -354,6 +354,7 @@ def run_eval(
                 metrics=active_metrics,
                 show_progress=True,
                 raise_exceptions=False,
+                batch_size=4,
             )
             df = result.to_pandas()
 
