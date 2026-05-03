@@ -184,9 +184,7 @@ def run_eval(
     import warnings
     from ragas.llms import LangchainLLMWrapper
     from ragas import SingleTurnSample, EvaluationDataset, evaluate
-    from ragas.run_config import RunConfig
-    from ragas.metrics import faithfulness, AnswerRelevancy, context_precision, context_recall
-    answer_relevancy = AnswerRelevancy(strictness=1)
+    from ragas.metrics import faithfulness, answer_relevancy, context_precision, context_recall
 
     class _STEmbeddings:
         def __init__(self, model_name: str):
@@ -223,7 +221,7 @@ def run_eval(
             evaluator_llm = LangchainLLMWrapper(
                 ChatGoogleGenerativeAI(
                     model="gemini-2.5-flash-lite",
-                    temperature=0.0,
+                    temperature=0.5,
                     google_api_key=api_key,
                     rate_limiter=InMemoryRateLimiter(
                         requests_per_second=gemini_rpm / 60,
@@ -313,7 +311,6 @@ def run_eval(
                 show_progress=True,
                 raise_exceptions=False,
                 batch_size=4,
-                run_config=RunConfig(timeout=timeout, max_retries=2, max_wait=60),
             )
             df = result.to_pandas()
 
