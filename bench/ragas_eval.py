@@ -260,12 +260,19 @@ def run_eval(
                 raise SystemExit(
                     "langchain-ollama not installed. Run:\n  pip install langchain-ollama"
                 )
-            # Disable Qwen3 thinking blocks — RAGAS's output parser can't handle
-            # <think>...</think> preambles. Safe to pass for all models; non-thinking
-            # models ignore it.
+            # Disable Qwen3 thinking blocks — with thinking ON the model reasons
+            # for minutes before responding, always hitting the timeout on long
+            # RAGAS prompts. `think=False` is passed as a direct kwarg (supported
+            # in langchain_ollama>=0.2) and also via num_ctx to ensure the full
+            # prompt fits without truncation-induced slowdowns.
             evaluator_llm = LangchainLLMWrapper(
-                ChatOllama(model=ollama_model, base_url=ollama_url, temperature=0.0,
-                           request_timeout=timeout, model_kwargs={"think": False})
+                ChatOllama(
+                    model=ollama_model,
+                    base_url=ollama_url,
+                    temperature=0.0,
+                    request_timeout=timeout,
+                    think=False,
+                )
             )
         else:
             from langchain_google_genai import ChatGoogleGenerativeAI
