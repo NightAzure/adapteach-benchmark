@@ -46,7 +46,7 @@ def _load_golden(path: Path) -> dict[str, str]:
     return {r["id"]: r["ground_truth"] for r in rows if "ground_truth" in r}
 
 
-_MAX_CONTEXTS = 3
+_MAX_CONTEXTS = 5  # matches retrieval k=5 in config.yaml
 
 
 def _contexts_from_record(record: dict) -> list[str]:
@@ -99,7 +99,9 @@ def build_golden(
     queries = {r["id"]: r["query"] for r in _load_jsonl(queries_path)}
     run_rows = _load_jsonl(run_file)
 
-    preferred_configs = ["E", "F", "D", "C", "B"]
+    # Use Config B (reference config) first so golden answers are grounded in the
+    # simplest working retriever; prevents bias toward E/F richer context.
+    preferred_configs = ["B", "C", "D", "E", "F"]
     best_context_by_qid: dict[str, list[str]] = {}
     best_config_by_qid: dict[str, str] = {}
     for row in run_rows:
@@ -353,6 +355,10 @@ def run_eval(
                 elif is_config_a and m in ("context_precision", "context_recall"):
                     means[m] = None
                 elif m in df.columns:
+                    nan_count = int(df[m].isna().sum())
+                    evaluated = len(df) - nan_count
+                    if nan_count:
+                        print(f"  Warning: {nan_count}/{len(df)} samples had NaN for {m} (evaluated on {evaluated})")
                     means[m] = round(float(df[m].mean(skipna=True)), 4)
                 else:
                     means[m] = None

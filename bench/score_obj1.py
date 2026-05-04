@@ -31,8 +31,15 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
 
 
 def load_labels_from_dir(labels_dir: Path) -> dict[str, dict[str, int]]:
+    qrels_files = sorted(labels_dir.glob('qrels_*.csv'))
+    if not qrels_files:
+        raise SystemExit(
+            f'No qrels_*.csv files found in {labels_dir}.\n'
+            'Run the single Obj1 label path first: build_judge_pool.py -> run_llm_judge.py -> build_qrels.py.'
+        )
+    print(f'Scoring against LLM-validated qrels ({len(qrels_files)} file(s)).')
     labels: dict[str, dict[str, int]] = defaultdict(dict)
-    for csv_path in sorted(labels_dir.glob('silver_labels_*.csv')):
+    for csv_path in qrels_files:
         with csv_path.open('r', encoding='utf-8') as handle:
             for row in csv.DictReader(handle):
                 qid = row['query_id']
@@ -51,8 +58,10 @@ def latest_run(runs_dir: Path) -> Path:
     return files[0]
 
 
-def score_mrr(retrieved: list[str], labels: dict[str, int]) -> float:
+def score_mrr(retrieved: list[str], labels: dict[str, int], k: int = 10) -> float:
     for rank, cid in enumerate(retrieved, start=1):
+        if rank > k:
+            break
         if labels.get(cid, 0) > 0:
             return 1.0 / rank
     return 0.0
@@ -135,7 +144,7 @@ def main() -> None:
     rows = read_jsonl(run_path)
     labels = load_labels_from_dir(ROOT / args.labels_dir)
     if not labels:
-        raise SystemExit('No label files found. Build them first with bench/build_silver_labels.py')
+        raise SystemExit('Qrels files were found, but no relevance rows were loaded.')
 
     per_query: list[dict[str, Any]] = []
     by_dataset_config: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
@@ -168,6 +177,9 @@ def main() -> None:
         }
         per_query.append(metric_row)
         by_dataset_config[(dataset, config)].append(metric_row)
+
+    if not by_dataset_config:
+        raise SystemExit('No run rows matched the available qrels. Check that query IDs and dataset outputs align.')
 
     out_dir = ROOT / args.out_dir
     out_dir.mkdir(parents=True, exist_ok=True)

@@ -8,8 +8,8 @@ Reads:
 Outputs one file per dataset:
   bench/labels/qrels_<dataset>.csv
 
-Schema (matches silver_labels_*.csv):
-  query_id, query, chunk_id, doc_id, relevance, silver_score, label_source, notes
+Schema:
+  query_id, query, chunk_id, doc_id, relevance, lexical_score, label_source, notes
 
 Only pairs with relevance > 0 are written (zeros are implicit negatives).
 
@@ -125,7 +125,7 @@ def main() -> None:
 
     labels_dir.mkdir(parents=True, exist_ok=True)
 
-    fieldnames = ["query_id", "query", "chunk_id", "doc_id", "relevance", "silver_score", "label_source", "notes"]
+    fieldnames = ["query_id", "query", "chunk_id", "doc_id", "relevance", "lexical_score", "label_source", "notes"]
 
     total_pairs = 0
     total_positive = 0
@@ -152,7 +152,7 @@ def main() -> None:
                 "chunk_id": chunk_id,
                 "doc_id": pr["doc_id"],
                 "relevance": relevance,
-                "silver_score": pr.get("silver_score", ""),
+                "lexical_score": pr.get("lexical_score", ""),
                 "label_source": LABEL_SOURCE,
                 "notes": pr.get("source", ""),
             })

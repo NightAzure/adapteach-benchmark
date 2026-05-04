@@ -1,20 +1,11 @@
-# Relevance Labeling Rubric
+# LLM Judge Relevance Rubric
 
-Label each retrieved chunk for a query using:
+The Objective 1 qrels pipeline asks the LLM judge to score each query-chunk pair as:
 
-- `3` = highly relevant, directly supports answer
-- `2` = relevant, useful support
-- `1` = partially relevant, useful but incomplete
+- `2` = directly relevant
+- `1` = partially relevant
 - `0` = not relevant
 
-Guidelines:
-
-- judge only relevance to query intent
-- do not reward stylistic quality
-- prefer conservative labels when uncertain
-- label independently before discussion
-
-Inter-rater:
-
-- Use two raters (`rater_a`, `rater_b`)
-- compute Cohen's kappa from overlapping labels
+Judge only whether the chunk supports the query intent. Do not reward writing style,
+retrieval rank, source configuration, or whether the chunk was selected by lexical,
+retrieved, hard-negative, or random pool nomination.

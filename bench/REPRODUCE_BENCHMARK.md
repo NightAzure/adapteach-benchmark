@@ -12,10 +12,10 @@ Covers Objective 1 (retrieval evaluation, configs A–F) and Objective 2 (RAGAS 
 | Requirement | Version | Notes |
 |-------------|---------|-------|
 | Python | 3.10+ | Tested on 3.10 and 3.11 |
-| Ollama | Any recent | Required for Obj 1 LLM judge (Step 6) |
+| Ollama | Any recent | Required for Obj 1 LLM judge (Step 5) |
 | Gemini API key | — | Required for Obj 2 (generation + RAGAS evaluation) |
 
-Install Ollama from https://ollama.com, then pull the judge model used in Step 6:
+Install Ollama from https://ollama.com, then pull the judge model used in Step 5:
 
 ```bash
 ollama pull qwen3.5:9b
@@ -85,7 +85,7 @@ Six ablation configs are evaluated. Each is defined in `configs/<letter>.yaml`.
 
 | Config | Retrieval | Chunking | Hybrid (BM25) | Graph Expansion | Graph Context | Purpose |
 |--------|-----------|----------|---------------|-----------------|---------------|---------|
-| **A** | Disabled | Fixed | No | No | No | No-retrieval baseline |
+| **A** | Disabled | Fixed | No | No | No | No-retrieval **negative control** — context metrics (precision/recall) are N/A by design |
 | **B** | Dense only | Fixed | No | No | No | Dense vector reference |
 | **C** | Dense + BM25 | Fixed | Yes (RRF) | No | No | Hybrid on fixed chunks |
 | **D** | Dense only | AST | No | No | No | Dense on code-aware chunks |
@@ -169,45 +169,7 @@ Expected runtime: ~5 minutes on CPU with sentence-transformers loaded.
 
 ---
 
-## Step 4: Build Candidate Labels (Silver Labels)
-
-Generate lexical candidate labels used as input to the qrels pipeline (Step 6).
-These are **not** the final ground-truth labels — they serve as the silver-positive
-source in the judging pool. Final ground truth comes from the LLM judge in Step 6.
-
-**Primary benchmark (custom dataset only — recommended for initial runs):**
-
-```bash
-make labels
-# or: python bench/build_silver_labels.py --benchmark bench/benchmarks/obj1_primary.yaml
-```
-
-**Full benchmark (all four datasets):**
-
-```bash
-python bench/build_silver_labels.py --benchmark bench/benchmarks/obj1_full.yaml
-```
-
-Outputs written to `bench/labels/`:
-- `silver_labels_custom.csv`
-- `silver_labels_cs1qa.csv` (full only)
-- `silver_labels_mbpp.csv` (full only)
-- `silver_labels_staqc.csv` (full only)
-
-**Label schema:** `query_id, query, chunk_id, doc_id, relevance, silver_score, label_source, notes`
-
-**Scoring signals (hardcoded weights):**
-- Lexical F1 (text overlap): 55%
-- Title overlap: 25%
-- Topic match (concept tags): 35%
-- Category bonuses, chunk length/type bonuses applied on top
-
-Minimum score threshold: **0.55** (used in Step 6 pool building). Labels are fully
-deterministic — identical results on every run given the same chunk manifest.
-
----
-
-## Step 5: Run Objective 1 — Retrieval Benchmark
+## Step 4: Run Objective 1 — Retrieval Benchmark
 
 Runs retrieval only (`dry_run: retrieval`); no LLM generation. Config A is included in the primary run but is functionally a no-retrieval baseline (empty retrieved sets).
 
@@ -263,17 +225,18 @@ Written to `bench/runs/`:
 
 ---
 
-## Step 6: Score Objective 1
+## Step 5: Score Objective 1 (LLM-Validated Ground Truth)
 
-Build LLM-validated qrels and score the benchmark. The lexical silver labels are used
-only as a candidate nominator. Final ground-truth relevance labels come from a blind LLM
-judge scoring a four-source pool — this eliminates circularity so dense and semantic
-retrievers get credit for chunks the lexical scorer would have missed.
+The scoring pipeline has one path: build a mixed judging pool, have a blind LLM judge rate
+query-chunk pairs from all retrieval methods, build qrels, then score against those qrels.
+There is no standalone lexical-label scoring fallback.
 
 **Pipeline:**
 ```
 build_judge_pool.py → run_llm_judge.py → build_qrels.py → score_obj1.py
 ```
+
+`score_obj1.py` requires `qrels_*.csv`. If qrels are missing, run the judge pipeline below.
 
 ---
 
@@ -287,7 +250,7 @@ Reads the latest run file from `bench/runs/` automatically. Outputs
 `bench/judge_pool/pool.csv`.
 
 Pool sources per query:
-- `silver_positive` — chunks rated ≥ 0.55 by lexical scorer
+- `lexical_positive` — chunks rated ≥ 0.55 by the lexical candidate scorer
 - `hard_negative` — top-3 topic-matching chunks rejected by lexical scorer
 - `retrieved` — all chunks retrieved by any config in the run file
 - `random_negative` — 2 randomly sampled chunks with no topic connection
@@ -339,6 +302,8 @@ Only pairs with relevance ≥ 1 are written (zeros are implicit negatives).
 python bench/score_obj1.py --reference-config B --labels-dir bench/labels
 ```
 
+`score_obj1.py` reads only `qrels_*.csv` from `--labels-dir`.
+
 Metrics reported:
 
 | Metric | Description |
@@ -356,7 +321,7 @@ Outputs written to `bench/results/obj1_latest/`:
 
 ---
 
-## Step 7: Objective 2 — RAGAS Evaluation
+## Step 6: Objective 2 — RAGAS Evaluation
 
 Objective 2 evaluates generation quality (faithfulness, answer relevancy, context precision, context recall) using the RAGAS framework across all six configs including the no-retrieval baseline (Config A).
 
@@ -458,20 +423,22 @@ python bench/run_obj2.py evaluate \
 | `make datasets` | Validate shipped query files |
 | `make chunks` | Build chunk manifest from corpus |
 | `make index` | Build vector + BM25 indexes from chunk manifest |
-| `make labels` | Build silver labels (primary benchmark / custom dataset) |
-| `make reproduce` | Full primary run: datasets → chunks → index → labels → obj1-primary → obj1-score |
+| `make reproduce` | Primary run: datasets → chunks → index → obj1-primary → judge-pool → llm-judge → qrels → obj1-score |
 | `make obj1-primary` | Run Obj1 with primary benchmark spec (all configs, custom queries) |
 | `make obj1-full` | Run Obj1 with full benchmark spec (all datasets, configs B–F) |
-| `make obj1-score` | Score the latest run against silver labels |
-| `make obj1-smoke` | Quick 5-query smoke test + score |
+| `make judge-pool` | Build LLM judging pool from latest Obj1 run |
+| `make llm-judge` | Score judging pool with local Ollama |
+| `make qrels` | Merge LLM scores into qrels |
+| `make obj1-score` | Score the latest run against qrels |
+| `make obj1-smoke` | Quick 5-query retrieval-only smoke test |
 | `make obj2` | Run Objective 2 RAGAS evaluation |
 | `make test` | Syntax-check all bench scripts |
 
-**Qrels pipeline scripts (no Makefile target — run directly as Step 6):**
+**Qrels pipeline scripts:**
 
 | Script | Description |
 |--------|-------------|
-| `python bench/build_judge_pool.py` | Build 4-source judging pool (positives + hard/random negatives + retrieved) |
+| `python bench/build_judge_pool.py` | Build 4-source judging pool (lexical positives + hard/random negatives + retrieved) |
 | `python bench/run_llm_judge.py --pool-file bench/judge_pool/pool.csv` | Score pool with local Ollama LLM |
 | `python bench/build_qrels.py` | Merge LLM scores → per-dataset qrels CSVs (ground truth for scoring) |
 
@@ -485,15 +452,13 @@ These values are hardcoded in the pipeline and match the reported experimental s
 |-----------|-------|----------|
 | Chunk size | 450 characters | `bench/build_chunks.py` |
 | Retrieval top-k | 5 | `config.yaml` |
-| RRF fusion k | 5 | `config.yaml` |
+| RRF smoothing constant | 60 | `src/retrieval/engine.py` (hardcoded `rrf_k`) |
 | Rerank weights | retrieval=0.70, graph=0.30 | `config.yaml` |
 | BM25 k1 | 1.2 | `src/indexing/build_indexes.py` |
 | BM25 b | 0.75 | `src/indexing/build_indexes.py` |
 | Embedding model | `all-MiniLM-L6-v2` (384-dim) | `src/indexing/build_indexes.py` |
 | Embedding fallback | Hash-based (64-dim) | `src/indexing/build_indexes.py` |
-| Silver label high-k | 2 (relevance = 2) | `bench/build_silver_labels.py` |
-| Silver label mid-k | 4 (relevance = 1) | `bench/build_silver_labels.py` |
-| Silver label min-score | 0.55 (candidate pool threshold) | `bench/build_judge_pool.py` |
+| Lexical candidate threshold | 0.55 | `bench/build_judge_pool.py` |
 | Judge pool hard negatives | 3 per query | `bench/build_judge_pool.py` |
 | Judge pool random negatives | 2 per query | `bench/build_judge_pool.py` |
 | Judge pool random seed | 42 | `bench/build_judge_pool.py` |
@@ -504,7 +469,7 @@ These values are hardcoded in the pipeline and match the reported experimental s
 | Obj2 eval model | `gemini-2.5-flash-lite` (RAGAS judge) | `bench/ragas_eval.py` |
 | Obj2 golden model | `gemini-2.5-flash` (golden generation) | `bench/ragas_eval.py` |
 | Obj2 RAGAS batch size | 4 samples per batch | `bench/ragas_eval.py` |
-| Obj2 max contexts per sample | 3 | `bench/ragas_eval.py` |
+| Obj2 max contexts per sample | 5 | `bench/ragas_eval.py` (matches retrieval k=5) |
 | Obj2 default Gemini RPM | 60 (paid tier); use 25 on free tier | `bench/run_obj2.py` |
 | Ollama base URL | `http://localhost:11434` | `.env` |
 

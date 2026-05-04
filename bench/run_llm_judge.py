@@ -11,62 +11,10 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-LABELS_DIR = ROOT / "bench" / "labels"
-CORPUS_DIR = ROOT / "data" / "corpus"
-MANIFEST_PATH = ROOT / "data" / "corpus_meta" / "chunk_manifest.json"
 SCORES_DIR = ROOT / "bench" / "llm_judge" / "scores"
 
-CHUNK_SIZE = 450
 DEFAULT_MODEL = "qwen3.5:9b"
 DEFAULT_BATCH_SIZE = 30
-MAX_CHUNK_CHARS = 400
-
-
-def _hash(text: str) -> str:
-    import hashlib
-    return hashlib.sha256(text.encode()).hexdigest()[:16]
-
-
-def _fixed_split_ids(content: str, doc_id: str) -> dict[str, str]:
-    lookup: dict[str, str] = {}
-    start = 0
-    while start < len(content):
-        end = min(start + CHUNK_SIZE, len(content))
-        if end < len(content):
-            boundary = content.rfind(" ", start, end)
-            if boundary > start:
-                end = boundary
-        piece = content[start:end].strip()
-        if piece:
-            chunk_id = "text-" + _hash(doc_id + str(start) + piece)
-            lookup[chunk_id] = piece
-        start = end
-    return lookup
-
-
-def build_chunk_lookup() -> dict[str, str]:
-    lookup: dict[str, str] = {}
-    for doc_path in sorted(CORPUS_DIR.glob("*.json")):
-        doc = json.loads(doc_path.read_text(encoding="utf-8"))
-        doc_id = doc_path.stem
-        lookup.update(_fixed_split_ids(doc.get("content", ""), doc_id))
-    if MANIFEST_PATH.exists():
-        manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-        for chunk in manifest.get("chunks", []):
-            cid = chunk.get("chunk_id", "")
-            text = chunk.get("content", "")
-            if cid and text:
-                lookup[cid] = text
-    return lookup
-
-
-def load_silver_labels() -> list[dict]:
-    rows = []
-    for csv_path in sorted(LABELS_DIR.glob("silver_labels_*.csv")):
-        with csv_path.open(encoding="utf-8") as f:
-            for row in csv.DictReader(f):
-                rows.append(row)
-    return rows
 
 
 def load_from_pool(pool_file: Path) -> list[dict]:
@@ -87,7 +35,7 @@ def load_from_pool(pool_file: Path) -> list[dict]:
 
 JUDGE_SYSTEM = (
     "You are a relevance scoring tool. "
-    "You output ONLY CSV lines in the format: row_id,score — nothing else. "
+    "You output ONLY CSV lines in the format: row_id,score - nothing else. "
     "Score: 0=not relevant, 1=partially relevant, 2=directly relevant. "
     "No explanations. No headers. No markdown. Just the CSV lines."
 )
@@ -131,7 +79,7 @@ def call_ollama(base_url: str, model: str, prompt: str, timeout: int = 120) -> s
         text = body.get("message", {}).get("content", "")
         return str(text).strip()
     except urllib.error.URLError as e:
-        raise RuntimeError(f"Ollama unreachable at {base_url} — is it running? ({e})") from e
+        raise RuntimeError(f"Ollama unreachable at {base_url} - is it running? ({e})") from e
 
 
 def parse_scores(response: str, expected_ids: list[str], debug: bool = False) -> dict[str, int]:
@@ -175,46 +123,16 @@ def run(
     batch_size: int,
     resume: bool,
     timeout: int,
+    pool_file: Path,
     debug: bool = False,
-    pool_file: Path | None = None,
     retries: int = 2,
 ) -> None:
-    if pool_file and pool_file.exists():
-        print(f"Loading judging pool from: {pool_file}")
-        rows_to_score = load_from_pool(pool_file)
-        print(f"  {len(rows_to_score):,} pairs loaded from pool")
-    else:
-        if pool_file:
-            print(f"Warning: Pool file not found ({pool_file}), falling back to silver labels.")
-        print("Building chunk lookup...")
-        chunk_lookup = build_chunk_lookup()
-        print(f"  {len(chunk_lookup):,} chunks indexed")
+    if not pool_file.exists():
+        raise SystemExit(f"Pool file not found: {pool_file}\nRun bench/build_judge_pool.py first.")
 
-        print("Loading silver labels...")
-        labels = load_silver_labels()
-        print(f"  {len(labels):,} labeled pairs")
-
-        rows_to_score = []
-        missing = 0
-        for label in labels:
-            qid = label["query_id"]
-            query = label["query"]
-            chunk_id = label.get("chunk_id", "")
-            content = chunk_lookup.get(chunk_id)
-            if not content:
-                missing += 1
-                continue
-            truncated = content[:MAX_CHUNK_CHARS]
-            if len(content) > MAX_CHUNK_CHARS:
-                truncated += "…"
-            rows_to_score.append({
-                "row_id": f"{qid}__{chunk_id}",
-                "query_text": query,
-                "chunk_text": truncated,
-            })
-
-        if missing:
-            print(f"  Warning: {missing} pairs had no chunk content (skipped)")
+    print(f"Loading judging pool from: {pool_file}")
+    rows_to_score = load_from_pool(pool_file)
+    print(f"  {len(rows_to_score):,} pairs loaded from pool")
 
     SCORES_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -230,7 +148,7 @@ def run(
         out_path = SCORES_DIR / f"judge_scores_batch_{batch_num:02d}.csv"
 
         if resume and out_path.exists():
-            print(f"  Batch {batch_num:02d}/{n_batches} — skipped (already exists)")
+            print(f"  Batch {batch_num:02d}/{n_batches} - skipped (already exists)")
             with out_path.open(encoding="utf-8") as f:
                 for line in f:
                     line = line.strip()
@@ -252,16 +170,14 @@ def run(
             query_safe = r["query_text"].replace('"', '""').replace("\n", " ")
             chunk_safe = r["chunk_text"].replace('"', '""').replace("\n", " ")
             rows_csv_lines.append(f'"{r["row_id"]}","{query_safe}","{chunk_safe}"')
-        rows_csv = "\n".join(rows_csv_lines)
-
-        prompt = JUDGE_PROMPT_TEMPLATE.format(rows_csv=rows_csv)
+        prompt = JUDGE_PROMPT_TEMPLATE.format(rows_csv="\n".join(rows_csv_lines))
 
         elapsed = time.perf_counter() - start_time
         done = batch_idx * batch_size
         eta = (elapsed / done * (total - done)) if done > 0 else 0
         print(
             f"  Batch {batch_num:02d}/{n_batches} "
-            f"[{batch_idx * batch_size + 1}–{min((batch_idx + 1) * batch_size, total)}/{total}] "
+            f"[{batch_idx * batch_size + 1}-{min((batch_idx + 1) * batch_size, total)}/{total}] "
             f"elapsed={elapsed:.0f}s eta={eta:.0f}s ...",
             end=" ", flush=True,
         )
@@ -309,11 +225,11 @@ def run(
     total_scored = sum(1 for v in all_scores.values() if isinstance(v, int))
     print(f"\nDone. {total_scored}/{total} pairs scored.")
     print(f"Scores saved to: {SCORES_DIR}")
-    print("\nNext step: python bench/import_llm_scores.py")
+    print("\nNext step: python bench/build_qrels.py")
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Automated LLM judge for silver label cross-validation.")
+    parser = argparse.ArgumentParser(description="Automated LLM judge for qrels construction.")
     parser.add_argument("--model", default=DEFAULT_MODEL,
                         help=f"Ollama model to use (default: {DEFAULT_MODEL})")
     parser.add_argument("--ollama-url", default="http://localhost:11434",
@@ -328,15 +244,15 @@ def parse_args() -> argparse.Namespace:
                         help="Times to retry rows missing from a batch response (default: 2)")
     parser.add_argument("--debug", action="store_true",
                         help="Print raw model response for the first batch (for diagnosing parse failures)")
-    parser.add_argument("--pool-file", default="",
+    parser.add_argument("--pool-file", default="bench/judge_pool/pool.csv",
                         help="Path to pool.csv from build_judge_pool.py")
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
-    pool_file = Path(args.pool_file) if args.pool_file else None
-    if pool_file and not pool_file.is_absolute():
+    pool_file = Path(args.pool_file)
+    if not pool_file.is_absolute():
         pool_file = ROOT / pool_file
     run(
         model=args.model,
@@ -344,8 +260,8 @@ def main() -> None:
         batch_size=args.batch_size,
         resume=args.resume,
         timeout=args.timeout,
-        debug=args.debug,
         pool_file=pool_file,
+        debug=args.debug,
         retries=args.retries,
     )
 

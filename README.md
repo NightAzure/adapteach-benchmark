@@ -13,7 +13,7 @@ Mapua Malayan Colleges Mindanao, CSAI 2026.
 adapteach-benchmark/
 ├── bench/                  # Benchmark scripts, query sets, labels, runs, results
 │   ├── benchmarks/         # YAML benchmark specs (obj1_primary, obj1_full)
-│   ├── labels/             # Generated silver relevance labels
+│   ├── labels/             # Generated LLM-validated qrels
 │   ├── runs/               # Generated run JSONL files (git-ignored)
 │   └── results/            # Generated score CSVs (git-ignored)
 ├── configs/                # Pipeline configs A–F + defaults.yaml
@@ -54,10 +54,7 @@ make datasets
 make chunks
 make index
 
-# 5. Build silver labels
-make labels
-
-# 6. Smoke test: 5 queries per dataset + score
+# 5. Smoke test: 5 queries per dataset (retrieval only)
 make obj1-smoke
 ```
 

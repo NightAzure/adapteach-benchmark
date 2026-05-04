@@ -2,13 +2,13 @@
 Build the deduplicated LLM judging pool from four sources.
 
 Sources (in priority order for deduplication):
-  1. silver_positive  — pairs scored >= min_score by the lexical scorer
+  1. lexical_positive — pairs scored >= min_score by the lexical candidate scorer
   2. hard_negative    — topic-matching pairs scored < min_score (sampled n_hard_neg per query)
   3. retrieved        — all unique chunks retrieved by any config in the latest run file
   4. random_negative  — randomly sampled chunks with no connection to the query
 
 Output: bench/judge_pool/pool.csv
-Columns: query_id, query_text, dataset, chunk_id, doc_id, chunk_text, source, silver_score
+Columns: query_id, query_text, dataset, chunk_id, doc_id, chunk_text, source, lexical_score
 
 Usage:
     python bench/build_judge_pool.py
@@ -30,7 +30,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from bench.build_silver_labels import (
+from bench.lexical_candidates import (
     build_chunk_index,
     score_chunk,
     keywords,
@@ -42,7 +42,7 @@ from bench.common import load_benchmark_spec, read_jsonl
 MAX_CHUNK_CHARS = 400
 
 # Priority order: lower index = higher priority.
-SOURCE_PRIORITY = ["silver_positive", "hard_negative", "retrieved", "random_negative"]
+SOURCE_PRIORITY = ["lexical_positive", "hard_negative", "retrieved", "random_negative"]
 
 
 # ---------------------------------------------------------------------------
@@ -128,7 +128,7 @@ def truncate(text: str, max_chars: int = MAX_CHUNK_CHARS) -> str:
 # ---------------------------------------------------------------------------
 
 def _passes_topic_filter(query_row: dict, chunk: dict) -> bool:
-    """Return True if chunk passes the two-stage topic filter used by build_silver_labels."""
+    """Return True if chunk passes the lexical candidate topic filter."""
     topic = str(query_row.get("topic", "")).lower().strip()
     if not topic:
         return True
@@ -159,11 +159,11 @@ def build_pool_for_dataset(
         qid = query_row["id"]
         query_text = query_row["query"]
 
-        # Accumulators keyed by chunk_id, tracking (source, silver_score)
+        # Accumulators keyed by chunk_id, tracking (source, lexical_score)
         # We collect candidates per source, then dedup by priority.
         candidates: dict[str, dict] = {}  # chunk_id -> pool row dict
 
-        def _upsert(chunk_id: str, doc_id: str, source: str, silver_score: float) -> None:
+        def _upsert(chunk_id: str, doc_id: str, source: str, lexical_score: float) -> None:
             """Insert or upgrade a candidate using source priority."""
             content = content_lookup.get(chunk_id, "")
             if not content:
@@ -181,7 +181,7 @@ def build_pool_for_dataset(
                 "doc_id": doc_id,
                 "chunk_text": truncate(content),
                 "source": source,
-                "silver_score": silver_score,
+                "lexical_score": lexical_score,
             }
 
         # --- Source 1 & 2: score topic-filtered chunks ---
@@ -198,7 +198,7 @@ def build_pool_for_dataset(
                 hard_negatives.append((sc, chunk))
 
         for sc, chunk in positives:
-            _upsert(chunk["chunk_id"], chunk["doc_id"], "silver_positive", sc)
+            _upsert(chunk["chunk_id"], chunk["doc_id"], "lexical_positive", sc)
 
         # Sample hard negatives (highest scoring below threshold)
         hard_negatives.sort(key=lambda t: t[0], reverse=True)
@@ -253,7 +253,7 @@ def parse_args() -> argparse.Namespace:
         "--min-score",
         type=float,
         default=0.55,
-        help="Minimum silver score for silver_positive source (default: 0.55)",
+        help="Minimum lexical score for lexical_positive source (default: 0.55)",
     )
     parser.add_argument(
         "--n-hard-neg",
@@ -353,7 +353,7 @@ def main() -> None:
 
     # Write output
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    fieldnames = ["query_id", "query_text", "dataset", "chunk_id", "doc_id", "chunk_text", "source", "silver_score"]
+    fieldnames = ["query_id", "query_text", "dataset", "chunk_id", "doc_id", "chunk_text", "source", "lexical_score"]
     with out_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()

@@ -1,137 +1,144 @@
-# Manuscript Changes — Evaluation Label Methodology
+# Manuscript Change Guide - Benchmarking Corrections
 
-Changes made to address the reviewer concern about circularity in silver label evaluation.
-Edit your manuscript at the sections noted below.
-
----
-
-## What the concern is (for your reference)
-
-Silver labels are generated using a lexical scoring function (keyword overlap, title match,
-concept tags). Evaluating retrievers against these labels could systematically favour
-keyword-based retrievers (BM25) over semantic/dense retrievers — not because BM25 is
-better, but because the labels reward lexical overlap. A reviewer would flag this as
-circular evaluation.
+Use this file as an edit guide for `Article 1.docx`. It reflects the current benchmark
+workflow in `bench/REPRODUCE_BENCHMARK.md` and the live scripts. It is not a full repository
+changelog.
 
 ---
 
-## How it is resolved — LLM-validated qrels
+## Main Benchmarking Corrections
 
-The pipeline has been updated to eliminate the circularity. The lexical scorer is no longer
-the ground truth — it is used only as a *candidate nominator*. Final relevance labels come
-from a blind LLM judge scoring a mixed pool that includes positives, hard negatives,
-retrieved chunks from every config, and random negatives.
+The manuscript should describe LLM-validated qrels as the only Objective 1 scoring labels.
+The lexical heuristic is used only inside the judging-pool builder to nominate candidate
+query-chunk pairs; it no longer writes standalone lexical label files and is not a scoring
+fallback.
 
-**New evaluation flow:**
+Current Objective 1 scoring path:
 
-```
-build_judge_pool.py  →  run_llm_judge.py  →  build_qrels.py  →  score_obj1.py
-  (pool 4 sources)       (LLM scores 0/1/2)   (qrels per dataset)  (MRR, nDCG, etc.)
+```text
+build_judge_pool.py -> run_llm_judge.py -> build_qrels.py -> score_obj1.py
 ```
 
----
+What each step means:
 
-## Changes to report in the manuscript
+- `bench/build_judge_pool.py` builds a mixed judging pool from lexical positives, hard negatives,
+  chunks retrieved by any config, and random negatives.
+- `bench/run_llm_judge.py` blindly scores query-chunk pairs on a 0/1/2 relevance scale.
+- `bench/build_qrels.py` writes `qrels_*.csv` files from LLM scores; relevance 0 is treated as
+  an implicit negative.
+- `bench/score_obj1.py` requires `qrels_*.csv`; it does not fall back to lexical labels.
 
-### 1. Methodology section — Relevance Label Construction
-
-**Replace or rewrite the silver label section as:**
-
-> We construct relevance labels using an LLM-as-judge procedure to avoid lexical circularity.
-> A candidate judging pool is built from four sources for each query: (1) chunks rated
-> relevant by the lexical scorer (silver positives, threshold ≥ 0.55); (2) topic-matching
-> chunks rejected by the lexical scorer (hard negatives); (3) all chunks retrieved by any
-> pipeline configuration in the benchmark run; and (4) randomly sampled chunks with no
-> topic connection (random negatives). This pooling strategy ensures that dense and
-> semantic retrievers (Configs D–F) can receive credit for chunks the lexical scorer would
-> have missed.
->
-> The resulting pool of [N] (query, chunk) pairs is scored blindly by
-> [model name, e.g. Qwen3.5-9B / Qwen3.6-27B] on a three-point scale:
-> 0 = not relevant, 1 = partially relevant, 2 = directly relevant. The LLM receives only
-> the query text and chunk text — no retrieval scores or system identifiers. Pairs scored 0
-> are treated as implicit negatives (not written to the qrels file). The resulting qrels
-> are used as ground truth for all Objective 1 metrics (MRR@10, nDCG@10, P@5, Hit@5).
-
-**Then note pool composition:**
-
-> The judging pool contained [N] unique (query, chunk) pairs: [X] silver positives,
-> [Y] hard negatives, [Z] retrieved-only pairs, and [W] random negatives. After LLM
-> scoring, [M] pairs received relevance ≥ 1 and form the final qrels.
+Because generated qrels/results are not currently present in the repository, keep pool sizes and
+final qrel counts as placeholders until the LLM judge pipeline has been run.
 
 ---
 
-### 2. Evaluation setup / Experimental design section
+## Replace Manuscript Paragraphs 184-186
 
-**Add:**
+Paragraph 184 should clarify the actual benchmark specs:
 
-> Relevance labels are LLM-validated qrels built via a four-source pooling strategy
-> (see §Methodology). All evaluation scripts and the judging pool are included in the
-> benchmark repository. The lexical silver labeler (`bench/build_silver_labels.py`) is
-> retained as an upstream candidate nominator but is no longer the source of ground-truth
-> labels. Final qrels are produced by `bench/build_qrels.py` from blind LLM scores.
+> Evaluation proceeded in two phases. In Phase 1, the primary Objective 1 benchmark evaluated
+> all six configurations (A-F) on the curriculum-aligned custom query set (n = 120), with Config
+> A included as a no-retrieval negative control. The full Objective 1 benchmark evaluated
+> retrieval-enabled configurations B-F across four query sets: custom (n = 120), CS1QA (n = 437),
+> MBPP (n = 500), and StaQC (n = 500), totalling 1,557 queries.
 
----
+Replace paragraph 185 with:
 
-### 3. Limitations section
+> Relevance labels for the Objective 1 retrieval benchmark were constructed through an
+> LLM-validated qrels pipeline to reduce circularity from lexical-only labels. First,
+> `build_judge_pool.py` used a deterministic lexical/topic heuristic to nominate candidate
+> query-chunk pairs using text keyword overlap, title overlap, curriculum topic tags, and
+> pedagogical bonuses. These lexical scores were not written as standalone labels and were not
+> used as scoring ground truth. For each query, the judging pool combined: (1) lexical-positive chunks from
+> the lexical/topic scorer; (2) hard negatives that matched topic filters but scored below the
+> lexical threshold; (3) chunks retrieved by any benchmark configuration; and (4) random negative
+> chunks. A local Ollama LLM judge then scored each pooled query-chunk pair blindly on a 0/1/2
+> relevance scale, where 0 = not relevant, 1 = partially relevant, and 2 = directly relevant.
+> Pairs scored 1 or 2 were written to per-dataset qrels files and used as the Objective 1 ground
+> truth; score-0 pairs were treated as implicit negatives.
 
-**Add or expand:**
+Add the pool-count sentence after the replacement paragraph once the qrels pipeline has been run:
 
-> Relevance labels are produced by an LLM judge ([model name]) rather than human
-> annotators. While LLM-as-judge approaches have been shown to correlate well with
-> human judgements at the query–chunk level (Faggioli et al., 2023), model consistency
-> is not guaranteed across all query types. The judging pool uses a four-source pooling
-> strategy — including random negatives and retrieved chunks from all pipeline
-> configurations — to minimise systematic bias. Human annotation over a subset of
-> queries would provide stronger ground truth and is left as future work.
+> The judging pool contained [N] unique query-chunk pairs: [X] lexical positives, [Y] hard
+> negatives, [Z] retrieved pairs, and [W] random negatives. After LLM scoring, [M] pairs received
+> relevance >= 1 and formed the final qrels.
 
-**If you keep the semantic cross-validation (Spearman ρ) as supplementary:**
+Paragraph 186 can keep the same metrics, but should identify qrels as the labels:
 
-> As a supplementary check, we compute Spearman ρ between the LLM-judged relevance
-> rankings and cosine similarity rankings from all-MiniLM-L6-v2 over the top-10
-> retrieved chunks per query (mean ρ = [fill in]).
-
----
-
-### 4. Results table for label quality (if applicable)
-
-| Pool source | Pairs | After LLM scoring (rel ≥ 1) |
-|-------------|-------|------------------------------|
-| Silver positive | [fill in] | [fill in] |
-| Hard negative | [fill in] | [fill in] |
-| Retrieved (any config) | [fill in] | [fill in] |
-| Random negative | [fill in] | [fill in] |
-| **Total** | **[fill in]** | **[fill in]** |
-
----
-
-## Files added or updated in the repository
-
-| File | Purpose |
-|------|---------|
-| `bench/build_judge_pool.py` | Builds deduplicated judging pool (4 sources) |
-| `bench/run_llm_judge.py` | Automated LLM judging via Ollama; supports `--pool-file` |
-| `bench/build_qrels.py` | Merges LLM scores → per-dataset qrels CSVs |
-| `bench/import_llm_scores.py` | Computes Cohen's κ (used for diagnostics, not ground truth) |
-| `bench/export_for_llm_judge.py` | Manual judging export for ChatGPT/Gemini (fallback) |
-| `bench/validate_silver_labels.py` | Semantic cross-validation via Spearman ρ (supplementary) |
-| `bench/REPRODUCE_BENCHMARK.md` | Updated with full qrels pipeline instructions |
+> Retrieval performance (Objective 1) was measured using four rank-based metrics computed
+> against the LLM-validated qrels: Mean Reciprocal Rank at cutoff 10 (MRR@10), Normalized
+> Discounted Cumulative Gain at cutoff 10 (nDCG@10), Precision at 5 (P@5), and Hit Rate at 5
+> (Hit@5). MRR@10 captures the rank of the first relevant result; nDCG@10 accounts for graded
+> relevance across the top-10 ranked list; P@5 measures the fraction of the top five retrieved
+> chunks labeled as relevant; and Hit@5 is a binary indicator of whether any relevant chunk
+> appears in the top five. To quantify sampling uncertainty, 95% bootstrap confidence intervals
+> were computed for MRR@10 and nDCG@10 (2,000 iterations, seed 13). Statistical significance of
+> differences between each config and the reference Config B was assessed using paired
+> randomization tests (5,000 permutation iterations, seed 13).
 
 ---
 
-## Reference to cite for LLM-as-judge
+## Replace Manuscript Paragraphs 187-189
 
-> Faggioli, G., et al. (2023). Perspectives on large language models for relevance
-> judgment. *Proceedings of SIGIR 2023*.
+Paragraph 187 currently has model and Config A details that do not match the benchmark scripts.
+Replace it with:
 
-## Reference to cite for Cohen's κ (if still reporting it as diagnostic)
+> In Phase 2 (Generation Quality - Objective 2), the configurations were evaluated end-to-end
+> using the RAGAS framework (v0.4.3) on the custom curriculum-aligned query set. Pipeline answers
+> were generated by running `bench/run_obj1.py` in full generation mode with Gemini; the current
+> script default for Gemini generation is `gemini-2.5-flash` unless overridden by CLI arguments.
+> RAGAS metric scoring used `gemini-2.5-flash-lite` as the judge model, with
+> `sentence-transformers/all-MiniLM-L6-v2` for embedding-based answer relevancy scoring. Four
+> metrics were computed for retrieval-enabled configurations: faithfulness, answer relevancy,
+> context precision, and context recall. Config A was included as a no-retrieval generation
+> control: answer relevancy was evaluated, faithfulness was reported as 0.0, and context
+> precision/context recall were N/A because Config A retrieves no context.
 
-> Landis, J. R., & Koch, G. G. (1977). The measurement of observer agreement for
-> categorical data. *Biometrics*, 33(1), 159–174.
+Paragraph 188 can remain focused on dataset provenance unless the manuscript needs to disclose
+that the custom set is included locally but may be restricted for public redistribution.
 
-Kappa interpretation thresholds (Landis & Koch):
-- κ < 0.20: slight
-- κ 0.21–0.40: fair
-- κ 0.41–0.60: moderate
-- κ 0.61–0.80: substantial
-- κ > 0.80: almost perfect
+Replace paragraph 189 with:
+
+> Ground-truth reference answers for RAGAS evaluation were generated using Gemini 2.5 Flash
+> (`gemini-2.5-flash`). For each query, the golden-answer builder selected up to five retrieved
+> context chunks from the simplest available retrieval configuration in the priority order
+> B, C, D, E, F. This B-first selection grounds reference answers in the reference dense retriever
+> rather than privileging graph-expanded configurations. This is separate from RAGAS metric
+> scoring, which used Gemini 2.5 Flash Lite (`gemini-2.5-flash-lite`).
+
+---
+
+## Config A Notes To Fix Elsewhere
+
+Use this wording consistently anywhere the manuscript discusses Config A:
+
+- Config A is a no-retrieval negative control, not a normal retrieval pipeline.
+- In Objective 1 primary runs, Config A is included on the custom dataset and produces empty
+  retrieved sets by design.
+- In Objective 1 full runs, Config A is excluded; configs B-F are evaluated across all four
+  datasets.
+- In Objective 2, Config A is included only for generation-side comparison. It has no context
+  precision or context recall because it retrieves no context.
+
+---
+
+## Removed Legacy Paths
+
+Do not present standalone lexical labels, manual export batches, or agreement diagnostics as part
+of the benchmark. The repository now has one Objective 1 label
+path: judging pool -> LLM judge scores -> qrels -> scoring.
+
+---
+
+## Repository Facts To Keep Aligned
+
+- Objective 1 metrics: MRR@10, nDCG@10, P@5, Hit@5, retrieval latency.
+- Bootstrap CI: 2,000 iterations, seed 13.
+- Paired randomization tests: 5,000 iterations, seed 13, compared against Config B.
+- Retrieval top-k: 5.
+- RRF smoothing constant: 60 in `src/retrieval/engine.py`.
+- RAGAS max contexts per sample: 5, matching retrieval top-k.
+- Objective 1 judge model in the guide: `qwen3.5:9b` via Ollama.
+- Objective 2 golden model: `gemini-2.5-flash`.
+- Objective 2 RAGAS judge model: `gemini-2.5-flash-lite`.
